@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import sample from './services/sample.json'
+import sample from './services/sample.json';
+import Preview from './components/Preview';
 
 class App extends Component {
   constructor(props){
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Manfred Awesomic CV</h1>
+        <Preview />
         <ul>
             {sample.map((item, index)=>{
               return(

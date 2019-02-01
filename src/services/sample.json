@@ -1,47 +1,80 @@
-[ {
-  "name": "Jane Doe",
-  "position": "Puesto de trabajo",
-  "bio_data": {
-    "email": "jane.doe@gmail.com",
-    "phone": "+34 654 789 097",
-    "website": "jane-doe-is-the-best.com",
-    "github": "http://jane-doe.github.io"
-  },
-  "profile":
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "experience": [
-    {
-      "company": "Nombre de la empresa",
-      "roles": [
+[
+  {
+    "author": {
+      "profile": [
         {
-          "role": "Technical Evangelist",
-          "from": "junio de 2011",
-          "until": "enero de 2014",
-          "achievements": [
-            "Contribución al lanzamiento de nuevos productos y funcionalidades",
-            "Venta por Canal",
-            "Reclutamiento",
-            "Evangelismo Técnico"
-          ]
+          "name": "Marta Pérez",
+          "image": "",
+          "birthday": "1989-05-06",
+          "publicLinks": [""],
+          "roles": ["project manager"],
+          "yearsOfExperience": 4
         }
-      ]
+      ],
+      "professionalGoals": [""],
+      "transportableSkills": [""],
+      "significantExperience": [""],
+      "significantRelationships": [
+        {
+          "name": "",
+          "comment": "",
+          "role": "",
+          "contact": "",
+          "company": ""
+        }
+      ],
+      "intro": "blablablablabalablabalabla"
     },
-    {
-      "company": "Nombre de la empresa",
-      "roles": [
-        {
-          "role": "CTO",
-          "from": "septiembre de 2003",
-          "until": "junio de 2011",
-          "achievements": [
-            "Contribución al lanzamiento de nuevos productos y funcionalidades",
-            "Venta por Canal",
-            "Reclutamiento",
-            "Evangelismo Técnico"
-          ]
-        }
-      ]
-    }
-  ]
-}
+    "experience": [
+      {
+        "company": [
+          {
+            "name": "Burbujas SL",
+            "roles": [
+              {
+                "role": "Product manager",
+                "from": "2017",
+                "until": "2018",
+                "challenges": [
+                  {
+                    "summary": "Reventar burbujas",
+                    "actions": [
+                      {
+                        "summary": "Apretar las burbujas",
+                        "tools": "Herramientas muy sofisticadas"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "references": [
+              {
+                "name": "",
+                "role": "",
+                "contact": ""
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Escuela de burbujas",
+        "study": "Burbujeador profesional",
+        "from": "2015",
+        "until": "2017",
+        "achievements": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "Burbujeo",
+        "proficiency": ["native or bilingual"]
+      }
+    ],
+    "miscEducation": [],
+    "questionnaire": []
+  }
 ]

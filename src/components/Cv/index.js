@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Author from "../Author";
+import Experience from "../Experience";
 
 class Cv extends Component {
   render() {
@@ -10,13 +11,14 @@ class Cv extends Component {
       //     - Preview
       <div className="cv__wrapper">
         {/* Instancia:
-          - Author
-          - Experience
           - Education
           - Languages
           - MiscEducation
           - Questionnaire */}
         <Author sampleAuthor={sample.author} />
+        <Experience sample={sample} />
+        {/* - Education - Languages - MiscEducation - Questionnaire */}
+        <p>Cv component goes here</p>
       </div>
     );
   }

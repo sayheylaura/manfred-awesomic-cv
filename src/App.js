@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import sample from "./services/sample.json";
+//import sample from "./services/sample.json";
 import sample_2 from "./services/sample_2.json";
 import Preview from "./components/Preview";
 

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Button from "../Button";
 
 class Preview extends Component {
   render() {
@@ -7,6 +8,9 @@ class Preview extends Component {
         {/* Button
         CV */}
         Hola
+        <Button buttonType="button" styles="preview__print-btn">
+          Imprimir
+        </Button>
       </div>
     );
   }

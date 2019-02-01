@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 class Author extends Component {
   render() {
     const { sampleAuthor } = this.props;
-    console.log(sampleAuthor);
     return (
       <Fragment>
         {sampleAuthor.profile.map((item, index) => {

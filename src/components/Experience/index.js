@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Company from '../Company';
 
 
 class Experience extends Component {
@@ -13,20 +14,18 @@ class Experience extends Component {
                 <ul>
                     {experience.map((item, index) => {
                         return (
-                            <li key={index}>
-                                <h5>{item.company[0].name}</h5>
-                            </li>
+                            <Company key={index} company={item} />
                         );
                     })}
                 </ul>
             </Fragment>
-         );
+        );
     }
 }
- 
+
 Experience.propTypes = {
     sample: PropTypes.object.isRequired
-  };
+};
 
 
 export default Experience;

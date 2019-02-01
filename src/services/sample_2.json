@@ -5,9 +5,7 @@
           "name": "David Bonilla",
           "image": "",
           "birthday": "1980-04-02",
-          "publicLinks": [
-            ""
-          ],
+          "publicLinks": [""],
           "roles": [
             "project manager"
           ],
@@ -97,4 +95,4 @@
     "miscEducation": [
       "Scrum Master"
     ]
-  };
+  }

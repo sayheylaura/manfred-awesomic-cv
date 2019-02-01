@@ -14,16 +14,17 @@ class App extends Component {
 
   render() {
     const {sample} = this.state;
+    const {profile} = sample.author;
     return (
       <div className="App">
         <h1>Manfred Awesomic CV</h1>
         <Preview />
         <ul>
-            {sample.map((item, index)=>{
+            {profile.map((item, index)=>{
               return(
                 <li key={index}>
                 <h2>{item.name}</h2>
-                <h2>{item.position}</h2>
+                <h2>{item.yearsOfExperience}</h2>
                 </li>
               );
             })}

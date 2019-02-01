@@ -1,32 +1,31 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Company from '../Company';
 
 
 class Experience extends Component {
 
-    render() { 
+    render() {
         const {experience} = this.props.sample;
         // console.log("experience", experience);
-        return ( 
+        return (
             <Fragment>
                 <h3>Experience</h3>
                 <ul>
                     {experience.map((item, index) => {
                         return (
-                            <li key={index}>
-                                <h5>{item.company[0].name}</h5>
-                            </li>
+                            <Company key={index} experience={item} />
                         );
                     })}
                 </ul>
             </Fragment>
-         );
+        );
     }
 }
- 
+
 Experience.propTypes = {
     sample: PropTypes.object.isRequired
-  };
+};
 
 
 export default Experience;

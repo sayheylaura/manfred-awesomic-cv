@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Company extends Component {
 
@@ -16,5 +17,9 @@ class Company extends Component {
         );
     }
 }
+
+Company.propTypes = {
+    company: PropTypes.object.isRequired
+};
 
 export default Company;

@@ -5,7 +5,6 @@ class RoleList extends Component {
 
   render() {
     const { roles } = this.props;
-    console.log(roles);
     return (
       <ul className="role-list__list">
         {roles.map((item, index) => {

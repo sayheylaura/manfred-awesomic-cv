@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 class MiscEducation extends Component {
   render() {
-    const { miscEducation } = this.props;
+    const { sampleMiscEducation } = this.props;
     return (
       <Fragment>
         <h3>Miscellany</h3>
         <ul className="miscEducation__list">
-          {miscEducation.map((item, index) => {
+          {sampleMiscEducation.map((item, index) => {
             return(
             <li key={index} className="miscEducation__item">
               {item}
@@ -22,7 +22,7 @@ class MiscEducation extends Component {
 }
 
 MiscEducation.propTypes = {
-  miscEducation: PropTypes.arr
+  sampleMiscEducation: PropTypes.array
 };
 
 export default MiscEducation;

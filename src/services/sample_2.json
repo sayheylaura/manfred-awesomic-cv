@@ -94,5 +94,15 @@
     ],
     "miscEducation": [
       "Scrum Master"
+    ],
+    "questionnaire": [
+      {
+        "question": "cuál es tu color favorito",
+        "answer": "negro"
+      },
+      {
+        "question": "cuál es tu signo del zodiaco",
+        "answer": "aries"
+      }
     ]
   }

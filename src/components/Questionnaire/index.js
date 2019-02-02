@@ -7,15 +7,15 @@ class Questionnaire extends Component {
     const {sampleQuestionnaire} = this.props;
     return (
         <div className="questionnaire__wrapper">
-          <h2 className="questionnaire__item--title">Questionnaire</h2>
+          <h2 className="questionnaire__title">Questionnaire</h2>
           {sampleQuestionnaire.map((item, index)=>{
           return (
             <div key={index} className="questionnaire__item">
 
-                <p className="questionnaire__item--question">
+                <p className="questionnaire__item-question">
                     {item.question}
                 </p>
-                <p className="questionnaire__item--answer">
+                <p className="questionnaire__item-answer">
                     {item.answer}
                 </p>
             </div>
@@ -26,6 +26,6 @@ class Questionnaire extends Component {
   }
 }
 Questionnaire.propTypes = {
-  sampleQuestionnaire: PropTypes.array
+  sampleQuestionnaire: PropTypes.array.isRequired
 };
 export default Questionnaire;

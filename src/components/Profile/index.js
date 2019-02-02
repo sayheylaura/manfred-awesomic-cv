@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import PublicLinks from "../PublicLinks";
 
 class Profile extends Component {
   render() {
@@ -25,6 +26,7 @@ class Profile extends Component {
                 })}
               </div>
               <p className="author__birthday">{item.birthday}</p>
+              <PublicLinks profileLinks={item.publicLinks}/>
               <p className="author__yearsOfExperience">
                 {item.yearsOfExperience}
               </p>

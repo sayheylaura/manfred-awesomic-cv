@@ -10,10 +10,10 @@ class Questionnaire extends Component {
           {sampleQuestionnaire.map((item, index)=>{
           return (
             <div key={index} className="questionnaire__item">
-                <p className="questionnaire__question">
+                <p className="questionnaire__item--question">
                     {item.question}
                 </p>
-                <p className="questionnaire__answer">
+                <p className="questionnaire__item--answer">
                     {item.answer}
                 </p>
             </div>

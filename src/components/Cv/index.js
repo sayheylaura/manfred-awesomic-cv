@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Author from "../Author";
 import Experience from "../Experience";
 import Education from "../Education";
+import MiscEducation from "../MiscEducation";
 
 class Cv extends Component {
   render() {
@@ -19,7 +20,8 @@ class Cv extends Component {
         <Author sampleAuthor={sample.author} />
         <Experience sample={sample} />
         <Education sampleEducation={sample.education}/>
-        {/*  - Languages - MiscEducation - Questionnaire */}
+        <MiscEducation sampleMiscEducation={sample.miscEducation} />
+        {/* - Languages - Questionnaire */}
 
       </div>
     );

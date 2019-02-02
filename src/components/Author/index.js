@@ -1,12 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Profile from "../Profile";
+import ProfessionalGoals from "../ProfessionalGoals";
 
 class Author extends Component {
   render() {
     const { sampleAuthor } = this.props;
     return (
-      <Profile sampleProfile={sampleAuthor.profile} />
+      <Fragment>
+        <Profile sampleProfile={sampleAuthor.profile} />
+        <ProfessionalGoals
+          sampleProfessionalGoals={sampleAuthor.professionalGoals}
+        />
+      </Fragment>
       // Instancia:
       // - Intro
       // - ProfessionalGoals

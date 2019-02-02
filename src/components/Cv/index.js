@@ -18,13 +18,9 @@ class Cv extends Component {
           - Questionnaire */}
         <Author sampleAuthor={sample.author} />
         <Experience sample={sample} />
-<<<<<<< HEAD
         <Education sampleEducation={sample.education}/>
         {/*  - Languages - MiscEducation - Questionnaire */}
 
-=======
-        {/* - Education - Languages - MiscEducation - Questionnaire */}
->>>>>>> 3025bbb534f15082f74bd05b56a41f1ce92b7f08
       </div>
     );
   }

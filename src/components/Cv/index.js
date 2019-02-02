@@ -4,6 +4,7 @@ import Author from "../Author";
 import Experience from "../Experience";
 import Education from "../Education";
 import Questionnaire from "../Questionnaire";
+import MiscEducation from "../MiscEducation";
 
 class Cv extends Component {
   render() {
@@ -20,8 +21,9 @@ class Cv extends Component {
         <Author sampleAuthor={sample.author} />
         <Experience sample={sample} />
         <Education sampleEducation={sample.education}/>
+        <MiscEducation sampleMiscEducation={sample.miscEducation} />
         <Questionnaire sampleQuestionnaire={sample.questionnaire} />
-        {/*  - Languages - MiscEducation - Questionnaire */}
+        {/* - Languages */}
 
       </div>
     );

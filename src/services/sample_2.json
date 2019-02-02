@@ -75,7 +75,10 @@
         "study": "Master en Desarrollo de Aplicaciones Web",
         "from": "2000",
         "until": "2001",
-        "achievements": []
+        "achievements": [
+          "blibli",
+          "blabla"
+        ]
       }
     ],
     "languages": [

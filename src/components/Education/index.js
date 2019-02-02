@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 class Education extends Component {
   render() {
     const { sampleEducation } = this.props;
-    console.log(sampleEducation);
     return (
       <div className="education__wrapper">
         <h3>Formación</h3>

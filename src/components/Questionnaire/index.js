@@ -7,9 +7,11 @@ class Questionnaire extends Component {
     const {sampleQuestionnaire} = this.props;
     return (
         <div className="questionnaire__wrapper">
+          <h2 className="questionnaire__item--title">Questionnaire</h2>
           {sampleQuestionnaire.map((item, index)=>{
           return (
             <div key={index} className="questionnaire__item">
+
                 <p className="questionnaire__item--question">
                     {item.question}
                 </p>

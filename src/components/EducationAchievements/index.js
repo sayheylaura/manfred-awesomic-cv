@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class EducationAchievements extends Component {
   render() {
-    const { achievements } = this.props;
-    console.log(achievements);
+    const { sampleEducation } = this.props;
+    console.log(sampleEducation);
 
     return (
       <ul className="achievements__list">
-        {achievements.map((item, index) => {
+        {sampleEducation.map((item, index) => {
           return (
             <li key={index} className="achievements__list-item">
-              {item}
+              {item.achievements}
             </li>
           )
         })}
@@ -20,8 +20,8 @@ class EducationAchievements extends Component {
   }
 }
 
-EducationAchievements.propTypes = {
-  achievements: PropTypes.array.isRequired
-};
+// EducationAchievements.propTypes = {
+//   achievements: PropTypes.array.isRequired
+// };
 
 export default EducationAchievements;

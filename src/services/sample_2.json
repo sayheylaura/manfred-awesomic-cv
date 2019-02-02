@@ -68,7 +68,11 @@
         "institution": "Universitat Oberta de Catalunya",
         "study": "Ingeniería Informática",
         "from": "2002",
-        "until": "pendiente de finalizar"
+        "until": "pendiente de finalizar",
+        "achievements": [
+          "blibli",
+          "blabla"
+        ]
       },
       {
         "institution": "CFDTI IBM/La Caixa",

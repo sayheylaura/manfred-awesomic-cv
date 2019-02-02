@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class EducationAchievements extends Component {
   render() {
@@ -20,8 +20,8 @@ class EducationAchievements extends Component {
   }
 }
 
-// EducationAchievements.propTypes = {
-//   achievements: PropTypes.array.isRequired
-// };
+EducationAchievements.propTypes = {
+  achievements: PropTypes.array.isRequired
+};
 
 export default EducationAchievements;

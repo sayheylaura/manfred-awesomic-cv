@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RoleItem from '../RoleItem';
 
 class RoleList extends Component {
 
@@ -9,10 +10,8 @@ class RoleList extends Component {
       <ul className="role-list__list">
         {roles.map((item, index) => {
           return (
-            <li className="role-list__item" key={index}>
-              <div className="role-list__role">{item.role}</div>
-              <div className="role-list__date">{item.from} — {item.until}</div>
-            </li>
+            <RoleItem roleName={item.role} roleDateFrom={item.from} roleDateuntil={item.until} index={index} key={index}/>
+          //  Challenges
           );
         })}
       </ul>

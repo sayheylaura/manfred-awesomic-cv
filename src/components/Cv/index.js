@@ -5,6 +5,7 @@ import Experience from "../Experience";
 import Education from "../Education";
 import Questionnaire from "../Questionnaire";
 import MiscEducation from "../MiscEducation";
+import './Cv.scss';
 
 class Cv extends Component {
   render() {

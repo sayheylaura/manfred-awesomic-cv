@@ -3,4 +3,7 @@
 }
 h1 {
   font-size: 60px;
+  @media print {
+    display: none;
+  }
 }

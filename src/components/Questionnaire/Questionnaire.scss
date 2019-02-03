@@ -1,0 +1,7 @@
+.questionnaire__wrapper {
+  background-color: #fff;
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

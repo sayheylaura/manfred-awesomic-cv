@@ -1,0 +1,10 @@
+.cv__wrapper {
+  min-height: 100%;
+  padding: 20px;
+  background-color: pink;
+
+  @media print {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}

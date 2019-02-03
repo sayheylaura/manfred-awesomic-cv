@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import Profile from "../Profile";
 import Intro from "../Intro";
+import SignificantRelationships from "../SignificantRelationships";
 
 class Author extends Component {
   render() {
@@ -10,11 +11,11 @@ class Author extends Component {
       <Fragment>
       <Profile sampleProfile={sampleAuthor.profile} />
       {/* // Instancia: */}
-        <Intro sampleIntro={sampleAuthor.intro}/>
+      <Intro sampleIntro={sampleAuthor.intro}/>
       {/* // - ProfessionalGoals
       // - TransportableSkills
-      // - SignificantExperience
-      // - SignificantRelationships */}
+      // - SignificantExperience*/}
+      <SignificantRelationships sampleSigRelations={sampleAuthor.significantRelationships}/>
       </Fragment>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from "prop-types";
 class SignificantExperience extends Component {
   render() {
     const {sampleSigExperience} = this.props;
@@ -20,5 +20,10 @@ class SignificantExperience extends Component {
     );
   }
 }
+
+
+SignificantExperience.propTypes = {
+  sampleSigExperience: PropTypes.array.isRequired
+};
 
 export default SignificantExperience;

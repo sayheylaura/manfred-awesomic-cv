@@ -10,22 +10,34 @@ import ProfessionalGoals from "../ProfessionalGoals";
 class Author extends Component {
   render() {
     const { sampleAuthor } = this.props;
+    const { profile,
+      intro,
+      professionalGoals,
+      transportableSkills,
+      significantExperience,
+      significantRelationships
+    } = sampleAuthor;
     return (
       <Fragment>
-        <Profile sampleProfile={sampleAuthor.profile} />
-        <Intro sampleIntro={sampleAuthor.intro} />
-        <ProfessionalGoals
-          sampleProfessionalGoals={sampleAuthor.professionalGoals}
-        />
-        <TransportableSkills
-          sampleTransSkills={sampleAuthor.transportableSkills}
-        />
-        <SignificantExperience
-          sampleSigExperience={sampleAuthor.significantExperience}
-        />
-        <SignificantRelationships
-          sampleSigRelations={sampleAuthor.significantRelationships}
-        />
+        <Profile sampleProfile={profile} />
+        {intro && <Intro sampleIntro={intro} />}
+
+        {professionalGoals && <ProfessionalGoals
+          sampleProfessionalGoals={professionalGoals}
+        />}
+
+        {transportableSkills && <TransportableSkills
+          sampleTransSkills={transportableSkills}
+        />}
+
+        {significantExperience && <SignificantExperience
+          sampleSigExperience={significantExperience}
+        />}
+
+        {significantRelationships && <SignificantRelationships
+          sampleSigRelations={significantRelationships}
+        />}
+
       </Fragment>
     );
   }

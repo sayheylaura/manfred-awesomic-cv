@@ -27,7 +27,7 @@ class EducationItem extends Component {
   }
 }
 EducationItem.propTypes = {
-  sampleEducationItem: PropTypes.array.isRequired
+  sampleEducationItem: PropTypes.object.isRequired
 };
 
 export default EducationItem;

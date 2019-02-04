@@ -16,9 +16,7 @@ class RoleItem extends Component {
 }
 
 RoleItem.propTypes = {
-  role: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
-  until: PropTypes.string.isRequired
+  sampleRoleItem : PropTypes.object.isRequired
 };
 
 export default RoleItem;

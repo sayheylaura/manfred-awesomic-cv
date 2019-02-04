@@ -15,7 +15,7 @@ class EducationItem extends Component {
                 <h4 className="education__item-institution">{item.institution}</h4>
                 <h5 className="education__item-institution">{item.study}</h5>
                 <p className="education__item-date">{item.from} - {item.until}</p>
-                <EducationAchievements sampleEducation={sampleEducation}/>
+                {item.achievements && (<EducationAchievements sampleAchievements={item.achievements}/>)}
               </li>
             )
           })}

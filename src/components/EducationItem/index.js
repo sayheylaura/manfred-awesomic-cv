@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import EducationAchievements from "../EducationAchievements";
 
 class EducationItem extends Component {
   render() {
-    const { sampleEducation } = this.props;
+    const { sampleEducationItem } = this.props;
+    const {
+      institution,
+      study,
+      from,
+      until,
+      achievements
+    } = sampleEducationItem;
     return (
-      <ul className="education__list">
-        {sampleEducation.map((item, index) => {
-          return (
-            <li key={index} className="education__list-item">
-              <h4 className="education__item-institution">{item.institution}</h4>
-              <h5 className="education__item-institution">{item.study}</h5>
-              <p className="education__item-date">{item.from} - {item.until}</p>
-              {item.achievements && (<EducationAchievements sampleAchievements={item.achievements} />)}
-            </li>
-          )
-        })}
-      </ul>
+      <li className="education__list-item">
+        <h3 className="education__item-institution">{institution}</h3>
+        <h4 className="education__item-institution">{study}</h4>
+        <p className="education__item-date">
+          {from} - {until}
+        </p>
+        {achievements && (
+          <EducationAchievements sampleAchievements={achievements} />
+        )}
+      </li>
     );
   }
 }
 EducationItem.propTypes = {
-  sampleEducation: PropTypes.array.isRequired
+  sampleEducationItem: PropTypes.array.isRequired
 };
 
 export default EducationItem;

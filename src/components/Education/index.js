@@ -7,8 +7,13 @@ class Education extends Component {
     const { sampleEducation } = this.props;
     return (
       <div className="education__wrapper">
-        <h3 className="education__title">Education</h3>
-        <EducationItem sampleEducation={sampleEducation} />
+        <h2 className="education__title">Education</h2>
+
+        <ul className="education__list">
+          {sampleEducation.map((item, index) => {
+            return <EducationItem key={index} sampleEducationItem={item} />;
+          })}
+        </ul>
       </div>
     );
   }

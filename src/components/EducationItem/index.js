@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EducationAchievements from "../EducationAchievements";
 
-//pendiente de averiguar la solucion a que falte una clave
-
 class EducationItem extends Component {
   render() {
     const { sampleEducation } = this.props;

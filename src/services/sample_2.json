@@ -60,6 +60,13 @@
                   }
                 ]
               }
+            ],
+            "references": [
+              {
+                "name": "Sarah Connor",
+                "role": "CEO of Skynet",
+                "contact": "sarah@skynet.com"
+              }
             ]
           }
         ]

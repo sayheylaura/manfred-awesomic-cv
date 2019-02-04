@@ -14,12 +14,10 @@ class SignificantRelationships extends Component {
           {sampleSigRelations.map((item, index)=>{
             return (
               <RelationshipItem key={index} relation={item} />
-
             );
           })}
         </ul>
       </div>
-
     );
   }
 }

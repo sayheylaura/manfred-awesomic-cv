@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import Profile from "../Profile";
 import Intro from "../Intro";
+import SignificantRelationships from "../SignificantRelationships";
 import SignificantExperience from "../SignificantExperience";
 
 class Author extends Component {
@@ -11,9 +12,12 @@ class Author extends Component {
       <Fragment>
       <Profile sampleProfile={sampleAuthor.profile} />
       {/* // Instancia: */}
-        <Intro sampleIntro={sampleAuthor.intro}/>
+      <Intro sampleIntro={sampleAuthor.intro}/>
       {/* // - ProfessionalGoals
-      // - TransportableSkills */}
+      // - TransportableSkills
+      // - SignificantExperience*/}
+      <SignificantRelationships sampleSigRelations={sampleAuthor.significantRelationships}/>
+      {/* - TransportableSkills  */}
       <SignificantExperience sampleSigExperience={sampleAuthor.significantExperience}/>
       {/* // - SignificantRelationships */}
       </Fragment>

@@ -5,19 +5,27 @@ import TransportableSkills from "../TransportableSkills";
 import Intro from "../Intro";
 import SignificantRelationships from "../SignificantRelationships";
 import SignificantExperience from "../SignificantExperience";
+import ProfessionalGoals from "../ProfessionalGoals";
 
 class Author extends Component {
   render() {
     const { sampleAuthor } = this.props;
     return (
       <Fragment>
-      <Profile sampleProfile={sampleAuthor.profile} />
-      <Intro sampleIntro={sampleAuthor.intro}/>
-    {/* ProfessionalGoals */}
-      <TransportableSkills sampleTransSkills={sampleAuthor.transportableSkills}/>
-      <SignificantExperience sampleSigExperience={sampleAuthor.significantExperience}/>
-      <SignificantRelationships sampleSigRelations={sampleAuthor.significantRelationships}/>
-
+        <Profile sampleProfile={sampleAuthor.profile} />
+        <Intro sampleIntro={sampleAuthor.intro} />
+        <ProfessionalGoals
+          sampleProfessionalGoals={sampleAuthor.professionalGoals}
+        />
+        <TransportableSkills
+          sampleTransSkills={sampleAuthor.transportableSkills}
+        />
+        <SignificantExperience
+          sampleSigExperience={sampleAuthor.significantExperience}
+        />
+        <SignificantRelationships
+          sampleSigRelations={sampleAuthor.significantRelationships}
+        />
       </Fragment>
     );
   }

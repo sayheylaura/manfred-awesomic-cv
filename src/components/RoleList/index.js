@@ -12,7 +12,6 @@ class RoleList extends Component {
         {roles.map((item, index) => {
           return (
             <RoleItem sampleRoleItem={item} key={index}/>
-          //  Challenges
           );
         })}
       </ul>

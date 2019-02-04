@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import EducationItem from "../EducationItem";
 
 class Education extends Component {
@@ -7,11 +7,15 @@ class Education extends Component {
     const { sampleEducation } = this.props;
     return (
       <div className="education__wrapper">
-        <h3>Formación</h3>
-        <EducationItem sampleEducation={sampleEducation}/>
+        <h2 className="education__title">Education</h2>
+
+        <ul className="education__list">
+          {sampleEducation.map((item, index) => {
+            return <EducationItem key={index} sampleEducationItem={item} />;
+          })}
+        </ul>
       </div>
     );
-
   }
 }
 

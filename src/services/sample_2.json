@@ -41,9 +41,9 @@
           "name": "Happy Bear Co.",
           "roles": [
             {
-              "role": " Fundador",
-              "from": "desde junio 2018",
-              "until": "actualmente",
+              "role": " Founder",
+              "from": "june 2018",
+              "until": "present",
               "challenges": [
                 {
                   "summary": "La- da- da- da- dah. Just be happy. We'll throw some happy little limbs on this tree.",
@@ -54,7 +54,6 @@
                     },
                     {
                       "summary": "By now you should be quite happy about what's happening here. Get tough with it, get strong."
-
                     }
                   ]
                 }
@@ -75,29 +74,32 @@
   "education": [
     {
       "institution": "Miskatonic University",
-      "study": "Ingeniería Informática",
+      "study": "Computer Science",
       "from": "2002",
-      "until": "pendiente de finalizar"
+      "until": "2004"
     },
     {
       "institution": "Night Vale Community College",
       "study": "Technology With Finger Quotes",
       "from": "2000",
       "until": "2001",
-      "achievements": []
+      "achievements": [
+        "Blabla",
+        "Blibli"
+      ]
     }
   ],
   "languages": [
     {
-      "language": "Castellano",
+      "language": "Spanish",
       "proficiency": [
-        "native or bilingual"
+        "Native or bilingual"
       ]
     },
     {
       "language": "French Gibbering",
       "proficiency": [
-        "full professional"
+        "Full professional"
       ]
     }
   ],
@@ -106,12 +108,12 @@
   ],
   "questionnaire": [
     {
-      "question": "cuál es tu color favorito",
-      "answer": "negro"
+      "question": "What's your favorite color?",
+      "answer": "Black"
     },
     {
-      "question": "cuál es tu signo del zodiaco",
-      "answer": "aries"
+      "question": "What's your zodiac?",
+      "answer": "Aries"
     }
   ]
 }

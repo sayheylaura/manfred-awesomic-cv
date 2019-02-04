@@ -7,8 +7,8 @@ class ReferenceItem extends Component {
     return (
       <li className="reference-list__item">
         <div className="reference-list__name">{name}</div>
-          <div className="reference-list__role">{role}</div>
-          <a className="reference-list__contact" href={`mailto: ${contact}`}>{contact}</a>
+        <div className="reference-list__role">{role}</div>
+        <a className="reference-list__contact" href={`mailto: ${contact}`}>{contact}</a>
       </li>
     );
   }

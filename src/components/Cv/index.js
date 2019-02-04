@@ -11,12 +11,10 @@ class Cv extends Component {
   render() {
     const { sample } = this.props;
     return (
-      // Importado en:
-      //     - Preview
       <div className="cv__wrapper">
         <Author sampleAuthor={sample.author} />
-        <Experience sample={sample} />
-        <Education sampleEducation={sample.education}/>
+        <Experience sampleExperience={sample.experience} />
+        <Education sampleEducation={sample.education} />
         <LanguagesList sampleLanguages={sample.languages} />
         <MiscEducation sampleMiscEducation={sample.miscEducation} />
         <Questionnaire sampleQuestionnaire={sample.questionnaire} />

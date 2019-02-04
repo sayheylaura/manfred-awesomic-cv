@@ -12,11 +12,13 @@ class Profile extends Component {
           return (
             <Fragment key={index}>
               <div className="author__basic-data">
-                <img
-                  className="author__image"
-                  src={item.image}
-                  alt={item.name}
-                />
+                {item.image && (
+                  <img
+                    className="author__image"
+                    src={item.image}
+                    alt={item.name}
+                  />
+                )}
                 <h2 className="author__name">{item.name}</h2>
               </div>
 

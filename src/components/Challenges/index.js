@@ -9,9 +9,9 @@ class Challenges extends Component {
       <ul className="challenges__list">
         {challenges.map((item, index )=> {
           return (
-            <li  key={index} className="challenges__item">
+            <li key={index} className="challenges__item">
             <p className="challenges__item-summary">{item.summary}</p>
-              <ChallengesActions challengesActions={item.actions}/>
+              <ChallengesActions challengesActions={item.actions} />
             </li>
           );
         })}
@@ -20,7 +20,7 @@ class Challenges extends Component {
   }
 }
 
-Challenges.PropTypes ={
+Challenges.propTypes ={
   challenges: PropTypes.array.isRequired
 }
 

@@ -6,15 +6,16 @@ class Challenges extends Component {
     const { challenges } = this.props;
     console.log(challenges);
     return (
-      <div className="Challenges__item">
-        {challenges.map(item => {
+      <ul className="challenges__list">
+        {challenges.map((item, index )=> {
           return (
-            <p className="Challenges__sumary">
-            {item.sumary}
-            </p>
+            <li  key={index} className="challenges__item">
+            <p className="challenges__item-summary">{item.summary}</p>
+
+            </li>
           );
         })}
-      </div>
+      </ul>
     );
   }
 }

@@ -25,7 +25,9 @@ class Profile extends Component {
               <p className="author__yearsOfExperience">
                 {item.yearsOfExperience} years of experience
               </p>
-              <PublicLinks profileLinks={item.publicLinks} />
+              {item.publicLinks && (
+                <PublicLinks profileLinks={item.publicLinks} />
+              )}
             </Fragment>
           );
         })}

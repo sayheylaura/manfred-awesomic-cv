@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import RoleList from '../RoleList';
 import ReferencesList from '../ReferencesList';
+import './Company.scss';
 
 class Company extends Component {
 
@@ -12,7 +13,7 @@ class Company extends Component {
             {company.map((item, index)=>{
                 return (
                   <Fragment key={index}>
-                    <p className="company__name">Nombre de la compañía: {item.name}</p>
+                    <h4 className="company__name"> {item.name}</h4>
                     <RoleList  roles={item.roles}/>
                     <ReferencesList references={item.references}/>
                   </Fragment>

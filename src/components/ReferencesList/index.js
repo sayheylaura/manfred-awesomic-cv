@@ -12,7 +12,6 @@ class ReferencesList extends Component {
         <ul className="reference-list__list">
           {references.map((item, index)=>{
             return (
-
               <li className="reference-list__item" key={index}>
                 <div className="reference-list__name">{item.name}</div>
                   <div className="reference-list__role">{item.role}</div>

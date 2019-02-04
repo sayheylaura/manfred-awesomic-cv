@@ -15,7 +15,7 @@ class ReferencesList extends Component {
               <li className="reference-list__item" key={index}>
                 <div className="reference-list__name">{item.name}</div>
                   <div className="reference-list__role">{item.role}</div>
-                  <a className="reference-list__contact" href="mailto:{item.contact}">{item.contact}</a>
+                  <a className="reference-list__contact" href={`mailto: ${item.contact}`}>{item.contact}</a>
               </li>
             );
           })}

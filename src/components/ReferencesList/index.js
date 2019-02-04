@@ -6,20 +6,17 @@ class ReferencesList extends Component {
     const {references} = this.props;
     return (
       <div className="reference-list__wrapper">
+      <h4 className="reference-list__title">
+        References
+        </h4>
         <ul className="reference-list__list">
-          <h4>References</h4>
           {references.map((item, index)=>{
             return (
-              <li className="reference-list__item" key={index}>
-                <p className="reference-list__paragraph">
-                  {item.name}{', '}
-                  <span>
-                    <a href={item.contact}>
-                      {item.role}
-                      </a>
-                  </span>
 
-                </p>
+              <li className="reference-list__item" key={index}>
+                <div className="reference-list__name">{item.name}</div>
+                  <div className="reference-list__role">{item.role}</div>
+                  <a className="reference-list__contact" href="mailto:{item.contact}">{item.contact}</a>
               </li>
             );
           })}

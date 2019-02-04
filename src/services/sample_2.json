@@ -1,0 +1,116 @@
+{
+  "author": {
+    "profile": [
+      {
+        "name": "Mary Jaen",
+        "image": "",
+        "birthday": "1980-04-02",
+        "publicLinks": [
+          "https://github.com/emma-martin"
+        ],
+        "roles": [
+          "project manager"
+        ],
+        "yearsOfExperience": 5
+      }
+    ],
+    "intro": "Llevo casi dos décadas desarrollando software,      ocupando Let's make some happy little clouds in our world.  Work on one thing at a time. Don't get carried away - we have plenty of time. Everyone is going to see things differently - and that's the way it should be. Don't hurry. Take your time and enjoy. In your world you can create anything you desire. digitales.",
+    "professionalGoals": [
+      "World Domitation Manager"
+    ],
+    "transportableSkills": [
+      "Krusty's Burguer team lead"
+    ],
+    "significantExperience": [
+      "Formar parte del equipo que implementó la pasarela de Let's have a nice tree right here. Just let go - and fall like a little waterfall. We'll put all the little clouds in and let them dance around and have fun colectivo."
+    ],
+    "significantRelationships": [
+      {
+        "name": "Darwin Watterson",
+        "comment": "fundador y General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
+        "role": "fundador y General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
+        "contact": "darwin@gumball.com",
+        "company": "Watterson SL"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": [
+        {
+          "name": "Happy Bear Co.",
+          "roles": [
+            {
+              "role": " Fundador",
+              "from": "desde junio 2018",
+              "until": "actualmente",
+              "challenges": [
+                {
+                  "summary": "Creación y publicación de contratos La- da- da- da- dah. Just be happy. We'll throw some happy little limbs on this tree..",
+                  "actions": [
+                    {
+                      "summary": "Definición de alcance y condiciones de By now you should be quite happy about what's happening here. Get tough with it, get strong."
+                    },
+                    {
+                      "summary": "Gestión del repositorio en GitHub para permitir su publicación y consulta así como potenciales pull requests.",
+                      "tools": "Git, GitHub"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "Sarah Connor",
+              "role": "CEO of Skynet",
+              "contact": "sarah@skynet.com"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Miskatonic University",
+      "study": "Ingeniería Informática",
+      "from": "2002",
+      "until": "pendiente de finalizar"
+    },
+    {
+      "institution": "Night Vale Community College",
+      "study": "Technology With Finger Quotes",
+      "from": "2000",
+      "until": "2001",
+      "achievements": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "Castellano",
+      "proficiency": [
+        "native or bilingual"
+      ]
+    },
+    {
+      "language": "French Gibbering",
+      "proficiency": [
+        "full professional"
+      ]
+    }
+  ],
+  "miscEducation": [
+    "Scrum Master"
+  ],
+  "questionnaire": [
+    {
+      "question": "cuál es tu color favorito",
+      "answer": "negro"
+    },
+    {
+      "question": "cuál es tu signo del zodiaco",
+      "answer": "aries"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import RoleList from '../RoleList';
+import ReferencesList from '../ReferencesList';
 
 class Company extends Component {
 
@@ -13,6 +14,7 @@ class Company extends Component {
                   <Fragment key={index}>
                     <p className="company__name">Nombre de la compañía: {item.name}</p>
                     <RoleList  roles={item.roles}/>
+                    <ReferencesList references={item.references}/>
                   </Fragment>
                 );
             })}

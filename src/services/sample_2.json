@@ -83,7 +83,10 @@
       "study": "Technology With Finger Quotes",
       "from": "2000",
       "until": "2001",
-      "achievements": []
+      "achievements": [
+        "Blabla",
+        "Blibli"
+      ]
     }
   ],
   "languages": [

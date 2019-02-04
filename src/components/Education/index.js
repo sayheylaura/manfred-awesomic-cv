@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import EducationItem from "../EducationItem";
 
 class Education extends Component {
   render() {
@@ -7,22 +8,9 @@ class Education extends Component {
     return (
       <div className="education__wrapper">
         <h3 className="education__title">Education</h3>
-        <ul className="education__list">
-          {sampleEducation.map((item, index) => {
-            return (
-              <li key={index} className="education__list-item">
-                <h4 className="education__item-institution">{item.institution}</h4>
-                <h5 className="education__item-institution">{item.study}</h5>
-                <p className="education__item-date">{item.from} - {item.until}</p>
-                {/* <EducationAchievements/> */}
-              </li>
-            )
-          })}
-
-        </ul>
+        <EducationItem sampleEducation={sampleEducation} />
       </div>
     );
-
   }
 }
 

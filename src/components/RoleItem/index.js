@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 
 class RoleItem extends Component {
   render() {
-    const {roleName, roleDateFrom, roleDateuntil, index} = this.props;
+
+    const { role, from, until } = this.props.sampleRoleItem;
+
     return (
-      <li className="role-list__item" key={index}>
-        <p className="role-list__role">{roleName}</p>
-        <p className="role-list__date">{roleDateFrom} — {roleDateuntil}</p>
+      <li className="role-list__item">
+        <p className="role-list__role">{role}</p>
+        <p className="role-list__date">{from} — {until}</p>
       </li>
     );
   }
 }
 
 RoleItem.propTypes = {
-  roleName: PropTypes.string.isRequired,
-  roleDateFrom: PropTypes.string.isRequired,
-  roleDateuntil: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  role: PropTypes.string.isRequired,
+  from: PropTypes.string.isRequired,
+  until: PropTypes.string.isRequired
 };
 
 export default RoleItem;

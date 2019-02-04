@@ -9,12 +9,12 @@
           "https://github.com/emma-martin"
         ],
         "roles": [
-          "project manager"
+          "Project manager"
         ],
         "yearsOfExperience": 5
       }
     ],
-    "intro": "Llevo casi dos décadas desarrollando software,      ocupando Let's make some happy little clouds in our world.  Work on one thing at a time. Don't get carried away - we have plenty of time. Everyone is going to see things differently - and that's the way it should be. Don't hurry. Take your time and enjoy. In your world you can create anything you desire. digitales.",
+    "intro": "Let's make some happy little clouds in our world.  Work on one thing at a time. Don't get carried away - we have plenty of time. Everyone is going to see things differently - and that's the way it should be. Don't hurry. Take your time and enjoy. In your world you can create anything you desire.",
     "professionalGoals": [
       "World Domitation Manager"
     ],
@@ -22,13 +22,13 @@
       "Krusty's Burguer team lead"
     ],
     "significantExperience": [
-      "Formar parte del equipo que implementó la pasarela de Let's have a nice tree right here. Just let go - and fall like a little waterfall. We'll put all the little clouds in and let them dance around and have fun colectivo."
+      "Let's have a nice tree right here. Just let go - and fall like a little waterfall. We'll put all the little clouds in and let them dance around and have fun."
     ],
     "significantRelationships": [
       {
         "name": "Darwin Watterson",
-        "comment": "fundador y General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
-        "role": "fundador y General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
+        "comment": "General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
+        "role": "General Darwin Raglan Caspian Ahab Poseidon Nicodemius Watterson III is the deuteragonist in The Amazing World of Gumball.",
         "contact": "darwin@gumball.com",
         "company": "Watterson SL"
       }
@@ -46,14 +46,15 @@
               "until": "actualmente",
               "challenges": [
                 {
-                  "summary": "Creación y publicación de contratos La- da- da- da- dah. Just be happy. We'll throw some happy little limbs on this tree..",
+                  "summary": "La- da- da- da- dah. Just be happy. We'll throw some happy little limbs on this tree.",
                   "actions": [
                     {
-                      "summary": "Definición de alcance y condiciones de By now you should be quite happy about what's happening here. Get tough with it, get strong."
+                      "summary": "By now you should be quite happy about what's happening here. Get tough with it, get strong.",
+                      "tools": "Git, GitHub"
                     },
                     {
-                      "summary": "Gestión del repositorio en GitHub para permitir su publicación y consulta así como potenciales pull requests.",
-                      "tools": "Git, GitHub"
+                      "summary": "By now you should be quite happy about what's happening here. Get tough with it, get strong."
+
                     }
                   ]
                 }

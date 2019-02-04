@@ -13,7 +13,7 @@ class Author extends Component {
     return (
       <Fragment>
         <Profile sampleProfile={sampleAuthor.profile} />
-        <Intro sampleIntro={sampleAuthor.intro} />
+        {sampleAuthor.intro && <Intro sampleIntro={sampleAuthor.intro} />}
         <ProfessionalGoals
           sampleProfessionalGoals={sampleAuthor.professionalGoals}
         />

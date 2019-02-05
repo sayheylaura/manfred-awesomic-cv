@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import ProfileRoles from "../ProfileRoles";
 import PublicLinks from "../PublicLinks";
+import user from "../../images/user.png";
 
 class Profile extends Component {
   render() {
@@ -12,22 +13,21 @@ class Profile extends Component {
           return (
             <Fragment key={index}>
               <div className="author__basic-data">
-                <img
-                  className="author__image"
-                  src={item.image}
-                  alt={item.name}
-                />
+                {item.image ? (
+                  <div className="author__image"style={{ backgroundImage: `url(${item.image})` }}/>
+                ) : (
+                  <div className="author__image" style={{ backgroundImage: `url(${user})` }}/>
+                  )}
                 <h2 className="author__name">{item.name}</h2>
               </div>
-
               <ProfileRoles sampleProfileRoles={item.roles} />
-
               <p className="author__birthday">{item.birthday}</p>
               <p className="author__yearsOfExperience">
                 {item.yearsOfExperience} years of experience
               </p>
-
-              <PublicLinks profileLinks={item.publicLinks} />
+              {item.publicLinks && (
+                <PublicLinks profileLinks={item.publicLinks} />
+              )}
             </Fragment>
           );
         })}

@@ -3,6 +3,8 @@ import "./App.scss";
 //import sample from "./services/sample.json";
 import sample_2 from "./services/sample_2.json";
 import Preview from "./components/Preview";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +18,15 @@ class App extends Component {
     const { sample } = this.state;
     return (
       <div className="App">
-        <Preview sample={sample} />
+        <header>
+          <Header />
+        </header>
+        <main>
+          <Preview sample={sample} />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }

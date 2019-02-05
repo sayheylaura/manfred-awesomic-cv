@@ -5,11 +5,15 @@ import Button from "../Button";
 
 class Preview extends Component {
   render() {
-    const { sample } = this.props;
+    const { sample, handlePrintBtn } = this.props;
     return (
       <div className="preview__wrapper">
-        <Button buttonType="button" styles="preview__print-btn">
-          Imprimir
+        <Button
+          buttonType="button"
+          styles="preview__print-btn"
+          handleButtonClick={handlePrintBtn}
+        >
+          Print
         </Button>
         <Cv sample={sample} />
       </div>
@@ -18,7 +22,8 @@ class Preview extends Component {
 }
 
 Preview.propTypes = {
-  sample: PropTypes.object.isRequired
+  sample: PropTypes.object.isRequired,
+  handlePrintBtn: PropTypes.func.isRequired
 };
 
 export default Preview;

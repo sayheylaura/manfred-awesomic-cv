@@ -15,7 +15,7 @@ class Company extends Component {
             <Fragment key={index}>
               <h4 className="company__name">{name}</h4>
               <RoleList roles={roles} />
-              {references && references.length && (
+              {references && !!references.length && (
                 <ReferencesList references={references} />
               )}
             </Fragment>

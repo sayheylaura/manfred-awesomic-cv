@@ -39,7 +39,7 @@ class Profile extends Component {
               <p className="author__yearsOfExperience">
                 {yearsOfExperience} years of experience
               </p>
-              {publicLinks && publicLinks.length && (
+              {publicLinks && !!publicLinks.length && (
                 <PublicLinks profileLinks={publicLinks} />
               )}
             </Fragment>

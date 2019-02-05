@@ -23,9 +23,9 @@ class Cv extends Component {
         <Author sampleAuthor={author} />
         <Experience sampleExperience={experience} />
         <Education sampleEducation={education} />
-        {languages && languages.length && <LanguagesList sampleLanguages={languages} />}
-        {miscEducation && miscEducation.length && <MiscEducation sampleMiscEducation={miscEducation} />}
-        {questionnaire && questionnaire.length && <Questionnaire sampleQuestionnaire={questionnaire} />}
+        {languages && !!languages.length && <LanguagesList sampleLanguages={languages} />}
+        {miscEducation && !!miscEducation.length && <MiscEducation sampleMiscEducation={miscEducation} />}
+        {questionnaire && !!questionnaire.length && <Questionnaire sampleQuestionnaire={questionnaire} />}
       </div>
     );
   }

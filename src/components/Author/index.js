@@ -23,19 +23,19 @@ class Author extends Component {
         <Profile sampleProfile={profile} />
         {intro && <Intro sampleIntro={intro} />}
 
-        {professionalGoals && professionalGoals.length && (
+        {professionalGoals && !!professionalGoals.length && (
           <ProfessionalGoals sampleProfessionalGoals={professionalGoals} />
         )}
 
-        {transportableSkills && transportableSkills.length && (
+        {transportableSkills && !!transportableSkills.length && (
           <TransportableSkills sampleTransSkills={transportableSkills} />
         )}
 
-        {significantExperience && significantExperience.length && (
+        {significantExperience && !!significantExperience.length && (
           <SignificantExperience sampleSigExperience={significantExperience} />
         )}
 
-        {significantRelationships && significantRelationships.length && (
+        {significantRelationships && !!significantRelationships.length && (
           <SignificantRelationships
             sampleSigRelations={significantRelationships}
           />

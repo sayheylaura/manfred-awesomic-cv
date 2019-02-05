@@ -10,14 +10,17 @@ class Questionnaire extends Component {
         <h2 className="questionnaire__title">Questionnaire</h2>
         <ul className="questionnaire__list">
           {sampleQuestionnaire.map((item, index) => {
+            const { question, answer } = item;
             return (
               <li key={index} className="questionnaire__item">
-                <p className="questionnaire__item-question">
-                  {item.question}
-                </p>
-                <p className="questionnaire__item-answer">
-                  {item.answer}
-                </p>
+                {question && (
+                  <p className="questionnaire__item-question">
+                    {question}
+                  </p>
+                )}
+                {answer && <p className="questionnaire__item-answer">
+                  {answer}
+                </p>}
               </li>
             );
           })}

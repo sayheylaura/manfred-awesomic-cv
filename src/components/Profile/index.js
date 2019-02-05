@@ -14,17 +14,19 @@ class Profile extends Component {
             <Fragment key={index}>
               <div className="author__basic-data">
                 {item.image ? (
-                  <div className="author__image" style={{ backgroundImage: `url(${item.image})` }}/>
+                  <div className="author__image" style={{ backgroundImage: `url(${item.image})` }} />
                 ) : (
-                  <div className="author__image" style={{ backgroundImage: `url(${user})` }}/>
+                    <div className="author__image" style={{ backgroundImage: `url(${user})` }} />
                   )}
                 <h2 className="author__name">{item.name}</h2>
               </div>
               <ProfileRoles sampleProfileRoles={item.roles} />
-              <p className="author__birthday">{item.birthday}</p>
-              <p className="author__yearsOfExperience">
-                {item.yearsOfExperience} years of experience
+              <div className="author-data__container">
+                <p className="author__birthday">{item.birthday}</p>
+                <p className="author__yearsOfExperience">
+                  {item.yearsOfExperience} years of experience
               </p>
+              </div>
               {item.publicLinks && (
                 <PublicLinks profileLinks={item.publicLinks} />
               )}

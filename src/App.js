@@ -19,13 +19,13 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Header />
+          {/* <Header /> */}
         </header>
         <main>
           <Preview sample={sample} />
         </main>
         <footer>
-          <Footer />
+          {/* <Footer /> */}
         </footer>
       </div>
     );

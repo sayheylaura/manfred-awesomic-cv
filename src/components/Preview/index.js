@@ -13,7 +13,6 @@ class Preview extends Component {
           styles="preview__print-btn"
           handleButtonClick={handlePrintBtn}
         >
-          Print
         </Button>
         <Cv sample={sample} />
       </div>

@@ -8,6 +8,12 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+@media print {
+  @page {
+    margin: 0;
+  }
+}
+
 ul,
 ol {
     list-style: none;
@@ -33,6 +39,10 @@ a:hover{
     width: auto;
     height: 70px;
     background-color: #fff;
+
+    @media print {
+      display: none;
+    }
 }
 
 .footer {
@@ -85,6 +95,12 @@ a:hover{
       width: 80%;
       max-width: 80%;
     }
+
+    @media print {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+    }
 }
 
 .preview__print-btn {
@@ -109,6 +125,10 @@ a:hover{
     @media all and (min-width: 768px) {
       display: block;
     }
+
+    @media print {
+      display: none;
+    }
 }
 
 .cv__wrapper {
@@ -119,6 +139,13 @@ a:hover{
     padding: 40px 20px;
     @media all and (min-width: 768px) {
       padding: 50px 170px;
+    }
+
+    @media print {
+      margin: 0;
+      padding: 40px;
+      width: 100%;
+      box-shadow: none;
     }
 }
 
@@ -131,6 +158,11 @@ a:hover{
     border-radius: 50%;
     box-shadow: 0px 25px 35px 0 rgba(0, 0, 0, 0.1);
     margin: 0 auto 30px;
+
+    @media print {
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+    }
 }
 
 .author__name {

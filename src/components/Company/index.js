@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RoleList from "../RoleList";
 import ReferencesList from "../ReferencesList";
@@ -8,7 +8,7 @@ class Company extends Component {
   render() {
     const { company } = this.props.experience;
     return (
-      <li className="company__item">
+      <ul className="company__item">
         {company.map((item, index) => {
           const { name, roles, references } = item;
           return (
@@ -21,7 +21,7 @@ class Company extends Component {
             </li>
           );
         })}
-      </li>
+      </ul>
     );
   }
 }

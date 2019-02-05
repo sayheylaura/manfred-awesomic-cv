@@ -3,15 +3,16 @@
   margin: 0;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #EFEFEF;
+  font-family: "Montserrat", sans-serif;
+  background-color: #efefef;
 }
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 .cv__wrapper {
   background-color: #fff;
-  box-shadow: 0px 9px 71px -21px rgba(0,0,0,0.5);
+  box-shadow: 0px 9px 71px -21px rgba(0, 0, 0, 0.5);
   width: 310px;
   border-radius: 2px;
   margin: 0px auto;
@@ -21,9 +22,9 @@ ul, ol {
   width: 150px;
   height: 150px;
   background-size: cover;
-  background-position:  center;
+  background-position: center;
   border-radius: 50%;
-  box-shadow: 0px 25px 35px 0 rgba(0,0,0,0.1);
+  box-shadow: 0px 25px 35px 0 rgba(0, 0, 0, 0.1);
   margin: 0 auto 30px;
 }
 .author__name {
@@ -31,7 +32,6 @@ ul, ol {
   font-weight: 900;
   text-align: center;
 }
-
 
 //LanguagesList
 
@@ -60,6 +60,29 @@ ul, ol {
 }
 
 .languages__item-level {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+// MiscEducation
+
+.miscEducation__wrapper {
+  padding: 20px 0 40px;
+}
+
+.miscEducation__title {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.miscEducation__list {
+  list-style-type: disc;
+  padding: 0 20px;
+}
+
+.miscEducation__item {
   font-size: 16px;
   font-weight: 400;
 }

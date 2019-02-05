@@ -16,4 +16,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ![](https://media1.tenor.com/images/2a8ce8d4128b7b6616fb825ede2b47ec/tenor.gif?itemid=11225469)
 
-To get started, you will need to follow this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json)
+To get started, you will need to follow this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json). 
+
+Once ready, follow these instructions:
+
+1. Add it as a json file to services 📂
+
+2. Go to App.js, then change the import and the state to your shiny JSON file.💻
+
+3. Lit 🔥🔥🔥

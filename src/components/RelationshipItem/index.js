@@ -15,13 +15,13 @@ class RelationshipItem extends Component {
         <p className="sig-relations__role">{role}</p>
         <p className="sig-relations__contact-company">
 
-          {{ contact } && <span>
+          {contact && <span>
             <a href={`mailto: ${contact}`}>
               {contact}
             </a>
           </span>}
 
-          {{ company } && <span>
+          {company && <span>
             {company}
           </span>}
 

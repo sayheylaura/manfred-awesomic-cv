@@ -10,7 +10,8 @@ import ProfessionalGoals from "../ProfessionalGoals";
 class Author extends Component {
   render() {
     const { sampleAuthor } = this.props;
-    const { profile,
+    const {
+      profile,
       intro,
       professionalGoals,
       transportableSkills,
@@ -22,22 +23,23 @@ class Author extends Component {
         <Profile sampleProfile={profile} />
         {intro && <Intro sampleIntro={intro} />}
 
-        {professionalGoals && <ProfessionalGoals
-          sampleProfessionalGoals={professionalGoals}
-        />}
+        {professionalGoals && professionalGoals.length && (
+          <ProfessionalGoals sampleProfessionalGoals={professionalGoals} />
+        )}
 
-        {transportableSkills && <TransportableSkills
-          sampleTransSkills={transportableSkills}
-        />}
+        {transportableSkills && transportableSkills.length && (
+          <TransportableSkills sampleTransSkills={transportableSkills} />
+        )}
 
-        {significantExperience && <SignificantExperience
-          sampleSigExperience={significantExperience}
-        />}
+        {significantExperience && significantExperience.length && (
+          <SignificantExperience sampleSigExperience={significantExperience} />
+        )}
 
-        {significantRelationships && <SignificantRelationships
-          sampleSigRelations={significantRelationships}
-        />}
-
+        {significantRelationships && significantRelationships.length && (
+          <SignificantRelationships
+            sampleSigRelations={significantRelationships}
+          />
+        )}
       </Fragment>
     );
   }

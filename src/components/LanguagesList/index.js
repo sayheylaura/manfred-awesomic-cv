@@ -7,7 +7,7 @@ class LanguagesList extends Component {
     const { sampleLanguages } = this.props;
     return (
       <div className="languages__wrapper">
-        <h3 className="languages__title">Languages</h3>
+        <h2 className="languages__title">Languages</h2>
         <ul className="languages__list">
           {sampleLanguages.map((item, index) => {
             return <LanguageItem key={index} sampleLanguageItem={item} />;

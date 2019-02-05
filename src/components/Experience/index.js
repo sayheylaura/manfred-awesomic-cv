@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Company from '../Company';
+import "./Experience.scss";
 
 
 class Experience extends Component {
@@ -8,8 +9,8 @@ class Experience extends Component {
   render() {
     const { sampleExperience } = this.props;
     return (
-      <Fragment>
-        <h3 className="experience__title">Experience</h3>
+      <div className="experience__wrapper">
+        <h2 className="experience__title">Experience</h2>
         <ul className="experience__list">
           {sampleExperience.map((item, index) => {
             return (
@@ -17,7 +18,7 @@ class Experience extends Component {
             );
           })}
         </ul>
-      </Fragment>
+      </div>
     );
   }
 }

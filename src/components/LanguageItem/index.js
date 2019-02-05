@@ -6,7 +6,7 @@ class LanguageItem extends Component {
     const { language, proficiency } = this.props.sampleLanguageItem;
     return (
       <li className="languages__list-item">
-        <h4 className="languages__item-language">{language}</h4>
+        <h3 className="languages__item-language">{language}</h3>
         <p className="languages__item-level">{proficiency}</p>
       </li>
     );

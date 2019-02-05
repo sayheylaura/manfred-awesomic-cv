@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.scss";
 //import sample from "./services/sample.json";
 import example from "./services/example.json";
 //import sample_2 from "./services/sample_2.json";
 import Preview from "./components/Preview";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -17,8 +19,11 @@ class App extends Component {
     const { sample } = this.state;
     return (
       <div className="App">
-        <h1>Manfred Awesomic CV</h1>
-        <Preview sample={sample} />
+        <Header />
+        <main className="main">
+          <Preview sample={sample} />
+        </main>
+        <Footer />
       </div>
     );
   }

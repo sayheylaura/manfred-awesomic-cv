@@ -27,18 +27,20 @@ class Profile extends Component {
                     style={{ backgroundImage: `url(${image})` }}
                   />
                 ) : (
-                  <div
-                    className="author__image"
-                    style={{ backgroundImage: `url(${user})` }}
-                  />
-                )}
+                    <div
+                      className="author__image"
+                      style={{ backgroundImage: `url(${user})` }}
+                    />
+                  )}
                 <h2 className="author__name">{name}</h2>
               </div>
               <ProfileRoles sampleProfileRoles={roles} />
-              <p className="author__birthday">{birthday}</p>
-              <p className="author__yearsOfExperience">
-                {yearsOfExperience} years of experience
+              <div className="author-data__container">
+                <p className="author__birthday">{birthday}</p>
+                <p className="author__yearsOfExperience">
+                  {yearsOfExperience} years of experience
               </p>
+              </div>
               {publicLinks && !!publicLinks.length && (
                 <PublicLinks profileLinks={publicLinks} />
               )}

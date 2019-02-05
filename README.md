@@ -18,10 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 To get started, you will need to follow this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json). 
 
-Once ready, follow these instructions:
+Once your JSON file is ready, follow these instructions:
 
-1. Add it as a json file to services 📂
+1. Add it to services folder 📂
 
-2. Go to App.js, then change the import and the state to your shiny JSON file.💻
+2. Go to App.js, then change the import link and the state to your shiny JSON file 💻
 
 3. Lit 🔥🔥🔥

@@ -18,15 +18,11 @@ class App extends Component {
     const { sample } = this.state;
     return (
       <div className="App">
-        {/* <header>
-          <Header />
-        </header> */}
-        <main>
+        <Header />
+        <main className="main">
           <Preview sample={sample} />
         </main>
-        {/* <footer>
-          <Footer />
-        </footer> */}
+        <Footer />
       </div>
     );
   }

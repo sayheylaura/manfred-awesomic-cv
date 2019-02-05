@@ -10,14 +10,22 @@ import LanguagesList from "../LanguagesList";
 class Cv extends Component {
   render() {
     const { sample } = this.props;
+    const {
+      author,
+      experience,
+      education,
+      languages,
+      miscEducation,
+      questionnaire
+    } = sample;
     return (
       <div className="cv__wrapper">
-        <Author sampleAuthor={sample.author} />
-        <Experience sampleExperience={sample.experience} />
-        <Education sampleEducation={sample.education} />
-        <LanguagesList sampleLanguages={sample.languages} />
-        <MiscEducation sampleMiscEducation={sample.miscEducation} />
-        <Questionnaire sampleQuestionnaire={sample.questionnaire} />
+        <Author sampleAuthor={author} />
+        <Experience sampleExperience={experience} />
+        <Education sampleEducation={education} />
+        {languages && <LanguagesList sampleLanguages={languages} />}
+        {miscEducation && <MiscEducation sampleMiscEducation={miscEducation} />}
+        {questionnaire && <Questionnaire sampleQuestionnaire={questionnaire} />}
       </div>
     );
   }

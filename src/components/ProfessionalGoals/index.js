@@ -5,12 +5,12 @@ class ProfessionalGoals extends Component {
   render() {
     const { sampleProfessionalGoals } = this.props;
     return (
-      <div className="professional-goals__wrapper">
-        <h2 className="professional-goals__title">Professional goals</h2>
+      <div className="professional-goals__wrapper wrapper">
+        <h2 className="professional-goals__title title">Professional goals</h2>
         <ul className="professional-goals__list">
           {sampleProfessionalGoals.map((item, index) => {
             return (
-              <li key={index} className="professional-goals__item">
+              <li key={index} className="professional-goals__item paragraph">
                 {item}
               </li>
             );

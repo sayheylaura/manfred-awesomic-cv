@@ -6,8 +6,8 @@ class Education extends Component {
   render() {
     const { sampleEducation } = this.props;
     return (
-      <div className="education__wrapper">
-        <h2 className="education__title">Education</h2>
+      <div className="education__wrapper wrapper">
+        <h2 className="education__title title">Education</h2>
 
         <ul className="education__list">
           {sampleEducation.map((item, index) => {

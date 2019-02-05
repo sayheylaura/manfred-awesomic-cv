@@ -13,6 +13,12 @@ class App extends Component {
     this.state = {
       sample: example
     };
+
+    this.handlePrintBtn = this.handlePrintBtn.bind(this);
+  }
+
+  handlePrintBtn() {
+    window.print();
   }
 
   render() {
@@ -21,7 +27,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main className="main">
-          <Preview sample={sample} />
+          <Preview sample={sample} handlePrintBtn={this.handlePrintBtn} />
         </main>
         <Footer />
       </div>

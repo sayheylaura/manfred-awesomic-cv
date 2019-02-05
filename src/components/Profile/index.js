@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import ProfileRoles from "../ProfileRoles";
 import PublicLinks from "../PublicLinks";
-import user from "../../images/user.png";
+import user from "../../images/user.svg";
 
 class Profile extends Component {
   render() {
@@ -14,7 +14,7 @@ class Profile extends Component {
             <Fragment key={index}>
               <div className="author__basic-data">
                 {item.image ? (
-                  <div className="author__image"style={{ backgroundImage: `url(${item.image})` }}/>
+                  <div className="author__image" style={{ backgroundImage: `url(${item.image})` }}/>
                 ) : (
                   <div className="author__image" style={{ backgroundImage: `url(${user})` }}/>
                   )}

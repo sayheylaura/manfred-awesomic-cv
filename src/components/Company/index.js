@@ -9,17 +9,22 @@ class Company extends Component {
     render() {
         const {company} = this.props.experience;
         return (
-            <li className="company__item">
-            {company.map((item, index)=>{
-                return (
+          <li className="company__item">
+            {company.map((item, index) => {
+              return (
+                (item.references[0].name !== "") ?
                   <Fragment key={index}>
                     <h4 className="company__name"> {item.name}</h4>
-                    <RoleList  roles={item.roles}/>
-                    <ReferencesList references={item.references}/>
+                    <RoleList roles={item.roles} />
+                    <ReferencesList references={item.references} />
+                  </Fragment> :
+                  <Fragment key={index}>
+                    <h4 className="company__name"> {item.name}</h4>
+                    <RoleList roles={item.roles} />
                   </Fragment>
-                );
+              );
             })}
-            </li>
+          </li>
         );
     }
 }

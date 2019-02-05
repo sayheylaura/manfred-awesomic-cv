@@ -9,8 +9,10 @@ class RoleItem extends Component {
 
     return (
       <li className="role-list__item">
-        <p className="role-list__role">{role}</p>
-        <p className="role-list__date">{from} — {until}</p>
+      <div className="role-list__wrapper">
+        <h3 className="role-list__role-name">{role}</h3>
+        <span className="role-list__date">{from} — {until}</span>
+      </div>
         <Challenges challenges={challenges}/>
       </li>
     );

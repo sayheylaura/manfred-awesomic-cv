@@ -12,12 +12,14 @@ ul,
 ol {
     list-style: none;
 }
-
-// Hide scrollbar
-::-webkit-scrollbar {
-    display: none;
+a:link {
+  color: rgb(138, 138, 138);
+  text-decoration: none;
+  transition: .3s all;
 }
-
+a:hover{
+  color: rgb(73, 73, 73);
+}
 // Header and Footer
 .header,
 .footer {
@@ -99,15 +101,14 @@ ol {
     border-radius: 2px;
     margin: 0px auto;
     padding: 40px 20px;
-    overflow: auto;
-    height: 100vh;
 }
 
 .author__image {
     width: 150px;
     height: 150px;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     border-radius: 50%;
     box-shadow: 0px 25px 35px 0 rgba(0, 0, 0, 0.1);
     margin: 0 auto 30px;
@@ -119,12 +120,79 @@ ol {
     text-align: center;
 }
 
-.author__role {
-  font-size: 20px;
-  text-align: center;
-  font-weight: 100;
-  text-transform: uppercase;
+.profile__roles-list {
+    margin: 10px auto 50px;
+    text-align: center;
 }
+
+.author__role {
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+.author-data__container {
+  display: flex;
+  justify-content: space-between;
+}
+.author__birthday,
+.author__yearsOfExperience {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.author__yearsOfExperience {
+  width: 100px;
+  text-align: right;
+}
+.publicLinks__wrapper {
+  margin: 30px 0 50px;
+}
+.publicLinks__list {
+  padding-left: 10px;
+}
+.publicLinks__list-item {
+  position: relative;
+}
+.publicLinks__list-anchor {
+  font-size: 12px;
+  line-height: 14px;
+  padding-left: 8px;
+  margin-bottom: 15px;
+  display: block;
+  &::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background-image: url(images/link.svg);
+    position: absolute;
+    left: -5px;
+    top: 2px;
+    transition: .5s all;
+  }
+  &:hover::before {
+    transform: rotate(90deg);
+  }
+}
+.intro__wrapper {
+  margin: 30px 0 50px;
+}
+.intro__title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.intro__paragraph {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+
+
+
+
+
+
 
 //LanguagesList
 .languages__wrapper {

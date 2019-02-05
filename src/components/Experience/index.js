@@ -10,7 +10,7 @@ class Experience extends Component {
     const { sampleExperience } = this.props;
     return (
       <Fragment>
-        <h3 className="experience__title">Experience</h3>
+        <h2 className="experience__title">Experience</h2>
         <ul className="experience__list">
           {sampleExperience.map((item, index) => {
             return (

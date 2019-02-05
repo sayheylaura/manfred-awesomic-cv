@@ -1,5 +1,5 @@
 
-# Manfred Awesomic CV (MAC)📄
+# Manfred Awesomic CV (MAC)📄 + 👩‍💻 = 🚀
 
 Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac).
 
@@ -22,6 +22,6 @@ Once your JSON file is ready, follow these instructions:
 
 1. Add it to services folder 📂
 
-2. Go to App.js, then change the import link and the state to your shiny JSON file 💻
+2. Go to App.js, then change the import link and the App's state to your shiny JSON file 💻
 
 3. Lit 🔥🔥🔥

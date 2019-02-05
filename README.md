@@ -1,5 +1,5 @@
 
-# Manfred Awesomic CV (MAC)📄
+# Manfred Awesomic CV (MAC)📄 + 👩‍💻 = 🚀
 
 Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac).
 

@@ -10,15 +10,28 @@ class Profile extends Component {
     return (
       <Fragment>
         {sampleProfile.map((item, index) => {
-          const { image, name, roles, birthday, yearsOfExperience, publicLinks } = item;
+          const {
+            image,
+            name,
+            roles,
+            birthday,
+            yearsOfExperience,
+            publicLinks
+          } = item;
           return (
             <Fragment key={index}>
               <div className="author__basic-data">
                 {image ? (
-                  <div className="author__image" style={{ backgroundImage: `url(${image})` }} />
+                  <div
+                    className="author__image"
+                    style={{ backgroundImage: `url(${image})` }}
+                  />
                 ) : (
-                    <div className="author__image" style={{ backgroundImage: `url(${user})` }} />
-                  )}
+                  <div
+                    className="author__image"
+                    style={{ backgroundImage: `url(${user})` }}
+                  />
+                )}
                 <h2 className="author__name">{name}</h2>
               </div>
               <ProfileRoles sampleProfileRoles={roles} />

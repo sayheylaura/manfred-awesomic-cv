@@ -1,0 +1,400 @@
+{
+  "author": {
+    "profile": [
+      {
+        "name": "Yago Cousiño",
+        "image": "https://secure.gravatar.com/avatar/0fb605c157b27a4653baf218c862fc99?s=96&d=mm&r=g",
+        "birthday": "1995-04-17",
+        "publicLinks": [
+          "https://www.linkedin.com/in/yago-cousi%C3%B1o-13533261/",
+          "https://thewing.es/author/yago/",
+          "https://twitter.com/Cousy14"
+        ],
+        "roles": [
+          "business analyst",
+          "team lead"
+        ],
+        "yearsOfExperience": 3
+      }
+    ],
+    "intro": "Salir de mi zona de confort y cursar mis estudios universitarios primero en Madrid y luego en Texas ha sido un hecho definitorio en mi vida y los resultados han provocado que sea una constante en mi (corta) vida profesional. Mi inquietud por explorar más vías además del camino marcado y aprender de todas ellas es lo que me ha movido a participar, y fundar, proyectos que me apasionan.   De formación de negocio, no planeo quedarme en el campo del marketing o del negocio sino crecer e introducirme en el producto y la programación, algo de lo que se aleja en la educación a los perfiles parecidos al mío, pero que yo creo que son complementarios.   Habiendo ya realizado prácticas en empresas de diferentes tamaños y en departamentos tan diferentes como logística o marketing digital, reuní las (muchas o pocas) capacidades adquiridas para montar The Wing, una plataforma de contenido que reúne a más de 20 creadores con la que intentamos fijar un nuevo estándar en el periodismo deportivo en español.  Mi próximo reto: Manfred.",
+    "professionalGoals": [
+      "Creo que lo más importante de una organización es la calidad humana que hay detrás y la cultura con la que trabajan y se relacionan. Es para mí lo que va a prevalecer en sus procesos y, sobre todo, resultados. ",
+      "Quiero centrarme en un proyecto que cree un producto enfocado a aportar valor a un sector y a cambiar, y en última instancia mejorar, lo establecido. ",
+      "Entrar a un proyecto en fase temprana seguro que significará una carga de trabajo algo mayor que otros puestos, pero también estar más cerca de la toma de decisiones y de aportar valor real al objetivo conjunto. ",
+      "Me gustaría trabajar para una organización de mentalidad abierta y moderna en cuanto a la gestión de su equipo, pero sin perder el norte, el ping-pong es para los findes. "
+    ],
+    "transportableSkills": [
+      "Capacidad de comunicar y crear contenidos tanto en inglés como en español.",
+      "Energía y actitud contagiosa",
+      "Organización y liderazgo de equipos de manera efectiva y satisfactoria para sus miembros.",
+      "Empatía y capacidad de aportar intangibles a una estructura."
+    ],
+    "significantExperience": [
+      "Pasar un año estudiando en una sociedad como la de Texas y concretamente en una universidad muy diferente al estándar europeo en muchos sentidos, Texas A&M. Por ejemplo, dar clase en la incubadora propia de la universidad y formar parte de la Entrepreneurship Society me aportó tanto conocimiento relacionado con el desarrollo de negocio y marketing como puntos de vista distintos.",
+      "Formar parte de Start UC3M, la asociación de emprendedores de la Universidad Carlos III, encendió en mí la llama de cuestionar el método establecido y de crear nuevos proyectos. Además me permitió introducirme en el ecosistema español y crear relaciones que espero sean muy importantes. ",
+      "La creación de The Wing, ser clave montando el WordPress por detrás y organizando el equipo y los objetivos de un equipo de más de 20 redactores en remoto ha sido un reto apasionante que no ha hecho más que aportarme habilidades. ",
+      "Formar parte de La Locomotora, la aventura de Walter Kobylanski, me ha permitido formar parte del desarrollo de proyectos tanto digitales como físicos en fase muy temprana y aprender hard y soft skills muy valiosas. ",
+      "Varias de las prácticas realizadas, especialmente en Famar, Isigano y EMS Seven Seas, me han dado capacidades comerciales y de negociación, ya que me vi envuelto en esa labor desde el primer día."
+    ],
+    "significantRelationships": [
+      {
+        "name": "David Pombar",
+        "comment": "El referente",
+        "role": "Product Owner",
+        "contact": "https://twitter.com/DavidPombar",
+        "company": "Zara"
+      },
+      {
+        "name": "Jaime Novoa",
+        "comment": "Analista en K-Fund y co-fundador del NOSDay. Siempre está listo para aportar ideas o contactos ante una decisión difícil. ",
+        "role": "Analyst",
+        "contact": "https://twitter.com/jaimenovoa",
+        "company": "K-Fund"
+      },
+      {
+        "name": "Aníbal Vera",
+        "comment": "Co-fundador de Start UC3M y agente inmobiliario en KellerWilliams. Involucrado en el Máster de Emprendimiento de la Carlos III y en varios proyectos propios. Contrasto con él ideas y visiones y nos ayudamos mutuamente con sugerencias y opiniones. ",
+        "role": "Agente Inmobiliario",
+        "contact": "https://www.linkedin.com/in/anibal-vera-dom%C3%ADnguez-3509b749/",
+        "company": "Keller Williams"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": [
+        {
+          "name": "Manfred",
+          "roles": [
+            {
+              "role": "Operaciones",
+              "from": "Noviembre 2018",
+              "until": "Ahora",
+              "challenges": [
+                {
+                  "summary": "Construir carreras",
+                  "actions": [
+                    {
+                      "summary": "Ejecutar estrategias para actualizar la base de datos de candidatos y facilitar la búsqueda y el contacto de los mismos para posiciones vacantes",
+                      "tools": "Herramienta 1"
+                    },
+                    {
+                      "summary": "Redacción de ofertas y otras labores de apoyo al cliente",
+                      "tools": "Herramienta 2"
+                    }
+                  ]
+                },
+                {
+                  "summary": "Manfred Daily",
+                  "actions": [
+                    {
+                      "summary": "Toma del proyecto, actualizando estadísticas y publicando el contenido de manera diario. Esto implica el filtrado y selección de ofertas siguiendo distintos criterios",
+                      "tools": ""
+                    },
+                    {
+                      "summary": "Gestión del contenido patrocinado del Daily realizando el contacto y acompañamiento del proceso de las empresas anunciantes.",
+                      "tools": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "David Bonilla",
+              "role": "Awesomic Worker",
+              "contact": "https://www.linkedin.com/in/dbonillaf/"
+            }
+          ]
+        },
+        {
+          "name": "La Locomotora",
+          "roles": [
+            {
+              "role": "Marketing Digital y Negocio",
+              "from": "Abril 2017",
+              "until": "Noviembre 2018",
+              "challenges": [
+                {
+                  "summary": "Desarrollar y ejecutar estrategias de contenido para los proyectos",
+                  "actions": [
+                    {
+                      "summary": "Creación del blog de Worka.io junto al equipo, de su línea editorial y varias piezas de contenido enfocadas al posicionamiento SEO. Diseñar y ejecutar estrategias de RRSS mediante diversas herramientas",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Parte del equipo de creación de landing y tiendas",
+                  "actions": [
+                    {
+                      "summary": "Redacción de copies para páginas web en el marco de una estrategia de wording enfocada al SEO tanto para tarjetaspremium.com, como para tallerlaser.com y worka.io",
+                      "tools": "WordPress + Plugins"
+                    }
+                  ]
+                },
+                {
+                  "summary": "Abrir el canal de venta de Amazon y Etsy",
+                  "actions": [
+                    {
+                      "summary": "Subir y actualizar el catálogo de productos de Dacoris en Amazon ",
+                      "tools": "Amazon"
+                    },
+                    {
+                      "summary": "Subir y actualizar el catálogo de productos de Taller Láser en Etsy",
+                      "tools": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "David Pombar",
+              "role": "Product Owner",
+              "contact": "https://www.linkedin.com/in/davidpombar/"
+            }
+          ]
+        },
+        {
+          "name": "The Wing",
+          "roles": [
+            {
+              "role": "Co-Fundador",
+              "from": "Junio 2017",
+              "until": "Ahora",
+              "challenges": [
+                {
+                  "summary": "Lanzamiento y mantenimiento de The Wing",
+                  "actions": [
+                    {
+                      "summary": "Creación del proyecto desde 0 conformando un equipo de redactores y de dirección basándonos en nuestra experiencia en la comunidad NBA en español",
+                      "tools": "WordPress"
+                    },
+                    {
+                      "summary": "Fijación flujos de trabajo (Trello-Slack-WordPress), de comunicación (Slack) y briefing de montaje y diseño de toda la página ",
+                      "tools": ""
+                    },
+                    {
+                      "summary": "Colaboración en la organización de la página por departamentos y creación de las nuevas secciones",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Creación estrategia marketing ",
+                  "actions": [
+                    {
+                      "summary": "Montaje sistema de medición de visitas, clicks y resultados SEO",
+                      "tools": "Google Analytics"
+                    },
+                    {
+                      "summary": "Creación de un manual SEO y explicación a todos y cada uno de los redactores",
+                      "tools": ""
+                    },
+                    {
+                      "summary": "Toma de acciones para mejorar la presencia en RRSS y en los buscadores, manejo de RRSS.",
+                      "tools": "Tweetdeck"
+                    },
+                    {
+                      "summary": "Newsletter semanal",
+                      "tools": "MailChimp, Bloom Plugin"
+                    },
+                    {
+                      "summary": "Creación de estrategia de backlinks y otra acciones relacionadas",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Crear una identidad de cara a posibles partners y oportunidades de negocio",
+                  "actions": [
+                    {
+                      "summary": "Reuniones y contacto personal para explicar el proyecto con marcas deportivas y posibles partners como NBA España, 2K España o Nike España.",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Participación puntual en el equipo de contenido",
+                  "actions": [
+                    {
+                      "summary": "Redacción de artículos, análisis y participación en podcasts de manera puntual",
+                      "tools": ""
+                    },
+                    {
+                      "summary": "Realización de entrevistas tanto en castellano como en inglés",
+                      "tools": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "Ignacio Losilla",
+              "role": "Jefe de Contenido",
+              "contact": "https://www.linkedin.com/in/ignacio-losilla-arce/"
+            }
+          ]
+        },
+        {
+          "name": "Start UC3M",
+          "roles": [
+            {
+              "role": "Blog Manager y Vicepresidente",
+              "from": "Mayo 2015",
+              "until": "Octubre 2017",
+              "challenges": [
+                {
+                  "summary": "Estrategia y pautas de contenido",
+                  "actions": [
+                    {
+                      "summary": "Como Blog Manager, creación de contenido con enfoque en posicionamiento SEO, crear y explicar una estrategia de contenido para un pequeño equipo que se pudiese mantener en el tiempo. Realización de entrevistas",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Montaje de eventos",
+                  "actions": [
+                    {
+                      "summary": "Colaboración en la planificación, montaje y dirección de distintos eventos realizados en la Universidad y en espacios como Wayra",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Organización de equipos",
+                  "actions": [
+                    {
+                      "summary": "A cargo de la sección de marketing durante varios meses, fijación de objetivos para el equipo, atraer talento y cultivarlo en distintas partes del equipo",
+                      "tools": ""
+                    }
+                  ]
+                },
+                {
+                  "summary": "Labores de presidencia",
+                  "actions": [
+                    {
+                      "summary": "Representación de la asociación en eventos y negociaciones con distintos estamentos de la universidad. ",
+                      "tools": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "Carmen Fernández",
+              "role": "Head of Communication",
+              "contact": "https://www.linkedin.com/in/carmenfdezmtnez/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Carlos III de Madrid",
+      "study": "Administración y Dirección de Empresas",
+      "from": "2013",
+      "until": "2017"
+    },
+    {
+      "institution": "Texas A&M University",
+      "study": "Business Administration",
+      "from": "2015",
+      "until": "2016",
+      "achievements": [
+        "Chico más gallego de mi clase (2013-2016)"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Castellano",
+      "proficiency": [
+        "native or bilingual"
+      ]
+    },
+    {
+      "language": "Gallego",
+      "proficiency": [
+        "native or bilingual"
+      ]
+    },
+    {
+      "language": "Inglés",
+      "proficiency": [
+        "full professional"
+      ]
+    }
+  ],
+  "miscEducation": [
+    "Alrededor de 3 años en Start UC3M, la asociación de emprendedores de la Universidad Carlos III, realizando labores de Blog Manager y Vicepresidente en distintas fases. Creación de eventos, organización de equipos y gran contacto con la comunidad universitaria.",
+    "Set de prácticas en diversas empresas y con roles relacionados con la logística y el marketing. En EMS Seven Seas, Isigano y Famar Healthcare Services. ",
+    "Organización de eventos relacionados con la tecnología y el emprendimiento como el NOSDay, las Cañas A La Madrileña y la TarugoConf",
+    "Implicado en puestos de responsabilidad de actividades de voluntariado en el Colegio Mayor Elías Ahúja"
+  ],
+  "questionnaire": [
+    {
+      "question": "¿Cuáles son tus principales herramientas de trabajo (IDEs, editores de texto, clientes de correo, Excel...) y cómo las utilizas (plugins, configuraciones, trucos)?",
+      "answer": "Para la organización de las tareas de los equipos de los que he formado parte, hemos utilizado Asana y Trello, combinados con Slack para la comunicación y Drive para la documentación. Las integraciones de estas tres herramientas con los canales de Slack como repositorio de notificaciones es un truco que permite entender y medir la labor del equipo aunque sea remoto o esté trabajando en varios proyectos a la vez. He empleado WordPress como CMS de los proyectos digitales para los que he creado contenido, o realizado creaciones de páginas web.  En cuanto a la medición de los resultados de mis acciones en cuanto a visitas y resultado de SEO se refiere, mis herramientas favoritas son Google Analytics, Google Data Studio, SearchConsole y tengo cierta experiencia con SemRush. Todas estas herramientas combinadas con Excel me permiten hacer reportes para trackear el impacto sobre el negocio de mis actos.   He hecho también algún pinito con HTML/CSS usando Sublime Text, pero la programación es algo en lo que me quiero imbuir en los próximos años de mi carrera profesional."
+    },
+    {
+      "question": "¿Qué recursos online (webs, blogs, apps, foros, etc) usas para ayudarte a desempeñar tu trabajo?",
+      "answer": "Primero y ante todo intento sacar tiempo para conocer eventos que tratan sobre habilidades que no conozco y que son relevantes para mí. Además, busco hacer contacto personal con los speakers o expertos, seguirlos en Twitter y otras RRSS relevantes y expresar mis dudas y preguntas cuando puedo. En ese sentido tanto Google Campus, eventos de SeedRocket o Tetuan Valley, NOSDay, TarugoiConf, Product Hunt Madrid y los eventos de Start UC3M, son mi referencia. Intento suscribirme a meetups y newsletters que informen de estos eventos y fijarlos cuanto antes en mi Calendar.  Además, hay una gran cantidad de podcasts, blogs y foros que me ayudan tanto en la parte de abrir mi mente ante un problema o actitudes correctas ante el mismo, como TED Talks, hasta los que tratan sobre habilidades más concretas, como la newsletter de GrowthHackers Top Posts, por mencionar algunos. En este sentido creo que hay empresas como SumaCRM que tienen una estrategia de contenidos muy fuertes que me han servido de ejemplo para estructurar estrategias de contenido y dar la sensación de que sabía de lo que hablaba de vez en cuando :).  Por último creo que es muy importante entender las opiniones personales y entrar en debates, creo que Twitter, bien usado, es una herramienta muy poderosa. Tanto en el campo del emprendimiento como el del baloncesto, ambas comunidades son muy activas y hay mucha información y ganas de ayudar. Tengo pendiente introducirme más en el oscuro mundo de Reddit y los foros ACB."
+    },
+    {
+      "question": "¿Qué nuevas tecnologías y/o herramientas te llaman especialmente la atención y por qué?",
+      "answer": "Creo que hay dos tecnologías que han irrumpido y que con el enfoque adecuado tienen un potencial ilimitado: blockchain y todo lo relacionado con realidad virtual. La idea de la descentralización y de comunidad que aporta la primera, con sus errores, puede cambiar los incentivos que tenemos todos para consumir, ahorrar o invertir. Es, sin embargo, una tarea lo suficientemente grande y difícil como para requerir una rigurosidad enorme en su aplicación y diseño. En cuanto a la realidad virtual, puede cambiar la manera en la que nos relacionemos y accedamos a información para siempre.  En lo referente a la programación on-hands y herramientas, todavía me estoy introduciendo poco a poco en este mundo, por lo que es pronto para dar pronósticos :)"
+    },
+    {
+      "question": "¿Hay alguna empresa tecnológica que te llame la atención por lo bien que lo está haciendo?",
+      "answer": "Amazon es el futuro, a la vez da miedo e ilusión por ver hasta qué punto revoluciona el mundo. Siempre hay que mantener un ojo en lo hacen los proyectos de Elon Musk, aunque sea por el postureo. "
+    },
+    {
+      "question": "¿Cómo intentas mantener actualizados tus conocimientos y habilidades profesionales?",
+      "answer": "Haciendo y probando. Estar en proyectos como The Wing y embarcarme en la aventura de Manfred me hacen salir de mi zona de confort continuamente y hacer de necesidades nuevas, oportunidades de probar y mantener habilidades y conocimientos.   Leer todo lo que pase por mis manos y mantenerme informado a través de medios en los que confío y pueda contrastar la información."
+    },
+    {
+      "question": "¿Sueles compartir tu conocimiento por algún canal (posts, foros, contribución a open source, charlas públicas etc)?",
+      "answer": "Personalmente, mi Twitter y la newsletter semanal de The Wing son mis principales canales, lo segundo más enfocado en el baloncesto. En este sentido tengo experiencia realizando podcasts y planeo seguir en este sentido tanto con The Wing como con otras temáticas.   Aún me ha costado salir del contacto personal en este sentido, pero intento quedar y compartir toda la información e ideas que puedo con la comunidad de Start UC3M y el enorme grupo humano detrás de The Wing. "
+    },
+    {
+      "question": "¿Hay alguna tarea o función que hayas realizado a lo largo de tu carrera profesional de la que te sientas especialmente orgulloso?",
+      "answer": "Es difícil quedarme con uno, pero creo que atreverme a lanzar The Wing con varios compañeros con los que habíamos compartido varios años de predicar sobre la NBA en español ha sido toda una aventura. "
+    },
+    {
+      "question": "¿Hay alguna tarea o función que hayas realizado a lo largo de tu carrera profesional que te hubiera gustado hacer de otra manera?",
+      "answer": "Muchas, seguramente la más importante fueron las relacionadas con puestos de responsabilidad en Start UC3M. Ya que coordinar y tener responsabilidad sobre otras personas es complicado a una temprana edad. Creo que no entendimos bien la oportunidad que teníamos entre manos y actuar en consecuencia con ello, sobre todo teniendo en cuenta el coste de oportunidad. Hicimos una gran labor y buena parte de lo que soy se ha construido sobre esa base, pero echando la vista atrás, podíamos haber provocado un cambio mucho mayor. "
+    },
+    {
+      "question": "¿Qué cualidades y conocimientos crees que debe tener un buen profesional en tu puesto?",
+      "answer": "Adaptación al cambio, saber ejecutar acciones manteniendo un estándar de calidad muy alto, alta capacidad de organización y de abstracción táctica y manejar la presión como algo natural."
+    },
+    {
+      "question": "¿Qué habilidades y valores crees que debería tener un buen líder?",
+      "answer": "Transparencia, comunicación, humildad, seguridad y capacidad de aprendizaje."
+    },
+    {
+      "question": "¿Cómo sería el equipo de trabajo del que te sentirías orgulloso de formar parte?",
+      "answer": " Multidisciplinar y diverso, pero con los objetivos finales muy claros. Un equipo en el que las habilidades y áreas de expertise de cada uno permitiese a todos los miembros aprender algo cada día y apoyarse unos en otros. Me gusta mucho el término maníacos en lo que se refiere a expresar una voluntad inquebrantable de hacer algo por encima de cualquier circunstancia, pero el que trabajar demasiadas horas es improductivo, una cosa no quita la otra ;). Hay que tener hambre pero sin morir de inanición.   Un grupo donde haya espacio para innovar y probar nuevas ideas."
+    },
+    {
+      "question": "¿Cómo sería la empresa en donde te gustaría de trabajar?",
+      "answer": "Una empresa formada por personas de las que aprender, con las que relacionarte y embarcarte en proyectos apasionantes con ellos. Donde haya espacio para la toma de decisión, el error y el aprendizaje. Donde la transparencia y la comunicación sean los mantras. "
+    },
+    {
+      "question": "¿Cómo sería la empresa en donde NO te gustaría de trabajar?",
+      "answer": "Aburrida, burocratizada e insulsa. Que no aporte nada al mundo y no se preocupe por conseguir objetivos, sino por mantenerse tal y como está."
+    }
+  ]
+}

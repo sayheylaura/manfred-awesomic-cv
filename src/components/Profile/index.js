@@ -10,25 +10,37 @@ class Profile extends Component {
     return (
       <Fragment>
         {sampleProfile.map((item, index) => {
+          const {
+            image,
+            name,
+            roles,
+            birthday,
+            yearsOfExperience,
+            publicLinks
+          } = item;
           return (
             <Fragment key={index}>
               <div className="author__basic-data">
-                {item.image ? (
-                  <div className="author__image" style={{ backgroundImage: `url(${item.image})` }} />
+                {image ? (
+                  <div
+                    className="author__image"
+                    style={{ backgroundImage: `url(${image})` }}
+                  />
                 ) : (
-                    <div className="author__image" style={{ backgroundImage: `url(${user})` }} />
-                  )}
-                <h2 className="author__name">{item.name}</h2>
+                  <div
+                    className="author__image"
+                    style={{ backgroundImage: `url(${user})` }}
+                  />
+                )}
+                <h2 className="author__name">{name}</h2>
               </div>
-              <ProfileRoles sampleProfileRoles={item.roles} />
-              <div className="author-data__container">
-                <p className="author__birthday">{item.birthday}</p>
-                <p className="author__yearsOfExperience">
-                  {item.yearsOfExperience} years of experience
+              <ProfileRoles sampleProfileRoles={roles} />
+              <p className="author__birthday">{birthday}</p>
+              <p className="author__yearsOfExperience">
+                {yearsOfExperience} years of experience
               </p>
-              </div>
-              {item.publicLinks && (
-                <PublicLinks profileLinks={item.publicLinks} />
+              {publicLinks && !!publicLinks.length && (
+                <PublicLinks profileLinks={publicLinks} />
               )}
             </Fragment>
           );

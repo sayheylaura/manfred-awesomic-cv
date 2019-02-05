@@ -19,7 +19,7 @@ class EducationItem extends Component {
         <p className="education__item-date">
           {from} - {until}
         </p>
-        {achievements && (
+        {achievements && !!achievements.length && (
           <EducationAchievements sampleAchievements={achievements} />
         )}
       </li>

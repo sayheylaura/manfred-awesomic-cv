@@ -9,8 +9,8 @@ class Experience extends Component {
   render() {
     const { sampleExperience } = this.props;
     return (
-      <div className="experience__wrapper">
-        <h2 className="experience__title">Experience</h2>
+      <div className="experience__wrapper wrapper">
+        <h2 className="experience__title title">Experience</h2>
         <ul className="experience__list">
           {sampleExperience.map((item, index) => {
             return (

@@ -5,7 +5,8 @@ class TransportableSkills extends Component {
   render() {
     const {sampleTransSkills} = this.props;
     return (
-      <div className="transSkills__wrapper">
+      <div className="transSkills__wrapper wrapper">
+      <h3 className="transSkills__title title">Soft skills</h3>
         <ul className="transSkills__list">
         {sampleTransSkills.map((item, index)=>{
           return (

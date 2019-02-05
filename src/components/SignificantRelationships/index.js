@@ -6,8 +6,8 @@ class SignificantRelationships extends Component {
   render() {
     const {sampleSigRelations} = this.props;
     return (
-      <div className="sig-relations__wrapper">
-        <h3 className="sig-relations__title">
+      <div className="sig-relations__wrapper wrapper">
+        <h3 className="sig-relations__title title">
             Significant Relationships
         </h3>
         <ul className="sig-relations__list">

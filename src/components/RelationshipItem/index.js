@@ -4,28 +4,29 @@ import PropTypes from 'prop-types';
 class RelationshipItem extends Component {
   render() {
     const { name,
-            comment,
-            role,
-            contact,
-            company
-          } = this.props.relation;
+      comment,
+      role,
+      contact,
+      company
+    } = this.props.relation;
     return (
       <li className="sig-relations__item">
-        <p className="sig-relations__name-comment">{`${name}, ${comment}`}</p>
+        <p className="sig-relations__name">{`${name}`}</p>
+        <p className="sig-relations__comment">{`${comment}`}</p>
         <p className="sig-relations__role">{role}</p>
-        <p className="sig-relations__contact-company">
+        <div className="sig-relations__contact-company">
 
-          {contact && <span>
-            <a href={`mailto: ${contact}`}>
+          {{ contact } && <div>
+            <a className="link"href={`mailto: ${contact}`}>
               {contact}
             </a>
-          </span>}
+          </div>}
 
-          {company && <span>
+          {{ company } && <div className="sig-relations__company">
             {company}
-          </span>}
+          </div>}
 
-        </p>
+        </div>
       </li>
     );
   }

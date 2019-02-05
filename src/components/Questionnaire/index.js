@@ -6,8 +6,8 @@ class Questionnaire extends Component {
   render() {
     const { sampleQuestionnaire } = this.props;
     return (
-      <div className="questionnaire__wrapper">
-        <h2 className="questionnaire__title">Questionnaire</h2>
+      <div className="questionnaire__wrapper wrapper">
+        <h2 className="questionnaire__title title">Questionnaire</h2>
         <ul className="questionnaire__list">
           {sampleQuestionnaire.map((item, index) => {
             const { question, answer } = item;

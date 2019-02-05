@@ -8,14 +8,27 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+@media print {
+  @page {
+    margin: 0;
+  }
+}
+
 ul,
 ol {
     list-style: none;
+}
+p {
+  font-size: 14px;
+  line-height: 20px;
 }
 a:link {
   color: rgb(138, 138, 138);
   text-decoration: none;
   transition: .3s all;
+}
+a:visited {
+  color: rgb(192, 192, 192);
 }
 a:hover{
   color: rgb(73, 73, 73);
@@ -26,6 +39,10 @@ a:hover{
     width: auto;
     height: 70px;
     background-color: #fff;
+
+    @media print {
+      display: none;
+    }
 }
 
 .footer {
@@ -40,6 +57,10 @@ a:hover{
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    @media all and (min-width: 768px) {
+      width: 80%;
+      max-width: 80%;
+    }
 }
 
 .logo {
@@ -70,6 +91,16 @@ a:hover{
     max-width: 320px;
     margin: 0 auto;
     position: relative;
+    @media all and (min-width: 768px) {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    @media print {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+    }
 }
 
 .preview__print-btn {
@@ -81,7 +112,6 @@ a:hover{
     border: 0;
     border-radius: 2px;
     position: absolute;
-    top: 60px;
     right: 0;
     font-family: "Montserrat", sans-serif;
     font-weight: 900;
@@ -92,15 +122,31 @@ a:hover{
     &:hover {
         background-color: #9C9C9C;
     }
+    @media all and (min-width: 768px) {
+      display: block;
+    }
+
+    @media print {
+      display: none;
+    }
 }
 
 .cv__wrapper {
     background-color: #fff;
     box-shadow: 0px 9px 71px -21px rgba(0, 0, 0, 0.3);
-    max-width: 350px;
     border-radius: 2px;
     margin: 0px auto;
     padding: 40px 20px;
+    @media all and (min-width: 768px) {
+      padding: 50px 170px;
+    }
+
+    @media print {
+      margin: 0;
+      padding: 40px;
+      width: 100%;
+      box-shadow: none;
+    }
 }
 
 .author__image {
@@ -112,6 +158,11 @@ a:hover{
     border-radius: 50%;
     box-shadow: 0px 25px 35px 0 rgba(0, 0, 0, 0.1);
     margin: 0 auto 30px;
+
+    @media print {
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+    }
 }
 
 .author__name {
@@ -146,7 +197,9 @@ a:hover{
   text-align: right;
 }
 .publicLinks__wrapper {
-  margin: 30px 0 50px;
+  margin: 30px 0 45px;
+  border-top: 1px solid rgb(231, 231, 231);
+  padding-top: 30px;
 }
 .publicLinks__list {
   padding-left: 10px;
@@ -154,12 +207,14 @@ a:hover{
 .publicLinks__list-item {
   position: relative;
 }
-.publicLinks__list-anchor {
+.publicLinks__list-anchor, .link {
   font-size: 12px;
   line-height: 14px;
   padding-left: 8px;
-  margin-bottom: 15px;
+  margin: 10px;
   display: block;
+  position: relative;
+  word-wrap: break-word;
   &::before {
     content: '';
     width: 9px;
@@ -174,22 +229,118 @@ a:hover{
     transform: rotate(90deg);
   }
 }
-.intro__wrapper {
-  margin: 30px 0 50px;
+.wrapper {
+  margin: 30px 0 70px;
+  border-top: 1px solid rgb(231, 231, 231);
+  padding-top: 30px;
 }
-.intro__title {
+.title {
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 25px;
 }
-.intro__paragraph {
+.paragraph {
   font-size: 14px;
   line-height: 20px;
+  margin-bottom: 20px;
+}
+.significant-exp__list {
+  list-style: square inside;
+}
+.sig-relations__item {
+  margin-bottom: 30px;
+}
+.sig-relations__name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.sig-relations__role {
+  color: rgb(102, 102, 102);
+  margin: 5px;
+}
+.sig-relations__company {
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgb(73, 73, 73);
 }
 
+// Company
 
+.company__item {
+  margin-bottom: 70px;
+}
+.company__name {
+  font-size: 20px;
+  color: rgb(151, 151, 151);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.role-list__role-name {
+  color: #565656;
+}
+.role-list__date {
+  font-size: 12px;
+  color: #999;
+}
+.role-list__wrapper {
+  margin: 10px 0 30px 15px;
+}
+.challengesActions__list {
+  margin-left: 10px;
+}
+.challenges__item {
+  margin: 20px 0;
+}
+.challenges__item-summary {
+  font-size: 15px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+.challengesActions__item {
+  margin-bottom: 10px;
+}
+.challengesActions__item-tools{
+  padding: 5px 0;
+  padding-left: 25px;
+  color: #9c9c9c;
+}
+.reference-list__title {
+  margin-bottom: 10px;
+}
+.reference-list__list {
+  margin-left: 20px;
+}
+.reference-list__name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.reference-list__role {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 100;
+}
 
-
-
+// Education
+.education__list-item {
+  margin-bottom: 20px;
+}
+.education__item-institution {
+  color: #5E5E5E;
+}
+.education__item-study {
+  font-weight: 100;
+  font-size: 14px;
+}
+.education__item-date {
+  font-weight: 100;
+  font-size: 12px;
+}
+.achievements__list-item {
+  font-size: 14px;
+  margin-top: 15px;
+}
 
 
 
@@ -208,19 +359,19 @@ a:hover{
 
 // LanguageItem
 .languages__list-item {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
 
 .languages__item-language {
-    margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #5e5e5e;
 }
 
 .languages__item-level {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 100;
 }
 
 // MiscEducation
@@ -236,29 +387,32 @@ a:hover{
 }
 
 .miscEducation__list {
-    list-style-type: disc;
-    padding: 0 20px;
+    list-style: square inside;
 }
 
 .miscEducation__item {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
 }
 
 // Questionnaire
-.questionnaire__wrapper {
-    padding: 20px 0 40px;
-}
-
-.questionnaire__title {
-    margin: 20px 0;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 700;
-}
 
 .questionnaire__item {
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: 400;
+  margin-bottom: 20px;
 }
+.questionnaire__item-question {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #636363;
+}
+// @media (min-width: 768px) {
+//   .preview__wrapper {
+//     width: 2000px;
+//   }
+//   .cv__wrapper {
+//     width: 2000px;
+//   }
+// }

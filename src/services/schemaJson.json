@@ -250,16 +250,26 @@
                         "description": "Role of this reference",
                         "type": "string"
                       },
-                      "contact": {
-                        "description": "Contact of this reference",
+                      "link": {
+                        "description": "Link to a profile of this reference",
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "mail": {
+                        "description": "Mail of this reference",
+                        "type": "string",
+                        "format": "mail"
+                      },
+                      "phone_number": {
+                        "description": "Phone Number of this reference with country code",
                         "type": "string"
                       }
                     },
                     "required": [
                       "name",
-                      "role",
-                      "link"
-                    ]
+                      "role"
+                    ],
+                    "minProperties": 3
                   },
                   "minItems": 1,
                   "uniqueItems": true
@@ -335,17 +345,14 @@
           },
           "proficiency": {
             "description": "Your level of this language proficiency",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "elementary",
-                "limited working",
-                "professional working",
-                "full professional",
-                "native or bilingual"
-              ]
-            }
+            "type": "string",
+            "enum": [
+              "elementary",
+              "limited working",
+              "professional working",
+              "full professional",
+              "native or bilingual"
+            ]
           }
         },
         "required": [

@@ -9,7 +9,7 @@ import Json from "../Json";
 
 class Main extends Component {
   render() {
-    const { sample, handlePrintBtn, handleJsonText, handleProfileInputs } = this.props;
+    const { sample, handlePrintBtn, handleJsonText, handleProfileInputs, handlePublicLinks } = this.props;
     return (
       <main className="main">
         <nav className="main__nav">
@@ -20,7 +20,7 @@ class Main extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" render={() => <Form sample={sample} handleProfileInputs={handleProfileInputs} />} />
+          <Route exact path="/" render={() => <Form sample={sample} handleProfileInputs={handleProfileInputs} handlePublicLinks={handlePublicLinks} />} />
           <Route path="/json" render={() => <Json sample={sample} handleJsonText={handleJsonText} />} />
           <Route path="/preview" render={() => <Preview sample={sample} handlePrintBtn={handlePrintBtn} />} />
         </Switch>
@@ -33,7 +33,8 @@ Main.propTypes = {
   sample: PropTypes.object.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
-  handleProfileInputs: PropTypes.func.isRequired
+  handleProfileInputs: PropTypes.func.isRequired,
+  handlePublicLinks: PropTypes.func.isRequired
 };
 
 export default Main;

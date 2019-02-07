@@ -35,7 +35,7 @@ FormInput.propTypes = {
   inputType: PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
-  example: PropTypes.string.isRequired,
+  example: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired
 };
 

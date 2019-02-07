@@ -14,10 +14,17 @@ class App extends Component {
     };
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
+    this.handleJsonText = this.handleJsonText.bind(this);
   }
 
   handlePrintBtn() {
     window.print();
+  }
+
+  handleJsonText(event) {
+    const currentValue = event.currentTarget.value;
+    const parsedValue = JSON.parse(currentValue);
+    this.setState({ sample: parsedValue });
   }
 
   render() {
@@ -25,7 +32,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main sample={sample} handlePrintBtn={this.handlePrintBtn} />
+        <Main
+          sample={sample}
+          handlePrintBtn={this.handlePrintBtn}
+          handleJsonText={this.handleJsonText}
+        />
         <Footer />
       </div>
     );

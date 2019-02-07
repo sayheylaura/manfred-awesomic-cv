@@ -5,7 +5,7 @@ class Form extends Component {
   render() {
     return (
       <section className="form__wrapper">
-        Form
+        <h2 className="form__title">Here will be the form</h2>
       </section>
     );
   }

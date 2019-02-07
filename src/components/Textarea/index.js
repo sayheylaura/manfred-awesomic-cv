@@ -1,10 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Textarea = ({ name }) => <textarea name={name} rows="8" cols="50" />;
+const Textarea = ({ name, value, handleTextChange }) => (
+  <textarea
+    name={name}
+    value={value}
+    rows="8"
+    cols="50"
+    onChange={handleTextChange}
+  />
+);
 
 Textarea.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  handleTextChange: PropTypes.func.isRequired
 };
 
 export default Textarea;

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.scss";
 //import sample from "./services/sample.json";
 import sample_2 from "./services/sample_2.json";
-import Preview from "./components/Preview";
 import Header from "./components/Header";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 class App extends Component {
@@ -25,9 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <main className="main">
-          <Preview sample={sample} handlePrintBtn={this.handlePrintBtn} />
-        </main>
+        <Main sample={sample} handlePrintBtn={this.handlePrintBtn} />
         <Footer />
       </div>
     );

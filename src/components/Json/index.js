@@ -14,8 +14,9 @@ class Json extends Component {
           modifying it, your new JSON will be here waiting to be copied back!
         </p>
         <Textarea
-          name="json"
-          value={parsedSample}
+          labelContent="JSON code"
+          textName="json"
+          textValue={parsedSample}
           handleTextChange={handleJsonText}
         />
       </section>

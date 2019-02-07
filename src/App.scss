@@ -76,14 +76,14 @@ a:hover{
 // Main
 .main {
     position: relative;
-    &::before {
-        position: absolute;
-        top: 0;
-        content: '';
-        width: 100%;
-        height: 300px;
-        background-color: #efefef;
-    }
+    // &::before {
+    //     position: absolute;
+    //     top: 0;
+    //     content: '';
+    //     width: 100%;
+    //     height: 300px;
+    //     background-color: #efefef;
+    // }
 }
 
 .preview__wrapper {

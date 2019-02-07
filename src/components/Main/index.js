@@ -11,12 +11,15 @@ class Main extends Component {
     const { sample, handlePrintBtn, handleJsonText } = this.props;
     return (
       <Fragment>
-      <div className="links">
-          <Link to={`/form`} className="link">Form</Link>
-          <Link to={`/json`} className="link">Json</Link>
-          <Link to={`/preview`} className="link">Cv</Link>
-        </div>
+
       <main className="main">
+      <nav className="links">
+        <ul>
+          <Link to="/form" className=""><li className="nav-link">Form</li></Link>
+          <Link to="/json" className=""><li className="nav-link">Json</li></Link>
+          <Link to="/preview" className=""><li className="nav-link">Cv</li></Link>
+        </ul>
+      </nav>
         <Switch>
           <Route path="/form" render={()=><Form />}/>
           <Route path="/json" render={()=><Json sample={sample} handleJsonText={handleJsonText} />}/>

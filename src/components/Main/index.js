@@ -6,6 +6,7 @@ import Preview from "../Preview";
 import Form from "../Form";
 import Json from "../Json";
 
+
 class Main extends Component {
   render() {
     const { sample, handlePrintBtn, handleJsonText } = this.props;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Textarea from "../Textarea";
+import FormTextarea from "../FormTextarea";
 
 class Json extends Component {
   render() {
@@ -13,7 +13,7 @@ class Json extends Component {
           Paste here your JSON and check the CV created. When you're done
           modifying it, your new JSON will be here waiting to be copied back!
         </p>
-        <Textarea
+        <FormTextarea
           labelContent="JSON code"
           textName="json"
           textValue={parsedSample}

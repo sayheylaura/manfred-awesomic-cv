@@ -15,6 +15,7 @@ class App extends Component {
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
+    this.handleProfileInputs = this.handleProfileInputs.bind(this);
   }
 
   handlePrintBtn() {
@@ -27,6 +28,28 @@ class App extends Component {
     this.setState({ sample: parsedValue });
   }
 
+  handleProfileInputs(event) {
+    const { value, name } = event.currentTarget;
+    this.setState(prevState => {
+      const newProfile = {
+        ...prevState.sample.author.profile[0],
+        [name]: value
+      }
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: [
+              newProfile
+            ]
+          }
+        }
+      }
+      return newState;
+    })
+  }
+
   render() {
     const { sample } = this.state;
     return (
@@ -36,6 +59,7 @@ class App extends Component {
           sample={sample}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
+          handleProfileInputs={this.handleProfileInputs}
         />
         <Footer />
       </div>

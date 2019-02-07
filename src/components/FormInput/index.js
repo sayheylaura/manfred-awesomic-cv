@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class FormInput extends Component {
+
+
   render() {
     const {
       labelContent,
@@ -10,7 +12,8 @@ class FormInput extends Component {
       inputName,
       inputValue,
       example,
-      handleInputChange
+      handleInputChange,
+      ind
     } = this.props;
     return (
       <label className="label" htmlFor={inputName}>
@@ -36,7 +39,8 @@ FormInput.propTypes = {
   inputName: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
   example: PropTypes.string,
-  handleInputChange: PropTypes.func.isRequired
+  handleInputChange: PropTypes.func.isRequired,
+  ind: PropTypes.number.isRequired,
 };
 
 export default FormInput;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import FormInput from '../FormInput';
 import PropTypes from 'prop-types';
 
@@ -31,15 +31,16 @@ class FormAuthor extends Component {
 
         {publicLinks.map((item, index) => {
           return (
-            <FormInput
-              key={index}
-              labelContent="Links"
-              styles="form__input"
-              inputType="url"
-              inputName={`publicLink${index}`}
-              inputValue={item}
-              handleInputChange={handlePublicLinks}
-            />
+              <FormInput
+                key={index}
+                ind={index}
+                labelContent="Links"
+                styles="form__input"
+                inputType="url"
+                inputName={`publicLink${index}`}
+                inputValue={item}
+                handleInputChange={handlePublicLinks}
+              />
           )
         })}
       </fieldset>

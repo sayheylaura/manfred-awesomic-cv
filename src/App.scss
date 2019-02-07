@@ -418,3 +418,14 @@ a:hover{
 //     width: 2000px;
 //   }
 // }
+
+
+//Main component -- nav links from router
+
+.nav__list{
+  display: flex;
+}
+
+.nav__link{
+  padding: 5px;
+}

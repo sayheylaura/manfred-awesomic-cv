@@ -13,11 +13,11 @@ class Main extends Component {
       <Fragment>
 
       <main className="main">
-      <nav className="links">
-        <ul>
-          <Link to="/form" className=""><li className="nav-link">Form</li></Link>
-          <Link to="/json" className=""><li className="nav-link">Json</li></Link>
-          <Link to="/preview" className=""><li className="nav-link">Cv</li></Link>
+      <nav className="main__nav">
+        <ul className="nav__list">
+          <Link to="/form"><li className="nav__link">Form</li></Link>
+          <Link to="/json"><li className="nav__link">Json</li></Link>
+          <Link to="/preview"><li className="nav__link">Cv</li></Link>
         </ul>
       </nav>
         <Switch>

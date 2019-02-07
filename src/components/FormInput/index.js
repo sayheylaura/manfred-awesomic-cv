@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Input extends Component {
+class FormInput extends Component {
   render() {
     const {
       labelContent,
@@ -29,7 +29,7 @@ class Input extends Component {
   }
 }
 
-Input.propTypes = {
+FormInput.propTypes = {
   labelContent: PropTypes.string.isRequired,
   styles: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ Input.propTypes = {
   handleInputChange: PropTypes.func.isRequired
 };
 
-export default Input;
+export default FormInput;

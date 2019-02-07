@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 
-class Select extends Component {
+class FormSelect extends Component {
   render() {
     const {
       selectName,
@@ -28,7 +28,7 @@ class Select extends Component {
   }
 }
 
-Select.propTypes = {
+FormSelect.propTypes = {
   selectName: PropTypes.string.isRequired,
   labelContent: PropTypes.string.isRequired,
   selectValue: PropTypes.string.isRequired,
@@ -37,4 +37,4 @@ Select.propTypes = {
   handleSelectChange: PropTypes.func.isRequired
 };
 
-export default Select;
+export default FormSelect;

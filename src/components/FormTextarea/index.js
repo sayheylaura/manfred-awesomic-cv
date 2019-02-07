@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Textarea = ({ labelContent, textName, textValue, handleTextChange }) => (
+const FormTextarea = ({ labelContent, textName, textValue, handleTextChange }) => (
   <label className="label" htmlFor={textName}>
     {labelContent}
     <textarea
@@ -15,11 +15,11 @@ const Textarea = ({ labelContent, textName, textValue, handleTextChange }) => (
 
 );
 
-Textarea.propTypes = {
+FormTextarea.propTypes = {
   labelContent: PropTypes.string.isRequired,
   textName: PropTypes.string.isRequired,
   textValue: PropTypes.string.isRequired,
   handleTextChange: PropTypes.func.isRequired
 };
 
-export default Textarea;
+export default FormTextarea;

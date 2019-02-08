@@ -38,7 +38,6 @@ class Profile extends Component {
             yearsOfExperience,
             publicLinks
           } = item;
-          console.log(birthday);
           return (
             <Fragment key={index}>
               <div className="author__basic-data">

@@ -7,7 +7,7 @@ import FormQuestionnaireItem from '../FormQuestionnaireItem';
 class FormQuestionnaire extends Component {
 
   render() {
-    const { questionnaire, question, answer, handleAddItem, handleQuestionChange, handleRemoveItem } = this.props;
+    const { questionnaire, question, answer, handleAddItem, handleQuestionChange, handleRemoveItem, handleQuestionnaireInput } = this.props;
     return (
       <fieldset className="form__questionnaire">
         <legend className="form__section-title">Questionnaire</legend>
@@ -17,7 +17,8 @@ class FormQuestionnaire extends Component {
         {questionnaire.map((item, index) => {
           const { question, answer } = item;
           return (
-            <FormQuestionnaireItem key={index} question={question} answer={answer} handleRemoveItem={handleRemoveItem} ind={index} />
+            <FormQuestionnaireItem key={index} question={question} answer={answer} handleRemoveItem={handleRemoveItem}
+            handleQuestionnaireInput={handleQuestionnaireInput} ind={index} />
           )
         })}
 
@@ -43,7 +44,7 @@ class FormQuestionnaire extends Component {
           />
 
           <Button
-            type="button"
+            buttonType="button"
             styles="add-btn"
             handleButtonClick={handleAddItem}
           >
@@ -61,7 +62,8 @@ FormQuestionnaire.propTypes = {
   answer: PropTypes.string.isRequired,
   handleAddItem: PropTypes.func.isRequired,
   handleQuestionChange: PropTypes.func.isRequired,
-  handleRemoveItem: PropTypes.func.isRequired
+  handleRemoveItem: PropTypes.func.isRequired,
+  handleQuestionnaireInput: PropTypes.func.isRequired
 }
 
 export default FormQuestionnaire;

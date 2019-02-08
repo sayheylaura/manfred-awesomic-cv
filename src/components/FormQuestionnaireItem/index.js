@@ -7,11 +7,18 @@ class FormQuestionnaireItem extends Component {
   constructor(props) {
     super(props);
     this.removeItem = this.removeItem.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   removeItem() {
     const { handleRemoveItem, ind } = this.props;
     handleRemoveItem(ind);
+  }
+
+  handleInputChange(event) {
+    const { value, name } = event.currentTarget;
+    const { handleQuestionnaireInput, ind } = this.props;
+    handleQuestionnaireInput(value, name, ind);
   }
 
   render() {
@@ -25,7 +32,7 @@ class FormQuestionnaireItem extends Component {
                 inputName={`question${ind}`}
                 inputValue={question}
                 example="What JS frameworks do you use?"
-              /* handleInputChange={handleProfileInputs} */
+                handleInputChange={this.handleInputChange}
               />
 
               <FormInput
@@ -35,11 +42,11 @@ class FormQuestionnaireItem extends Component {
                 inputName={`answer${ind}`}
                 inputValue={answer}
                 example="React"
-              /* handleInputChange={handleProfileInputs} */
+                handleInputChange={this.handleInputChange}
               />
 
               <Button
-                type="button"
+                buttonType="button"
                 styles="remove-btn"
                 handleButtonClick={this.removeItem}
               >

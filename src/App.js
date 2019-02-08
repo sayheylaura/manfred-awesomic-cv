@@ -20,6 +20,7 @@ class App extends Component {
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
+    this.handleQuestionnaireInput = this.handleQuestionnaireInput.bind(this);
   }
 
   handlePrintBtn() {
@@ -53,7 +54,7 @@ class App extends Component {
   }
 
   handleAddItem() {
-    const {question, answer} = this.state;
+    const { question, answer } = this.state;
     const newQuestItem = {
       question: question,
       answer: answer
@@ -84,12 +85,44 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          questionnaire: prevState.sample.questionnaire.filter((item, index) => {
-            return(index !== ind)})
+          questionnaire: prevState.sample.questionnaire.filter(
+            (item, index) => {
+              return index !== ind;
+            }
+          )
         }
-      }
+      };
       return newState;
-    })
+    });
+  }
+
+  handleQuestionnaireInput(value, name, ind) {
+    console.log("ind", ind);
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          questionnaire: prevState.sample.questionnaire.map((item, index) => {
+            /* const newItem = {
+              ...item,
+              [name]: value
+            } */
+            let newItem;
+            if (index === ind) {
+              console.log("hola");
+              console.log("item", item);
+              console.log("index", index);
+              console.log("ind", ind);
+              newItem = {
+                [name]: value
+              };
+            }
+            return newItem;
+          })
+        }
+      };
+      return newState;
+    });
   }
 
   render() {
@@ -106,6 +139,7 @@ class App extends Component {
           handleAddItem={this.handleAddItem}
           handleQuestionChange={this.handleQuestionChange}
           handleRemoveItem={this.handleRemoveItem}
+          handleQuestionnaireInput={this.handleQuestionnaireInput}
         />
         <Footer />
       </div>

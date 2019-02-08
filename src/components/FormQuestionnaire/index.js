@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FormInput from '../FormInput';
 import Button from '../Button';
+import FormQuestionnaireItem from '../FormQuestionnaireItem';
 
 class FormQuestionnaire extends Component {
+
   render() {
-    const { questionnaire, question, answer, handleAddItem, handleQuestionChange } = this.props;
+    const { questionnaire, question, answer, handleAddItem, handleQuestionChange, handleRemoveItem } = this.props;
     return (
       <fieldset className="form__questionnaire">
         <legend className="form__section-title">Questionnaire</legend>
@@ -15,35 +17,7 @@ class FormQuestionnaire extends Component {
         {questionnaire.map((item, index) => {
           const { question, answer } = item;
           return (
-            <div key={index}>
-              <FormInput
-                labelContent="Question"
-                styles="form__input"
-                inputType="text"
-                inputName={`question${index}`}
-                inputValue={question}
-                example="What JS frameworks do you use?"
-              /* handleInputChange={handleProfileInputs} */
-              />
-
-              <FormInput
-                labelContent="Answer"
-                styles="form__input"
-                inputType="text"
-                inputName={`answer${index}`}
-                inputValue={answer}
-                example="React"
-              /* handleInputChange={handleProfileInputs} */
-              />
-
-              <Button
-                type="button"
-                styles="remove-btn"
-                /* handleButtonClick={} */
-              >
-                Remove
-              </Button>
-            </div>
+            <FormQuestionnaireItem key={index} question={question} answer={answer} handleRemoveItem={handleRemoveItem} ind={index} />
           )
         })}
 
@@ -52,7 +26,7 @@ class FormQuestionnaire extends Component {
             labelContent="Question"
             styles="form__input"
             inputType="text"
-            inputName={`question`}
+            inputName="question"
             inputValue={question}
             example="What JS frameworks do you use?"
             handleInputChange={handleQuestionChange}
@@ -62,7 +36,7 @@ class FormQuestionnaire extends Component {
             labelContent="Answer"
             styles="form__input"
             inputType="text"
-            inputName={`answer`}
+            inputName="answer"
             inputValue={answer}
             example="React"
             handleInputChange={handleQuestionChange}
@@ -83,8 +57,11 @@ class FormQuestionnaire extends Component {
 
 FormQuestionnaire.propTypes = {
   questionnaire: PropTypes.array.isRequired,
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
   handleAddItem: PropTypes.func.isRequired,
-  handleQuestionChange: PropTypes.func.isRequired
+  handleQuestionChange: PropTypes.func.isRequired,
+  handleRemoveItem: PropTypes.func.isRequired
 }
 
 export default FormQuestionnaire;

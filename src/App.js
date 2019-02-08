@@ -19,6 +19,7 @@ class App extends Component {
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    this.handleRemoveItem = this.handleRemoveItem.bind(this);
   }
 
   handlePrintBtn() {
@@ -78,6 +79,19 @@ class App extends Component {
     });
   }
 
+  handleRemoveItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          questionnaire: prevState.sample.questionnaire.filter((item, index) => {
+            return(index !== ind)})
+        }
+      }
+      return newState;
+    })
+  }
+
   render() {
     const { sample, question, answer } = this.state;
     return (
@@ -91,6 +105,7 @@ class App extends Component {
           handleJsonText={this.handleJsonText}
           handleAddItem={this.handleAddItem}
           handleQuestionChange={this.handleQuestionChange}
+          handleRemoveItem={this.handleRemoveItem}
         />
         <Footer />
       </div>

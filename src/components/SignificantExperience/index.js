@@ -8,7 +8,7 @@ class SignificantExperience extends Component {
         <h3 className="significant-exp__title title">
           Significant Experience
         </h3>
-        <ul className="significant-exp__list">
+        <ul className="significant-exp__list list">
         {sampleSigExperience.map((item, index)=>{
           return (
             <li className="significant-exp__item paragraph" key={index}>

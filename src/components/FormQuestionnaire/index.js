@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FormInput from '../FormInput';
+import Button from '../Button';
 
 class FormQuestionnaire extends Component {
   render() {
-    const { questionnaire } = this.props;
+    const { questionnaire, question, answer, handleAddItem, handleQuestionChange } = this.props;
     return (
       <fieldset className="form__questionnaire">
         <legend className="form__section-title">Questionnaire</legend>
@@ -14,9 +15,7 @@ class FormQuestionnaire extends Component {
         {questionnaire.map((item, index) => {
           const { question, answer } = item;
           return (
-            <fieldset key={index}>
-              <legend>{`Item ${index + 1}`}</legend>
-
+            <div key={index}>
               <FormInput
                 labelContent="Question"
                 styles="form__input"
@@ -36,16 +35,56 @@ class FormQuestionnaire extends Component {
                 example="React"
               /* handleInputChange={handleProfileInputs} */
               />
-            </fieldset>
+
+              <Button
+                type="button"
+                styles="remove-btn"
+                /* handleButtonClick={} */
+              >
+                Remove
+              </Button>
+            </div>
           )
         })}
+
+        <div>
+          <FormInput
+            labelContent="Question"
+            styles="form__input"
+            inputType="text"
+            inputName={`question`}
+            inputValue={question}
+            example="What JS frameworks do you use?"
+            handleInputChange={handleQuestionChange}
+          />
+
+          <FormInput
+            labelContent="Answer"
+            styles="form__input"
+            inputType="text"
+            inputName={`answer`}
+            inputValue={answer}
+            example="React"
+            handleInputChange={handleQuestionChange}
+          />
+
+          <Button
+            type="button"
+            styles="add-btn"
+            handleButtonClick={handleAddItem}
+          >
+            Añadir
+          </Button>
+        </div>
       </fieldset>
     );
   }
 }
 
 FormQuestionnaire.propTypes = {
-  questionnaire: PropTypes.array.isRequired
+  questionnaire: PropTypes.array.isRequired,
+  handleAddItem: PropTypes.func.isRequired,
+  handleQuestionChange: PropTypes.func.isRequired
 }
 
 export default FormQuestionnaire;

@@ -55,8 +55,8 @@ class App extends Component {
     const { value, name } = event.currentTarget;
     console.log(name);
     this.setState(prevState => {
-      const newProfile = {
-        ...prevState.sample.author.profile[0],
+      const newPublicLinks = {
+        ...prevState.sample.author.profile[0].publicLinks,
         [name]: value
       }
       const newState = {
@@ -65,7 +65,9 @@ class App extends Component {
           author: {
             ...prevState.sample.author,
             profile: [
-              newProfile
+              prevState.newPublicLinks.map(item => {
+
+              })
             ]
           }
         }

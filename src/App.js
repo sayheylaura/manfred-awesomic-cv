@@ -97,27 +97,18 @@ class App extends Component {
   }
 
   handleQuestionnaireInput(value, name, ind) {
-    console.log("ind", ind);
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
           questionnaire: prevState.sample.questionnaire.map((item, index) => {
-            /* const newItem = {
-              ...item,
-              [name]: value
-            } */
-            let newItem;
             if (index === ind) {
-              console.log("hola");
-              console.log("item", item);
-              console.log("index", index);
-              console.log("ind", ind);
-              newItem = {
+              item = {
+                ...item,
                 [name]: value
               };
             }
-            return newItem;
+            return item;
           })
         }
       };

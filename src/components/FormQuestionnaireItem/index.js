@@ -22,14 +22,14 @@ class FormQuestionnaireItem extends Component {
   }
 
   render() {
-    const { question, answer, ind } = this.props;
+    const { question, answer } = this.props;
     return (
       <div >
               <FormInput
                 labelContent="Question"
                 styles="form__input"
                 inputType="text"
-                inputName={`question${ind}`}
+                inputName="question"
                 inputValue={question}
                 example="What JS frameworks do you use?"
                 handleInputChange={this.handleInputChange}
@@ -39,7 +39,7 @@ class FormQuestionnaireItem extends Component {
                 labelContent="Answer"
                 styles="form__input"
                 inputType="text"
-                inputName={`answer${ind}`}
+                inputName="answer"
                 inputValue={answer}
                 example="React"
                 handleInputChange={this.handleInputChange}

@@ -5,7 +5,7 @@ import FormTextarea from "../FormTextarea";
 class Json extends Component {
   render() {
     const { sample, handleJsonText } = this.props;
-    const parsedSample = JSON.stringify(sample);
+    const parsedSample = JSON.stringify(sample, undefined, 4);
     return (
       <section className="json__wrapper">
         <h2 className="json__title">JSON viewer</h2>

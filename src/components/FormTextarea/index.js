@@ -8,7 +8,7 @@ const FormTextarea = ({ labelContent, textName, textValue, handleTextChange }) =
       name={textName}
       value={textValue}
       rows="8"
-      cols="50"
+      cols="40"
       onChange={handleTextChange}
     />
   </label>

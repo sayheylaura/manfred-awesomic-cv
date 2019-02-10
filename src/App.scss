@@ -21,8 +21,8 @@ ol {
 }
 
 .list {
-  list-style: square;
-  margin-left: 20px;
+    list-style: square;
+    margin-left: 20px;
 }
 
 p {
@@ -30,17 +30,12 @@ p {
     line-height: 20px;
 }
 
-a:link {
+a:link, a:visited  {
     color: rgb(138, 138, 138);
     text-decoration: none;
     transition: .3s all;
 }
-
-a:visited {
-    color: rgb(192, 192, 192);
-}
-
-a:hover {
+a:hover, a:active {
     color: rgb(73, 73, 73);
 }
 
@@ -81,15 +76,17 @@ a:hover {
 
 // Main
 .main {
+    min-height: 100vh;
     position: relative;
-    // &::before {
-    //     position: absolute;
-    //     top: 0;
-    //     content: '';
-    //     width: 100%;
-    //     height: 300px;
-    //     background-color: #efefef;
-    // }
+    &::before {
+        position: absolute;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 300px;
+        background-color: #efefef;
+        z-index: -1;
+    }
 }
 
 .preview__wrapper {
@@ -130,10 +127,11 @@ a:hover {
     }
 }
 
-.cv__wrapper {
+.cv__wrapper, .form__wrapper, .json__wrapper  {
     background-color: #fff;
     box-shadow: 0px 9px 71px -21px rgba(0, 0, 0, 0.3);
-    border-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     margin: 0px auto;
     padding: 40px 20px;
     @media print {
@@ -342,9 +340,11 @@ a:hover {
 .education__list-item {
     margin-bottom: 20px;
 }
+
 .education__item-container {
-  margin-top: 5px;
+    margin-top: 5px;
 }
+
 .education__item-institution {
     color: #5E5E5E;
 }
@@ -359,10 +359,12 @@ a:hover {
     font-size: 12px;
     color: #999;
 }
+
 .achievements__title {
-  margin: 15px 0 5px 20px;
-  font-weight: 400;
+    margin: 15px 0 5px 20px;
+    font-weight: 400;
 }
+
 .achievements__list-item {
     font-size: 14px;
     margin-left: 20px;
@@ -386,7 +388,6 @@ a:hover {
 }
 
 // MiscEducation
-
 .miscEducation__item {
     font-size: 14px;
     line-height: 20px;
@@ -394,7 +395,6 @@ a:hover {
 }
 
 // Questionnaire
-
 .questionnaire__item-question {
     font-size: 18px;
     line-height: 25px;
@@ -411,25 +411,27 @@ a:hover {
         padding: 50px 170px;
     }
     .author__image {
-      width: 170px;
-      height: 170px;
-      margin-bottom: 50px;
+        width: 170px;
+        height: 170px;
+        margin-bottom: 50px;
     }
 }
+
 @media all and (min-width: 600px) {
-  .role-list__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .role-list__role-name {
-      max-width: 200px;
+    .role-list__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .role-list__role-name {
+            max-width: 200px;
+        }
+    }
+    .education__item-container {
+        display: flex;
+        justify-content: space-between;
     }
 }
-.education__item-container {
-  display: flex;
-  justify-content: space-between;
-}
-}
+
 @media all and (min-width: 480px) {
     .header__container,
     .footer__container {
@@ -437,33 +439,41 @@ a:hover {
         max-width: 80%;
     }
     .preview__wrapper {
-      width: 80%;
-      max-width: 80%;
+        width: 80%;
+        max-width: 80%;
     }
 }
 
-//   font-size: 18px;
-//   line-height: 25px;
-//   margin-bottom: 10px;
-//   font-weight: 700;
-//   color: #636363;
-// }
-// @media (min-width: 768px) {
-//   .preview__wrapper {
-//     width: 2000px;
-//   }
-//   .cv__wrapper {
-//     width: 2000px;
-//   }
-// }
-
-
 //Main component -- nav links from router
-
-.nav__list{
-  display: flex;
-}
-
-.nav__link{
-  padding: 5px;
+.nav__list {
+    height: 40px;
+    display: flex;
+    .nav__link {
+        display: inline-block;
+        height: 100%;
+        background-color:#e2e2e2;
+        margin-right: 3px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        transition: .3s all;
+        font-weight: 700;
+        &:hover a{
+          color:  #636363;
+        }
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding: 0px 36px;
+          color: #fff;
+        }
+    }
+    .nav__link.active {
+      background-color: #fff;
+      a {
+        color: #636363;
+      }
+    }
 }

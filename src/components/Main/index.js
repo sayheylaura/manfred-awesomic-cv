@@ -20,7 +20,7 @@ class Main extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" render={() => <Form />} />
+          <Route exact path="/" render={() => <Form sample={sample}/>} />
           <Route path="/json" render={() => <Json sample={sample} handleJsonText={handleJsonText} />} />
           <Route path="/preview" render={() => <Preview sample={sample} handlePrintBtn={handlePrintBtn} />} />
         </Switch>

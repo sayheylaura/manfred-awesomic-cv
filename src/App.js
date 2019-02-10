@@ -15,6 +15,24 @@ class App extends Component {
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
+    this.handleIntroChange = this.handleIntroChange.bind(this);
+
+  }
+
+  handleIntroChange(event) {
+    const { value } = event.currentTarget;
+    this.setState(prevState =>{
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            intro: value
+          }
+        }
+      };
+      return newState;
+    });
   }
 
   handlePrintBtn() {
@@ -33,7 +51,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Main
-          sample={sample}
+          sample={sample} handleIntroChange={this.handleIntroChange}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
         />

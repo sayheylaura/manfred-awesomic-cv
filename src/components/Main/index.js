@@ -9,10 +9,15 @@ class Main extends Component {
   render() {
     const {
       sample,
+      language,
+      proficiency,
       miscEdDefault,
       handlePrintBtn,
       handleJsonText,
       handleDefaultInputChange,
+      handleAddLanguageItem,
+      handleRemoveLanguageItem,
+      handleLanguageChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange
@@ -39,8 +44,13 @@ class Main extends Component {
             render={() => (
               <Form
                 sample={sample}
+                language={language}
+                proficiency={proficiency}
                 miscEdDefault={miscEdDefault}
                 handleDefaultInputChange={handleDefaultInputChange}
+                handleAddLanguageItem={handleAddLanguageItem}
+                handleRemoveLanguageItem={handleRemoveLanguageItem}
+                handleLanguageChange={handleLanguageChange}
                 handleAddMiscItem={handleAddMiscItem}
                 handleRemoveMiscItem={handleRemoveMiscItem}
                 handleMiscInputChange={handleMiscInputChange}
@@ -67,10 +77,15 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  language: PropTypes.string.isRequired,
+  proficiency: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLanguageItem: PropTypes.func.isRequired,
+  handleRemoveLanguageItem: PropTypes.func.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
   handleAddMiscItem: PropTypes.func.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
   handleMiscInputChange: PropTypes.func.isRequired

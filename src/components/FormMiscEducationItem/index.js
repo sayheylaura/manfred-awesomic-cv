@@ -50,7 +50,8 @@ class FormMiscEducationItem extends Component {
 FormMiscEducationItem.propTypes = {
   ind: PropTypes.number.isRequired,
   item: PropTypes.string.isRequired,
-  handleRemoveMiscItem: PropTypes.func.isRequired
+  handleRemoveMiscItem: PropTypes.func.isRequired,
+  handleMiscInputChange: PropTypes.func.isRequired
 };
 
 export default FormMiscEducationItem;

@@ -48,7 +48,7 @@ class FormQuestionnaire extends Component {
             styles="add-btn"
             handleButtonClick={handleAddItem}
           >
-            Añadir
+            Add item
           </Button>
         </div>
       </fieldset>

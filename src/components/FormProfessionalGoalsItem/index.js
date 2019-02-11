@@ -22,7 +22,7 @@ class FormProfessionalGoalsItem extends Component {
   }
 
   render() {
-    const { goal } = this.props;
+    const { goalDefault } = this.props;
     return (
       <div >
               <FormInput
@@ -30,7 +30,7 @@ class FormProfessionalGoalsItem extends Component {
                 styles="form__input"
                 inputType="text"
                 inputName="Professional Goal"
-                inputValue={goal}
+                inputValue={goalDefault}
                 example="Professional Goal"
                 handleDefaultInputChange={this.handleInputChange}
               />
@@ -48,8 +48,8 @@ class FormProfessionalGoalsItem extends Component {
 }
 
 FormProfessionalGoalsItem.propTypes = {
-  goal: PropTypes.string.isRequired,
-  handleRemoveItem: PropTypes.func.isRequired,
+  goalDefault: PropTypes.string.isRequired,
+  handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput:PropTypes.func.isRequired
 }
 

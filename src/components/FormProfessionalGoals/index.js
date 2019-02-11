@@ -6,12 +6,12 @@ import FormProfessionalGoalsItem from '../FormProfessionalGoalsItem';
 
 class FormProfessionalGoals extends Component {
   render() {
-    const { professionalGoals, goal, handleAddGoal, handleRemoveGoal, handleGoalsInput, handleGoalChange } = this.props;
+    const { professionalGoals, goalDefault, handleAddGoal, handleRemoveGoal, handleGoalsInput, handleGoalChange } = this.props;
     return (
       <Fragment>
       {professionalGoals.map((item, index) => {
         return (
-        <FormProfessionalGoalsItem goal={item} ind={index} handleRemoveGoal={handleRemoveGoal} handleGoalsInput={handleGoalsInput} />
+        <FormProfessionalGoalsItem goalDefault={item} ind={index} handleRemoveGoal={handleRemoveGoal} handleGoalsInput={handleGoalsInput} />
       )})}
         <div>
         <FormInput
@@ -19,7 +19,7 @@ class FormProfessionalGoals extends Component {
           styles="form__input"
           inputType="text"
           inputName="professional goals"
-          inputValue={goal}
+          inputValue={goalDefault}
           example="Brand Manager"
           handleDefaultInputChange={handleGoalChange}
 
@@ -39,7 +39,6 @@ class FormProfessionalGoals extends Component {
 
 FormProfessionalGoals.propTypes = {
   professionalGoals: PropTypes.array.isRequired,
-  handleProfessionalGoals: PropTypes.func.isRequired,
   handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired

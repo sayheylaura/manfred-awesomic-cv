@@ -20,12 +20,11 @@ class Form extends Component {
       handleRemoveMiscItem,
       handleMiscInputChange,
       handleIntroChange,
-      handleProfessionalGoals,
       handleAddGoal,
       handleRemoveGoal,
       handleGoalsInput,
       handleGoalChange,
-      goal
+      goalDefault
     } = this.props;
 
     const { miscEducation, questionnaire } = sample;
@@ -43,24 +42,13 @@ class Form extends Component {
         />
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
-          handleProfessionalGoals={handleProfessionalGoals}
           handleAddGoal={handleAddGoal}
           handleRemoveGoal={handleRemoveGoal}
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
-          goal={goal}
+          goalDefault={goalDefault}
         />
 
-        <FormQuestionnaire
-          questionnaire={questionnaire}
-          handleAddItem={handleAddItem}
-          handleDefaultInputChange={handleDefaultInputChange}
-          question={question}
-          answer={answer}
-          handleRemoveItem={handleRemoveItem}
-          handleQuestionnaireInput={handleQuestionnaireInput}
-
-        />
         <FormMiscEducation
           miscEducation={miscEducation}
           miscEdDefault={miscEdDefault}
@@ -87,8 +75,7 @@ class Form extends Component {
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleProfessionalGoals: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired ,
+  handleAddGoal:PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   question: PropTypes.string.isRequired,

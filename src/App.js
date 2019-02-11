@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample_2,
-      goal: "",
+      goalDefault: "",
       miscEdDefault: "",
       question: "",
       answer: ""
@@ -22,7 +22,6 @@ class App extends Component {
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleIntroChange = this.handleIntroChange.bind(this);
-    this.handleProfessionalGoals = this.handleProfessionalGoals.bind(this);
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
@@ -53,26 +52,9 @@ class App extends Component {
     });
   }
 
-
-  handleProfessionalGoals(event){
-    const { name, value } = event.currentTarget;
-    this.setState(prevState=>{
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            [name]: value
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
   handleAddGoal() {
-    const { goal } = this.state;
-    const newGoalItem = goal;
+    const { goalDefault } = this.state;
+    const newGoalItem = goalDefault;
 
     this.setState(prevState => {
       const newState={
@@ -82,7 +64,7 @@ class App extends Component {
             ...prevState.sample.author,
             professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem)
           },
-          goal: ""
+          goalDefault: ""
           }
         };
         return newState;
@@ -92,7 +74,7 @@ class App extends Component {
   handleGoalChange(event) {
     const { value } = event.currentTarget;
     this.setState({
-      goal: value
+      goalDefault: value
     });
   }
 
@@ -125,10 +107,9 @@ class App extends Component {
             professionalGoals: prevState.sample.author.professionalGoals.map((item, index) => {
               if (index === ind) {
                 console.log("dentro if item",item);
-                item ={
-                  ...item,
-                  professionalGoals : value
-                }
+                item =[
+                  value
+                ]
               }
               console.log("index",index);
                 console.log("ind",ind);
@@ -194,13 +175,6 @@ class App extends Component {
       return newState;
     });
   }
-
-  // handleQuestionChange(event) {
-  //   const { name, value } = event.currentTarget;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
 
   handleRemoveItem(ind) {
     this.setState(prevState => {
@@ -294,11 +268,10 @@ class App extends Component {
     });
   }
 
-  // TODO: check if goal has to be passed
 
   render() {
 
-    const { sample, goal, question, answer, miscEdDefault } = this.state;
+    const { sample, goalDefault, question, answer, miscEdDefault } = this.state;
     return (
       <div className="App">
         <Header />
@@ -310,7 +283,7 @@ class App extends Component {
           handleAddGoal={this.handleAddGoal}
           handleGoalsInput ={ this.handleGoalsInput}
           handleGoalChange={this.handleGoalChange}
-          goal={goal}
+          goalDefault={goalDefault}
           question={question}
           answer={answer}
           handlePrintBtn={this.handlePrintBtn}

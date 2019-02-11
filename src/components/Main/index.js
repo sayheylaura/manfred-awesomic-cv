@@ -37,12 +37,11 @@ class Main extends Component {
     const {
       sample,
       handleIntroChange,
-      handleProfessionalGoals,
       handleAddGoal,
       handleRemoveGoal,
       handleGoalsInput,
       handleGoalChange,
-      goal,
+      goalDefault,
       miscEdDefault,
       question,
       answer,
@@ -94,12 +93,11 @@ class Main extends Component {
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
                   handleIntroChange={handleIntroChange}
-                  handleProfessionalGoals={handleProfessionalGoals}
                   handleAddGoal={handleAddGoal}
                   handleRemoveGoal ={handleRemoveGoal}
                   handleGoalsInput={handleGoalsInput}
                   handleGoalChange={handleGoalChange}
-                  goal={goal}
+                  goalDefault={goalDefault}
 
                 />
               )}
@@ -130,7 +128,6 @@ Main.propTypes = {
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleProfessionalGoals: PropTypes.func.isRequired,
   handleAddGoal:PropTypes.func.isRequired ,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,

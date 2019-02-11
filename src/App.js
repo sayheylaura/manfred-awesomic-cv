@@ -27,6 +27,8 @@ class App extends Component {
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -36,17 +38,23 @@ class App extends Component {
     this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
     this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
     this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
-    this.handleImage = this.handleImage.bind(this);
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
   }
 
+  handlePrintBtn() {
+    window.print();
+  }
+
+  handleJsonText(event) {
+    const currentValue = event.currentTarget.value;
+    const parsedValue = JSON.parse(currentValue);
+    this.setState({ sample: parsedValue });
+  }
+
   handleImage(image) {
-    console.log(image);
-
     this.setState(prevState => {
-
       const newState = {
         sample: {
           ...prevState.sample,
@@ -63,29 +71,18 @@ class App extends Component {
     });
   }
 
-  handlePrintBtn() {
-    window.print();
-  }
-
-  handleJsonText(event) {
-    const currentValue = event.currentTarget.value;
-    const parsedValue = JSON.parse(currentValue);
-    this.setState({ sample: parsedValue });
-  }
-
   handleProfileInputs(event) {
     const { value, name } = event.currentTarget;
     this.setState(prevState => {
-      const newProfile = {
-        ...prevState.sample.author.profile,
-        [name]: value
-      };
       const newState = {
         sample: {
           ...prevState.sample,
           author: {
             ...prevState.sample.author,
-            profile: [newProfile]
+            profile: {
+              ...prevState.sample.author.profile,
+              [name]: value
+            }
           }
         }
       };
@@ -354,6 +351,8 @@ class App extends Component {
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
           handleDefaultInputChange={this.handleDefaultInputChange}
+          handleImage={this.handleImage}
+          handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}
@@ -363,7 +362,6 @@ class App extends Component {
           handleAddMiscItem={this.handleAddMiscItem}
           handleRemoveMiscItem={this.handleRemoveMiscItem}
           handleMiscInputChange={this.handleMiscInputChange}
-          handleImage={this.handleImage}
           handleAddQuestion={this.handleAddQuestion}
           handleRemoveQuestion={this.handleRemoveQuestion}
           handleQuestionInputChange={this.handleQuestionInputChange}

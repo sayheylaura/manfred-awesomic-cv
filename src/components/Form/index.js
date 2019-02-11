@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import FormAuthor from '../FormAuthor';
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
@@ -20,6 +21,7 @@ class Form extends Component {
       questionDefault,
       answerDefault,
       handleDefaultInputChange,
+      handleProfileInputs,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -46,7 +48,13 @@ class Form extends Component {
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
 
-        <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
+        <FormAuthor
+          sample={sample}
+          handleProfileInputs={handleProfileInputs}
+          updateAvatar={handleImage}
+          image={sample.author.profile.image}
+        />
+
         <FormEducation
           education={education}
           institutionDefault={institutionDefault}
@@ -104,6 +112,7 @@ Form.propTypes = {
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

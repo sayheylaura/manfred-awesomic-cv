@@ -51,7 +51,6 @@ class Profile extends Component {
         {publicLinks && !!publicLinks.length && (
           <PublicLinks profileLinks={publicLinks} />
         )}
-        )}
       </Fragment>
     );
   }

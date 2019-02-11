@@ -48,7 +48,7 @@ class FormTransportableSkills extends Component {
             styles="add-btn"
             handleButtonClick={handleAddTransportableSkill}
           >
-            Añadir
+            Add
           </Button>
         </div>
       </fieldset>

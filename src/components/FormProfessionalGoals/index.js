@@ -46,7 +46,7 @@ class FormProfessionalGoals extends Component {
             styles="add-btn"
             handleButtonClick={handleAddGoal}
           >
-            Añadir
+            Add
           </Button>
         </div>
       </fieldset>

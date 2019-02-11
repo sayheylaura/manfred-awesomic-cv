@@ -5,12 +5,12 @@ import FormImage from "../FormImage";
 
 class FormAuthor extends Component {
   render() {
-    const { sample, handleProfileInputs, handleImage } = this.props;
+    const { sample, handleProfileInputs, updateAvatar } = this.props;
     const { name, birthday, yearsOfExperience } = sample.author.profile;
     return (
       <fieldset className="form__author">
         <legend>Personal data</legend>
-        <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
+        <FormImage updateAvatar={updateAvatar} image={sample.author.profile.image} />
 
         <FormInput
           labelContent="Name"

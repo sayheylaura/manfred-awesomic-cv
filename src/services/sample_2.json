@@ -1,20 +1,18 @@
 {
   "author": {
-    "profile": [
-      {
-        "name": "Mary Jane",
-        "image": "",
-        "birthday": "1980-04-02",
-        "publicLinks": [
-          "https://github.com/emma-martin",
-          "https://github.com/emma-martin"
-        ],
-        "roles": [
-          "Project manager"
-        ],
-        "yearsOfExperience": 5
-      }
-    ],
+    "profile": {
+      "name": "Mary Jane",
+      "image": "",
+      "birthday": "1980-04-02",
+      "publicLinks": [
+        "https://github.com/emma-martin",
+        "https://github.com/emma-martin"
+      ],
+      "roles": [
+        "Project manager"
+      ],
+      "yearsOfExperience": 5
+    },
     "intro": "Let's make some happy little clouds in our world.  Work on one thing at a time. Don't get carried away - we have plenty of time. Everyone is going to see things differently - and that's the way it should be. Don't hurry. Take your time and enjoy. In your world you can create anything you desire.",
     "professionalGoals": [
       "World Domitation Manager"

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.scss";
 // import sample from "./services/sample.json";
-//import sample_2 from "./services/sample_2.json";
+import sample_2 from "./services/sample_2.json";
 //import sample from "./services/sample_yago.json";
-import sample from "./services/example.json";
+//import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sample: sample,
+      sample: sample_2,
       goalDefault: "",
       transportableSkillDefault: "",
       significantExperienceDefault: "",

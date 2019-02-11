@@ -3,6 +3,7 @@ import "./App.scss";
 // import sample from "./services/sample.json";
 import sample_2 from "./services/sample_2.json";
 //import sample from "./services/sample_yago.json";
+//import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
@@ -27,7 +28,7 @@ class App extends Component {
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
     this.handleGoalChange = this.handleGoalChange.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
-    this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    // this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
     this.handleQuestionnaireInput = this.handleQuestionnaireInput.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
@@ -179,12 +180,12 @@ class App extends Component {
     });
   }
 
-  handleQuestionChange(event) {
-    const { name, value } = event.currentTarget;
-    this.setState({
-      [name]: value
-    });
-  }
+  // handleQuestionChange(event) {
+  //   const { name, value } = event.currentTarget;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // }
 
   handleRemoveItem(ind) {
     this.setState(prevState => {
@@ -295,7 +296,6 @@ class App extends Component {
           handleGoalsInput ={ this.handleGoalsInput}
           handleGoalChange={this.handleGoalChange}
           goal={goal}
-          miscEdDefault={miscEdDefault}
           question={question}
           answer={answer}
           handlePrintBtn={this.handlePrintBtn}
@@ -304,6 +304,7 @@ class App extends Component {
           handleQuestionChange={this.handleQuestionChange}
           handleRemoveItem={this.handleRemoveItem}
           handleQuestionnaireInput={this.handleQuestionnaireInput}
+          miscEdDefault={miscEdDefault}
           handleDefaultInputChange={this.handleDefaultInputChange}
           handleAddMiscItem={this.handleAddMiscItem}
           handleRemoveMiscItem={this.handleRemoveMiscItem}

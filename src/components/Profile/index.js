@@ -4,6 +4,26 @@ import Image from "../Image";
 import ProfileRoles from "../ProfileRoles";
 import PublicLinks from "../PublicLinks";
 
+function getAge(DOB) {
+  let today = new Date();
+  let todayYear = today.getFullYear();
+  let dobYear = DOB.slice(0, 4);
+  const dobInt = parseInt(dobYear);
+  let age = todayYear - dobInt;
+  const monthDOB = DOB.slice(5, 7);
+  let monthInt = parseInt(monthDOB);
+  let m = today.getMonth();
+  let d = today.getDate();
+  let dobDay = DOB.slice(8, 11);
+  let dobDayInt = parseInt(dobDay);
+  if (m < monthInt || (m === monthInt && d < dobDayInt)) {
+    age = age - 1;
+    return `${age} years old`;
+  } else {
+    return `${age} years old`;
+  }
+}
+
 class Profile extends Component {
   render() {
     const { sampleProfile } = this.props;
@@ -26,7 +46,7 @@ class Profile extends Component {
               </div>
               <ProfileRoles sampleProfileRoles={roles} />
               <div className="author-data__container">
-                <p className="author__birthday">{birthday}</p>
+                <p className="author__birthday">{getAge(birthday)}</p>
                 <p className="author__yearsOfExperience">
                   {yearsOfExperience} years of experience
                 </p>

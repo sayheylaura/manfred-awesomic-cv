@@ -51,7 +51,6 @@ class Main extends Component {
       handleAddItem,
       handleQuestionChange,
       handleRemoveItem,
-      handleQuestionnaireInput,
       handleDefaultInputChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
@@ -89,7 +88,6 @@ class Main extends Component {
                   question={question}
                   answer={answer}
                   handleRemoveItem={handleRemoveItem}
-                  handleQuestionnaireInput={handleQuestionnaireInput}
                   miscEdDefault={miscEdDefault}
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleAddMiscItem={handleAddMiscItem}
@@ -141,7 +139,6 @@ Main.propTypes = {
   handleRemoveMiscItem: PropTypes.func.isRequired,
   handleMiscInputChange: PropTypes.func.isRequired,
   handleAddItem: PropTypes.func.isRequired,
-  handleQuestionChange: PropTypes.func.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
   handleQuestionnaireInput: PropTypes.func.isRequired
 };

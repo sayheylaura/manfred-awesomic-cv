@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import FormInput from '../FormInput';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import FormInput from "../FormInput";
+import PropTypes from "prop-types";
 
 class FormAuthor extends Component {
   render() {
-    const { sample, handleProfileInputs, handlePublicLinks } = this.props;
-    const { name, birthday, publicLinks } = sample.author.profile[0];
+    const { sample, handleProfileInputs } = this.props;
+    const { name, birthday } = sample.author.profile;
     return (
       <fieldset className="form__author">
         <legend>Personal data</legend>
@@ -28,28 +28,13 @@ class FormAuthor extends Component {
           inputValue={birthday}
           handleInputChange={handleProfileInputs}
         />
-
-        {publicLinks.map((item, index) => {
-          return (
-            <FormInput
-              key={index}
-              labelContent="Links"
-              styles="form__input"
-              inputType="url"
-              inputName={`publicLink${index}`}
-              inputValue={item}
-              handleInputChange={handlePublicLinks}
-            />
-          )
-        })}
       </fieldset>
     );
   }
 }
 
 FormAuthor.propTypes = {
-  handleProfileInputs: PropTypes.func.isRequired,
-  handlePublicLinks: PropTypes.func.isRequired
-}
+  handleProfileInputs: PropTypes.func.isRequired
+};
 
 export default FormAuthor;

@@ -178,7 +178,7 @@ class App extends Component {
   }
 
   render() {
-    const { sample, question, answer } = this.state;
+    const { sample, question, answer, miscEdDefault } = this.state;
     return (
       <div className="App">
         <Header />
@@ -192,6 +192,11 @@ class App extends Component {
           handleQuestionChange={this.handleQuestionChange}
           handleRemoveItem={this.handleRemoveItem}
           handleQuestionnaireInput={this.handleQuestionnaireInput}
+          miscEdDefault={miscEdDefault}
+          handleDefaultInputChange={this.handleDefaultInputChange}
+          handleAddMiscItem={this.handleAddMiscItem}
+          handleRemoveMiscItem={this.handleRemoveMiscItem}
+          handleMiscInputChange={this.handleMiscInputChange}
         />
         <Footer />
       </div>

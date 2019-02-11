@@ -48,6 +48,7 @@ class Main extends Component {
       handlePrintBtn,
       handleJsonText,
       handleDefaultInputChange,
+      handleProfileInputs,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -57,6 +58,7 @@ class Main extends Component {
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange,
+      handleImage,
       handleAddQuestion,
       handleRemoveQuestion,
       handleQuestionInputChange
@@ -98,6 +100,7 @@ class Main extends Component {
                   questionDefault={questionDefault}
                   answerDefault={answerDefault}
                   handleDefaultInputChange={handleDefaultInputChange}
+                  handleProfileInputs={handleProfileInputs}
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -107,6 +110,7 @@ class Main extends Component {
                   handleAddMiscItem={handleAddMiscItem}
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
+                  handleImage={handleImage}
                   handleAddQuestion={handleAddQuestion}
                   handleRemoveQuestion={handleRemoveQuestion}
                   handleQuestionInputChange={handleQuestionInputChange}
@@ -146,6 +150,7 @@ Main.propTypes = {
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

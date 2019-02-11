@@ -274,7 +274,7 @@ class App extends Component {
           ...prevState.sample,
           author:{
             ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.significantExperience.concat(newsignificantExperienceItem)
+            significantExperience: prevState.sample.author.significantExperience.concat(newsignificantExperienceItem)
           },
           significantExperienceDefault: ""
           }

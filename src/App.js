@@ -34,6 +34,10 @@ class App extends Component {
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
     this.handleGoalChange = this.handleGoalChange.bind(this);
+    this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(this);
+    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(this);
+    this.handleRemoveTransportableSkill = this.handleRemoveTransportableSkill.bind(this);
+    this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -169,8 +173,71 @@ class App extends Component {
     });
   }
 
-  handleAddTransSkill(){
+  handleAddTransportableSkill(){
+    const { transportableSkillDefault } = this.state;
+    const newTransportableSkillItem = transportableSkillDefault;
 
+    this.setState(prevState => {
+      const newState={
+        sample: {
+          ...prevState.sample,
+          author:{
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.concat(newTransportableSkillItem)
+          },
+          transportableSkillDefault: ""
+          }
+        };
+        return newState;
+    });
+  }
+
+  handleTransportableSkillChange(event) {
+    const { value } = event.currentTarget;
+    this.setState({
+      transportableSkillDefault: value
+    });
+  }
+
+  handleRemoveTransportableSkill(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author:{
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleTransportableSkillsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author:{
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.map((item, index) => {
+              if (index === ind) {
+                item =[
+                  value
+                ]
+              }
+              return item;
+            })
+          }
+        }
+      };
+      return newState;
+    });
   }
 
   handleAddEducationItem() {
@@ -401,6 +468,7 @@ class App extends Component {
     const {
       sample,
       goalDefault,
+      transportableSkillDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -417,6 +485,7 @@ class App extends Component {
         <Main
           sample={sample}
           goalDefault={goalDefault}
+          transportableSkillDefault={transportableSkillDefault}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
@@ -434,6 +503,10 @@ class App extends Component {
           handleAddGoal={this.handleAddGoal}
           handleGoalsInput ={ this.handleGoalsInput}
           handleGoalChange={this.handleGoalChange}
+          handleAddTransportableSkill={this.handleAddTransportableSkill}
+          handleTransportableSkillChange={this.handleTransportableSkillChange}
+          handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
+          handleTransportableSkillsInput={this.handleTransportableSkillsInput}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

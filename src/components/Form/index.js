@@ -6,12 +6,15 @@ import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
+import FormTransportableSkills from "../FormTransportableSkills";
+
 
 class Form extends Component {
   render() {
     const {
       sample,
       goalDefault,
+      transportableSkillDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -27,6 +30,10 @@ class Form extends Component {
       handleRemoveGoal,
       handleGoalsInput,
       handleGoalChange,
+      handleAddTransportableSkill,
+      handleTransportableSkillChange,
+      handleRemoveTransportableSkill,
+      handleTransportableSkillsInput,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -42,7 +49,7 @@ class Form extends Component {
     } = this.props;
 
     const { education, languages, miscEducation, questionnaire } = sample;
-    const {intro, professionalGoals} = sample.author;
+    const {intro, professionalGoals, transportableSkills} = sample.author;
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
@@ -51,6 +58,7 @@ class Form extends Component {
           want to be displayed in your CV. Note that the fields marked with an
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
+
         <FormIntro intro={intro}
           handleIntroChange={handleIntroChange}
         />
@@ -61,6 +69,14 @@ class Form extends Component {
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
           goalDefault={goalDefault}
+        />
+        <FormTransportableSkills
+        transportableSkillDefault={transportableSkillDefault}
+        transportableSkills={transportableSkills}
+        handleAddTransportableSkill={handleAddTransportableSkill}
+        handleTransportableSkillChange={handleTransportableSkillChange}
+        handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+        handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
         <FormEducation
@@ -111,6 +127,7 @@ class Form extends Component {
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
   goalDefault: PropTypes.string.isRequired,
+  transportableSkillDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -125,6 +142,10 @@ Form.propTypes = {
   handleAddGoal:PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
+  handleAddTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillChange: PropTypes.func.isRequired,
+  handleRemoveTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

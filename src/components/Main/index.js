@@ -38,6 +38,7 @@ class Main extends Component {
       sample,
       goalDefault,
       transportableSkillDefault,
+      significantExperienceDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -59,6 +60,10 @@ class Main extends Component {
       handleTransportableSkillChange,
       handleRemoveTransportableSkill,
       handleTransportableSkillsInput,
+      handleAddSignificantExperience,
+      handlesignificantExperienceChange,
+      handleRemoveSignificantExperience,
+      handleSignificantExperienceInput,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -101,6 +106,7 @@ class Main extends Component {
                   sample={sample}
                   goalDefault={goalDefault}
                   transportableSkillDefault={transportableSkillDefault}
+                  significantExperienceDefault={significantExperienceDefault}
                   institutionDefault={institutionDefault}
                   studyDefault={studyDefault}
                   fromEdDefault={fromEdDefault}
@@ -120,6 +126,10 @@ class Main extends Component {
                   handleTransportableSkillChange={handleTransportableSkillChange}
                   handleRemoveTransportableSkill={handleRemoveTransportableSkill}
                   handleTransportableSkillsInput={handleTransportableSkillsInput}
+                  handleAddSignificantExperience={handleAddSignificantExperience}
+                  handlesignificantExperienceChange={handlesignificantExperienceChange}
+                  handleRemoveSignificantExperience={handleRemoveSignificantExperience}
+                  handleSignificantExperienceInput={handleSignificantExperienceInput}
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -158,6 +168,7 @@ Main.propTypes = {
   sample: PropTypes.object.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
+  significantExperienceDefault:PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -178,6 +189,10 @@ Main.propTypes = {
   handleTransportableSkillChange: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
+  handleAddSignificantExperience: PropTypes.func.isRequired,
+  handlesignificantExperienceChange: PropTypes.func.isRequired,
+  handleRemoveSignificantExperience: PropTypes.func.isRequired,
+  handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

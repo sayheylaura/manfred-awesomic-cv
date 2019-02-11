@@ -26,7 +26,7 @@ class FormProfessionalGoalsItem extends Component {
     return (
       <div >
               <FormInput
-                labelContent="List the goals that explain to your future company what kind of professional you'd like to be, what you'd like to be i.e., What motivates you"
+                labelContent="professional goal"
                 styles="form__input"
                 inputType="text"
                 inputName="Professional Goal"

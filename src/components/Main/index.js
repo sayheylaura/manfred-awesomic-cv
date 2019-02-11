@@ -38,6 +38,8 @@ class Main extends Component {
       sample,
       goalDefault,
       significantRelationshipsDefault,
+      transportableSkillDefault,
+      significantExperienceDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -55,6 +57,15 @@ class Main extends Component {
       handleRemoveGoal,
       handleGoalsInput,
       handleGoalChange,
+      handleAddTransportableSkill,
+      handleTransportableSkillChange,
+      handleRemoveTransportableSkill,
+      handleTransportableSkillsInput,
+      handleAddSignificantExperience,
+      handlesignificantExperienceChange,
+      handleRemoveSignificantExperience,
+      handleSignificantExperienceInput,
+      handleProfileInputs,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -64,6 +75,7 @@ class Main extends Component {
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange,
+      handleImage,
       handleAddQuestion,
       handleRemoveQuestion,
       handleQuestionInputChange
@@ -97,6 +109,8 @@ class Main extends Component {
                   sample={sample}
                   goalDefault={goalDefault}
                   significantRelationshipsDefault={significantRelationshipsDefault}
+                  transportableSkillDefault={transportableSkillDefault}
+                  significantExperienceDefault={significantExperienceDefault}
                   institutionDefault={institutionDefault}
                   studyDefault={studyDefault}
                   fromEdDefault={fromEdDefault}
@@ -112,6 +126,15 @@ class Main extends Component {
                   handleRemoveGoal ={handleRemoveGoal}
                   handleGoalsInput={handleGoalsInput}
                   handleGoalChange={handleGoalChange}
+                  handleAddTransportableSkill={handleAddTransportableSkill}
+                  handleTransportableSkillChange={handleTransportableSkillChange}
+                  handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+                  handleTransportableSkillsInput={handleTransportableSkillsInput}
+                  handleAddSignificantExperience={handleAddSignificantExperience}
+                  handlesignificantExperienceChange={handlesignificantExperienceChange}
+                  handleRemoveSignificantExperience={handleRemoveSignificantExperience}
+                  handleSignificantExperienceInput={handleSignificantExperienceInput}
+                  handleProfileInputs={handleProfileInputs}
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -121,6 +144,7 @@ class Main extends Component {
                   handleAddMiscItem={handleAddMiscItem}
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
+                  handleImage={handleImage}
                   handleAddQuestion={handleAddQuestion}
                   handleRemoveQuestion={handleRemoveQuestion}
                   handleQuestionInputChange={handleQuestionInputChange}
@@ -150,6 +174,8 @@ Main.propTypes = {
   sample: PropTypes.object.isRequired,
   goalDefault: PropTypes.string.isRequired,
   significantRelationshipsDefault: PropTypes.array.isRequired,
+  transportableSkillDefault: PropTypes.string.isRequired,
+  significantExperienceDefault:PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -166,6 +192,15 @@ Main.propTypes = {
   handleAddGoal:PropTypes.func.isRequired ,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
+  handleAddTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillChange: PropTypes.func.isRequired,
+  handleRemoveTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillsInput: PropTypes.func.isRequired,
+  handleAddSignificantExperience: PropTypes.func.isRequired,
+  handlesignificantExperienceChange: PropTypes.func.isRequired,
+  handleRemoveSignificantExperience: PropTypes.func.isRequired,
+  handleSignificantExperienceInput: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

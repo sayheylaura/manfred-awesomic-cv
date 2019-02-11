@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample_2,
-      goal: ""
+      goal: "",
+      miscEdDefault: ""
     };
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
@@ -22,6 +23,10 @@ class App extends Component {
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
     this.handleGoalChange = this.handleGoalChange.bind(this);
+    this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
+    this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
+    this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
   }
 
   handleIntroChange(event) {
@@ -124,8 +129,66 @@ class App extends Component {
     this.setState({ sample: parsedValue });
   }
 
+  handleDefaultInputChange(event) {
+    const { name, value } = event.currentTarget;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleAddMiscItem() {
+    const { miscEdDefault } = this.state;
+    const newMiscItem = miscEdDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.concat(newMiscItem)
+        },
+        miscEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveMiscItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.filter(
+            (item, index) => {
+              return index !== ind;
+            }
+          )
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleMiscInputChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.map((item, index) => {
+            if (index === ind) {
+              item = value;
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  // TODO: check if goal has to be passed
+
   render() {
-    const { sample, goal } = this.state;
+    const { sample, goal, miscEdDefault } = this.state;
     return (
       <div className="App">
         <Header />
@@ -135,10 +198,15 @@ class App extends Component {
           handleRemoveGoal = {this.handleRemoveGoal}
           handleAddGoal={this.handleAddGoal}
           handleGoalsInput ={ this.handleGoalsInput}
-          handlePrintBtn={this.handlePrintBtn}
-          handleJsonText={this.handleJsonText}
           handleGoalChange={this.handleGoalChange}
           goal={goal}
+          miscEdDefault={miscEdDefault}
+          handlePrintBtn={this.handlePrintBtn}
+          handleJsonText={this.handleJsonText}
+          handleDefaultInputChange={this.handleDefaultInputChange}
+          handleAddMiscItem={this.handleAddMiscItem}
+          handleRemoveMiscItem={this.handleRemoveMiscItem}
+          handleMiscInputChange={this.handleMiscInputChange}
         />
         <Footer />
       </div>

@@ -501,9 +501,15 @@ a:active {
     width: 100%;
   }
 }
-.form__questionnaire {
+.form__questionnaire,
+.form__education,
+.form__languages,
+.form__misc-education {
     border: none;
     margin: 80px 0 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto 60px;
 }
 
 .form__section-title {
@@ -511,12 +517,6 @@ a:active {
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 700;
-}
-
-.form__questionnaire {
-    width: 80%;
-    max-width: 500px;
-    margin: 50px auto 60px;
 }
 
 .form__section-description {
@@ -533,8 +533,8 @@ a:active {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 1.2;
-  font-weight: 100;
-  color: #858585;
+  font-weight: 400;
+  color: #000;
   outline: none;
   transition: .3s all;
 }

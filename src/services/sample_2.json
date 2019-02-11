@@ -92,15 +92,11 @@
   "languages": [
     {
       "language": "Spanish",
-      "proficiency": [
-        "Native or bilingual"
-      ]
+      "proficiency": "Native or bilingual"
     },
     {
       "language": "French Gibbering",
-      "proficiency": [
-        "Full professional"
-      ]
+      "proficiency": "Full professional"
     }
   ],
   "miscEducation": [

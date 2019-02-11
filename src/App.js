@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample,
+      publicLinkDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -28,6 +29,9 @@ class App extends Component {
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
     this.handleImage = this.handleImage.bind(this);
+    this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
+    this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
+    this.handleLinkChange = this.handleLinkChange.bind(this);
     this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
@@ -94,6 +98,77 @@ class App extends Component {
     const { name, value } = event.currentTarget;
     this.setState({
       [name]: value
+    });
+  }
+
+  handleAddLinkItem() {
+    const { publicLinkDefault } = this.state;
+    const newLinkItem = publicLinkDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.concat(
+                newLinkItem
+              )
+            }
+          }
+        },
+        publicLinkDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveLinkItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.filter(
+                (item, index) => {
+                  return index !== ind;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleLinkChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
     });
   }
 
@@ -324,6 +399,7 @@ class App extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -339,6 +415,7 @@ class App extends Component {
         <Header />
         <Main
           sample={sample}
+          publicLinkDefault={publicLinkDefault}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
@@ -352,6 +429,9 @@ class App extends Component {
           handleJsonText={this.handleJsonText}
           handleDefaultInputChange={this.handleDefaultInputChange}
           handleImage={this.handleImage}
+          handleAddLinkItem={this.handleAddLinkItem}
+          handleRemoveLinkItem={this.handleRemoveLinkItem}
+          handleLinkChange={this.handleLinkChange}
           handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}

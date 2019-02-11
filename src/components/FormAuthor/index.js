@@ -2,15 +2,33 @@ import React, { Component } from "react";
 import FormInput from "../FormInput";
 import PropTypes from "prop-types";
 import FormImage from "../FormImage";
+import FormPublicLinks from "../FormPublicLinks";
 
 class FormAuthor extends Component {
   render() {
-    const { sample, handleProfileInputs, handleImage } = this.props;
-    const { name, birthday, yearsOfExperience } = sample.author.profile;
+    const {
+      sample,
+      publicLinkDefault,
+      handleProfileInputs,
+      updateAvatar,
+      handleDefaultInputChange,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange
+    } = this.props;
+    const {
+      name,
+      birthday,
+      yearsOfExperience,
+      publicLinks
+    } = sample.author.profile;
     return (
       <fieldset className="form__author">
         <legend>Personal data</legend>
-        <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
+        <FormImage
+          updateAvatar={updateAvatar}
+          image={sample.author.profile.image}
+        />
 
         <FormInput
           labelContent="Name"
@@ -40,13 +58,28 @@ class FormAuthor extends Component {
           handleInputChange={handleProfileInputs}
         />
 
+        <FormPublicLinks
+          publicLinks={publicLinks}
+          publicLinkDefault={publicLinkDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLinkItem={handleAddLinkItem}
+          handleRemoveLinkItem={handleRemoveLinkItem}
+          handleLinkChange={handleLinkChange}
+        />
       </fieldset>
     );
   }
 }
 
 FormAuthor.propTypes = {
-  handleProfileInputs: PropTypes.func.isRequired
+  sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired
 };
 
 export default FormAuthor;

@@ -10,6 +10,7 @@ class Form extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -21,6 +22,9 @@ class Form extends Component {
       answerDefault,
       handleDefaultInputChange,
       handleProfileInputs,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -49,9 +53,14 @@ class Form extends Component {
 
         <FormAuthor
           sample={sample}
+          publicLinkDefault={publicLinkDefault}
           handleProfileInputs={handleProfileInputs}
           updateAvatar={handleImage}
           image={sample.author.profile.image}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLinkItem={handleAddLinkItem}
+          handleRemoveLinkItem={handleRemoveLinkItem}
+          handleLinkChange={handleLinkChange}
         />
 
         <FormEducation
@@ -101,6 +110,7 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -112,6 +122,9 @@ Form.propTypes = {
   answerDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

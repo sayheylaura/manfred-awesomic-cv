@@ -36,6 +36,7 @@ class Main extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -49,6 +50,9 @@ class Main extends Component {
       handleJsonText,
       handleDefaultInputChange,
       handleProfileInputs,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -90,6 +94,7 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
+                  publicLinkDefault={publicLinkDefault}
                   institutionDefault={institutionDefault}
                   studyDefault={studyDefault}
                   fromEdDefault={fromEdDefault}
@@ -101,6 +106,9 @@ class Main extends Component {
                   answerDefault={answerDefault}
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleProfileInputs={handleProfileInputs}
+                  handleAddLinkItem={handleAddLinkItem}
+                  handleRemoveLinkItem={handleRemoveLinkItem}
+                  handleLinkChange={handleLinkChange}
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -138,6 +146,7 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -151,6 +160,9 @@ Main.propTypes = {
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

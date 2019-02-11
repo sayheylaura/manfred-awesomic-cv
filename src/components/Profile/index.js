@@ -57,7 +57,7 @@ class Profile extends Component {
 }
 
 Profile.propTypes = {
-  sampleProfile: PropTypes.array.isRequired
+  sampleProfile: PropTypes.object.isRequired
 };
 
 export default Profile;

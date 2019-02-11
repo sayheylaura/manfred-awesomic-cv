@@ -8,7 +8,10 @@ class Form extends Component {
     const { questionnaire } = sample;
     return (
       <section className="form__wrapper">
-        <h2 className="form__title">Here will be the form</h2>
+        <h2 className="form__title">Form</h2>
+        <p className="form__guidelines">
+        Fill in the fields with your personal and contact details that you want to be displayed in your CV. Note that the fields marked with an asterisk (*) are compulsory. You can add or remove the fields.
+        </p>
 
         <FormQuestionnaire
           questionnaire={questionnaire}

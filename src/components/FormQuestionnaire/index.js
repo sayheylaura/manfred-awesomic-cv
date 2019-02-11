@@ -22,7 +22,7 @@ class FormQuestionnaire extends Component {
           )
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Question"
             styles="form__input"

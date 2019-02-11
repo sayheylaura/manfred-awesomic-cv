@@ -24,7 +24,7 @@ class FormQuestionnaireItem extends Component {
   render() {
     const { question, answer } = this.props;
     return (
-      <div >
+      <div className="form__container">
               <FormInput
                 labelContent="Question"
                 styles="form__input"

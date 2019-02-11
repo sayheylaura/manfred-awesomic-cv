@@ -22,7 +22,7 @@ class FormSignificantRelationShips extends Component {
   //   const { value } = event.currentTarget;
   //   const { handleRemoveRelationshipsItem, ind } = this.props;
   //   handleRemoveRelationshipsItem(value, ind);
-  }
+  //}
   render() {
     const { significantRelationships, significantRelationshipsDefault } = this.props;
     console.log(significantRelationships);

@@ -10,7 +10,6 @@ class Form extends Component {
       question,
       answer,
       handleAddItem,
-      handleQuestionChange,
       handleRemoveItem,
       handleQuestionnaireInput,
       sample,
@@ -26,11 +25,7 @@ class Form extends Component {
       handleMiscInputChange
     } = this.props;
 
-    const {
-      languages,
-      miscEducation,
-      questionnaire
-    } = sample;
+    const { languages, miscEducation, questionnaire } = sample;
 
     return (
       <section className="form__wrapper">
@@ -63,7 +58,7 @@ class Form extends Component {
         <FormQuestionnaire
           questionnaire={questionnaire}
           handleAddItem={handleAddItem}
-          handleQuestionChange={handleQuestionChange}
+          handleDefaultInputChange={handleDefaultInputChange}
           question={question}
           answer={answer}
           handleRemoveItem={handleRemoveItem}
@@ -79,13 +74,12 @@ Form.propTypes = {
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   handleAddItem: PropTypes.func.isRequired,
-  handleQuestionChange: PropTypes.func.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
   handleQuestionnaireInput: PropTypes.func.isRequired,
   language: PropTypes.string.isRequired,
   proficiency: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
-  handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,

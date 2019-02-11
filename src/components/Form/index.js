@@ -9,7 +9,6 @@ class Form extends Component {
       question,
       answer,
       handleAddItem,
-      handleQuestionChange,
       handleRemoveItem,
       handleQuestionnaireInput,
       sample,
@@ -41,7 +40,7 @@ class Form extends Component {
         <FormQuestionnaire
           questionnaire={questionnaire}
           handleAddItem={handleAddItem}
-          handleQuestionChange={handleQuestionChange}
+          handleDefaultInputChange={handleDefaultInputChange}
           question={question}
           answer={answer}
           handleRemoveItem={handleRemoveItem}
@@ -57,11 +56,10 @@ Form.propTypes = {
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   handleAddItem: PropTypes.func.isRequired,
-  handleQuestionChange: PropTypes.func.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
   handleQuestionnaireInput: PropTypes.func.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
-  handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddMiscItem: PropTypes.func.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
   handleMiscInputChange: PropTypes.func.isRequired

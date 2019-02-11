@@ -10,7 +10,7 @@ class FormInput extends Component {
       inputName,
       inputValue,
       example,
-      handleInputChange
+      handleDefaultInputChange
     } = this.props;
     return (
       <label className="label" htmlFor={inputName}>
@@ -22,7 +22,7 @@ class FormInput extends Component {
           id={inputName}
           value={inputValue}
           placeholder={example}
-          onChange={handleInputChange}
+          onChange={handleDefaultInputChange}
         />
       </label>
     );
@@ -36,7 +36,7 @@ FormInput.propTypes = {
   inputName: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
   example: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired
+  handleDefaultInputChange: PropTypes.func.isRequired
 };
 
 export default FormInput;

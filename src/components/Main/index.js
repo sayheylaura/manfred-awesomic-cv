@@ -45,7 +45,12 @@ class Main extends Component {
       handleAddItem,
       handleQuestionChange,
       handleRemoveItem,
-      handleQuestionnaireInput
+      handleQuestionnaireInput,
+      miscEdDefault,
+      handleDefaultInputChange,
+      handleAddMiscItem,
+      handleRemoveMiscItem,
+      handleMiscInputChange
     } = this.props;
 
     return (
@@ -77,6 +82,11 @@ class Main extends Component {
                   answer={answer}
                   handleRemoveItem={handleRemoveItem}
                   handleQuestionnaireInput={handleQuestionnaireInput}
+                  miscEdDefault={miscEdDefault}
+                handleDefaultInputChange={handleDefaultInputChange}
+                handleAddMiscItem={handleAddMiscItem}
+                handleRemoveMiscItem={handleRemoveMiscItem}
+                handleMiscInputChange={handleMiscInputChange}
                 />
               )}
             />

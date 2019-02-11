@@ -22,6 +22,10 @@ class App extends Component {
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
     this.handleQuestionnaireInput = this.handleQuestionnaireInput.bind(this);
+    this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
+    this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
+    this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
   }
 
   handlePrintBtn() {
@@ -108,6 +112,62 @@ class App extends Component {
                 ...item,
                 [name]: value
               };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleDefaultInputChange(event) {
+    const { name, value } = event.currentTarget;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleAddMiscItem() {
+    const { miscEdDefault } = this.state;
+    const newMiscItem = miscEdDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.concat(newMiscItem)
+        },
+        miscEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveMiscItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.filter(
+            (item, index) => {
+              return index !== ind;
+            }
+          )
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleMiscInputChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.map((item, index) => {
+            if (index === ind) {
+              item = value;
             }
             return item;
           })

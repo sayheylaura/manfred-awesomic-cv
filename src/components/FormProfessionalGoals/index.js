@@ -15,13 +15,13 @@ class FormProfessionalGoals extends Component {
       )})}
         <div>
         <FormInput
-          labelContent="Professional Goal"
+          labelContent="more goals:"
           styles="form__input"
           inputType="text"
           inputName="professional goals"
           inputValue={goal}
           example="Brand Manager"
-          handleInputChange={handleGoalChange}
+          handleDefaultInputChange={handleGoalChange}
 
         />
         <Button

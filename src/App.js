@@ -78,9 +78,12 @@ class App extends Component {
       const newState={
         sample: {
           ...prevState.sample,
-          professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem)
-        },
-        goal: ""
+          author:{
+            ...prevState.sample.author,
+            professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem)
+          },
+          goal: ""
+          }
         };
         return newState;
     });
@@ -98,33 +101,45 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          professionalGoals: prevState.sample.author.professionalGoals.filter(
-            (item, index) => {
-              return index !== ind;
-            }
-          )
+          author:{
+            ...prevState.sample.author,
+            professionalGoals: prevState.sample.author.professionalGoals.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
         }
       };
       return newState;
     });
   }
 
-  handleGoalsInput(value, ind) {
+  handleGoalsInput(value, name, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
-          professionalGoals: prevState.sample.author.professionalGoals.map((item, index) => {
-            console.log(item, index);
-            if (index === ind) {
-              item = value;
-            }
-            console.log(item);
-            return item;
-          })
+          author:{
+            ...prevState.sample.author,
+            professionalGoals: prevState.sample.author.professionalGoals.map((item, index) => {
+              if (index === ind) {
+                console.log("dentro if item",item);
+                item ={
+                  ...item,
+                  professionalGoals : value
+                }
+              }
+              console.log("index",index);
+                console.log("ind",ind);
+                console.log("item",item);
+                console.log("name",name);
+                console.log("value",value);
+              return item;
+            })
+          }
         }
       };
-      console.log(newState);
       return newState;
     });
   }

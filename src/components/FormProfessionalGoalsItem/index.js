@@ -16,10 +16,9 @@ class FormProfessionalGoalsItem extends Component {
   }
 
   handleInputChange(event) {
-    const { value } = event.currentTarget;
+    const { value, name } = event.currentTarget;
     const { handleGoalsInput, ind } = this.props;
-    console.log('HEYYYYY');
-    handleGoalsInput(value, ind);
+    handleGoalsInput(value, name, ind);
   }
 
   render() {
@@ -33,7 +32,7 @@ class FormProfessionalGoalsItem extends Component {
                 inputName="Professional Goal"
                 inputValue={goal}
                 example="Professional Goal"
-                handleInputChange={this.handleInputChange}
+                handleDefaultInputChange={this.handleInputChange}
               />
 
               <Button

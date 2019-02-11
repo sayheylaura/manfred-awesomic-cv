@@ -38,6 +38,7 @@ class Profile extends Component {
             yearsOfExperience,
             publicLinks
           } = item;
+
           return (
             <Fragment key={index}>
               <div className="author__basic-data">

@@ -48,9 +48,12 @@ class Form extends Component {
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
 
-        <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
-
-        <FormAuthor sample={sample} handleProfileInputs={handleProfileInputs} />
+        <FormAuthor
+          sample={sample}
+          handleProfileInputs={handleProfileInputs}
+          updateAvatar={handleImage}
+          image={sample.author.profile.image}
+        />
 
         <FormEducation
           education={education}

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import FormAuthor from '../FormAuthor';
+import FormAuthor from "../FormAuthor";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
-import FormImage from "../FormImage";
 
 class Form extends Component {
   render() {

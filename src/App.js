@@ -20,7 +20,7 @@ class App extends Component {
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
-    this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    // this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
     this.handleQuestionnaireInput = this.handleQuestionnaireInput.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);

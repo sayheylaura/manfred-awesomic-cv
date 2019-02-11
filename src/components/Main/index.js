@@ -48,7 +48,8 @@ class Main extends Component {
       handleDefaultInputChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
-      handleMiscInputChange
+      handleMiscInputChange,
+      handleImage
     } = this.props;
 
     return (
@@ -88,6 +89,7 @@ class Main extends Component {
                   handleAddMiscItem={handleAddMiscItem}
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
+                  handleImage={handleImage}
                 />
               )}
             />

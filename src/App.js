@@ -27,6 +27,28 @@ class App extends Component {
     this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
     this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
     this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+  }
+
+  handleImage(image) {
+    console.log(image);
+
+    this.setState(prevState => {
+
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              image: image
+            }
+          }
+        }
+      };
+      return newState;
+    });
   }
 
   handlePrintBtn() {
@@ -43,7 +65,7 @@ class App extends Component {
     const { value, name } = event.currentTarget;
     this.setState(prevState => {
       const newProfile = {
-        ...prevState.sample.author.profile[0],
+        ...prevState.sample.author.profile,
         [name]: value
       };
       const newState = {
@@ -198,6 +220,7 @@ class App extends Component {
           handleAddMiscItem={this.handleAddMiscItem}
           handleRemoveMiscItem={this.handleRemoveMiscItem}
           handleMiscInputChange={this.handleMiscInputChange}
+          handleImage={this.handleImage}
         />
         <Footer />
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormMiscEducation from "../FormMiscEducation";
+import FormImage from "../FormImage";
 
 class Form extends Component {
   render() {
@@ -17,7 +18,8 @@ class Form extends Component {
       handleDefaultInputChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
-      handleMiscInputChange
+      handleMiscInputChange,
+      handleImage
     } = this.props;
     const { miscEducation, questionnaire } = sample;
     return (
@@ -28,6 +30,8 @@ class Form extends Component {
           want to be displayed in your CV. Note that the fields marked with an
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
+
+        <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
 
         <FormMiscEducation
           miscEducation={miscEducation}

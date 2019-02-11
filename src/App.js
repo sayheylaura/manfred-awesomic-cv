@@ -43,6 +43,8 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(this);
     this.handleRemoveSignificantExperience= this.handleRemoveSignificantExperience.bind(this);
     this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -67,19 +69,36 @@ class App extends Component {
     this.setState({ sample: parsedValue });
   }
 
-  handleProfileInputs(event) {
-    const { value, name } = event.currentTarget;
+  handleImage(image) {
     this.setState(prevState => {
-      const newProfile = {
-        ...prevState.sample.author.profile[0],
-        [name]: value
-      };
       const newState = {
         sample: {
           ...prevState.sample,
           author: {
             ...prevState.sample.author,
-            profile: [newProfile]
+            profile: {
+              ...prevState.sample.author.profile,
+              image: image
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleProfileInputs(event) {
+    const { value, name } = event.currentTarget;
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              [name]: value
+            }
           }
         }
       };
@@ -587,6 +606,8 @@ class App extends Component {
           handlesignificantExperienceChange={this.handlesignificantExperienceChange}
           handleRemoveSignificantExperience={this.handleRemoveSignificantExperience}
           handleSignificantExperienceInput={this.handleSignificantExperienceInput}
+          handleImage={this.handleImage}
+          handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

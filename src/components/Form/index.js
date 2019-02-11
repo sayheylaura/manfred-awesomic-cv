@@ -5,12 +5,22 @@ import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
+import FormIntro from '../FormIntro';
+import FormProfessionalGoals from '../FormProfessionalGoals';
+import FormTransportableSkills from "../FormTransportableSkills";
+import FormSignificantExperience from "../FormSignificantExperience";
+
+
+
 
 class Form extends Component {
   render() {
     const {
       sample,
       publicLinkDefault,
+      goalDefault,
+      transportableSkillDefault,
+      significantExperienceDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -21,6 +31,19 @@ class Form extends Component {
       questionDefault,
       answerDefault,
       handleDefaultInputChange,
+      handleIntroChange,
+      handleAddGoal,
+      handleRemoveGoal,
+      handleGoalsInput,
+      handleGoalChange,
+      handleAddTransportableSkill,
+      handleTransportableSkillChange,
+      handleRemoveTransportableSkill,
+      handleTransportableSkillsInput,
+      handleAddSignificantExperience,
+      handlesignificantExperienceChange,
+      handleRemoveSignificantExperience,
+      handleSignificantExperienceInput,
       handleProfileInputs,
       handleAddLinkItem,
       handleRemoveLinkItem,
@@ -37,11 +60,11 @@ class Form extends Component {
       handleImage,
       handleAddQuestion,
       handleRemoveQuestion,
-      handleQuestionInputChange
+      handleQuestionInputChange,
     } = this.props;
 
     const { education, languages, miscEducation, questionnaire } = sample;
-
+    const { intro, professionalGoals, transportableSkills, significantExperience } = sample.author;
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
@@ -50,6 +73,7 @@ class Form extends Component {
           want to be displayed in your CV. Note that the fields marked with an
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
+
 
         <FormAuthor
           sample={sample}
@@ -62,7 +86,36 @@ class Form extends Component {
           handleRemoveLinkItem={handleRemoveLinkItem}
           handleLinkChange={handleLinkChange}
         />
+        <FormIntro intro={intro}
+          handleIntroChange={handleIntroChange}
+        />
+        <FormProfessionalGoals
+          professionalGoals={professionalGoals}
+          handleAddGoal={handleAddGoal}
+          handleRemoveGoal={handleRemoveGoal}
+          handleGoalsInput={handleGoalsInput}
+          handleGoalChange={handleGoalChange}
+          goalDefault={goalDefault}
+        />
+        <FormTransportableSkills
+          transportableSkillDefault={transportableSkillDefault}
+          transportableSkills={transportableSkills}
+          handleAddTransportableSkill={handleAddTransportableSkill}
+          handleTransportableSkillChange={handleTransportableSkillChange}
+          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+          handleTransportableSkillsInput={handleTransportableSkillsInput}
+        />
 
+        <FormSignificantExperience
+          significantExperienceDefault={significantExperienceDefault}
+          significantExperience={significantExperience}
+          handleAddSignificantExperience={handleAddSignificantExperience}
+          handlesignificantExperienceChange={handlesignificantExperienceChange}
+          handleRemoveSignificantExperience={
+            handleRemoveSignificantExperience
+          }
+          handleSignificantExperienceInput={handleSignificantExperienceInput}
+        />
         <FormEducation
           education={education}
           institutionDefault={institutionDefault}
@@ -111,6 +164,9 @@ class Form extends Component {
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
+  goalDefault: PropTypes.string.isRequired,
+  transportableSkillDefault: PropTypes.string.isRequired,
+  significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -121,6 +177,18 @@ Form.propTypes = {
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleIntroChange: PropTypes.func.isRequired,
+  handleAddGoal: PropTypes.func.isRequired,
+  handleRemoveGoal: PropTypes.func.isRequired,
+  handleGoalsInput: PropTypes.func.isRequired,
+  handleAddTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillChange: PropTypes.func.isRequired,
+  handleRemoveTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillsInput: PropTypes.func.isRequired,
+  handleAddSignificantExperience: PropTypes.func.isRequired,
+  handlesignificantExperienceChange: PropTypes.func.isRequired,
+  handleRemoveSignificantExperience: PropTypes.func.isRequired,
+  handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,

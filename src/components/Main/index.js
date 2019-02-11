@@ -36,49 +36,9 @@ class Main extends Component {
   render() {
     const {
       sample,
-      goalDefault,
-      significantRelationshipsDefault,
-      transportableSkillDefault,
-      significantExperienceDefault,
-      institutionDefault,
-      studyDefault,
-      fromEdDefault,
-      untilEdDefault,
-      languageDefault,
-      proficiencyDefault,
-      miscEdDefault,
-      questionDefault,
-      answerDefault,
       handlePrintBtn,
       handleJsonText,
-      handleDefaultInputChange,
-      handleIntroChange,
-      handleAddGoal,
-      handleRemoveGoal,
-      handleGoalsInput,
-      handleGoalChange,
-      handleAddTransportableSkill,
-      handleTransportableSkillChange,
-      handleRemoveTransportableSkill,
-      handleTransportableSkillsInput,
-      handleAddSignificantExperience,
-      handlesignificantExperienceChange,
-      handleRemoveSignificantExperience,
-      handleSignificantExperienceInput,
-      handleProfileInputs,
-      handleAddEducationItem,
-      handleRemoveEducationItem,
-      handleEducationChange,
-      handleAddLanguageItem,
-      handleRemoveLanguageItem,
-      handleLanguageChange,
-      handleAddMiscItem,
-      handleRemoveMiscItem,
-      handleMiscInputChange,
-      handleImage,
-      handleAddQuestion,
-      handleRemoveQuestion,
-      handleQuestionInputChange
+      ...rest
     } = this.props;
 
     return (
@@ -107,47 +67,7 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
-                  goalDefault={goalDefault}
-                  significantRelationshipsDefault={significantRelationshipsDefault}
-                  transportableSkillDefault={transportableSkillDefault}
-                  significantExperienceDefault={significantExperienceDefault}
-                  institutionDefault={institutionDefault}
-                  studyDefault={studyDefault}
-                  fromEdDefault={fromEdDefault}
-                  untilEdDefault={untilEdDefault}
-                  languageDefault={languageDefault}
-                  proficiencyDefault={proficiencyDefault}
-                  miscEdDefault={miscEdDefault}
-                  questionDefault={questionDefault}
-                  answerDefault={answerDefault}
-                  handleDefaultInputChange={handleDefaultInputChange}
-                  handleIntroChange={handleIntroChange}
-                  handleAddGoal={handleAddGoal}
-                  handleRemoveGoal ={handleRemoveGoal}
-                  handleGoalsInput={handleGoalsInput}
-                  handleGoalChange={handleGoalChange}
-                  handleAddTransportableSkill={handleAddTransportableSkill}
-                  handleTransportableSkillChange={handleTransportableSkillChange}
-                  handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-                  handleTransportableSkillsInput={handleTransportableSkillsInput}
-                  handleAddSignificantExperience={handleAddSignificantExperience}
-                  handlesignificantExperienceChange={handlesignificantExperienceChange}
-                  handleRemoveSignificantExperience={handleRemoveSignificantExperience}
-                  handleSignificantExperienceInput={handleSignificantExperienceInput}
-                  handleProfileInputs={handleProfileInputs}
-                  handleAddEducationItem={handleAddEducationItem}
-                  handleRemoveEducationItem={handleRemoveEducationItem}
-                  handleEducationChange={handleEducationChange}
-                  handleAddLanguageItem={handleAddLanguageItem}
-                  handleRemoveLanguageItem={handleRemoveLanguageItem}
-                  handleLanguageChange={handleLanguageChange}
-                  handleAddMiscItem={handleAddMiscItem}
-                  handleRemoveMiscItem={handleRemoveMiscItem}
-                  handleMiscInputChange={handleMiscInputChange}
-                  handleImage={handleImage}
-                  handleAddQuestion={handleAddQuestion}
-                  handleRemoveQuestion={handleRemoveQuestion}
-                  handleQuestionInputChange={handleQuestionInputChange}
+                  {...rest}
                 />
               )}
             />
@@ -200,6 +120,7 @@ Main.propTypes = {
   handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
+  handleAddSignificantRelationships: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,

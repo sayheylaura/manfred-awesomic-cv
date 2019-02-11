@@ -44,6 +44,7 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(this);
     this.handleRemoveSignificantExperience= this.handleRemoveSignificantExperience.bind(this);
     this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(this);
+    this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
     this.handleImage = this.handleImage.bind(this);
     this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
@@ -332,6 +333,24 @@ class App extends Component {
     });
   }
 
+  handleAddSignificantRelationships(){
+    const { significantRelationshipsDefault } = this.state;
+    const newsignificantRelationshipsItem= significantRelationshipsDefault;
+
+    this.setState(prevState => {
+      const newState={
+        sample: {
+          ...prevState.sample,
+          author:{
+            ...prevState.sample.author,
+            ssignificantRelationships : prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
+          },
+          significantRelationshipsDefault: ""
+          }
+        };
+        return newState;
+    });
+  }
 
 
   handleAddEducationItem() {
@@ -609,6 +628,7 @@ class App extends Component {
           handlesignificantExperienceChange={this.handlesignificantExperienceChange}
           handleRemoveSignificantExperience={this.handleRemoveSignificantExperience}
           handleSignificantExperienceInput={this.handleSignificantExperienceInput}
+          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
           handleImage={this.handleImage}
           handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}

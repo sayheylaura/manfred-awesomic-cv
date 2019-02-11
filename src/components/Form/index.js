@@ -29,6 +29,15 @@ class Form extends Component {
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
 
+        <FormMiscEducation
+          miscEducation={miscEducation}
+          miscEdDefault={miscEdDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddMiscItem={handleAddMiscItem}
+          handleRemoveMiscItem={handleRemoveMiscItem}
+          handleMiscInputChange={handleMiscInputChange}
+        />
+
         <FormQuestionnaire
           questionnaire={questionnaire}
           handleAddItem={handleAddItem}
@@ -37,14 +46,6 @@ class Form extends Component {
           answer={answer}
           handleRemoveItem={handleRemoveItem}
           handleQuestionnaireInput={handleQuestionnaireInput}
-        />
-        <FormMiscEducation
-          miscEducation={miscEducation}
-          miscEdDefault={miscEdDefault}
-          handleDefaultInputChange={handleDefaultInputChange}
-          handleAddMiscItem={handleAddMiscItem}
-          handleRemoveMiscItem={handleRemoveMiscItem}
-          handleMiscInputChange={handleMiscInputChange}
         />
       </section>
     );

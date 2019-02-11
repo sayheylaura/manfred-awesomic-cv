@@ -29,7 +29,7 @@ class FormQuestionnaire extends Component {
             inputType="text"
             inputName="question"
             inputValue={question}
-            example="What JS frameworks do you use?"
+            example="Ex: What JS frameworks do you use?"
             handleInputChange={handleQuestionChange}
           />
 
@@ -39,7 +39,7 @@ class FormQuestionnaire extends Component {
             inputType="text"
             inputName="answer"
             inputValue={answer}
-            example="React"
+            example="Ex: React"
             handleInputChange={handleQuestionChange}
           />
 
@@ -48,7 +48,7 @@ class FormQuestionnaire extends Component {
             styles="add-btn"
             handleButtonClick={handleAddItem}
           >
-            Añadir
+            Add item
           </Button>
         </div>
       </fieldset>

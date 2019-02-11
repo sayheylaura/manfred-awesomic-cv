@@ -32,8 +32,11 @@ class FormInput extends Component {
 FormInput.propTypes = {
   labelContent: PropTypes.string.isRequired,
   styles: PropTypes.string.isRequired,
-  inputType: PropTypes.string.isRequired,
+  inputType:   PropTypes.string.isRequired,
   inputName: PropTypes.string.isRequired,
+  // inputValue: PropTypes.oneOfType([
+  //   PropTypes.string,
+  //   PropTypes.array]).isRequired,
   inputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   example: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired

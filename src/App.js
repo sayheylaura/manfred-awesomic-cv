@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       sample: sample,
       goalDefault: "",
+      transportableSkillDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -46,6 +47,44 @@ class App extends Component {
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
   }
+
+  handlePrintBtn() {
+    window.print();
+  }
+
+  handleJsonText(event) {
+    const currentValue = event.currentTarget.value;
+    const parsedValue = JSON.parse(currentValue);
+    this.setState({ sample: parsedValue });
+  }
+
+  handleProfileInputs(event) {
+    const { value, name } = event.currentTarget;
+    this.setState(prevState => {
+      const newProfile = {
+        ...prevState.sample.author.profile[0],
+        [name]: value
+      };
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: [newProfile]
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleDefaultInputChange(event) {
+    const { name, value } = event.currentTarget;
+    this.setState({
+      [name]: value
+    });
+  }
+
 
   handleIntroChange(event) {
     const { value } = event.currentTarget;
@@ -117,16 +156,10 @@ class App extends Component {
             ...prevState.sample.author,
             professionalGoals: prevState.sample.author.professionalGoals.map((item, index) => {
               if (index === ind) {
-                console.log("dentro if item",item);
                 item =[
                   value
                 ]
               }
-              console.log("index",index);
-                console.log("ind",ind);
-                console.log("item",item);
-                console.log("name",name);
-                console.log("value",value);
               return item;
             })
           }
@@ -136,42 +169,8 @@ class App extends Component {
     });
   }
 
+  handleAddTransSkill(){
 
-  handlePrintBtn() {
-    window.print();
-  }
-
-  handleJsonText(event) {
-    const currentValue = event.currentTarget.value;
-    const parsedValue = JSON.parse(currentValue);
-    this.setState({ sample: parsedValue });
-  }
-
-  handleProfileInputs(event) {
-    const { value, name } = event.currentTarget;
-    this.setState(prevState => {
-      const newProfile = {
-        ...prevState.sample.author.profile[0],
-        [name]: value
-      };
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            profile: [newProfile]
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
-  handleDefaultInputChange(event) {
-    const { name, value } = event.currentTarget;
-    this.setState({
-      [name]: value
-    });
   }
 
   handleAddEducationItem() {

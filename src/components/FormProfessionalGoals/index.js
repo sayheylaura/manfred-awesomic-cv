@@ -11,7 +11,13 @@ class FormProfessionalGoals extends Component {
       <Fragment>
       {professionalGoals.map((item, index) => {
         return (
-        <FormProfessionalGoalsItem key={index} goalDefault={item} ind={index} handleRemoveGoal={handleRemoveGoal} handleGoalsInput={handleGoalsInput} />
+        <FormProfessionalGoalsItem
+          key={index}
+          goalDefault={item}
+          ind={index}
+          handleRemoveGoal={handleRemoveGoal}
+          handleGoalsInput={handleGoalsInput}
+        />
       )})}
         <div>
         <FormInput

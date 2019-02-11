@@ -9,7 +9,7 @@ import Json from "../Json";
 
 class Main extends Component {
   render() {
-    const { sample, handlePrintBtn, handleJsonText, handleIntroChange } = this.props;
+    const { sample, handlePrintBtn, handleJsonText, handleIntroChange, handleProfessionalGoals, handleAddGoal, handleRemoveGoal, handleGoalsInput, handleGoalChange, goal } = this.props;
     return (
       <main className="main">
         <nav className="main__nav">
@@ -20,7 +20,14 @@ class Main extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" render={() => <Form sample={sample} handleIntroChange={handleIntroChange}/>} />
+          <Route exact path="/" render={() => <Form sample={sample} handleIntroChange={handleIntroChange}
+          handleProfessionalGoals={handleProfessionalGoals}
+          handleAddGoal={handleAddGoal}
+          handleRemoveGoal ={handleRemoveGoal}
+          handleGoalsInput={handleGoalsInput}
+          handleGoalChange={handleGoalChange}
+          goal={goal}
+          />} />
           <Route path="/json" render={() => <Json sample={sample} handleJsonText={handleJsonText} />} />
           <Route path="/preview" render={() => <Preview sample={sample} handlePrintBtn={handlePrintBtn} />} />
         </Switch>
@@ -34,6 +41,11 @@ Main.propTypes = {
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
+  handleProfessionalGoals: PropTypes.func.isRequired,
+  handleAddGoal:PropTypes.func.isRequired ,
+  handleRemoveGoal: PropTypes.func.isRequired,
+  handleGoalsInput: PropTypes.func.isRequired
+
 };
 
 export default Main;

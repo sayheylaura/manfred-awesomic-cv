@@ -11,7 +11,7 @@ class FormProfessionalGoals extends Component {
       <Fragment>
       {professionalGoals.map((item, index) => {
         return (
-        <FormProfessionalGoalsItem goalDefault={item} ind={index} handleRemoveGoal={handleRemoveGoal} handleGoalsInput={handleGoalsInput} />
+        <FormProfessionalGoalsItem key={index} goalDefault={item} ind={index} handleRemoveGoal={handleRemoveGoal} handleGoalsInput={handleGoalsInput} />
       )})}
         <div>
         <FormInput
@@ -21,7 +21,7 @@ class FormProfessionalGoals extends Component {
           inputName="professional goals"
           inputValue={goalDefault}
           example="Brand Manager"
-          handleDefaultInputChange={handleGoalChange}
+          handleInputChange={handleGoalChange}
 
         />
         <Button
@@ -38,10 +38,13 @@ class FormProfessionalGoals extends Component {
 }
 
 FormProfessionalGoals.propTypes = {
+  goalDefault: PropTypes.string.isRequired,
   professionalGoals: PropTypes.array.isRequired,
   handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
-  handleGoalsInput: PropTypes.func.isRequired
+  handleGoalsInput: PropTypes.func.isRequired,
+  handleGoalChange: PropTypes.func.isRequired
 };
+
 
 export default FormProfessionalGoals;

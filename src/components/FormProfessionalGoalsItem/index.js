@@ -7,7 +7,7 @@ class FormProfessionalGoalsItem extends Component {
   constructor(props) {
     super(props);
     this.removeItem = this.removeItem.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleGoalInputChange = this.handleGoalInputChange.bind(this);
   }
 
   removeItem() {
@@ -15,7 +15,7 @@ class FormProfessionalGoalsItem extends Component {
     handleRemoveGoal(ind);
   }
 
-  handleInputChange(event) {
+  handleGoalInputChange(event) {
     const { value, name } = event.currentTarget;
     const { handleGoalsInput, ind } = this.props;
     handleGoalsInput(value, name, ind);
@@ -32,7 +32,7 @@ class FormProfessionalGoalsItem extends Component {
                 inputName="Professional Goal"
                 inputValue={goalDefault}
                 example="Professional Goal"
-                handleDefaultInputChange={this.handleInputChange}
+                handleInputChange={this.handleGoalInputChange}
               />
 
               <Button
@@ -49,8 +49,10 @@ class FormProfessionalGoalsItem extends Component {
 
 FormProfessionalGoalsItem.propTypes = {
   goalDefault: PropTypes.string.isRequired,
+  ind: PropTypes.number.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput:PropTypes.func.isRequired
 }
+
 
 export default FormProfessionalGoalsItem;

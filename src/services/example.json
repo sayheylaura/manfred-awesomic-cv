@@ -320,21 +320,15 @@
   "languages": [
     {
       "language": "Castellano",
-      "proficiency": [
-        "native or bilingual"
-      ]
+      "proficiency": "native or bilingual"
     },
     {
       "language": "Gallego",
-      "proficiency": [
-        "native or bilingual"
-      ]
+      "proficiency": "native or bilingual"
     },
     {
       "language": "Inglés",
-      "proficiency": [
-        "full professional"
-      ]
+      "proficiency": "full professional"
     }
   ],
   "miscEducation": [

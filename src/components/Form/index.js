@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormQuestionnaire from "../FormQuestionnaire";
+import FormLanguages from "../FormLanguages";
+import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
@@ -8,26 +10,38 @@ import FormProfessionalGoals from '../FormProfessionalGoals';
 class Form extends Component {
   render() {
     const {
-      question,
-      answer,
-      handleAddItem,
-      handleRemoveItem,
-      handleQuestionnaireInput,
       sample,
+      goalDefault,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      languageDefault,
+      proficiencyDefault,
       miscEdDefault,
+      questionDefault,
+      answerDefault,
       handleDefaultInputChange,
-      handleAddMiscItem,
-      handleRemoveMiscItem,
-      handleMiscInputChange,
       handleIntroChange,
       handleAddGoal,
       handleRemoveGoal,
       handleGoalsInput,
       handleGoalChange,
-      goalDefault
+      handleAddEducationItem,
+      handleRemoveEducationItem,
+      handleEducationChange,
+      handleAddLanguageItem,
+      handleRemoveLanguageItem,
+      handleLanguageChange,
+      handleAddMiscItem,
+      handleRemoveMiscItem,
+      handleMiscInputChange,
+      handleAddQuestion,
+      handleRemoveQuestion,
+      handleQuestionInputChange,
     } = this.props;
 
-    const { miscEducation, questionnaire } = sample;
+    const { education, languages, miscEducation, questionnaire } = sample;
     const {intro, professionalGoals} = sample.author;
     return (
       <section className="form__wrapper">
@@ -49,6 +63,28 @@ class Form extends Component {
           goalDefault={goalDefault}
         />
 
+        <FormEducation
+          education={education}
+          institutionDefault={institutionDefault}
+          studyDefault={studyDefault}
+          fromEdDefault={fromEdDefault}
+          untilEdDefault={untilEdDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddEducationItem={handleAddEducationItem}
+          handleRemoveEducationItem={handleRemoveEducationItem}
+          handleEducationChange={handleEducationChange}
+        />
+
+        <FormLanguages
+          languages={languages}
+          languageDefault={languageDefault}
+          proficiencyDefault={proficiencyDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLanguageItem={handleAddLanguageItem}
+          handleRemoveLanguageItem={handleRemoveLanguageItem}
+          handleLanguageChange={handleLanguageChange}
+        />
+
         <FormMiscEducation
           miscEducation={miscEducation}
           miscEdDefault={miscEdDefault}
@@ -60,12 +96,12 @@ class Form extends Component {
 
         <FormQuestionnaire
           questionnaire={questionnaire}
-          handleAddItem={handleAddItem}
+          questionDefault={questionDefault}
+          answerDefault={answerDefault}
           handleDefaultInputChange={handleDefaultInputChange}
-          question={question}
-          answer={answer}
-          handleRemoveItem={handleRemoveItem}
-          handleQuestionnaireInput={handleQuestionnaireInput}
+          handleAddQuestion={handleAddQuestion}
+          handleRemoveQuestion={handleRemoveQuestion}
+          handleQuestionInputChange={handleQuestionInputChange}
         />
       </section>
     );
@@ -74,20 +110,33 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
+  goalDefault: PropTypes.string.isRequired,
+  institutionDefault: PropTypes.string.isRequired,
+  studyDefault: PropTypes.string.isRequired,
+  fromEdDefault: PropTypes.string.isRequired,
+  untilEdDefault: PropTypes.string.isRequired,
+  languageDefault: PropTypes.string.isRequired,
+  proficiencyDefault: PropTypes.string.isRequired,
+  miscEdDefault: PropTypes.string.isRequired,
+  questionDefault: PropTypes.string.isRequired,
+  answerDefault: PropTypes.string.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
   handleAddGoal:PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
-  handleAddItem: PropTypes.func.isRequired,
-  handleDefaultInputChange: PropTypes.func.isRequired,
-  handleRemoveItem: PropTypes.func.isRequired,
-  handleQuestionnaireInput: PropTypes.func.isRequired,
-  miscEdDefault: PropTypes.string.isRequired,
+  handleAddEducationItem: PropTypes.func.isRequired,
+  handleRemoveEducationItem: PropTypes.func.isRequired,
+  handleEducationChange: PropTypes.func.isRequired,
+  handleAddLanguageItem: PropTypes.func.isRequired,
+  handleRemoveLanguageItem: PropTypes.func.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
   handleAddMiscItem: PropTypes.func.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
-  handleMiscInputChange: PropTypes.func.isRequired
+  handleMiscInputChange: PropTypes.func.isRequired,
+  handleAddQuestion: PropTypes.func.isRequired,
+  handleRemoveQuestion: PropTypes.func.isRequired,
+  handleQuestionInputChange: PropTypes.func.isRequired
 };
 
 export default Form;

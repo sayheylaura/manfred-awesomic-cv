@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-
 class FormSelect extends Component {
   render() {
     const {
@@ -13,15 +12,20 @@ class FormSelect extends Component {
       selectOptions
     } = this.props;
     return (
-      <label className="label" htmlFor={selectName}>{labelContent}
+      <label className="label" htmlFor={selectName}>
+        {labelContent}
         <select
-        id={selectName}
-        name={selectName}
-        value={selectValue}
-        onChange={ handleSelectChange}
-        className={styles}>
-          {selectOptions.map(optionSelect=>
-          <option key={optionSelect} value={optionSelect}>{optionSelect}</option>)}
+          id={selectName}
+          name={selectName}
+          value={selectValue}
+          onChange={handleSelectChange}
+          className={styles}
+        >
+          {selectOptions.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
       </label>
     );

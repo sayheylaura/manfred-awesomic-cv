@@ -17,8 +17,8 @@ class FormQuestionnaireItem extends Component {
 
   handleInputChange(event) {
     const { value, name } = event.currentTarget;
-    const { handleQuestionnaireInput, ind } = this.props;
-    handleQuestionnaireInput(value, name, ind);
+    const { handleDefaultInputChange, ind } = this.props;
+    handleDefaultInputChange(value, name, ind);
   }
 
   render() {

@@ -18,7 +18,7 @@ class FormQuestionnaire extends Component {
           const { question, answer } = item;
           return (
             <FormQuestionnaireItem key={index} question={question} answer={answer} handleRemoveItem={handleRemoveItem}
-            handleQuestionnaireInput={handleQuestionnaireInput} ind={index} />
+            handleDefaultInputChange={handleDefaultInputChange} ind={index} />
           )
         })}
 

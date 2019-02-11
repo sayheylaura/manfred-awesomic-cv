@@ -42,7 +42,7 @@ class FormMiscEducation extends Component {
             inputType="text"
             inputName="miscEdDefault"
             inputValue={miscEdDefault}
-            example="Scrum master certification"
+            example="Ex: Scrum master certification"
             handleInputChange={handleDefaultInputChange}
           />
 

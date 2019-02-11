@@ -6,6 +6,7 @@ import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
+import FormSignificantReltionShips from '../FormSignificantReltionShips';
 
 class Form extends Component {
   render() {
@@ -62,6 +63,7 @@ class Form extends Component {
           handleGoalChange={handleGoalChange}
           goalDefault={goalDefault}
         />
+        <FormSignificantReltionShips />
 
         <FormEducation
           education={education}

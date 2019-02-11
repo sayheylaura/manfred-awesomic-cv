@@ -12,12 +12,10 @@ class FormEducation extends Component {
       studyDefault,
       fromEdDefault,
       untilEdDefault,
-      achievementDefault,
       handleDefaultInputChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
-      handleAddAchievementItem
     } = this.props;
     return (
       <fieldset className="form__education">
@@ -44,7 +42,7 @@ class FormEducation extends Component {
             inputType="text"
             inputName="institutionDefault"
             inputValue={institutionDefault}
-            example="MIT"
+            example="Ex: MIT"
             handleInputChange={handleDefaultInputChange}
           />
 
@@ -54,7 +52,7 @@ class FormEducation extends Component {
             inputType="text"
             inputName="studyDefault"
             inputValue={studyDefault}
-            example="Computer Science"
+            example="Ex: Computer Science"
             handleInputChange={handleDefaultInputChange}
           />
 
@@ -64,7 +62,7 @@ class FormEducation extends Component {
             inputType="text"
             inputName="fromEdDefault"
             inputValue={fromEdDefault}
-            example="2008"
+            example="Ex: 2008"
             handleInputChange={handleDefaultInputChange}
           />
 
@@ -74,32 +72,9 @@ class FormEducation extends Component {
             inputType="text"
             inputName="untilEdDefault"
             inputValue={untilEdDefault}
-            example="2012"
+            example="Ex: 2012"
             handleInputChange={handleDefaultInputChange}
           />
-
-          <div>
-            <p>Achievements</p>
-            <p>List of awards or achievements during your studies</p>
-
-            <FormInput
-              labelContent="Item"
-              styles="form__input"
-              inputType="text"
-              inputName="achievement"
-              inputValue={achievementDefault}
-              example="Best end of degree thesis"
-              handleInputChange={handleDefaultInputChange}
-            />
-
-            <Button
-              buttonType="button"
-              styles="add-btn"
-              handleButtonClick={handleAddAchievementItem}
-            >
-              Add item
-          </Button>
-          </div>
 
           <Button
             buttonType="button"
@@ -120,7 +95,6 @@ FormEducation.propTypes = {
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
   untilEdDefault: PropTypes.string.isRequired,
-  achievementDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,

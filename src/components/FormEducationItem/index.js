@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormInput from "../FormInput";
 import Button from "../Button";
-import FormAchievements from "../FormAchievements";
 
 class FormEducationItem extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class FormEducationItem extends Component {
   }
 
   render() {
-    const { institution, study, from, until, achievements } = this.props.item;
+    const { institution, study, from, until } = this.props.item;
     return (
       <div>
         <FormInput
@@ -33,7 +32,7 @@ class FormEducationItem extends Component {
           inputType="text"
           inputName="institution"
           inputValue={institution}
-          example="MIT"
+          example="Ex: MIT"
           handleInputChange={this.handleInputChange}
         />
 
@@ -43,7 +42,7 @@ class FormEducationItem extends Component {
           inputType="text"
           inputName="study"
           inputValue={study}
-          example="Computer Science"
+          example="Ex: Computer Science"
           handleInputChange={this.handleInputChange}
         />
 
@@ -53,7 +52,7 @@ class FormEducationItem extends Component {
           inputType="text"
           inputName="from"
           inputValue={from}
-          example="2008"
+          example="Ex: 2008"
           handleInputChange={this.handleInputChange}
         />
 
@@ -63,13 +62,9 @@ class FormEducationItem extends Component {
           inputType="text"
           inputName="until"
           inputValue={until}
-          example="2012"
+          example="Ex: 2012"
           handleInputChange={this.handleInputChange}
         />
-
-        {achievements && achievements.length && (
-          <FormAchievements achievements={achievements} />
-        )}
 
         <Button
           buttonType="button"

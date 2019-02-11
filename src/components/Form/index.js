@@ -13,7 +13,6 @@ class Form extends Component {
       studyDefault,
       fromEdDefault,
       untilEdDefault,
-      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
@@ -45,6 +44,18 @@ class Form extends Component {
           asterisk (*) are compulsory. You can add or remove the fields.
         </p>
 
+        <FormEducation
+          education={education}
+          institutionDefault={institutionDefault}
+          studyDefault={studyDefault}
+          fromEdDefault={fromEdDefault}
+          untilEdDefault={untilEdDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddEducationItem={handleAddEducationItem}
+          handleRemoveEducationItem={handleRemoveEducationItem}
+          handleEducationChange={handleEducationChange}
+        />
+
         <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
@@ -53,19 +64,6 @@ class Form extends Component {
           handleAddLanguageItem={handleAddLanguageItem}
           handleRemoveLanguageItem={handleRemoveLanguageItem}
           handleLanguageChange={handleLanguageChange}
-        />
-
-        <FormEducation
-          education={education}
-          institutionDefault={institutionDefault}
-          studyDefault={studyDefault}
-          fromEdDefault={fromEdDefault}
-          untilEdDefault={untilEdDefault}
-          achievementDefault={achievementDefault}
-          handleDefaultInputChange={handleDefaultInputChange}
-          handleAddEducationItem={handleAddEducationItem}
-          handleRemoveEducationItem={handleRemoveEducationItem}
-          handleEducationChange={handleEducationChange}
         />
 
         <FormMiscEducation
@@ -97,7 +95,6 @@ Form.propTypes = {
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
   untilEdDefault: PropTypes.string.isRequired,
-  achievementDefault: PropTypes.string.isRequired,
   languageDefault: PropTypes.string.isRequired,
   proficiencyDefault: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,

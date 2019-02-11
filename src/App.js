@@ -17,7 +17,6 @@ class App extends Component {
       studyDefault: "",
       fromEdDefault: "",
       untilEdDefault: "",
-      achievementDefault: "hola",
       languageDefault: "",
       proficiencyDefault: "elementary",
       miscEdDefault: "",
@@ -310,7 +309,6 @@ class App extends Component {
       studyDefault,
       fromEdDefault,
       untilEdDefault,
-      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
@@ -326,7 +324,6 @@ class App extends Component {
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
           untilEdDefault={untilEdDefault}
-          achievementDefault={achievementDefault}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}
           miscEdDefault={miscEdDefault}

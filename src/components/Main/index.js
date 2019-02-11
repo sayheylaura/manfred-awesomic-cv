@@ -40,7 +40,6 @@ class Main extends Component {
       studyDefault,
       fromEdDefault,
       untilEdDefault,
-      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
@@ -93,7 +92,6 @@ class Main extends Component {
                   studyDefault={studyDefault}
                   fromEdDefault={fromEdDefault}
                   untilEdDefault={untilEdDefault}
-                  achievementDefault={achievementDefault}
                   languageDefault={languageDefault}
                   proficiencyDefault={proficiencyDefault}
                   miscEdDefault={miscEdDefault}
@@ -140,7 +138,6 @@ Main.propTypes = {
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
   untilEdDefault: PropTypes.string.isRequired,
-  achievementDefault: PropTypes.string.isRequired,
   languageDefault: PropTypes.string.isRequired,
   proficiencyDefault: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,

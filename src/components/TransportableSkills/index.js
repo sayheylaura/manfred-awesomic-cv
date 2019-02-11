@@ -7,7 +7,7 @@ class TransportableSkills extends Component {
     return (
       <div className="transSkills__wrapper wrapper">
       <h3 className="transSkills__title title">Soft skills</h3>
-        <ul className="transSkills__list">
+        <ul className="transSkills__list list">
         {sampleTransSkills.map((item, index)=>{
           return (
             <li key={index} className="transSkills__item">

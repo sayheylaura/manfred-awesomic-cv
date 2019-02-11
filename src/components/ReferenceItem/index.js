@@ -6,8 +6,8 @@ class ReferenceItem extends Component {
     const {name, role, contact} = this.props.sampleReferenceItem;
     return (
       <li className="reference-list__item">
-        <div className="reference-list__name">{name}</div>
-        <div className="reference-list__role">{role}</div>
+        <span className="reference-list__name">{name}</span>
+        <span className="reference-list__role">&#160;({role})</span>
         <a className="reference-list__contact link" href={`mailto: ${contact}`}>{contact}</a>
       </li>
     );

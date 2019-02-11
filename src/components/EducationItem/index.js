@@ -15,10 +15,12 @@ class EducationItem extends Component {
     return (
       <li className="education__list-item">
         <h3 className="education__item-institution">{institution}</h3>
-        <h4 className="education__item-study">{study}</h4>
-        <p className="education__item-date">
-          {from} - {until}
-        </p>
+        <div className="education__item-container">
+          <h4 className="education__item-study">{study}</h4>
+          <p className="education__item-date">
+            {from} - {until}
+          </p>
+        </div>
         {achievements && !!achievements.length && (
           <EducationAchievements sampleAchievements={achievements} />
         )}

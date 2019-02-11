@@ -5,28 +5,26 @@
   "description": "An open CV format",
   "type": "object",
   "properties": {
-    "author": {
+    "author":{
       "description": "Main data of the CV author",
-      "type": "object",
-      "properties": {
-        "profile": {
-          "description": "Personal data of the CV author",
-          "type": "array",
-          "items": {
+        "type":"object",
+        "properties": {
+          "profile":{
+            "description": "Personal data of the CV author",
             "type": "object",
             "properties": {
               "name": {
                 "description": "Complete name of the CV author",
                 "type": "string"
               },
-              "image": {
+              "image":{
                 "description": "URL of the author image",
-                "type": "string",
-                "format": "uri"
+                "type":"string",
+                "format":"uri"
               },
-              "birthday": {
+              "birthday":{
                 "description": "Birthday in format dd.mm.yyyy",
-                "type": "string",
+                "type":"string",
                 "format": "date"
               },
               "publicLinks": {
@@ -39,31 +37,12 @@
                 "minItems": 1,
                 "uniqueItems": true
               },
-              "roles": {
+              "roles":{
                 "description": "The ones that better describe your previous or future positions",
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "enum": [
-                    "project manager",
-                    "product manager",
-                    "operational manager",
-                    "analyst",
-                    "business analyst",
-                    "qa manager",
-                    "software architect",
-                    "process analyst",
-                    "test engineer",
-                    "test analyst",
-                    "database administrator",
-                    "developer",
-                    "software engineer",
-                    "product owner",
-                    "scrum master",
-                    "team lead",
-                    "UX designer",
-                    "UI designer"
-                  ]
+                  "enum": ["project manager", "product manager", "operational manager", "analyst", "business analyst", "qa manager", "software architect", "process analyst", "test engineer", "test analyst", "database administrator", "developer", "software engineer", "product owner", "scrum master", "team lead", "UX designer", "UI designer"]
                 }
               },
               "yearsOfExperience": {
@@ -78,77 +57,78 @@
               "yearsOfExperience"
             ]
           },
-          "minItems": 1,
-          "maxItems": 1
-        },
-        "intro": {
-          "description": "Explain to your future company what kind of professional you are",
-          "type": "string"
-        },
-        "professionalGoals": {
-          "description": "List the goals that explain to your future company what kind of professional you'd like to be, what you'd like to be i.e., What motivates you",
-          "type": "array",
-          "items": {
+          "intro": {
+            "description": "Explain to your future company what kind of professional you are",
             "type": "string"
           },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "transportableSkills": {
-          "description": "List the skills not specifically related to your particular job or area of knowledge, but still can be used at work (for example, when you were manager in that Burger King and had to organize a team of employees)",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "significantExperience": {
-          "description": "List the professional milestones that provided you with experience and knowledge for your future position",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "significantRelationships": {
-          "description": "List the professional relationships (2-3 is enough) that you can seek advice in case you need, who provide you with professional insights in your day to day",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "description": "Name of this significant reference",
-                "type": "string"
-              },
-              "comment": {
-                "description": "Describe what this significant reference provides you with",
-                "type": "string"
-              },
-              "role": {
-                "description": "Role of this significant reference",
-                "type": "string"
-              },
-              "contact": {
-                "description": "Contact of this significant reference",
-                "type": "string"
-              },
-              "company": {
-                "description": "Name of the Company of this significant reference",
-                "type": "string"
-              }
+          "professionalGoals": {
+            "description": "List the goals that explain to your future company what kind of professional you'd like to be, what you'd like to be i.e., What motivates you",
+            "type": "array",
+            "items": {
+              "type": "string"
             },
-            "required": [
-              "name",
-              "comment",
-              "role"
-            ]
+            "minItems": 1,
+            "uniqueItems": true
           },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      }
+          "transportableSkills": {
+            "description": "List the skills not specifically related to your particular job or area of knowledge, but still can be used at work (for example, when you were manager in that Burger King and had to organize a team of employees)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "significantExperience": {
+            "description": "List the professional milestones that provided you with experience and knowledge for your future position",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "significantRelationships": {
+            "description": "List the professional relationships (2-3 is enough) that you can seek advice in case you need, who provide you with professional insights in your day to day",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "Name of this significant reference",
+                  "type": "string"
+                },
+                "comment": {
+                  "description": "Describe what this significant reference provides you with",
+                  "type": "string"
+                },
+                "role": {
+                  "description": "Role of this significant reference",
+                  "type": "string"
+                },
+                "contact": {
+                  "description": "Contact of this significant reference",
+                  "type": "string"
+                },
+                "company": {
+                  "description": "Name of the Company of this significant reference",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "comment",
+                "role"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "profile",
+          "intro"
+        ]
     },
     "experience": {
       "description": "List of working experience",
@@ -162,7 +142,7 @@
             "items": {
               "type": "object",
               "properties": {
-                "name": {
+                "name":{
                   "description": "Name of the company",
                   "type": "string"
                 },
@@ -190,7 +170,7 @@
                         "items": {
                           "type": "object",
                           "properties": {
-                            "summary": {
+                            "summary":{
                               "description": "Sum up your challenge",
                               "type": "string"
                             },
@@ -200,7 +180,7 @@
                               "items": {
                                 "type": "object",
                                 "properties": {
-                                  "summary": {
+                                  "summary":{
                                     "description": "Sum up your action for this challenge",
                                     "type": "string"
                                   },
@@ -250,16 +230,26 @@
                         "description": "Role of this reference",
                         "type": "string"
                       },
-                      "contact": {
-                        "description": "Contact of this reference",
+                      "link": {
+                        "description": "Link to a profile of this reference",
+                        "type": "string",
+                        "format": "uri"
+                      },
+                      "mail": {
+                        "description": "Mail of this reference",
+                        "type": "string",
+                        "format": "mail"
+                      },
+                      "phone_number": {
+                        "description": "Phone Number of this reference with country code",
                         "type": "string"
                       }
                     },
                     "required": [
                       "name",
-                      "role",
-                      "link"
-                    ]
+                      "role"
+                    ],
+                    "minProperties" : 3
                   },
                   "minItems": 1,
                   "uniqueItems": true
@@ -270,8 +260,8 @@
                 "roles"
               ]
             },
-            "minItems": 1,
-            "uniqueItems": true
+          "minItems": 1,
+          "uniqueItems": true
           }
         },
         "required": [
@@ -335,17 +325,8 @@
           },
           "proficiency": {
             "description": "Your level of this language proficiency",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "elementary",
-                "limited working",
-                "professional working",
-                "full professional",
-                "native or bilingual"
-              ]
-            }
+            "type": "string",
+            "enum": ["elementary", "limited working", "professional working", "full professional", "native or bilingual"]
           }
         },
         "required": [
@@ -365,7 +346,7 @@
       "minItems": 0,
       "uniqueItems": true
     },
-    "questionnaire": {
+    "questionnaire":{
       "description": "List of questions to help understanding if your motivations match with those of your potential employer",
       "type": "array",
       "items": {

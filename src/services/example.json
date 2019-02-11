@@ -1,22 +1,17 @@
 {
   "author": {
-    "profile": [
-      {
-        "name": "Yago Cousiño",
-        "image": "https://secure.gravatar.com/avatar/0fb605c157b27a4653baf218c862fc99?s=96&d=mm&r=g",
-        "birthday": "1995-04-17",
-        "publicLinks": [
-          "https://www.linkedin.com/in/yago-cousi%C3%B1o-13533261/",
-          "https://thewing.es/author/yago/",
-          "https://twitter.com/Cousy14"
-        ],
-        "roles": [
-          "business analyst",
-          "team lead"
-        ],
-        "yearsOfExperience": 3
-      }
-    ],
+    "profile": {
+      "name": "Yago Cousiño",
+      "image": "https://secure.gravatar.com/avatar/0fb605c157b27a4653baf218c862fc99?s=96&d=mm&r=g",
+      "birthday": "1995-04-17",
+      "publicLinks": [
+        "https://www.linkedin.com/in/yago-cousi%C3%B1o-13533261/",
+        "https://thewing.es/author/yago/",
+        "https://twitter.com/Cousy14"
+      ],
+      "roles": ["business analyst", "team lead"],
+      "yearsOfExperience": 3
+    },
     "intro": "Salir de mi zona de confort y cursar mis estudios universitarios primero en Madrid y luego en Texas ha sido un hecho definitorio en mi vida y los resultados han provocado que sea una constante en mi (corta) vida profesional. Mi inquietud por explorar más vías además del camino marcado y aprender de todas ellas es lo que me ha movido a participar, y fundar, proyectos que me apasionan.   De formación de negocio, no planeo quedarme en el campo del marketing o del negocio sino crecer e introducirme en el producto y la programación, algo de lo que se aleja en la educación a los perfiles parecidos al mío, pero que yo creo que son complementarios.   Habiendo ya realizado prácticas en empresas de diferentes tamaños y en departamentos tan diferentes como logística o marketing digital, reuní las (muchas o pocas) capacidades adquiridas para montar The Wing, una plataforma de contenido que reúne a más de 20 creadores con la que intentamos fijar un nuevo estándar en el periodismo deportivo en español.  Mi próximo reto: Manfred.",
     "professionalGoals": [
       "Creo que lo más importante de una organización es la calidad humana que hay detrás y la cultura con la que trabajan y se relacionan. Es para mí lo que va a prevalecer en sus procesos y, sobre todo, resultados. ",
@@ -312,29 +307,21 @@
       "study": "Business Administration",
       "from": "2015",
       "until": "2016",
-      "achievements": [
-        "Chico más gallego de mi clase (2013-2016)"
-      ]
+      "achievements": ["Chico más gallego de mi clase (2013-2016)"]
     }
   ],
   "languages": [
     {
       "language": "Castellano",
-      "proficiency": [
-        "native or bilingual"
-      ]
+      "proficiency": "native or bilingual"
     },
     {
       "language": "Gallego",
-      "proficiency": [
-        "native or bilingual"
-      ]
+      "proficiency": "native or bilingual"
     },
     {
       "language": "Inglés",
-      "proficiency": [
-        "full professional"
-      ]
+      "proficiency": "full professional"
     }
   ],
   "miscEducation": [

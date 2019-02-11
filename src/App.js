@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.scss";
-//import sample from "./services/sample.json";
-import sample_2 from "./services/sample_2.json";
+// import sample from "./services/sample.json";
+// import sample_2 from "./services/sample_2.json";
+//import sample from "./services/sample_yago.json";
+import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
@@ -10,13 +12,35 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sample: sample_2
+      sample: sample,
+      institutionDefault: "",
+      studyDefault: "",
+      fromEdDefault: "",
+      untilEdDefault: "",
+      languageDefault: "",
+      proficiencyDefault: "elementary",
+      miscEdDefault: "",
+      questionDefault: "",
+      answerDefault: ""
     };
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
+    this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleImage = this.handleImage.bind(this);
     this.handleProfileInputs = this.handleProfileInputs.bind(this);
-    this.handlePublicLinks.bind(this);
+    this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
+    this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
+    this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+    this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
+    this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
+    this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
+    this.handleAddQuestion = this.handleAddQuestion.bind(this);
+    this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
+    this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
   }
 
   handlePrintBtn() {
@@ -29,64 +53,319 @@ class App extends Component {
     this.setState({ sample: parsedValue });
   }
 
+  handleImage(image) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              image: image
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   handleProfileInputs(event) {
     const { value, name } = event.currentTarget;
     this.setState(prevState => {
       const newProfile = {
-        ...prevState.sample.author.profile[0],
+        ...prevState.sample.author.profile,
         [name]: value
-      }
+      };
       const newState = {
         sample: {
           ...prevState.sample,
           author: {
             ...prevState.sample.author,
-            profile: [
-              newProfile
-            ]
+            profile: [newProfile]
           }
         }
-      }
+      };
       return newState;
-    })
+    });
   }
 
-  handlePublicLinks(event) {
-    const { value, name } = event.currentTarget;
-    console.log(name);
+  handleDefaultInputChange(event) {
+    const { name, value } = event.currentTarget;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleAddEducationItem() {
+    const {
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault
+    } = this.state;
+
+    const newEducationItem = {
+      institution: institutionDefault,
+      study: studyDefault,
+      from: fromEdDefault,
+      until: untilEdDefault
+    };
+
     this.setState(prevState => {
-      const newPublicLinks = {
-        ...prevState.sample.author.profile[0].publicLinks,
-        [name]: value
-      }
       const newState = {
         sample: {
           ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            profile: [
-              prevState.newPublicLinks.map(item => {
-
-              })
-            ]
-          }
-        }
-      }
+          education: prevState.sample.education.concat(newEducationItem)
+        },
+        institutionDefault: "",
+        studyDefault: "",
+        fromEdDefault: "",
+        untilEdDefault: ""
+      };
       return newState;
-    })
+    });
+  }
+
+  handleRemoveEducationItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleEducationChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleAddLanguageItem() {
+    const { languageDefault, proficiencyDefault } = this.state;
+
+    const newLanguageItem = {
+      language: languageDefault,
+      proficiency: proficiencyDefault
+    };
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.concat(newLanguageItem)
+        },
+        languageDefault: "",
+        proficiencyDefault: "elementary"
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveLanguageItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleLanguageChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleAddMiscItem() {
+    const { miscEdDefault } = this.state;
+    const newMiscItem = miscEdDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.concat(newMiscItem)
+        },
+        miscEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveMiscItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.filter(
+            (item, index) => {
+              return index !== ind;
+            }
+          )
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleMiscInputChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          miscEducation: prevState.sample.miscEducation.map((item, index) => {
+            if (index === ind) {
+              item = value;
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleAddQuestion() {
+    const { questionDefault, answerDefault } = this.state;
+    const newQuestItem = {
+      question: questionDefault,
+      answer: answerDefault
+    };
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          questionnaire: prevState.sample.questionnaire.concat(newQuestItem)
+        },
+        questionDefault: "",
+        answerDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveQuestion(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          questionnaire: prevState.sample.questionnaire.filter(
+            (item, index) => {
+              return index !== ind;
+            }
+          )
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleQuestionInputChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          questionnaire: prevState.sample.questionnaire.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
   }
 
   render() {
-    const { sample } = this.state;
+    const {
+      sample,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      languageDefault,
+      proficiencyDefault,
+      miscEdDefault,
+      questionDefault,
+      answerDefault
+    } = this.state;
     return (
       <div className="App">
         <Header />
         <Main
           sample={sample}
+          institutionDefault={institutionDefault}
+          studyDefault={studyDefault}
+          fromEdDefault={fromEdDefault}
+          untilEdDefault={untilEdDefault}
+          languageDefault={languageDefault}
+          proficiencyDefault={proficiencyDefault}
+          miscEdDefault={miscEdDefault}
+          questionDefault={questionDefault}
+          answerDefault={answerDefault}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
+          handleDefaultInputChange={this.handleDefaultInputChange}
+          handleImage={this.handleImage}
           handleProfileInputs={this.handleProfileInputs}
-          handlePublicLinks={this.handlePublicLinks}
+          handleAddEducationItem={this.handleAddEducationItem}
+          handleRemoveEducationItem={this.handleRemoveEducationItem}
+          handleEducationChange={this.handleEducationChange}
+          handleAddLanguageItem={this.handleAddLanguageItem}
+          handleRemoveLanguageItem={this.handleRemoveLanguageItem}
+          handleLanguageChange={this.handleLanguageChange}
+          handleAddMiscItem={this.handleAddMiscItem}
+          handleRemoveMiscItem={this.handleRemoveMiscItem}
+          handleMiscInputChange={this.handleMiscInputChange}
+          handleAddQuestion={this.handleAddQuestion}
+          handleRemoveQuestion={this.handleRemoveQuestion}
+          handleQuestionInputChange={this.handleQuestionInputChange}
         />
         <Footer />
       </div>

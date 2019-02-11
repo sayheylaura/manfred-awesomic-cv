@@ -27,5 +27,6 @@
   ],
   "devDependencies": {
     "sass": "^1.16.1"
-  }
+  },
+  "homepage": "./"
 }

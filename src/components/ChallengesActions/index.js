@@ -5,7 +5,7 @@ class ChallengesActions extends Component {
   render() {
     const { challengesActions } = this.props;
     return (
-      <ul className="challengesActions__list">
+      <ul className="challengesActions__list list">
         {challengesActions.map((item, index) => {
           return (
             <li key={index} className="challengesActions__item">

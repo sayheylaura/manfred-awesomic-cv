@@ -41,7 +41,7 @@ class FormLanguageItem extends Component {
           inputType="text"
           inputName="language"
           inputValue={language}
-          example="English"
+          example="Ex: English"
           handleInputChange={this.handleChange}
         />
 

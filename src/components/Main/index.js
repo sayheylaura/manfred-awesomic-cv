@@ -36,24 +36,23 @@ class Main extends Component {
   render() {
     const {
       sample,
-      question,
-      answer,
-      language,
-      proficiency,
+      languageDefault,
+      proficiencyDefault,
       miscEdDefault,
+      questionDefault,
+      answerDefault,
       handlePrintBtn,
       handleJsonText,
-      handleAddItem,
-      handleQuestionChange,
-      handleRemoveItem,
-      handleQuestionnaireInput,
       handleDefaultInputChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
       handleLanguageChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
-      handleMiscInputChange
+      handleMiscInputChange,
+      handleAddQuestion,
+      handleRemoveQuestion,
+      handleQuestionInputChange
     } = this.props;
 
     return (
@@ -82,22 +81,21 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
-                  language={language}
-                  proficiency={proficiency}
+                  languageDefault={languageDefault}
+                  proficiencyDefault={proficiencyDefault}
                   miscEdDefault={miscEdDefault}
-                  question={question}
-                  answer={answer}
+                  questionDefault={questionDefault}
+                  answerDefault={answerDefault}
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleAddLanguageItem={handleAddLanguageItem}
                   handleRemoveLanguageItem={handleRemoveLanguageItem}
                   handleLanguageChange={handleLanguageChange}
-                  handleAddItem={handleAddItem}
-                  handleQuestionChange={handleQuestionChange}
-                  handleRemoveItem={handleRemoveItem}
-                  handleQuestionnaireInput={handleQuestionnaireInput}
                   handleAddMiscItem={handleAddMiscItem}
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
+                  handleAddQuestion={handleAddQuestion}
+                  handleRemoveQuestion={handleRemoveQuestion}
+                  handleQuestionInputChange={handleQuestionInputChange}
                 />
               )}
             />
@@ -122,23 +120,23 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
+  languageDefault: PropTypes.string.isRequired,
+  proficiencyDefault: PropTypes.string.isRequired,
+  miscEdDefault: PropTypes.string.isRequired,
+  questionDefault: PropTypes.string.isRequired,
+  answerDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
-  handleAddItem: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
-  handleRemoveItem: PropTypes.func.isRequired,
-  handleQuestionnaireInput: PropTypes.func.isRequired,
-  language: PropTypes.string.isRequired,
-  proficiency: PropTypes.string.isRequired,
-  miscEdDefault: PropTypes.string.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,
   handleAddMiscItem: PropTypes.func.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
-  handleMiscInputChange: PropTypes.func.isRequired
+  handleMiscInputChange: PropTypes.func.isRequired,
+  handleAddQuestion: PropTypes.func.isRequired,
+  handleRemoveQuestion: PropTypes.func.isRequired,
+  handleQuestionInputChange: PropTypes.func.isRequired
 };
 
 export default Main;

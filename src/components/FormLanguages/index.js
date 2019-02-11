@@ -17,12 +17,12 @@ class FormLanguages extends Component {
   render() {
     const {
       languages,
-      language,
-      proficiency,
+      languageDefault,
+      proficiencyDefault,
       handleDefaultInputChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
-      handleLanguageChange,
+      handleLanguageChange
     } = this.props;
 
     return (
@@ -50,17 +50,17 @@ class FormLanguages extends Component {
             labelContent="Language"
             styles="form__input"
             inputType="text"
-            inputName="language"
-            inputValue={language}
-            example="English"
+            inputName="languageDefault"
+            inputValue={languageDefault}
+            example="Ex: English"
             handleInputChange={handleDefaultInputChange}
           />
 
           <FormSelect
             labelContent="Proficiency"
             styles="form__select"
-            selectName="proficiency"
-            selectValue={proficiency}
+            selectName="proficiencyDefault"
+            selectValue={proficiencyDefault}
             selectOptions={proficiencyLevels}
             handleSelectChange={handleDefaultInputChange}
           />
@@ -80,8 +80,8 @@ class FormLanguages extends Component {
 
 FormLanguages.propTypes = {
   languages: PropTypes.array.isRequired,
-  language: PropTypes.string.isRequired,
-  proficiency: PropTypes.string.isRequired,
+  languageDefault: PropTypes.string.isRequired,
+  proficiencyDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,

@@ -32,7 +32,7 @@ class FormMiscEducationItem extends Component {
           inputType="text"
           inputName="miscEd"
           inputValue={item}
-          example="Scrum master certification"
+          example="Ex: Scrum master certification"
           handleInputChange={this.handleInputChange}
         />
         <Button

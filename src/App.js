@@ -45,34 +45,26 @@ class App extends Component {
     });
   }
   handleProfessionalGoals(event){
-    const { value } = event.currentTarget;
-    this.setState(prevState =>{
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample,
-            professionalGoals: [value]
-          }
-        }
-      };
-      return newState;
+    const { name, value } = event.currentTarget;
+    this.setState({
+      [name]: value
     });
   }
 
-  handleAddGoal(event) {
-    event.preventDefault();
+  handleAddGoal() {
     const { goal } = this.state;
-    const newGoalItem = {
-      goal: goal
-    };
-    this.setState(prevState => ({
+    const newGoalItem = goal;
+
+    this.setState(prevState => {
+      const newState={
         sample: {
           ...prevState.sample,
-          professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem),
-          goal: ""
-        }
-    }));
+          professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem)
+        },
+        goal: ""
+        };
+        return newState;
+    });
   }
 
   handleGoalChange(event) {

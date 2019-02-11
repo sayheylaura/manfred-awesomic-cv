@@ -15,6 +15,7 @@ class App extends Component {
       sample: sample,
       goalDefault: "",
       transportableSkillDefault: "",
+      significantRelationshipsDefault:"",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -401,6 +402,7 @@ class App extends Component {
     const {
       sample,
       goalDefault,
+      significantRelationshipsDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -417,6 +419,7 @@ class App extends Component {
         <Main
           sample={sample}
           goalDefault={goalDefault}
+          significantRelationshipsDefault={significantRelationshipsDefault}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}

@@ -6,13 +6,14 @@ import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
-import FormSignificantReltionShips from '../FormSignificantReltionShips';
+import FormSignificantRelationShips from '../FormSignificantRelationShips';
 
 class Form extends Component {
   render() {
     const {
       sample,
       goalDefault,
+      significantRelationshipsDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -43,7 +44,7 @@ class Form extends Component {
     } = this.props;
 
     const { education, languages, miscEducation, questionnaire } = sample;
-    const {intro, professionalGoals} = sample.author;
+    const {intro, professionalGoals, significantRelationships} = sample.author;
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
@@ -63,7 +64,10 @@ class Form extends Component {
           handleGoalChange={handleGoalChange}
           goalDefault={goalDefault}
         />
-        <FormSignificantReltionShips />
+        <FormSignificantRelationShips
+        significantRelationships={significantRelationships}
+        significantRelationshipsDefault={significantRelationshipsDefault}
+        />
 
         <FormEducation
           education={education}
@@ -113,6 +117,7 @@ class Form extends Component {
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
   goalDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.array.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,

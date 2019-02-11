@@ -37,6 +37,7 @@ class Main extends Component {
     const {
       sample,
       goalDefault,
+      significantRelationshipsDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -95,6 +96,7 @@ class Main extends Component {
                 <Form
                   sample={sample}
                   goalDefault={goalDefault}
+                  significantRelationshipsDefault={significantRelationshipsDefault}
                   institutionDefault={institutionDefault}
                   studyDefault={studyDefault}
                   fromEdDefault={fromEdDefault}
@@ -147,6 +149,7 @@ class Main extends Component {
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
   goalDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.array.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,

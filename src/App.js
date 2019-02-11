@@ -78,12 +78,12 @@ class App extends Component {
     });
   }
 
-  handleQuestionChange(event) {
-    const { name, value } = event.currentTarget;
-    this.setState({
-      [name]: value
-    });
-  }
+  // handleQuestionChange(event) {
+  //   const { name, value } = event.currentTarget;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // }
 
   handleRemoveItem(ind) {
     this.setState(prevState => {
@@ -191,7 +191,6 @@ class App extends Component {
           handleAddItem={this.handleAddItem}
           handleQuestionChange={this.handleQuestionChange}
           handleRemoveItem={this.handleRemoveItem}
-          handleQuestionnaireInput={this.handleQuestionnaireInput}
           miscEdDefault={miscEdDefault}
           handleDefaultInputChange={this.handleDefaultInputChange}
           handleAddMiscItem={this.handleAddMiscItem}

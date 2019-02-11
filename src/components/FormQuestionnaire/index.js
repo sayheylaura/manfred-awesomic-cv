@@ -7,7 +7,7 @@ import FormQuestionnaireItem from '../FormQuestionnaireItem';
 class FormQuestionnaire extends Component {
 
   render() {
-    const { questionnaire, question, answer, handleAddItem, handleQuestionChange, handleRemoveItem, handleQuestionnaireInput } = this.props;
+    const { questionnaire, question, answer, handleAddItem, handleDefaultInputChange, handleRemoveItem, handleQuestionnaireInput } = this.props;
     return (
       <fieldset className="form__questionnaire">
         <legend className="form__section-title">Questionnaire</legend>
@@ -30,7 +30,7 @@ class FormQuestionnaire extends Component {
             inputName="question"
             inputValue={question}
             example="What JS frameworks do you use?"
-            handleInputChange={handleQuestionChange}
+            handleDefaultInputChange={handleDefaultInputChange}
           />
 
           <FormInput
@@ -40,7 +40,7 @@ class FormQuestionnaire extends Component {
             inputName="answer"
             inputValue={answer}
             example="React"
-            handleInputChange={handleQuestionChange}
+            handleDefaultInputChange={handleDefaultInputChange}
           />
 
           <Button
@@ -61,7 +61,7 @@ FormQuestionnaire.propTypes = {
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   handleAddItem: PropTypes.func.isRequired,
-  handleQuestionChange: PropTypes.func.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
   handleQuestionnaireInput: PropTypes.func.isRequired
 }

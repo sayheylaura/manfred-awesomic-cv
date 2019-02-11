@@ -2,18 +2,27 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
+import FormEducation from "../FormEducation";
 import FormMiscEducation from "../FormMiscEducation";
 
 class Form extends Component {
   render() {
     const {
       sample,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
       questionDefault,
       answerDefault,
       handleDefaultInputChange,
+      handleAddEducationItem,
+      handleRemoveEducationItem,
+      handleEducationChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
       handleLanguageChange,
@@ -25,7 +34,7 @@ class Form extends Component {
       handleQuestionInputChange
     } = this.props;
 
-    const { languages, miscEducation, questionnaire } = sample;
+    const { education, languages, miscEducation, questionnaire } = sample;
 
     return (
       <section className="form__wrapper">
@@ -44,6 +53,19 @@ class Form extends Component {
           handleAddLanguageItem={handleAddLanguageItem}
           handleRemoveLanguageItem={handleRemoveLanguageItem}
           handleLanguageChange={handleLanguageChange}
+        />
+
+        <FormEducation
+          education={education}
+          institutionDefault={institutionDefault}
+          studyDefault={studyDefault}
+          fromEdDefault={fromEdDefault}
+          untilEdDefault={untilEdDefault}
+          achievementDefault={achievementDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddEducationItem={handleAddEducationItem}
+          handleRemoveEducationItem={handleRemoveEducationItem}
+          handleEducationChange={handleEducationChange}
         />
 
         <FormMiscEducation
@@ -71,12 +93,20 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
+  institutionDefault: PropTypes.string.isRequired,
+  studyDefault: PropTypes.string.isRequired,
+  fromEdDefault: PropTypes.string.isRequired,
+  untilEdDefault: PropTypes.string.isRequired,
+  achievementDefault: PropTypes.string.isRequired,
   languageDefault: PropTypes.string.isRequired,
   proficiencyDefault: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddEducationItem: PropTypes.func.isRequired,
+  handleRemoveEducationItem: PropTypes.func.isRequired,
+  handleEducationChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,

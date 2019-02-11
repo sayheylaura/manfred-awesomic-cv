@@ -13,6 +13,11 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample,
+      institutionDefault: "",
+      studyDefault: "",
+      fromEdDefault: "",
+      untilEdDefault: "",
+      achievementDefault: "hola",
       languageDefault: "",
       proficiencyDefault: "elementary",
       miscEdDefault: "",
@@ -23,6 +28,9 @@ class App extends Component {
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
+    this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
     this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
@@ -71,8 +79,73 @@ class App extends Component {
     });
   }
 
+  handleAddEducationItem() {
+    const {
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault
+    } = this.state;
+
+    const newEducationItem = {
+      institution: institutionDefault,
+      study: studyDefault,
+      from: fromEdDefault,
+      until: untilEdDefault
+    };
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.concat(newEducationItem)
+        },
+        institutionDefault: "",
+        studyDefault: "",
+        fromEdDefault: "",
+        untilEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveEducationItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleEducationChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddLanguageItem() {
     const { languageDefault, proficiencyDefault } = this.state;
+
     const newLanguageItem = {
       language: languageDefault,
       proficiency: proficiencyDefault
@@ -233,6 +306,11 @@ class App extends Component {
   render() {
     const {
       sample,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
@@ -244,6 +322,11 @@ class App extends Component {
         <Header />
         <Main
           sample={sample}
+          institutionDefault={institutionDefault}
+          studyDefault={studyDefault}
+          fromEdDefault={fromEdDefault}
+          untilEdDefault={untilEdDefault}
+          achievementDefault={achievementDefault}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}
           miscEdDefault={miscEdDefault}
@@ -252,6 +335,9 @@ class App extends Component {
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
           handleDefaultInputChange={this.handleDefaultInputChange}
+          handleAddEducationItem={this.handleAddEducationItem}
+          handleRemoveEducationItem={this.handleRemoveEducationItem}
+          handleEducationChange={this.handleEducationChange}
           handleAddLanguageItem={this.handleAddLanguageItem}
           handleRemoveLanguageItem={this.handleRemoveLanguageItem}
           handleLanguageChange={this.handleLanguageChange}

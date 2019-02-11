@@ -36,6 +36,11 @@ class Main extends Component {
   render() {
     const {
       sample,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      achievementDefault,
       languageDefault,
       proficiencyDefault,
       miscEdDefault,
@@ -44,6 +49,9 @@ class Main extends Component {
       handlePrintBtn,
       handleJsonText,
       handleDefaultInputChange,
+      handleAddEducationItem,
+      handleRemoveEducationItem,
+      handleEducationChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
       handleLanguageChange,
@@ -81,12 +89,20 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
+                  institutionDefault={institutionDefault}
+                  studyDefault={studyDefault}
+                  fromEdDefault={fromEdDefault}
+                  untilEdDefault={untilEdDefault}
+                  achievementDefault={achievementDefault}
                   languageDefault={languageDefault}
                   proficiencyDefault={proficiencyDefault}
                   miscEdDefault={miscEdDefault}
                   questionDefault={questionDefault}
                   answerDefault={answerDefault}
                   handleDefaultInputChange={handleDefaultInputChange}
+                  handleAddEducationItem={handleAddEducationItem}
+                  handleRemoveEducationItem={handleRemoveEducationItem}
+                  handleEducationChange={handleEducationChange}
                   handleAddLanguageItem={handleAddLanguageItem}
                   handleRemoveLanguageItem={handleRemoveLanguageItem}
                   handleLanguageChange={handleLanguageChange}
@@ -120,6 +136,11 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  institutionDefault: PropTypes.string.isRequired,
+  studyDefault: PropTypes.string.isRequired,
+  fromEdDefault: PropTypes.string.isRequired,
+  untilEdDefault: PropTypes.string.isRequired,
+  achievementDefault: PropTypes.string.isRequired,
   languageDefault: PropTypes.string.isRequired,
   proficiencyDefault: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
@@ -128,6 +149,9 @@ Main.propTypes = {
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddEducationItem: PropTypes.func.isRequired,
+  handleRemoveEducationItem: PropTypes.func.isRequired,
+  handleEducationChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,

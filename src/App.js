@@ -13,8 +13,11 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample,
-      question: "",
-      answer: ""
+      languageDefault: "",
+      proficiencyDefault: "elementary",
+      miscEdDefault: "",
+      questionDefault: "",
+      answerDefault: ""
     };
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
@@ -24,6 +27,9 @@ class App extends Component {
     this.handleRemoveItem = this.handleRemoveItem.bind(this);
     this.handleQuestionnaireInput = this.handleQuestionnaireInput.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
+    this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
     this.handleAddMiscItem = this.handleAddMiscItem.bind(this);
     this.handleRemoveMiscItem = this.handleRemoveMiscItem.bind(this);
     this.handleMiscInputChange = this.handleMiscInputChange.bind(this);
@@ -178,23 +184,89 @@ class App extends Component {
     });
   }
 
+  handleAddLanguageItem() {
+    const { language, proficiency } = this.state;
+    const newLanguageItem = {
+      language: language,
+      proficiency: proficiency
+    };
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.concat(newLanguageItem)
+        },
+        language: "",
+        proficiency: "elementary"
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveLanguageItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleLanguageChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          languages: prevState.sample.languages.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
   render() {
-    const { sample, question, answer, miscEdDefault } = this.state;
+    const {
+      sample,
+      questionDefault,
+      answerDefault,
+      languageDefault,
+      proficiencyDefault,
+      miscEdDefault
+    } = this.state;
     return (
       <div className="App">
         <Header />
         <Main
           sample={sample}
-          question={question}
-          answer={answer}
+          question={questionDefault}
+          answer={answerDefault}
+          language={languageDefault}
+          proficiency={proficiencyDefault}
+          miscEdDefault={miscEdDefault}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
           handleAddItem={this.handleAddItem}
           handleQuestionChange={this.handleQuestionChange}
           handleRemoveItem={this.handleRemoveItem}
           handleQuestionnaireInput={this.handleQuestionnaireInput}
-          miscEdDefault={miscEdDefault}
           handleDefaultInputChange={this.handleDefaultInputChange}
+          handleAddLanguageItem={this.handleAddLanguageItem}
+          handleRemoveLanguageItem={this.handleRemoveLanguageItem}
+          handleLanguageChange={this.handleLanguageChange}
           handleAddMiscItem={this.handleAddMiscItem}
           handleRemoveMiscItem={this.handleRemoveMiscItem}
           handleMiscInputChange={this.handleMiscInputChange}

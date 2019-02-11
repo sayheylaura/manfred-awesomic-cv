@@ -38,14 +38,19 @@ class Main extends Component {
       sample,
       question,
       answer,
+      language,
+      proficiency,
+      miscEdDefault,
       handlePrintBtn,
       handleJsonText,
       handleAddItem,
       handleQuestionChange,
       handleRemoveItem,
       handleQuestionnaireInput,
-      miscEdDefault,
       handleDefaultInputChange,
+      handleAddLanguageItem,
+      handleRemoveLanguageItem,
+      handleLanguageChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange
@@ -77,14 +82,19 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
-                  handleAddItem={handleAddItem}
-                  handleQuestionChange={handleQuestionChange}
+                  language={language}
+                  proficiency={proficiency}
+                  miscEdDefault={miscEdDefault}
                   question={question}
                   answer={answer}
+                  handleDefaultInputChange={handleDefaultInputChange}
+                  handleAddLanguageItem={handleAddLanguageItem}
+                  handleRemoveLanguageItem={handleRemoveLanguageItem}
+                  handleLanguageChange={handleLanguageChange}
+                  handleAddItem={handleAddItem}
+                  handleQuestionChange={handleQuestionChange}
                   handleRemoveItem={handleRemoveItem}
                   handleQuestionnaireInput={handleQuestionnaireInput}
-                  miscEdDefault={miscEdDefault}
-                  handleDefaultInputChange={handleDefaultInputChange}
                   handleAddMiscItem={handleAddMiscItem}
                   handleRemoveMiscItem={handleRemoveMiscItem}
                   handleMiscInputChange={handleMiscInputChange}
@@ -119,7 +129,17 @@ Main.propTypes = {
   handleAddItem: PropTypes.func.isRequired,
   handleQuestionChange: PropTypes.func.isRequired,
   handleRemoveItem: PropTypes.func.isRequired,
-  handleQuestionnaireInput: PropTypes.func.isRequired
+  handleQuestionnaireInput: PropTypes.func.isRequired,
+  language: PropTypes.string.isRequired,
+  proficiency: PropTypes.string.isRequired,
+  miscEdDefault: PropTypes.string.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLanguageItem: PropTypes.func.isRequired,
+  handleRemoveLanguageItem: PropTypes.func.isRequired,
+  handleLanguageChange: PropTypes.func.isRequired,
+  handleAddMiscItem: PropTypes.func.isRequired,
+  handleRemoveMiscItem: PropTypes.func.isRequired,
+  handleMiscInputChange: PropTypes.func.isRequired
 };
 
 export default Main;

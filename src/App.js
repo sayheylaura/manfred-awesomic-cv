@@ -44,10 +44,21 @@ class App extends Component {
       return newState;
     });
   }
+
+
   handleProfessionalGoals(event){
     const { name, value } = event.currentTarget;
-    this.setState({
-      [name]: value
+    this.setState(prevState=>{
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            [name]: value
+          }
+        }
+      };
+      return newState;
     });
   }
 

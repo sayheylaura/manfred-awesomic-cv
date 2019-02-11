@@ -9,10 +9,18 @@ class Main extends Component {
   render() {
     const {
       sample,
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault,
+      achievementDefault,
       miscEdDefault,
       handlePrintBtn,
       handleJsonText,
       handleDefaultInputChange,
+      handleAddEducationItem,
+      handleRemoveEducationItem,
+      handleEducationChange,
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange
@@ -39,8 +47,16 @@ class Main extends Component {
             render={() => (
               <Form
                 sample={sample}
+                institutionDefault={institutionDefault}
+                studyDefault={studyDefault}
+                fromEdDefault={fromEdDefault}
+                untilEdDefault={untilEdDefault}
+                achievementDefault={achievementDefault}
                 miscEdDefault={miscEdDefault}
                 handleDefaultInputChange={handleDefaultInputChange}
+                handleAddEducationItem={handleAddEducationItem}
+                handleRemoveEducationItem={handleRemoveEducationItem}
+                handleEducationChange={handleEducationChange}
                 handleAddMiscItem={handleAddMiscItem}
                 handleRemoveMiscItem={handleRemoveMiscItem}
                 handleMiscInputChange={handleMiscInputChange}
@@ -67,10 +83,18 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  institutionDefault: PropTypes.string.isRequired,
+  studyDefault: PropTypes.string.isRequired,
+  fromEdDefault: PropTypes.string.isRequired,
+  untilEdDefault: PropTypes.string.isRequired,
+  achievementDefault: PropTypes.string.isRequired,
   miscEdDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddEducationItem: PropTypes.func.isRequired,
+  handleRemoveEducationItem: PropTypes.func.isRequired,
+  handleEducationChange: PropTypes.func.isRequired,
   handleAddMiscItem: PropTypes.func.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
   handleMiscInputChange: PropTypes.func.isRequired

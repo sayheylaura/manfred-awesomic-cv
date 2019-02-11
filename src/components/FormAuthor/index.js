@@ -6,11 +6,10 @@ import FormImage from "../FormImage";
 class FormAuthor extends Component {
   render() {
     const { sample, handleProfileInputs, handleImage } = this.props;
-    const { name, birthday } = sample.author.profile;
+    const { name, birthday, yearsOfExperience } = sample.author.profile;
     return (
       <fieldset className="form__author">
         <legend>Personal data</legend>
-
         <FormImage updateAvatar={handleImage} image={sample.author.profile.image} />
 
         <FormInput
@@ -31,6 +30,16 @@ class FormAuthor extends Component {
           inputValue={birthday}
           handleInputChange={handleProfileInputs}
         />
+
+        <FormInput
+          labelContent="Years of experience"
+          styles="form__input"
+          inputType="number"
+          inputName="yearsOfExperience"
+          inputValue={yearsOfExperience}
+          handleInputChange={handleProfileInputs}
+        />
+
       </fieldset>
     );
   }

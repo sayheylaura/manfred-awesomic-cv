@@ -74,16 +74,15 @@ class App extends Component {
   handleProfileInputs(event) {
     const { value, name } = event.currentTarget;
     this.setState(prevState => {
-      const newProfile = {
-        ...prevState.sample.author.profile,
-        [name]: value
-      };
       const newState = {
         sample: {
           ...prevState.sample,
           author: {
             ...prevState.sample.author,
-            profile: [newProfile]
+            profile: {
+              ...prevState.sample.author.profile,
+              [name]: value
+            }
           }
         }
       };

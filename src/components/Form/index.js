@@ -17,6 +17,7 @@ class Form extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -44,6 +45,9 @@ class Form extends Component {
       handleRemoveSignificantExperience,
       handleSignificantExperienceInput,
       handleProfileInputs,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -60,7 +64,7 @@ class Form extends Component {
     } = this.props;
 
     const { education, languages, miscEducation, questionnaire } = sample;
-    const {intro, professionalGoals, transportableSkills, significantExperience} = sample.author;
+    const { intro, professionalGoals, transportableSkills, significantExperience } = sample.author;
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
@@ -73,9 +77,14 @@ class Form extends Component {
 
         <FormAuthor
           sample={sample}
+          publicLinkDefault={publicLinkDefault}
           handleProfileInputs={handleProfileInputs}
           updateAvatar={handleImage}
           image={sample.author.profile.image}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLinkItem={handleAddLinkItem}
+          handleRemoveLinkItem={handleRemoveLinkItem}
+          handleLinkChange={handleLinkChange}
         />
         <FormIntro intro={intro}
           handleIntroChange={handleIntroChange}
@@ -89,23 +98,23 @@ class Form extends Component {
           goalDefault={goalDefault}
         />
         <FormTransportableSkills
-        transportableSkillDefault={transportableSkillDefault}
-        transportableSkills={transportableSkills}
-        handleAddTransportableSkill={handleAddTransportableSkill}
-        handleTransportableSkillChange={handleTransportableSkillChange}
-        handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-        handleTransportableSkillsInput={handleTransportableSkillsInput}
+          transportableSkillDefault={transportableSkillDefault}
+          transportableSkills={transportableSkills}
+          handleAddTransportableSkill={handleAddTransportableSkill}
+          handleTransportableSkillChange={handleTransportableSkillChange}
+          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+          handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
         <FormSignificantExperience
-        significantExperienceDefault={significantExperienceDefault}
-        significantExperience={significantExperience}
-        handleAddSignificantExperience={handleAddSignificantExperience}
-        handlesignificantExperienceChange={handlesignificantExperienceChange}
-        handleRemoveSignificantExperience={
-          handleRemoveSignificantExperience
-        }
-        handleSignificantExperienceInput={handleSignificantExperienceInput}
+          significantExperienceDefault={significantExperienceDefault}
+          significantExperience={significantExperience}
+          handleAddSignificantExperience={handleAddSignificantExperience}
+          handlesignificantExperienceChange={handlesignificantExperienceChange}
+          handleRemoveSignificantExperience={
+            handleRemoveSignificantExperience
+          }
+          handleSignificantExperienceInput={handleSignificantExperienceInput}
         />
         <FormEducation
           education={education}
@@ -154,6 +163,7 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
@@ -168,7 +178,7 @@ Form.propTypes = {
   answerDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired,
+  handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
@@ -180,6 +190,9 @@ Form.propTypes = {
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

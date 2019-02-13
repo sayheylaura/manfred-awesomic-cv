@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample_2,
+      publicLinkDefault: "",
       goalDefault: "",
       transportableSkillDefault: "",
       significantExperienceDefault: "",
@@ -35,15 +36,34 @@ class App extends Component {
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
     this.handleGoalChange = this.handleGoalChange.bind(this);
-    this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(this);
-    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(this);
-    this.handleRemoveTransportableSkill = this.handleRemoveTransportableSkill.bind(this);
-    this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(this);
-    this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(this);
-    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(this);
-    this.handleRemoveSignificantExperience= this.handleRemoveSignificantExperience.bind(this);
-    this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(this);
+    this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(
+      this
+    );
+    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(
+      this
+    );
+    this.handleRemoveTransportableSkill = this.handleRemoveTransportableSkill.bind(
+      this
+    );
+    this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(
+      this
+    );
+    this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(
+      this
+    );
+    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
+      this
+    );
+    this.handleRemoveSignificantExperience = this.handleRemoveSignificantExperience.bind(
+      this
+    );
+    this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(
+      this
+    );
     this.handleImage = this.handleImage.bind(this);
+    this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
+    this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
+    this.handleLinkChange = this.handleLinkChange.bind(this);
     this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
@@ -113,10 +133,9 @@ class App extends Component {
     });
   }
 
-
   handleIntroChange(event) {
     const { value } = event.currentTarget;
-    this.setState(prevState =>{
+    this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
@@ -130,22 +149,70 @@ class App extends Component {
     });
   }
 
+  handleAddLinkItem() {
+    const { publicLinkDefault } = this.state;
+    const newLinkItem = publicLinkDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.concat(
+                newLinkItem
+              )
+            }
+          }
+        },
+        publicLinkDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveLinkItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.filter(
+                (item, index) => {
+                  return index !== ind;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddGoal() {
     const { goalDefault } = this.state;
     const newGoalItem = goalDefault;
 
     this.setState(prevState => {
-      const newState={
+      const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
-            professionalGoals: prevState.sample.author.professionalGoals.concat(newGoalItem)
+            professionalGoals: prevState.sample.author.professionalGoals.concat(
+              newGoalItem
+            )
           },
           goalDefault: ""
-          }
-        };
-        return newState;
+        }
+      };
+      return newState;
     });
   }
 
@@ -161,7 +228,7 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
             professionalGoals: prevState.sample.author.professionalGoals.filter(
               (item, index) => {
@@ -180,59 +247,14 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
-            professionalGoals: prevState.sample.author.professionalGoals.map((item, index) => {
-              if (index === ind) {
-                item =[
-                  value
-                ]
-              }
-              return item;
-            })
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
-  handleAddTransportableSkill(){
-    const { transportableSkillDefault } = this.state;
-    const newTransportableSkillItem = transportableSkillDefault;
-
-    this.setState(prevState => {
-      const newState={
-        sample: {
-          ...prevState.sample,
-          author:{
-            ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.concat(newTransportableSkillItem)
-          },
-          transportableSkillDefault: ""
-          }
-        };
-        return newState;
-    });
-  }
-
-  handleTransportableSkillChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      transportableSkillDefault: value
-    });
-  }
-
-  handleRemoveTransportableSkill(ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author:{
-            ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.filter(
+            professionalGoals: prevState.sample.author.professionalGoals.map(
               (item, index) => {
-                return index !== ind;
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
               }
             )
           }
@@ -242,21 +264,24 @@ class App extends Component {
     });
   }
 
-  handleTransportableSkillsInput(value, name, ind) {
+  handleLinkChange(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.map((item, index) => {
-              if (index === ind) {
-                item =[
-                  value
-                ]
-              }
-              return item;
-            })
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
           }
         }
       };
@@ -264,22 +289,24 @@ class App extends Component {
     });
   }
 
-  handleAddSignificantExperience(){
+  handleAddSignificantExperience() {
     const { significantExperienceDefault } = this.state;
     const newsignificantExperienceItem = significantExperienceDefault;
 
     this.setState(prevState => {
-      const newState={
+      const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
-            significantExperience: prevState.sample.author.significantExperience.concat(newsignificantExperienceItem)
+            significantExperience: prevState.sample.author.significantExperience.concat(
+              newsignificantExperienceItem
+            )
           },
           significantExperienceDefault: ""
-          }
-        };
-        return newState;
+        }
+      };
+      return newState;
     });
   }
 
@@ -295,7 +322,7 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
             significantExperience: prevState.sample.author.significantExperience.filter(
               (item, index) => {
@@ -314,24 +341,22 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
-            significantExperience: prevState.sample.author.significantExperience.map((item, index) => {
-              if (index === ind) {
-                item =[
-                  value
-                ]
+            significantExperience: prevState.sample.author.significantExperience.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
               }
-              return item;
-            })
+            )
           }
         }
       };
       return newState;
     });
   }
-
-
 
   handleAddEducationItem() {
     const {
@@ -557,9 +582,79 @@ class App extends Component {
     });
   }
 
+  handleAddTransportableSkill() {
+    const { transportableSkillDefault } = this.state;
+    const newTransportableSkillItem = transportableSkillDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.concat(
+              newTransportableSkillItem
+            )
+          },
+          transportableSkillDefault: ""
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleTransportableSkillChange(event) {
+    const { value } = event.currentTarget;
+    this.setState({
+      transportableSkillDefault: value
+    });
+  }
+
+  handleRemoveTransportableSkill(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleTransportableSkillsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   render() {
     const {
       sample,
+      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -578,6 +673,7 @@ class App extends Component {
         <Header />
         <Main
           sample={sample}
+          publicLinkDefault={publicLinkDefault}
           goalDefault={goalDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
@@ -594,19 +690,28 @@ class App extends Component {
           handleJsonText={this.handleJsonText}
           handleDefaultInputChange={this.handleDefaultInputChange}
           handleIntroChange={this.handleIntroChange}
-          handleRemoveGoal = {this.handleRemoveGoal}
+          handleRemoveGoal={this.handleRemoveGoal}
           handleAddGoal={this.handleAddGoal}
-          handleGoalsInput ={ this.handleGoalsInput}
+          handleGoalsInput={this.handleGoalsInput}
           handleGoalChange={this.handleGoalChange}
           handleAddTransportableSkill={this.handleAddTransportableSkill}
           handleTransportableSkillChange={this.handleTransportableSkillChange}
           handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
           handleTransportableSkillsInput={this.handleTransportableSkillsInput}
           handleAddSignificantExperience={this.handleAddSignificantExperience}
-          handlesignificantExperienceChange={this.handlesignificantExperienceChange}
-          handleRemoveSignificantExperience={this.handleRemoveSignificantExperience}
-          handleSignificantExperienceInput={this.handleSignificantExperienceInput}
+          handlesignificantExperienceChange={
+            this.handlesignificantExperienceChange
+          }
+          handleRemoveSignificantExperience={
+            this.handleRemoveSignificantExperience
+          }
+          handleSignificantExperienceInput={
+            this.handleSignificantExperienceInput
+          }
           handleImage={this.handleImage}
+          handleAddLinkItem={this.handleAddLinkItem}
+          handleRemoveLinkItem={this.handleRemoveLinkItem}
+          handleLinkChange={this.handleLinkChange}
           handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}

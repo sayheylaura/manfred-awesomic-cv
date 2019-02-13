@@ -2,15 +2,34 @@ import React, { Component } from "react";
 import FormInput from "../FormInput";
 import PropTypes from "prop-types";
 import FormImage from "../FormImage";
+import FormPublicLinks from "../FormPublicLinks";
 
 class FormAuthor extends Component {
   render() {
-    const { sample, handleProfileInputs, updateAvatar } = this.props;
-    const { name, birthday, yearsOfExperience } = sample.author.profile;
+    const {
+      sample,
+      publicLinkDefault,
+      updateAvatar,
+      handleProfileInputs,
+      handleDefaultInputChange,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange
+    } = this.props;
+    const {
+      name,
+      birthday,
+      yearsOfExperience,
+      publicLinks
+    } = sample.author.profile;
     return (
       <fieldset className="form__author">
-        <legend>Personal data</legend>
-        <FormImage updateAvatar={updateAvatar} image={sample.author.profile.image} />
+        <legend className="form__section-title">Personal data</legend>
+
+        <FormImage
+          updateAvatar={updateAvatar}
+          image={sample.author.profile.image}
+        />
 
         <FormInput
           labelContent="Name"
@@ -18,12 +37,12 @@ class FormAuthor extends Component {
           inputType="text"
           inputName="name"
           inputValue={name}
-          example="Laura"
+          example="Ex: Jane Doe"
           handleInputChange={handleProfileInputs}
         />
 
         <FormInput
-          labelContent="Age"
+          labelContent="Date of birth"
           styles="form__input"
           inputType="date"
           inputName="birthday"
@@ -37,16 +56,32 @@ class FormAuthor extends Component {
           inputType="number"
           inputName="yearsOfExperience"
           inputValue={yearsOfExperience}
+          example="Ex: 5"
           handleInputChange={handleProfileInputs}
         />
 
+        <FormPublicLinks
+          publicLinks={publicLinks}
+          publicLinkDefault={publicLinkDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLinkItem={handleAddLinkItem}
+          handleRemoveLinkItem={handleRemoveLinkItem}
+          handleLinkChange={handleLinkChange}
+        />
       </fieldset>
     );
   }
 }
 
 FormAuthor.propTypes = {
-  handleProfileInputs: PropTypes.func.isRequired
+  sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
+  handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired
 };
 
 export default FormAuthor;

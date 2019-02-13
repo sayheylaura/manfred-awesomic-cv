@@ -36,6 +36,7 @@ class Main extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -65,6 +66,9 @@ class Main extends Component {
       handleRemoveSignificantExperience,
       handleSignificantExperienceInput,
       handleProfileInputs,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -106,6 +110,7 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
+                  publicLinkDefault={publicLinkDefault}
                   goalDefault={goalDefault}
                   transportableSkillDefault={transportableSkillDefault}
                   significantExperienceDefault={significantExperienceDefault}
@@ -121,7 +126,7 @@ class Main extends Component {
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleIntroChange={handleIntroChange}
                   handleAddGoal={handleAddGoal}
-                  handleRemoveGoal ={handleRemoveGoal}
+                  handleRemoveGoal={handleRemoveGoal}
                   handleGoalsInput={handleGoalsInput}
                   handleGoalChange={handleGoalChange}
                   handleAddTransportableSkill={handleAddTransportableSkill}
@@ -133,6 +138,9 @@ class Main extends Component {
                   handleRemoveSignificantExperience={handleRemoveSignificantExperience}
                   handleSignificantExperienceInput={handleSignificantExperienceInput}
                   handleProfileInputs={handleProfileInputs}
+                  handleAddLinkItem={handleAddLinkItem}
+                  handleRemoveLinkItem={handleRemoveLinkItem}
+                  handleLinkChange={handleLinkChange}
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -170,9 +178,10 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
-  significantExperienceDefault:PropTypes.string.isRequired,
+  significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -186,7 +195,7 @@ Main.propTypes = {
   handleJsonText: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired ,
+  handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
@@ -198,6 +207,9 @@ Main.propTypes = {
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

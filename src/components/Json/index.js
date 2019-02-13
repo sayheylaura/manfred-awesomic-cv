@@ -10,8 +10,10 @@ class Json extends Component {
       <section className="json__wrapper">
         <h2 className="json__title">JSON viewer</h2>
         <p className="json__guidelines">
-          Paste here your JSON and check the CV created. When you're done
-          modifying it, your new JSON will be here waiting to be copied back!
+          Paste here your JSON and check out the CV created in the CV preview section. You can edit your
+          personal data in the Form section. When you're done modifying it, your
+          new CV will be ready and a brand new JSON will be here waiting to be
+          copied back!
         </p>
         <FormTextarea
           labelContent="JSON code"

@@ -27,21 +27,21 @@ class FormSignificantExperienceItem extends Component {
     return (
       <div>
         <FormInput
-            labelContent="significant experience"
-            styles="form__input"
-            inputType="text"
-            inputName="significant experience"
-            inputValue={significantExperienceDefault}
-            example="significant experience"
-            handleInputChange={this.handleGoalInputChange}
-          />
+          labelContent="Significant experience"
+          styles="form__input"
+          inputType="text"
+          inputName="significant experience"
+          inputValue={significantExperienceDefault}
+          example="Ex: Managing a team of 20 people at Acme, Co."
+          handleInputChange={this.handleGoalInputChange}
+        />
 
-          <Button
-            buttonType="button"
-            styles="remove-btn"
-            handleButtonClick={this.removeItem}
-          >
-            Remove
+        <Button
+          buttonType="button"
+          styles="remove-btn"
+          handleButtonClick={this.removeItem}
+        >
+          Remove
           </Button>
       </div>
     );
@@ -52,7 +52,7 @@ FormSignificantExperienceItem.propTypes = {
   significantExperienceDefault: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
-  handleSignificantExperienceInput:PropTypes.func.isRequired
+  handleSignificantExperienceInput: PropTypes.func.isRequired
 }
 
 export default FormSignificantExperienceItem;

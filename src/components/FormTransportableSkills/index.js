@@ -14,7 +14,7 @@ class FormTransportableSkills extends Component {
       handleTransportableSkillsInput
     } = this.props;
     return (
-      <fieldset>
+      <fieldset className="form__professionalGoals">
         <legend className="form__section-title">Transportable Skills</legend>
         <p className="form__section-description">
           List the skills not specifically related to your particular job or
@@ -48,7 +48,7 @@ class FormTransportableSkills extends Component {
             styles="add-btn"
             handleButtonClick={handleAddTransportableSkill}
           >
-            Añadir
+            Add
           </Button>
         </div>
       </fieldset>

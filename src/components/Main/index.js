@@ -53,10 +53,10 @@ class Main extends Component {
                 <Link to="/">Form</Link>
               </li>
               <li className="nav__link" onClick={this.handleSecondTabClick}>
-                <Link to="/json">Json</Link>
+                <Link to="/json">JSON viewer</Link>
               </li>
               <li className="nav__link" onClick={this.handleThirdTabClick}>
-                <Link to="/preview">Cv</Link>
+                <Link to="/preview">CV preview</Link>
               </li>
             </ul>
           </nav>
@@ -92,10 +92,11 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   significantRelationshipsDefault: PropTypes.array.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
-  significantExperienceDefault:PropTypes.string.isRequired,
+  significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -107,18 +108,23 @@ Main.propTypes = {
   answerDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
+  handleImage: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired ,
+  handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
+  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddSignificantExperience: PropTypes.func.isRequired,
-  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
+  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleAddSignificantRelationships: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,

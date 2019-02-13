@@ -7,7 +7,7 @@ class FormIntro extends Component {
     const { handleIntroChange, intro} = this.props;
     return (
       <fieldset className="form__intro">
-        <legend className="form__intro-title">Intro</legend>
+        <legend className="form__section-title">Intro</legend>
         <p className="form__intro-description">
           Explain to your future company what kind of professional you are
         </p>

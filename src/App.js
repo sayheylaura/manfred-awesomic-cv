@@ -302,9 +302,9 @@ class App extends Component {
             significantExperience: prevState.sample.author.significantExperience.concat(
               newsignificantExperienceItem
             )
-          },
-          significantExperienceDefault: ""
-        }
+          }
+        },
+        significantExperienceDefault: ""
       };
       return newState;
     });

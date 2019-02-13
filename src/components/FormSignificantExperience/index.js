@@ -18,9 +18,9 @@ class FormSignificantExperience extends Component {
       <fieldset className="form__sig-experience">
         <legend className="form__section-title">Significant Experience</legend>
         <p className="form__section-description">
-        List the professional milestones that provided you with experience and knowledge for your future position
+          List the professional milestones that provided you with experience and knowledge for your future position
         </p>
-        {significantExperience.map((item, index)=>{
+        {significantExperience.map((item, index) => {
           return (
             <FormSignificantExperienceItem
               key={index}
@@ -32,13 +32,13 @@ class FormSignificantExperience extends Component {
           );
         })}
         <div>
-        <FormInput
-            labelContent="more experience:"
+          <FormInput
+            labelContent="More significant experiences"
             styles="form__input"
             inputType="text"
-            inputName="significant experience"
+            inputName="significantExperienceDefault"
             inputValue={significantExperienceDefault}
-            example="Managing a team of 20 people at Acme, Co."
+            example="Ex: Managing a team of 20 people at Acme, Co."
             handleInputChange={handlesignificantExperienceChange}
           />
           <Button

@@ -111,17 +111,19 @@ class Form extends Component {
           handleGoalChange={handleGoalChange}
         />)}
 
-
+        {transportableSkills && !!transportableSkills.length &&(
         <FormTransportableSkills
-          transportableSkills={transportableSkills}
-          transportableSkillDefault={transportableSkillDefault}
-          handleAddTransportableSkill={handleAddTransportableSkill}
-          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-          handleTransportableSkillChange={handleTransportableSkillChange}
-          handleTransportableSkillsInput={handleTransportableSkillsInput}
+            transportableSkills={transportableSkills}
+            transportableSkillDefault={transportableSkillDefault}
+            handleAddTransportableSkill={handleAddTransportableSkill}
+            handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+            handleTransportableSkillChange={handleTransportableSkillChange}
+            handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
+        )}
 
-        <FormSignificantExperience
+        {significantExperience && !!significantExperience.length && (
+          <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
           handleAddSignificantExperience={handleAddSignificantExperience}
@@ -129,6 +131,8 @@ class Form extends Component {
           handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
         />
+        )}
+
 
         <FormEducation
           education={education}

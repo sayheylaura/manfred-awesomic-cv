@@ -15,7 +15,7 @@ class FormTransportableSkills extends Component {
     } = this.props;
     return (
       <fieldset className="form__professionalGoals">
-        <legend className="form__section-title">Transportable Skills</legend>
+        <legend className="form__section-title">Transportable Skills<span className="required_field">*</span></legend>
         <p className="form__section-description">
           List the skills not specifically related to your particular job or
           area of knowledge, but still can be used at work (for example, when

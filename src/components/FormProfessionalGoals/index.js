@@ -16,7 +16,7 @@ class FormProfessionalGoals extends Component {
     } = this.props;
     return (
       <fieldset className= "form__professionalGoals">
-        <legend className="form__section-title">Professional Goals</legend>
+        <legend className="form__section-title">Professional Goals <span className="required_field">*</span></legend>
         <p className="form__section-description">
         List the goals that explain to your future company what kind of professional you'd like to be, what you'd like to be i.e., What motivates you
         </p>

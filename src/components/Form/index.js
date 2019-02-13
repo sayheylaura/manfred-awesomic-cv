@@ -65,6 +65,7 @@ class Form extends Component {
 
     const { education, languages, miscEducation, questionnaire } = sample;
     const { intro, professionalGoals, transportableSkills, significantExperience } = sample.author;
+
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
@@ -89,6 +90,8 @@ class Form extends Component {
         <FormIntro intro={intro}
           handleIntroChange={handleIntroChange}
         />
+
+        {professionalGoals && !!professionalGoals.length && (
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
           handleAddGoal={handleAddGoal}
@@ -96,7 +99,7 @@ class Form extends Component {
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
           goalDefault={goalDefault}
-        />
+        />)}
         <FormTransportableSkills
           transportableSkillDefault={transportableSkillDefault}
           transportableSkills={transportableSkills}

@@ -9,8 +9,8 @@ class FormPublicLinks extends Component {
     const {
       publicLinks,
       publicLinkDefault,
-      handleAddLinkItem,
       handleDefaultInputChange,
+      handleAddLinkItem,
       handleRemoveLinkItem,
       handleLinkChange
     } = this.props;
@@ -29,6 +29,7 @@ class FormPublicLinks extends Component {
               key={index}
               ind={index}
               item={item}
+              publicLinks={publicLinks}
               handleRemoveLinkItem={handleRemoveLinkItem}
               handleLinkChange={handleLinkChange}
             />
@@ -36,12 +37,12 @@ class FormPublicLinks extends Component {
         })}
 
         <FormInput
-          labelContent="Link"
+          labelContent="More links"
           styles="form__input"
           inputType="string"
           inputName="publicLinkDefault"
           inputValue={publicLinkDefault}
-          example="https://www.twitter.com/janedoe"
+          example="Ex: https://www.twitter.com/janedoe"
           handleInputChange={handleDefaultInputChange}
         />
 
@@ -61,6 +62,7 @@ FormPublicLinks.propTypes = {
   publicLinks: PropTypes.array.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired
 };

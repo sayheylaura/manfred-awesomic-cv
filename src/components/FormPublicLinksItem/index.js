@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import FormInput from "../FormInput";
 import Button from "../Button";
 
@@ -23,16 +23,16 @@ class FormPublicLinksItem extends Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { ind, item, publicLinks } = this.props;
     return (
       <div>
         <FormInput
-          labelContent="Link"
+          labelContent={`Link ${ind + 1} of ${publicLinks.length}`}
           styles="form__input"
           inputType="string"
           inputName="publicLinks"
           inputValue={item}
-          example="https://www.twitter.com/janedoe"
+          example="Ex: https://www.twitter.com/janedoe"
           handleInputChange={this.handleChange}
         />
 
@@ -49,10 +49,11 @@ class FormPublicLinksItem extends Component {
 }
 
 FormPublicLinksItem.propTypes = {
-  item: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  publicLinks: PropTypes.array.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired
-}
+};
 
 export default FormPublicLinksItem;

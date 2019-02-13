@@ -30,7 +30,12 @@ class App extends Component {
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
+    this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
+    this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
+    this.handleLinkChange = this.handleLinkChange.bind(this);
     this.handleIntroChange = this.handleIntroChange.bind(this);
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
@@ -39,19 +44,16 @@ class App extends Component {
     this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(
       this
     );
-    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(
-      this
-    );
     this.handleRemoveTransportableSkill = this.handleRemoveTransportableSkill.bind(
       this
     );
     this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(
       this
     );
-    this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(
+    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(
       this
     );
-    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
+    this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(
       this
     );
     this.handleRemoveSignificantExperience = this.handleRemoveSignificantExperience.bind(
@@ -60,11 +62,9 @@ class App extends Component {
     this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(
       this
     );
-    this.handleImage = this.handleImage.bind(this);
-    this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
-    this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
-    this.handleLinkChange = this.handleLinkChange.bind(this);
-    this.handleProfileInputs = this.handleProfileInputs.bind(this);
+    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
+      this
+    );
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -133,22 +133,6 @@ class App extends Component {
     });
   }
 
-  handleIntroChange(event) {
-    const { value } = event.currentTarget;
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            intro: value
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
   handleAddLinkItem() {
     const { publicLinkDefault } = this.state;
     const newLinkItem = publicLinkDefault;
@@ -195,6 +179,47 @@ class App extends Component {
     });
   }
 
+  handleLinkChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              publicLinks: prevState.sample.author.profile.publicLinks.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleIntroChange(event) {
+    const { value } = event.currentTarget;
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            intro: value
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddGoal() {
     const { goalDefault } = this.state;
     const newGoalItem = goalDefault;
@@ -216,13 +241,6 @@ class App extends Component {
     });
   }
 
-  handleGoalChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      goalDefault: value
-    });
-  }
-
   handleRemoveGoal(ind) {
     this.setState(prevState => {
       const newState = {
@@ -239,6 +257,13 @@ class App extends Component {
         }
       };
       return newState;
+    });
+  }
+
+  handleGoalChange(event) {
+    const { value } = event.currentTarget;
+    this.setState({
+      goalDefault: value
     });
   }
 
@@ -264,24 +289,68 @@ class App extends Component {
     });
   }
 
-  handleLinkChange(value, ind) {
+  handleAddTransportableSkill() {
+    const { transportableSkillDefault } = this.state;
+    const newTransportableSkillItem = transportableSkillDefault;
+
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
           author: {
             ...prevState.sample.author,
-            profile: {
-              ...prevState.sample.author.profile,
-              publicLinks: prevState.sample.author.profile.publicLinks.map(
-                (item, index) => {
-                  if (index === ind) {
-                    item = value;
-                  }
-                  return item;
+            transportableSkills: prevState.sample.author.transportableSkills.concat(
+              newTransportableSkillItem
+            )
+          },
+          transportableSkillDefault: ""
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveTransportableSkill(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleTransportableSkillChange(event) {
+    const { value } = event.currentTarget;
+    this.setState({
+      transportableSkillDefault: value
+    });
+  }
+
+  handleTransportableSkillsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            transportableSkills: prevState.sample.author.transportableSkills.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
                 }
-              )
-            }
+                return item;
+              }
+            )
           }
         }
       };
@@ -310,13 +379,6 @@ class App extends Component {
     });
   }
 
-  handlesignificantExperienceChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      significantExperienceDefault: value
-    });
-  }
-
   handleRemoveSignificantExperience(ind) {
     this.setState(prevState => {
       const newState = {
@@ -333,6 +395,13 @@ class App extends Component {
         }
       };
       return newState;
+    });
+  }
+
+  handlesignificantExperienceChange(event) {
+    const { value } = event.currentTarget;
+    this.setState({
+      significantExperienceDefault: value
     });
   }
 
@@ -582,75 +651,6 @@ class App extends Component {
     });
   }
 
-  handleAddTransportableSkill() {
-    const { transportableSkillDefault } = this.state;
-    const newTransportableSkillItem = transportableSkillDefault;
-
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.concat(
-              newTransportableSkillItem
-            )
-          },
-          transportableSkillDefault: ""
-        }
-      };
-      return newState;
-    });
-  }
-
-  handleTransportableSkillChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      transportableSkillDefault: value
-    });
-  }
-
-  handleRemoveTransportableSkill(ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.filter(
-              (item, index) => {
-                return index !== ind;
-              }
-            )
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
-  handleTransportableSkillsInput(value, name, ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            transportableSkills: prevState.sample.author.transportableSkills.map(
-              (item, index) => {
-                if (index === ind) {
-                  item = [value];
-                }
-                return item;
-              }
-            )
-          }
-        }
-      };
-      return newState;
-    });
-  }
-
   render() {
     const {
       sample,
@@ -688,31 +688,32 @@ class App extends Component {
           answerDefault={answerDefault}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
+          handleImage={this.handleImage}
+          handleProfileInputs={this.handleProfileInputs}
           handleDefaultInputChange={this.handleDefaultInputChange}
+          handleAddLinkItem={this.handleAddLinkItem}
+          handleRemoveLinkItem={this.handleRemoveLinkItem}
+          handleLinkChange={this.handleLinkChange}
           handleIntroChange={this.handleIntroChange}
-          handleRemoveGoal={this.handleRemoveGoal}
+
           handleAddGoal={this.handleAddGoal}
+          handleRemoveGoal={this.handleRemoveGoal}
           handleGoalsInput={this.handleGoalsInput}
           handleGoalChange={this.handleGoalChange}
           handleAddTransportableSkill={this.handleAddTransportableSkill}
-          handleTransportableSkillChange={this.handleTransportableSkillChange}
           handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
+          handleTransportableSkillChange={this.handleTransportableSkillChange}
           handleTransportableSkillsInput={this.handleTransportableSkillsInput}
           handleAddSignificantExperience={this.handleAddSignificantExperience}
-          handlesignificantExperienceChange={
-            this.handlesignificantExperienceChange
-          }
           handleRemoveSignificantExperience={
             this.handleRemoveSignificantExperience
+          }
+          handlesignificantExperienceChange={
+            this.handlesignificantExperienceChange
           }
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
-          handleImage={this.handleImage}
-          handleAddLinkItem={this.handleAddLinkItem}
-          handleRemoveLinkItem={this.handleRemoveLinkItem}
-          handleLinkChange={this.handleLinkChange}
-          handleProfileInputs={this.handleProfileInputs}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

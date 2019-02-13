@@ -33,7 +33,7 @@ class FormLanguages extends Component {
           List of languages and your proficiency level
           <span className="required_field">*</span></p>
 
-        {languages.map((item, index) => {
+        {languages && !!languages.length && languages.map((item, index) => {
           return (
             <FormLanguageItem
               key={index}

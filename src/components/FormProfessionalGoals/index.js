@@ -20,7 +20,7 @@ class FormProfessionalGoals extends Component {
         <p className="form__section-description">
         List the goals that explain to your future company what kind of professional you'd like to be, what you'd like to be i.e., What motivates you
         </p>
-        {professionalGoals.map((item, index) => {
+        {professionalGoals && !!professionalGoals.length && professionalGoals.map((item, index) => {
           return (
             <FormProfessionalGoalsItem
               key={index}

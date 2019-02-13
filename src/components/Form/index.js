@@ -103,7 +103,6 @@ class Form extends Component {
           handleIntroChange={handleIntroChange}
         />
 
-        {professionalGoals && !!professionalGoals.length && (
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
           goalDefault={goalDefault}
@@ -111,9 +110,8 @@ class Form extends Component {
           handleRemoveGoal={handleRemoveGoal}
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
-        />)}
-
-        {transportableSkills && !!transportableSkills.length &&(
+       />
+      
         <FormTransportableSkills
             transportableSkills={transportableSkills}
             transportableSkillDefault={transportableSkillDefault}
@@ -122,9 +120,7 @@ class Form extends Component {
             handleTransportableSkillChange={handleTransportableSkillChange}
             handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
-        )}
 
-        {significantExperience && !!significantExperience.length && (
           <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
@@ -133,9 +129,7 @@ class Form extends Component {
           handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
         />
-        )}
 
-        {education && !!education.length &&(
         <FormEducation
           education={education}
           institutionDefault={institutionDefault}
@@ -147,9 +141,7 @@ class Form extends Component {
           handleRemoveEducationItem={handleRemoveEducationItem}
           handleEducationChange={handleEducationChange}
         />
-        )}
-
-        {languages && (
+       
           <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
@@ -159,8 +151,7 @@ class Form extends Component {
           handleRemoveLanguageItem={handleRemoveLanguageItem}
           handleLanguageChange={handleLanguageChange}
         />
-        )}
-        {miscEducation && !!miscEducation.length && (
+        
         <FormMiscEducation
           miscEducation={miscEducation}
           miscEdDefault={miscEdDefault}
@@ -169,9 +160,7 @@ class Form extends Component {
           handleRemoveMiscItem={handleRemoveMiscItem}
           handleMiscInputChange={handleMiscInputChange}
         />
-        )}
-
-        {questionnaire && questionnaire.length && (
+     
         <FormQuestionnaire
           questionnaire={questionnaire}
           questionDefault={questionDefault}
@@ -181,8 +170,7 @@ class Form extends Component {
           handleRemoveQuestion={handleRemoveQuestion}
           handleQuestionInputChange={handleQuestionInputChange}
         />
-        )}
-
+  
       </section>
     );
   }

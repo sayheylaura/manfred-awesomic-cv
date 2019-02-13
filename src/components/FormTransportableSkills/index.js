@@ -22,7 +22,7 @@ class FormTransportableSkills extends Component {
           you were manager in that Burger King and had to organize a team of
           employees)
         </p>
-        {transportableSkills.map((item, index) => {
+        {transportableSkills && !!transportableSkills.length && transportableSkills.map((item, index) => {
           return (
             <FormTransportableSkillsItem
               key={index}

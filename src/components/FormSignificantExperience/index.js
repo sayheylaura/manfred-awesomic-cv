@@ -20,7 +20,7 @@ class FormSignificantExperience extends Component {
         <p className="form__section-description">
           List the professional milestones that provided you with experience and knowledge for your future position
         </p>
-        {significantExperience.map((item, index) => {
+        {significantExperience && !!significantExperience.length && significantExperience.map((item, index) => {
           return (
             <FormSignificantExperienceItem
               key={index}

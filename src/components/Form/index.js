@@ -158,7 +158,7 @@ class Form extends Component {
           handleLanguageChange={handleLanguageChange}
         />
         )}
-
+        {miscEducation && !!miscEducation.length && (
         <FormMiscEducation
           miscEducation={miscEducation}
           miscEdDefault={miscEdDefault}
@@ -167,6 +167,8 @@ class Form extends Component {
           handleRemoveMiscItem={handleRemoveMiscItem}
           handleMiscInputChange={handleMiscInputChange}
         />
+        )}
+
 
         <FormQuestionnaire
           questionnaire={questionnaire}

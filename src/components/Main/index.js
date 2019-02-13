@@ -51,7 +51,8 @@ class Main extends Component {
       answerDefault,
       handlePrintBtn,
       handleJsonText,
-      handleImage,
+      handleAddImage,
+      handleRemoveImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
@@ -123,7 +124,8 @@ class Main extends Component {
                   miscEdDefault={miscEdDefault}
                   questionDefault={questionDefault}
                   answerDefault={answerDefault}
-                  handleImage={handleImage}
+                  handleAddImage={handleAddImage}
+                  handleRemoveImage={handleRemoveImage}
                   handleProfileInputs={handleProfileInputs}
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleAddLinkItem={handleAddLinkItem}
@@ -135,13 +137,27 @@ class Main extends Component {
                   handleGoalsInput={handleGoalsInput}
                   handleGoalChange={handleGoalChange}
                   handleAddTransportableSkill={handleAddTransportableSkill}
-                  handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-                  handleTransportableSkillChange={handleTransportableSkillChange}
-                  handleTransportableSkillsInput={handleTransportableSkillsInput}
-                  handleAddSignificantExperience={handleAddSignificantExperience}
-                  handleRemoveSignificantExperience={handleRemoveSignificantExperience}
-                  handlesignificantExperienceChange={handlesignificantExperienceChange}
-                  handleSignificantExperienceInput={handleSignificantExperienceInput}
+                  handleRemoveTransportableSkill={
+                    handleRemoveTransportableSkill
+                  }
+                  handleTransportableSkillChange={
+                    handleTransportableSkillChange
+                  }
+                  handleTransportableSkillsInput={
+                    handleTransportableSkillsInput
+                  }
+                  handleAddSignificantExperience={
+                    handleAddSignificantExperience
+                  }
+                  handleRemoveSignificantExperience={
+                    handleRemoveSignificantExperience
+                  }
+                  handlesignificantExperienceChange={
+                    handlesignificantExperienceChange
+                  }
+                  handleSignificantExperienceInput={
+                    handleSignificantExperienceInput
+                  }
                   handleAddEducationItem={handleAddEducationItem}
                   handleRemoveEducationItem={handleRemoveEducationItem}
                   handleEducationChange={handleEducationChange}
@@ -193,7 +209,8 @@ Main.propTypes = {
   answerDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
-  handleImage: PropTypes.func.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

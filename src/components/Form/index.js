@@ -27,7 +27,8 @@ class Form extends Component {
       miscEdDefault,
       questionDefault,
       answerDefault,
-      handleImage,
+      handleAddImage,
+      handleRemoveImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
@@ -60,12 +61,7 @@ class Form extends Component {
       handleQuestionInputChange
     } = this.props;
 
-    const {
-      education,
-      languages,
-      miscEducation,
-      questionnaire
-    } = sample;
+    const { education, languages, miscEducation, questionnaire } = sample;
 
     const {
       intro,
@@ -88,7 +84,8 @@ class Form extends Component {
           sample={sample}
           image={sample.author.profile.image}
           publicLinkDefault={publicLinkDefault}
-          handleImage={handleImage}
+          handleAddImage={handleAddImage}
+          handleRemoveImage={handleRemoveImage}
           handleProfileInputs={handleProfileInputs}
           handleDefaultInputChange={handleDefaultInputChange}
           handleAddLinkItem={handleAddLinkItem}
@@ -96,10 +93,7 @@ class Form extends Component {
           handleLinkChange={handleLinkChange}
         />
 
-        <FormIntro
-          intro={intro}
-          handleIntroChange={handleIntroChange}
-        />
+        <FormIntro intro={intro} handleIntroChange={handleIntroChange} />
 
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
@@ -188,7 +182,8 @@ Form.propTypes = {
   miscEdDefault: PropTypes.string.isRequired,
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
-  handleImage: PropTypes.fun.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

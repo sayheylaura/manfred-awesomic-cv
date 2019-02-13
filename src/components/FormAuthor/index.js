@@ -9,7 +9,7 @@ class FormAuthor extends Component {
     const {
       sample,
       publicLinkDefault,
-      updateAvatar,
+      handleImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
@@ -27,7 +27,7 @@ class FormAuthor extends Component {
         <legend className="form__section-title">Personal data</legend>
 
         <FormImage
-          updateAvatar={updateAvatar}
+          handleImage={handleImage}
           image={sample.author.profile.image}
         />
 
@@ -76,7 +76,7 @@ class FormAuthor extends Component {
 FormAuthor.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
-  updateAvatar: PropTypes.func.isRequired,
+  handleImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

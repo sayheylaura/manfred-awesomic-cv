@@ -25,7 +25,7 @@ class FormImage extends Component {
 
   getImage() {
     const image = this.fr.result;
-    this.props.updateAvatar(image);
+    this.props.handleImage(image);
   }
 
   render() {
@@ -39,7 +39,6 @@ class FormImage extends Component {
       </div>
     );
   }
-
 }
 
 export default FormImage;

@@ -67,6 +67,8 @@ class Form extends Component {
       questionnaire
     } = sample;
 
+
+
     const {
       intro,
       professionalGoals,
@@ -147,7 +149,7 @@ class Form extends Component {
         />
         )}
 
-        {languages && !!languages.length &&(
+        {languages && (
           <FormLanguages
           languages={languages}
           languageDefault={languageDefault}

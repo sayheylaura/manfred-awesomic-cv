@@ -188,7 +188,7 @@ Form.propTypes = {
   miscEdDefault: PropTypes.string.isRequired,
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
-  handleImage: PropTypes.fun.isRequired,
+  handleImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

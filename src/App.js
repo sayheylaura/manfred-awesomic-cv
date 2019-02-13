@@ -66,6 +66,8 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
       this
     );
+    this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
+    this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -428,6 +430,25 @@ class App extends Component {
     });
   }
 
+  handleRemoveSignificant(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantExperience: prevState.sample.author.significantExperience.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddSignificantRelationships(){
     const { significantRelationshipsDefault } = this.state;
     const newsignificantRelationshipsItem= significantRelationshipsDefault;
@@ -446,6 +467,27 @@ class App extends Component {
         return newState;
     });
   }
+  handleRemoveSignificantRelationships(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+
+//handle modificar campo!!!!
 
 
   handleAddEducationItem() {
@@ -737,6 +779,8 @@ class App extends Component {
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
+          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
+          handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

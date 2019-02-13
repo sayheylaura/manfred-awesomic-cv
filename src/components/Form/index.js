@@ -18,6 +18,7 @@ class Form extends Component {
       publicLinkDefault,
       goalDefault,
       significantRelationshipsDefault,
+      significantRelationships,
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
@@ -48,6 +49,7 @@ class Form extends Component {
       handleRemoveSignificantExperience,
       handlesignificantExperienceChange,
       handleSignificantExperienceInput,
+      handleAddSignificantRelationships,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -114,6 +116,8 @@ class Form extends Component {
         <FormSignificantRelationShips
         significantRelationships={significantRelationships}
         significantRelationshipsDefault={significantRelationshipsDefault}
+        handleDefaultInputChange={handleDefaultInputChange}
+        handleAddSignificantRelationships={handleAddSignificantRelationships}
         />
 
         <FormTransportableSkills

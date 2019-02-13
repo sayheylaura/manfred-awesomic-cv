@@ -169,7 +169,7 @@ class Form extends Component {
         />
         )}
 
-
+        {questionnaire && questionnaire.length && (
         <FormQuestionnaire
           questionnaire={questionnaire}
           questionDefault={questionDefault}
@@ -179,6 +179,8 @@ class Form extends Component {
           handleRemoveQuestion={handleRemoveQuestion}
           handleQuestionInputChange={handleQuestionInputChange}
         />
+        )}
+
       </section>
     );
   }

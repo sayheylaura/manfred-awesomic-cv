@@ -133,7 +133,7 @@ class Form extends Component {
         />
         )}
 
-
+        {education && !!education.length &&(
         <FormEducation
           education={education}
           institutionDefault={institutionDefault}
@@ -145,8 +145,10 @@ class Form extends Component {
           handleRemoveEducationItem={handleRemoveEducationItem}
           handleEducationChange={handleEducationChange}
         />
+        )}
 
-        <FormLanguages
+        {languages && !!languages.length &&(
+          <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}
@@ -155,6 +157,7 @@ class Form extends Component {
           handleRemoveLanguageItem={handleRemoveLanguageItem}
           handleLanguageChange={handleLanguageChange}
         />
+        )}
 
         <FormMiscEducation
           miscEducation={miscEducation}

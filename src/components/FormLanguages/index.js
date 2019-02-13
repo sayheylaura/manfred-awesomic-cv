@@ -31,7 +31,7 @@ class FormLanguages extends Component {
 
         <p className="form__section-description">
           List of languages and your proficiency level
-        </p>
+          <span className="required_field">*</span></p>
 
         {languages.map((item, index) => {
           return (

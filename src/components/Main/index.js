@@ -5,14 +5,21 @@ import Preview from "../Preview";
 import Form from "../Form";
 import Json from "../Json";
 
+const tabs = [
+  { name: 'form', text: 'Form', linkTo: '/' },
+  { name: 'json', text: 'JSON editor', linkTo: '/json' },
+  { name: 'cv', text: 'CV viewer', linkTo: '/preview' }
+]
+
 class Main extends Component {
-  handleFirstTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const secondChild = parent.childNodes[1];
-    const thirdChild = parent.childNodes[2];
-    event.currentTarget.classList.add("active");
-    secondChild.classList.remove("active");
-    thirdChild.classList.remove("active");
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: 'form',
+    }
+  }
+  handleTabClick(newActiveTabName) {
+    this.setState({ activeTab: newActiveTabName })
   }
 
   handleSecondTabClick(event) {
@@ -90,18 +97,17 @@ class Main extends Component {
         <div className="preview__wrapper">
           <nav className="main__nav">
             <ul className="nav__list">
-              <li
-                className="nav__link active"
-                onClick={this.handleFirstTabClick}
-              >
-                <Link to="/">Form</Link>
-              </li>
-              <li className="nav__link" onClick={this.handleSecondTabClick}>
-                <Link to="/json">JSON viewer</Link>
-              </li>
-              <li className="nav__link" onClick={this.handleThirdTabClick}>
-                <Link to="/preview">CV preview</Link>
-              </li>
+              {tabs.map(tabItem =>
+                <li
+                  className={`nav__link ${tabItem.name === this.state.activeTab ? 'active' : ''}`}
+                  onClick={(e) => this.handleTabClick(tabItem.name)}
+                >
+                  {tabItem.name === this.state.activeTab
+                    ? tabItem.text
+                    : <Link to={tabItem.linkTo}>{tabItem.text}</Link>}
+
+                </li>
+              )}
             </ul>
           </nav>
           <Switch>

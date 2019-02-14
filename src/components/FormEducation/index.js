@@ -31,6 +31,7 @@ class FormEducation extends Component {
               item={item}
               handleRemoveEducationItem={handleRemoveEducationItem}
               handleEducationChange={handleEducationChange}
+              education={education}
             />
           );
         })}

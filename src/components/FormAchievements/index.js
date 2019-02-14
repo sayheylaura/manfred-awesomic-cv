@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormInput from "../FormInput";
 import Button from "../Button";
+import FormAchievementItem from "../FormAchievementItem";
 
 class FormAchievements extends Component {
   render() {
@@ -9,36 +10,20 @@ class FormAchievements extends Component {
       achievements,
       achievementDefault,
       handleDefaultInputChange,
-      handleAddAchievementItem
+      handleAddAchievementItem,
+      education
     } = this.props;
     return (
       <div>
         <p>Achievements</p>
         <p>List of awards or achievements during your studies</p>
 
-        {achievements.map((item, index) => {
-          return (
-            <div key={index}>
-              <FormInput
-                labelContent="Item"
-                styles="form__input"
-                inputType="text"
-                inputName="achievement"
-                inputValue={item}
-                example="Best end of degree thesis"
-                handleInputChange={this.handleInputChange}
-              />
-
-              <Button
-                buttonType="button"
-                styles="remove-btn"
-                handleButtonClick={this.handleRemoveBtn}
-              >
-                Remove
-              </Button>
-            </div>
-          );
-        })}
+        {achievements &&
+          !!achievements.length &&
+          achievements.map((item, index) => {
+            return <FormAchievementItem key={index} ind={index} item={item} education
+            ={education} />;
+          })}
 
         <div>
           <FormInput

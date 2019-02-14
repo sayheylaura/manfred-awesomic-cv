@@ -79,14 +79,14 @@ class Main extends Component {
         <div className="preview__wrapper">
           <nav className="main__nav">
             <ul className="nav__list">
-              {tabs.map(tabItem =>
-                <li
+              {tabs.map((tabItem, index) =>
+                <li key={index}
                   className={`nav__link ${tabItem.name === this.state.activeTab ? 'active' : ''}`}
                   onClick={(e) => this.handleTabClick(tabItem.name)}
                 >
                   {tabItem.name === this.state.activeTab
                     ? tabItem.text
-                    : <Link to={tabItem.linkTo}>{tabItem.text}</Link>}
+                    : <Link className="nav__link-route" to={tabItem.linkTo}>{tabItem.text}</Link>}
                 </li>
               )}
             </ul>

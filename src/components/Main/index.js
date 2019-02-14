@@ -22,24 +22,6 @@ class Main extends Component {
     this.setState({ activeTab: newActiveTabName })
   }
 
-  handleSecondTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const firstChild = parent.childNodes[0];
-    const thirdChild = parent.childNodes[2];
-    event.currentTarget.classList.add("active");
-    firstChild.classList.remove("active");
-    thirdChild.classList.remove("active");
-  }
-
-  handleThirdTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const firstChild = parent.childNodes[0];
-    const secondChild = parent.childNodes[1];
-    event.currentTarget.classList.add("active");
-    secondChild.classList.remove("active");
-    firstChild.classList.remove("active");
-  }
-
   render() {
     const {
       sample,
@@ -105,7 +87,6 @@ class Main extends Component {
                   {tabItem.name === this.state.activeTab
                     ? tabItem.text
                     : <Link to={tabItem.linkTo}>{tabItem.text}</Link>}
-
                 </li>
               )}
             </ul>

@@ -479,7 +479,7 @@ class App extends Component {
           ...prevState.sample,
           author:{
             ...prevState.sample.author,
-            ssignificantRelationships : prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
+            significantRelationships : prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
           },
           significantRelationshipsDefault: ""
           }

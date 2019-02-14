@@ -111,23 +111,23 @@ class Form extends Component {
           handleGoalChange={handleGoalChange}
         />
         <FormSignificantRelationShips
-        significantRelationships={significantRelationships}
-        significantRelationshipsDefault={significantRelationshipsDefault}
-        handleDefaultInputChange={handleDefaultInputChange}
-        handleAddSignificantRelationships={handleAddSignificantRelationships}
-        handleSignificantRelationshipsInput={handleSignificantRelationshipsInput}
+          significantRelationships={significantRelationships}
+          significantRelationshipsDefault={significantRelationshipsDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddSignificantRelationships={handleAddSignificantRelationships}
+          handleSignificantRelationshipsInput={handleSignificantRelationshipsInput}
         />
 
         <FormTransportableSkills
-            transportableSkills={transportableSkills}
-            transportableSkillDefault={transportableSkillDefault}
-            handleAddTransportableSkill={handleAddTransportableSkill}
-            handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-            handleTransportableSkillChange={handleTransportableSkillChange}
-            handleTransportableSkillsInput={handleTransportableSkillsInput}
+          transportableSkills={transportableSkills}
+          transportableSkillDefault={transportableSkillDefault}
+          handleAddTransportableSkill={handleAddTransportableSkill}
+          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+          handleTransportableSkillChange={handleTransportableSkillChange}
+          handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
-          <FormSignificantExperience
+        <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
           handleAddSignificantExperience={handleAddSignificantExperience}
@@ -149,7 +149,7 @@ class Form extends Component {
           handleEducationChange={handleEducationChange}
         />
 
-          <FormLanguages
+        <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}

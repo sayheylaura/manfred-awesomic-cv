@@ -49,7 +49,9 @@ class Form extends Component {
       handleRemoveSignificantExperience,
       handlesignificantExperienceChange,
       handleSignificantExperienceInput,
+      handleDefaultInputChangeSignificantRelationships,
       handleAddSignificantRelationships,
+      handleRemoveSignificantRelationships,
       handleSignificantRelationshipsInput,
       handleAddEducationItem,
       handleRemoveEducationItem,
@@ -113,8 +115,9 @@ class Form extends Component {
         <FormSignificantRelationShips
           significantRelationships={significantRelationships}
           significantRelationshipsDefault={significantRelationshipsDefault}
-          handleDefaultInputChange={handleDefaultInputChange}
+          handleDefaultInputChangeSignificantRelationships={handleDefaultInputChangeSignificantRelationships}
           handleAddSignificantRelationships={handleAddSignificantRelationships}
+          handleRemoveSignificantRelationships={handleRemoveSignificantRelationships}
           handleSignificantRelationshipsInput={handleSignificantRelationshipsInput}
         />
 

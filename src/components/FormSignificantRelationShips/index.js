@@ -8,13 +8,34 @@ import FormSignificantRelationShipsItem from '../FormSignificantRelationShipsIte
 class FormSignificantRelationShips extends Component {
 
   render() {
-    const { significantRelationships, significantRelationshipsDefault, handleDefaultInputChange, handleAddSignificantRelationships, handleRemoveSignificantRelationships, handleSignificantRelationshipsInput } = this.props;
-    console.log(significantRelationships);
+    const {
+        significantRelationships,
+        significantRelationshipsDefault,
+        handleDefaultInputChangeSignificantRelationships,
+        handleAddSignificantRelationships,
+        handleRemoveSignificantRelationships,
+        handleSignificantRelationshipsInput } = this.props;
+
+    const {
+      name,
+      comment,
+      role,
+      contact,
+      company
+    } = significantRelationshipsDefault;
+
+        console.log("significantRelationshipsDefault", significantRelationshipsDefault);
+        console.log("significantRelationships", significantRelationships);
     return (
       <div>
         {significantRelationships.map((item, index) => {
           return (
-            <FormSignificantRelationShipsItem key={index} relationships={item} ind={index} handleRemoveSignificantRelationships={handleRemoveSignificantRelationships} handleSignificantRelationshipsInput ={handleSignificantRelationshipsInput }/>
+            <FormSignificantRelationShipsItem
+            key={index}
+            relationships={item}
+            ind={index}
+            handleRemoveSignificantRelationships={handleRemoveSignificantRelationships}
+            handleSignificantRelationshipsInput ={handleSignificantRelationshipsInput }/>
           );
         }
         )}
@@ -23,46 +44,46 @@ class FormSignificantRelationShips extends Component {
             labelContent="Name"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsName"
-            inputValue={significantRelationshipsDefault}
+            inputName="name"
+            inputValue={name}
             example="Ex: Steve Jobs"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Comment"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsComment"
-            inputValue={significantRelationshipsDefault}
+            inputName="comment"
+            inputValue={comment}
             example="Ex: "
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Role"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsRole"
-            inputValue={significantRelationshipsDefault}
+            inputName="role"
+            inputValue={role}
             example="Ex: CEO"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Contact"
             styles="form__input"
             inputType="email"
-            inputName="relationShipsContact"
-            inputValue={significantRelationshipsDefault}
+            inputName="contact"
+            inputValue={contact}
             example="Ex: email@email.com"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Company"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsCompany"
-            inputValue={significantRelationshipsDefault}
+            inputName="company"
+            inputValue={company}
             example="Ex: IBM"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <Button
             buttonType="button"

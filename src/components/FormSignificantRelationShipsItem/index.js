@@ -12,14 +12,14 @@ class FormSignificantRelationShipsItem extends Component {
   }
 
   handleRemoveBtn() {
-    const { handleRemoveRelationshipsItem, ind } = this.props;
-    handleRemoveRelationshipsItem(ind);
+    const { handleRemoveSignificantRelationships, ind } = this.props;
+    handleRemoveSignificantRelationships(ind);
   }
 
   handleInputChange(event) {
-    const { value } = event.currentTarget;
+    const { value, name } = event.currentTarget;
     const { handleSignificantRelationshipsInput, ind } = this.props;
-    handleSignificantRelationshipsInput(value, ind);
+    handleSignificantRelationshipsInput(value, name, ind);
   }
 
     render() {
@@ -31,53 +31,53 @@ class FormSignificantRelationShipsItem extends Component {
             labelContent="Name"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsName"
+            inputName="name"
             inputValue={name}
             example="Ex: Steve Jobs"
-          // handleInputChange={this.handleInputChange}
+            handleInputChange={this.handleInputChange}
           />
           <FormInput
             labelContent="Comment"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsComment"
+            inputName="comment"
             inputValue={comment}
             example="Ex: "
-          // handleInputChange={this.handleInputChange}
+            handleInputChange={this.handleInputChange}
           />
           <FormInput
             labelContent="Role"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsRole"
+            inputName="role"
             inputValue={role}
             example="Ex: CEO"
-          // handleInputChange={this.handleInputChange}
+            handleInputChange={this.handleInputChange}
           />
           <FormInput
             labelContent="Contact"
             styles="form__input"
             inputType="email"
-            inputName="relationShipsContact"
+            inputName="contact"
             inputValue={contact}
             example="Ex: email@email.com"
-          // handleInputChange={this.handleInputChange}
+            handleInputChange={this.handleInputChange}
           />
           <FormInput
             labelContent="Company"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsCompany"
+            inputName="company"
             inputValue={company}
             example="Ex: IBM"
-          // handleInputChange={this.handleInputChange}
+            handleInputChange={this.handleInputChange}
           />
           <Button
             buttonType="button"
             styles="add-btn"
-          // handleButtonClick={handleAddGoal}
+            handleButtonClick={this.handleRemoveBtn}
           >
-            Add
+            Remove
               </Button>
         </div>
 

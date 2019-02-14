@@ -13,7 +13,6 @@ class App extends Component {
     super(props);
     this.state = {
       sample: sample_2,
-      publicLinkDefault: "",
       goalDefault: "",
       transportableSkillDefault: "",
       significantExperienceDefault: "",
@@ -134,8 +133,6 @@ class App extends Component {
   }
 
   handleAddLinkItem() {
-    const { publicLinkDefault } = this.state;
-    const newLinkItem = publicLinkDefault;
 
     this.setState(prevState => {
       const newState = {
@@ -145,13 +142,11 @@ class App extends Component {
             ...prevState.sample.author,
             profile: {
               ...prevState.sample.author.profile,
-              publicLinks: prevState.sample.author.profile.publicLinks.concat(
-                newLinkItem
-              )
+              publicLinks: prevState.sample.author.profile.publicLinks
+                .concat("")
             }
           }
         },
-        publicLinkDefault: ""
       };
       return newState;
     });
@@ -673,7 +668,6 @@ class App extends Component {
         <Header />
         <Main
           sample={sample}
-          publicLinkDefault={publicLinkDefault}
           goalDefault={goalDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
@@ -695,7 +689,6 @@ class App extends Component {
           handleRemoveLinkItem={this.handleRemoveLinkItem}
           handleLinkChange={this.handleLinkChange}
           handleIntroChange={this.handleIntroChange}
-
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}
           handleGoalsInput={this.handleGoalsInput}

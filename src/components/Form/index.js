@@ -14,7 +14,6 @@ class Form extends Component {
   render() {
     const {
       sample,
-      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -87,7 +86,6 @@ class Form extends Component {
         <FormAuthor
           sample={sample}
           image={sample.author.profile.image}
-          publicLinkDefault={publicLinkDefault}
           handleImage={handleImage}
           handleProfileInputs={handleProfileInputs}
           handleDefaultInputChange={handleDefaultInputChange}
@@ -175,7 +173,6 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
-  publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,

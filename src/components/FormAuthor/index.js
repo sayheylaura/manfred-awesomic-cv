@@ -62,8 +62,6 @@ class FormAuthor extends Component {
 
         <FormPublicLinks
           publicLinks={publicLinks}
-          publicLinkDefault={publicLinkDefault}
-          handleDefaultInputChange={handleDefaultInputChange}
           handleAddLinkItem={handleAddLinkItem}
           handleRemoveLinkItem={handleRemoveLinkItem}
           handleLinkChange={handleLinkChange}
@@ -75,7 +73,6 @@ class FormAuthor extends Component {
 
 FormAuthor.propTypes = {
   sample: PropTypes.object.isRequired,
-  publicLinkDefault: PropTypes.string.isRequired,
   handleImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,

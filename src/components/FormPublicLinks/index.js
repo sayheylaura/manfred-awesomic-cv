@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import FormInput from "../FormInput";
 import Button from "../Button";
 import FormPublicLinksItem from "../FormPublicLinksItem";
 
@@ -8,8 +7,6 @@ class FormPublicLinks extends Component {
   render() {
     const {
       publicLinks,
-      publicLinkDefault,
-      handleDefaultInputChange,
       handleAddLinkItem,
       handleRemoveLinkItem,
       handleLinkChange
@@ -36,16 +33,6 @@ class FormPublicLinks extends Component {
           );
         })}
 
-        <FormInput
-          labelContent="More links"
-          styles="form__input"
-          inputType="string"
-          inputName="publicLinkDefault"
-          inputValue={publicLinkDefault}
-          example="Ex: https://www.twitter.com/janedoe"
-          handleInputChange={handleDefaultInputChange}
-        />
-
         <Button
           buttonType="button"
           styles="add-btn"
@@ -60,8 +47,6 @@ class FormPublicLinks extends Component {
 
 FormPublicLinks.propTypes = {
   publicLinks: PropTypes.array.isRequired,
-  publicLinkDefault: PropTypes.string.isRequired,
-  handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired

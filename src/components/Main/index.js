@@ -36,7 +36,6 @@ class Main extends Component {
   render() {
     const {
       sample,
-      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -110,7 +109,6 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
-                  publicLinkDefault={publicLinkDefault}
                   goalDefault={goalDefault}
                   transportableSkillDefault={transportableSkillDefault}
                   significantExperienceDefault={significantExperienceDefault}
@@ -178,7 +176,6 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
-  publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,

@@ -23,7 +23,7 @@ class FormMiscEducation extends Component {
           projects, etc.
         </p>
 
-        {miscEducation.map((item, index) => {
+        {miscEducation && !!miscEducation.length && miscEducation.map((item, index) => {
           return (
             <FormMiscEducationItem
               key={index}

@@ -31,9 +31,9 @@ class FormLanguages extends Component {
 
         <p className="form__section-description">
           List of languages and your proficiency level
-        </p>
+          <span className="required_field">*</span></p>
 
-        {languages.map((item, index) => {
+        {languages && !!languages.length && languages.map((item, index) => {
           return (
             <FormLanguageItem
               key={index}
@@ -47,7 +47,7 @@ class FormLanguages extends Component {
 
         <div>
           <FormInput
-            labelContent="Language"
+            labelContent="Language*"
             styles="form__input"
             inputType="text"
             inputName="languageDefault"
@@ -57,7 +57,7 @@ class FormLanguages extends Component {
           />
 
           <FormSelect
-            labelContent="Proficiency"
+            labelContent="Proficiency*"
             styles="form__select"
             selectName="proficiencyDefault"
             selectValue={proficiencyDefault}

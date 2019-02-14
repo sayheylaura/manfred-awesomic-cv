@@ -63,6 +63,8 @@ class Form extends Component {
 
     const { education, languages, miscEducation, questionnaire } = sample;
 
+
+
     const {
       intro,
       professionalGoals,
@@ -102,18 +104,18 @@ class Form extends Component {
           handleRemoveGoal={handleRemoveGoal}
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
-        />
-
+       />
+      
         <FormTransportableSkills
-          transportableSkills={transportableSkills}
-          transportableSkillDefault={transportableSkillDefault}
-          handleAddTransportableSkill={handleAddTransportableSkill}
-          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-          handleTransportableSkillChange={handleTransportableSkillChange}
-          handleTransportableSkillsInput={handleTransportableSkillsInput}
+            transportableSkills={transportableSkills}
+            transportableSkillDefault={transportableSkillDefault}
+            handleAddTransportableSkill={handleAddTransportableSkill}
+            handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+            handleTransportableSkillChange={handleTransportableSkillChange}
+            handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
-        <FormSignificantExperience
+          <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
           handleAddSignificantExperience={handleAddSignificantExperience}
@@ -133,8 +135,8 @@ class Form extends Component {
           handleRemoveEducationItem={handleRemoveEducationItem}
           handleEducationChange={handleEducationChange}
         />
-
-        <FormLanguages
+       
+          <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}
@@ -143,7 +145,7 @@ class Form extends Component {
           handleRemoveLanguageItem={handleRemoveLanguageItem}
           handleLanguageChange={handleLanguageChange}
         />
-
+        
         <FormMiscEducation
           miscEducation={miscEducation}
           miscEdDefault={miscEdDefault}
@@ -152,7 +154,7 @@ class Form extends Component {
           handleRemoveMiscItem={handleRemoveMiscItem}
           handleMiscInputChange={handleMiscInputChange}
         />
-
+     
         <FormQuestionnaire
           questionnaire={questionnaire}
           questionDefault={questionDefault}
@@ -162,6 +164,7 @@ class Form extends Component {
           handleRemoveQuestion={handleRemoveQuestion}
           handleQuestionInputChange={handleQuestionInputChange}
         />
+  
       </section>
     );
   }

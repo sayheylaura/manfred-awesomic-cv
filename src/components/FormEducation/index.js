@@ -23,7 +23,7 @@ class FormEducation extends Component {
 
         <p className="form__section-description">Degree or kind of schooling</p>
 
-        {education.map((item, index) => {
+        {education && !!education.length && education.map((item, index) => {
           return (
             <FormEducationItem
               key={index}

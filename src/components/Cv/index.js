@@ -21,8 +21,8 @@ class Cv extends Component {
     return (
       <div className="cv__wrapper">
         <Author sampleAuthor={author} />
-        <Experience sampleExperience={experience} />
-        <Education sampleEducation={education} />
+        {experience && !!experience.length && <Experience sampleExperience={experience} />}
+        {education && !!education.length && <Education sampleEducation={education} />}
         {languages && !!languages.length && <LanguagesList sampleLanguages={languages} />}
         {miscEducation && !!miscEducation.length && <MiscEducation sampleMiscEducation={miscEducation} />}
         {questionnaire && !!questionnaire.length && <Questionnaire sampleQuestionnaire={questionnaire} />}

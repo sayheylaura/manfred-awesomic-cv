@@ -8,13 +8,13 @@ import FormSignificantRelationShipsItem from '../FormSignificantRelationShipsIte
 class FormSignificantRelationShips extends Component {
 
   render() {
-    const { significantRelationships, significantRelationshipsDefault, handleDefaultInputChange, handleAddSignificantRelationships, handleRemoveSignificantRelationships } = this.props;
+    const { significantRelationships, significantRelationshipsDefault, handleDefaultInputChange, handleAddSignificantRelationships, handleRemoveSignificantRelationships, handleSignificantRelationshipsInput } = this.props;
     console.log(significantRelationships);
     return (
       <div>
         {significantRelationships.map((item, index) => {
           return (
-            <FormSignificantRelationShipsItem key={index} relationships={item} ind={index} handleRemoveSignificantRelationships={handleRemoveSignificantRelationships}/>
+            <FormSignificantRelationShipsItem key={index} relationships={item} ind={index} handleRemoveSignificantRelationships={handleRemoveSignificantRelationships} handleSignificantRelationshipsInput ={handleSignificantRelationshipsInput }/>
           );
         }
         )}

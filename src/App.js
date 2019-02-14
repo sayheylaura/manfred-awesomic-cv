@@ -68,6 +68,7 @@ class App extends Component {
     );
     this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
     this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
+    this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -430,24 +431,24 @@ class App extends Component {
     });
   }
 
-  handleRemoveSignificant(ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          author: {
-            ...prevState.sample.author,
-            significantExperience: prevState.sample.author.significantExperience.filter(
-              (item, index) => {
-                return index !== ind;
-              }
-            )
-          }
-        }
-      };
-      return newState;
-    });
-  }
+  // handleRemoveSignificant(ind) {
+  //   this.setState(prevState => {
+  //     const newState = {
+  //       sample: {
+  //         ...prevState.sample,
+  //         author: {
+  //           ...prevState.sample.author,
+  //           significantExperience: prevState.sample.author.significantExperience.filter(
+  //             (item, index) => {
+  //               return index !== ind;
+  //             }
+  //           )
+  //         }
+  //       }
+  //     };
+  //     return newState;
+  //   });
+  // }
 
   handleAddSignificantRelationships(){
     const { significantRelationshipsDefault } = this.state;
@@ -477,6 +478,28 @@ class App extends Component {
             significantRelationships: prevState.sample.author.significantRelationships.filter(
               (item, index) => {
                 return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleSignificantRelationshipsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
               }
             )
           }
@@ -742,6 +765,8 @@ class App extends Component {
           significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
+
+          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}

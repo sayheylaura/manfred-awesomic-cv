@@ -127,7 +127,6 @@ Main.propTypes = {
   handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleAddSignificantRelationships: PropTypes.func.isRequired,
-  handleProfileInputs: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

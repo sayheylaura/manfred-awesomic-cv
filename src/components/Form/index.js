@@ -18,7 +18,6 @@ class Form extends Component {
       publicLinkDefault,
       goalDefault,
       significantRelationshipsDefault,
-      significantRelationships,
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
@@ -50,6 +49,7 @@ class Form extends Component {
       handlesignificantExperienceChange,
       handleSignificantExperienceInput,
       handleAddSignificantRelationships,
+      handleSignificantRelationshipsInput,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -75,7 +75,8 @@ class Form extends Component {
       intro,
       professionalGoals,
       transportableSkills,
-      significantExperience
+      significantExperience,
+      significantRelationships
     } = sample.author;
 
     return (
@@ -118,6 +119,7 @@ class Form extends Component {
         significantRelationshipsDefault={significantRelationshipsDefault}
         handleDefaultInputChange={handleDefaultInputChange}
         handleAddSignificantRelationships={handleAddSignificantRelationships}
+        handleSignificantRelationshipsInput={handleSignificantRelationshipsInput}
         />
 
         <FormTransportableSkills
@@ -136,6 +138,7 @@ class Form extends Component {
           handleRemoveSignificantExperience={handleRemoveSignificantExperience}
           handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
+
         />
 
         <FormEducation
@@ -188,6 +191,7 @@ Form.propTypes = {
   publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   significantRelationshipsDefault: PropTypes.array.isRequired,
+  significantRelationships: PropTypes.array.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,

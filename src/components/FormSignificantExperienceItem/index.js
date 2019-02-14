@@ -23,7 +23,7 @@ class FormSignificantExperienceItem extends Component {
   }
 
   render() {
-    const { significantExperienceDefault, handleInputChan } = this.props;
+    const { significantExperienceDefault } = this.props;
     return (
       <div>
         <FormInput

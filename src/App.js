@@ -135,6 +135,8 @@ class App extends Component {
   handleAddLinkItem() {
 
     this.setState(prevState => {
+      const publicLinksArr = prevState.sample.author.profile.publicLinks;
+
       const newState = {
         sample: {
           ...prevState.sample,
@@ -142,8 +144,9 @@ class App extends Component {
             ...prevState.sample.author,
             profile: {
               ...prevState.sample.author.profile,
-              publicLinks: prevState.sample.author.profile.publicLinks
-                .concat("")
+              publicLinks: publicLinksArr
+                ? publicLinksArr.concat("")
+                : [""]
             }
           }
         },
@@ -649,7 +652,6 @@ class App extends Component {
   render() {
     const {
       sample,
-      publicLinkDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,

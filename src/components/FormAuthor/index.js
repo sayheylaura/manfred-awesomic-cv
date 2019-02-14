@@ -8,10 +8,8 @@ class FormAuthor extends Component {
   render() {
     const {
       sample,
-      publicLinkDefault,
       handleImage,
       handleProfileInputs,
-      handleDefaultInputChange,
       handleAddLinkItem,
       handleRemoveLinkItem,
       handleLinkChange
@@ -75,7 +73,6 @@ FormAuthor.propTypes = {
   sample: PropTypes.object.isRequired,
   handleImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
-  handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired

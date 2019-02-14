@@ -66,6 +66,10 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
       this
     );
+    this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
+
+
+
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -431,14 +435,13 @@ class App extends Component {
   handleAddSignificantRelationships(){
     const { significantRelationshipsDefault } = this.state;
     const newsignificantRelationshipsItem= significantRelationshipsDefault;
-
     this.setState(prevState => {
       const newState={
         sample: {
           ...prevState.sample,
           author:{
             ...prevState.sample.author,
-            ssignificantRelationships : prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
+            significantRelationships: prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
           },
           significantRelationshipsDefault: ""
           }
@@ -446,6 +449,7 @@ class App extends Component {
         return newState;
     });
   }
+
 
 
   handleAddEducationItem() {
@@ -737,6 +741,7 @@ class App extends Component {
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
+          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

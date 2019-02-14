@@ -23,7 +23,7 @@ class FormPublicLinks extends Component {
           networks or any other worthy public profile
         </p>
 
-        {publicLinks.map((item, index) => {
+        {publicLinks && !!publicLinks.length && publicLinks.map((item, index) => {
           return (
             <FormPublicLinksItem
               key={index}

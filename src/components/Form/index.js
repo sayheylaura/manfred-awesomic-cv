@@ -29,7 +29,8 @@ class Form extends Component {
       miscEdDefault,
       questionDefault,
       answerDefault,
-      handleImage,
+      handleAddImage,
+      handleRemoveImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
@@ -64,12 +65,9 @@ class Form extends Component {
       handleQuestionInputChange
     } = this.props;
 
-    const {
-      education,
-      languages,
-      miscEducation,
-      questionnaire
-    } = sample;
+    const { education, languages, miscEducation, questionnaire } = sample;
+
+
 
     const {
       intro,
@@ -93,7 +91,8 @@ class Form extends Component {
           sample={sample}
           image={sample.author.profile.image}
           publicLinkDefault={publicLinkDefault}
-          handleImage={handleImage}
+          handleAddImage={handleAddImage}
+          handleRemoveImage={handleRemoveImage}
           handleProfileInputs={handleProfileInputs}
           handleDefaultInputChange={handleDefaultInputChange}
           handleAddLinkItem={handleAddLinkItem}
@@ -101,10 +100,7 @@ class Form extends Component {
           handleLinkChange={handleLinkChange}
         />
 
-        <FormIntro
-          intro={intro}
-          handleIntroChange={handleIntroChange}
-        />
+        <FormIntro intro={intro} handleIntroChange={handleIntroChange} />
 
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
@@ -123,15 +119,15 @@ class Form extends Component {
         />
 
         <FormTransportableSkills
-          transportableSkills={transportableSkills}
-          transportableSkillDefault={transportableSkillDefault}
-          handleAddTransportableSkill={handleAddTransportableSkill}
-          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-          handleTransportableSkillChange={handleTransportableSkillChange}
-          handleTransportableSkillsInput={handleTransportableSkillsInput}
+            transportableSkills={transportableSkills}
+            transportableSkillDefault={transportableSkillDefault}
+            handleAddTransportableSkill={handleAddTransportableSkill}
+            handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+            handleTransportableSkillChange={handleTransportableSkillChange}
+            handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
-        <FormSignificantExperience
+          <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
           handleAddSignificantExperience={handleAddSignificantExperience}
@@ -153,7 +149,7 @@ class Form extends Component {
           handleEducationChange={handleEducationChange}
         />
 
-        <FormLanguages
+          <FormLanguages
           languages={languages}
           languageDefault={languageDefault}
           proficiencyDefault={proficiencyDefault}
@@ -181,6 +177,7 @@ class Form extends Component {
           handleRemoveQuestion={handleRemoveQuestion}
           handleQuestionInputChange={handleQuestionInputChange}
         />
+
       </section>
     );
   }
@@ -203,7 +200,8 @@ Form.propTypes = {
   miscEdDefault: PropTypes.string.isRequired,
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
-  handleImage: PropTypes.func.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

@@ -9,26 +9,30 @@ class FormAuthor extends Component {
     const {
       sample,
       publicLinkDefault,
-      handleImage,
+      handleAddImage,
+      handleRemoveImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
       handleRemoveLinkItem,
       handleLinkChange
     } = this.props;
+
     const {
       name,
       birthday,
       yearsOfExperience,
       publicLinks
     } = sample.author.profile;
+
     return (
       <fieldset className="form__author">
         <legend className="form__section-title">Personal data</legend>
 
         <FormImage
-          handleImage={handleImage}
           image={sample.author.profile.image}
+          handleAddImage={handleAddImage}
+          handleRemoveImage={handleRemoveImage}
         />
 
         <FormInput
@@ -76,7 +80,8 @@ class FormAuthor extends Component {
 FormAuthor.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
-  handleImage: PropTypes.func.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,

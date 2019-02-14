@@ -31,7 +31,8 @@ class App extends Component {
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
     this.handleJsonText = this.handleJsonText.bind(this);
-    this.handleImage = this.handleImage.bind(this);
+    this.handleAddImage = this.handleAddImage.bind(this);
+    this.handleRemoveImage = this.handleRemoveImage.bind(this);
     this.handleProfileInputs = this.handleProfileInputs.bind(this);
     this.handleDefaultInputChange = this.handleDefaultInputChange.bind(this);
     this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
@@ -93,7 +94,7 @@ class App extends Component {
     this.setState({ sample: parsedValue });
   }
 
-  handleImage(image) {
+  handleAddImage(image) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -103,6 +104,24 @@ class App extends Component {
             profile: {
               ...prevState.sample.author.profile,
               image: image
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveImage() {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              image: ""
             }
           }
         }
@@ -778,14 +797,14 @@ class App extends Component {
           answerDefault={answerDefault}
           handlePrintBtn={this.handlePrintBtn}
           handleJsonText={this.handleJsonText}
-          handleImage={this.handleImage}
+          handleAddImage={this.handleAddImage}
+          handleRemoveImage={this.handleRemoveImage}
           handleProfileInputs={this.handleProfileInputs}
           handleDefaultInputChange={this.handleDefaultInputChange}
           handleAddLinkItem={this.handleAddLinkItem}
           handleRemoveLinkItem={this.handleRemoveLinkItem}
           handleLinkChange={this.handleLinkChange}
           handleIntroChange={this.handleIntroChange}
-
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}
           handleGoalsInput={this.handleGoalsInput}

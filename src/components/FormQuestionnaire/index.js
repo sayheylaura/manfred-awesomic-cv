@@ -24,7 +24,7 @@ class FormQuestionnaire extends Component {
           those of your potential employer
         </p>
 
-        {questionnaire.map((item, index) => {
+        {questionnaire && !!questionnaire.length && questionnaire.map((item, index) => {
           const { question, answer } = item;
           return (
             <FormQuestionnaireItem

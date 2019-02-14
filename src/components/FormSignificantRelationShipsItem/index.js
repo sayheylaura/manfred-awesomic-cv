@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FormInput from '../FormInput';
 import Button from '../Button';
 
@@ -83,6 +84,13 @@ class FormSignificantRelationShipsItem extends Component {
 
       );
     }
+  }
+
+  FormSignificantRelationShipsItem.propTypes = {
+    relationships: PropTypes.object.isRequired,
+    ind: PropTypes.number.isRequired,
+    handleRemoveSignificantRelationships: PropTypes.func.isRequired,
+    handleSignificantRelationshipsInput: PropTypes.func.isRequired
   }
 
 

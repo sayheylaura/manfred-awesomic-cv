@@ -4,6 +4,7 @@ import FormAuthor from "../FormAuthor";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
+import FormExperience from '../FormExperience';
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
@@ -22,6 +23,7 @@ class Form extends Component {
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
+      companyDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -71,7 +73,7 @@ class Form extends Component {
       handleQuestionInputChange
     } = this.props;
 
-    const { education, languages, miscEducation, questionnaire } = sample;
+    const { education, experience, languages, miscEducation, questionnaire } = sample;
 
 
 
@@ -120,7 +122,7 @@ class Form extends Component {
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
        />
-        />
+
         <FormSignificantRelationShips
           significantRelationships={significantRelationships}
           significantRelationshipsDefault={significantRelationshipsDefault}
@@ -147,6 +149,11 @@ class Form extends Component {
           handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
 
+        />
+        <FormExperience
+          companyDefault={companyDefault}
+          experience={experience}
+          handleDefaultInputChange={handleDefaultInputChange}
         />
 
         <FormEducation

@@ -27,6 +27,7 @@ class App extends Component {
         company:"",
       },
       significantExperienceDefault: "",
+      companyDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -703,6 +704,64 @@ class App extends Component {
     });
   }
 
+  handleAddExperienceItem() {
+    const {
+      companyDefault
+    } = this.state;
+
+    const newExperience = {
+
+    }
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: prevState.sample.experience.concat(newExperience)
+        },
+        institutionDefault: "",
+        studyDefault: "",
+        fromEdDefault: "",
+        untilEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveExperienceItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleEducationChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddLanguageItem() {
     const { languageDefault, proficiencyDefault } = this.state;
 
@@ -873,6 +932,7 @@ class App extends Component {
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
+      companyDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -893,9 +953,9 @@ class App extends Component {
           significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
-
           handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           institutionDefault={institutionDefault}
+          companyDefault={companyDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
           untilEdDefault={untilEdDefault}

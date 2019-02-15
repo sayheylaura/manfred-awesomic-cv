@@ -3,17 +3,22 @@ import FormInput from "../FormInput";
 import PropTypes from "prop-types";
 import FormImage from "../FormImage";
 import FormPublicLinks from "../FormPublicLinks";
+import FormProfileRoles from "../FormProfileRoles";
 
 class FormAuthor extends Component {
   render() {
     const {
       sample,
       publicLinkDefault,
+      rolesDefault,
       handleAddImage,
       handleRemoveImage,
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
+      handleAddRoleItem,
+      handleRoleChange,
+      handleRemoveRoleItem,
       handleRemoveLinkItem,
       handleLinkChange
     } = this.props;
@@ -22,7 +27,8 @@ class FormAuthor extends Component {
       name,
       birthday,
       yearsOfExperience,
-      publicLinks
+      publicLinks,
+      roles
     } = sample.author.profile;
 
     return (
@@ -72,6 +78,15 @@ class FormAuthor extends Component {
           handleRemoveLinkItem={handleRemoveLinkItem}
           handleLinkChange={handleLinkChange}
         />
+
+        <FormProfileRoles
+          roles={roles}
+          handleDefaultInputChange={handleDefaultInputChange}
+          rolesDefault={rolesDefault}
+          handleAddRoleItem={handleAddRoleItem}
+          handleRemoveRoleItem={handleRemoveRoleItem}
+          handleRoleChange={handleRoleChange}
+        />
       </fieldset>
     );
   }
@@ -80,13 +95,17 @@ class FormAuthor extends Component {
 FormAuthor.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
+  rolesDefault: PropTypes.string.isRequired,
   handleAddImage: PropTypes.func.isRequired,
   handleRemoveImage: PropTypes.func.isRequired,
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
-  handleLinkChange: PropTypes.func.isRequired
+  handleLinkChange: PropTypes.func.isRequired,
+  handleAddRoleItem: PropTypes.func.isRequired,
+  handleRemoveRoleItem: PropTypes.func.isRequired,
+  handleRoleChange: PropTypes.func.isRequired
 };
 
 export default FormAuthor;

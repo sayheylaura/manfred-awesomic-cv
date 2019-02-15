@@ -6,20 +6,32 @@ import Form from "../Form";
 import Json from "../Json";
 
 const tabs = [
-  { name: 'form', text: 'Form', linkTo: '/' },
-  { name: 'json', text: 'JSON editor', linkTo: '/json' },
-  { name: 'cv', text: 'CV viewer', linkTo: '/preview' }
-]
+  { name: "form", text: "Form", linkTo: "/" },
+  { name: "json", text: "JSON editor", linkTo: "/json" },
+  { name: "cv", text: "CV viewer", linkTo: "/preview" }
+];
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: 'form',
+      activeTab: this.getActiveTabFromLS()
+    };
+  }
+
+  getActiveTabFromLS() {
+    const localStorageActiveTab = localStorage.getItem("activeTab");
+    const localStorageJSON = JSON.parse(localStorageActiveTab);
+    if (!localStorageActiveTab) {
+      return "form";
+    } else {
+      return localStorageJSON;
     }
   }
+
   handleTabClick(newActiveTabName) {
-    this.setState({ activeTab: newActiveTabName })
+    this.setState({ activeTab: newActiveTabName });
+    localStorage.setItem("activeTab", JSON.stringify(newActiveTabName));
   }
 
   render() {
@@ -35,16 +47,23 @@ class Main extends Component {
         <div className="preview__wrapper">
           <nav className="main__nav">
             <ul className="nav__list">
-              {tabs.map((tabItem, index) =>
-                <li key={index}
-                  className={`nav__link ${tabItem.name === this.state.activeTab ? 'active' : ''}`}
-                  onClick={(e) => this.handleTabClick(tabItem.name)}
+              {tabs.map((tabItem, index) => (
+                <li
+                  key={index}
+                  className={`nav__link ${
+                    tabItem.name === this.state.activeTab ? "active" : ""
+                  }`}
+                  onClick={e => this.handleTabClick(tabItem.name)}
                 >
-                  {tabItem.name === this.state.activeTab
-                    ? tabItem.text
-                    : <Link className="nav__link-route" to={tabItem.linkTo}>{tabItem.text}</Link>}
+                  {tabItem.name === this.state.activeTab ? (
+                    tabItem.text
+                  ) : (
+                    <Link className="nav__link-route" to={tabItem.linkTo}>
+                      {tabItem.text}
+                    </Link>
+                  )}
                 </li>
-              )}
+              ))}
             </ul>
           </nav>
           <Switch>
@@ -80,6 +99,7 @@ class Main extends Component {
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
+  rolesDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   significantRelationshipsDefault: PropTypes.object.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
@@ -100,6 +120,9 @@ Main.propTypes = {
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
+  handleAddRoleItem: PropTypes.func.isRequired,
+  handleRemoveRoleItem: PropTypes.func.isRequired,
+  handleRoleChange: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,

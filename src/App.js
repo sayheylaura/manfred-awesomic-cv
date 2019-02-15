@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,13 @@ class App extends Component {
       publicLinkDefault: "",
       goalDefault: "",
       transportableSkillDefault: "",
-      significantRelationshipsDefault:"",
+      significantRelationshipsDefault: {
+        name:"",
+        comment:"",
+        role:"",
+        contact:"",
+        company:"",
+      },
       significantExperienceDefault: "",
       institutionDefault: "",
       studyDefault: "",
@@ -69,6 +77,7 @@ class App extends Component {
     );
     this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
     this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
+    this.handleDefaultInputChangeSignificantRelationships = this.handleDefaultInputChangeSignificantRelationships.bind(this)
     this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
@@ -468,22 +477,44 @@ class App extends Component {
   //     return newState;
   //   });
   // }
-
-  handleAddSignificantRelationships(){
-    const { significantRelationshipsDefault } = this.state;
-    const newsignificantRelationshipsItem= significantRelationshipsDefault;
+  handleDefaultInputChangeSignificantRelationships(event) {
+    const { name, value } = event.currentTarget;
     this.setState(prevState => {
-      const newState={
+      const newState = {
+        significantRelationshipsDefault: {
+          ...prevState.significantRelationshipsDefault,
+          [name]: value
+        }
+      };
+      return newState;
+    });
+  }
+
+
+  handleAddSignificantRelationships() {
+    const { significantRelationshipsDefault } = this.state;
+    const newsignificantRelationshipsItem = significantRelationshipsDefault;
+
+    this.setState(prevState => {
+      const newState = {
         sample: {
           ...prevState.sample,
-          author:{
+          author: {
             ...prevState.sample.author,
             significantRelationships: prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
           },
-          significantRelationshipsDefault: ""
-          }
-        };
-        return newState;
+
+        },
+        significantRelationshipsDefault: {
+          name: "",
+          comment: "",
+          role: "",
+          contact: "",
+          company: "",
+        }
+
+      };
+      return newState;
     });
   }
   handleRemoveSignificantRelationships(ind) {
@@ -823,6 +854,7 @@ class App extends Component {
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
+          handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
           handleAddSignificantRelationships={this.handleAddSignificantRelationships}
           handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
           handleAddEducationItem={this.handleAddEducationItem}

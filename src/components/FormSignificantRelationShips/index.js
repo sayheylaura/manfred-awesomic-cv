@@ -1,20 +1,43 @@
 import React, { Component } from 'react';
 import FormInput from '../FormInput';
 import Button from '../Button';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import FormSignificantRelationShipsItem from '../FormSignificantRelationShipsItem';
 
 
 class FormSignificantRelationShips extends Component {
 
   render() {
-    const { significantRelationships, significantRelationshipsDefault, handleDefaultInputChange, handleAddSignificantRelationships, handleRemoveSignificantRelationships, handleSignificantRelationshipsInput } = this.props;
-    console.log(significantRelationships);
+    const {
+      significantRelationships,
+      significantRelationshipsDefault,
+      handleDefaultInputChangeSignificantRelationships,
+      handleAddSignificantRelationships,
+      handleRemoveSignificantRelationships,
+      handleSignificantRelationshipsInput } = this.props;
+
+    const {
+      name,
+      comment,
+      role,
+      contact,
+      company
+    } = significantRelationshipsDefault;
     return (
-      <div>
-        {significantRelationships.map((item, index) => {
+      <fieldset className="form__significantRelationships">
+        <legend className="form__section-title">Significant Relationships
+        <span className="required_field">*</span></legend>
+        <p className="form__section-description">
+          List the professional relationships (2-3 is enough) that you can seek advice in case you need, who provide you with professional insights in your day to day
+        </p>
+        {significantRelationships && !!significantRelationships.length && significantRelationships.map((item, index) => {
           return (
-            <FormSignificantRelationShipsItem key={index} relationships={item} ind={index} handleRemoveSignificantRelationships={handleRemoveSignificantRelationships} handleSignificantRelationshipsInput ={handleSignificantRelationshipsInput }/>
+            <FormSignificantRelationShipsItem
+              key={index}
+              relationships={item}
+              ind={index}
+              handleRemoveSignificantRelationships={handleRemoveSignificantRelationships}
+              handleSignificantRelationshipsInput={handleSignificantRelationshipsInput} />
           );
         }
         )}
@@ -23,46 +46,46 @@ class FormSignificantRelationShips extends Component {
             labelContent="Name"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsName"
-            inputValue={significantRelationshipsDefault}
+            inputName="name"
+            inputValue={name}
             example="Ex: Steve Jobs"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Comment"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsComment"
-            inputValue={significantRelationshipsDefault}
+            inputName="comment"
+            inputValue={comment}
             example="Ex: "
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Role"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsRole"
-            inputValue={significantRelationshipsDefault}
+            inputName="role"
+            inputValue={role}
             example="Ex: CEO"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Contact"
             styles="form__input"
             inputType="email"
-            inputName="relationShipsContact"
-            inputValue={significantRelationshipsDefault}
+            inputName="contact"
+            inputValue={contact}
             example="Ex: email@email.com"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <FormInput
             labelContent="Company"
             styles="form__input"
             inputType="text"
-            inputName="relationShipsCompany"
-            inputValue={significantRelationshipsDefault}
+            inputName="company"
+            inputValue={company}
             example="Ex: IBM"
-            handleInputChange={handleDefaultInputChange}
+            handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
           <Button
             buttonType="button"
@@ -71,11 +94,21 @@ class FormSignificantRelationShips extends Component {
           >
             Add
               </Button>
-        </div>
 
-      </div>
+        </div>
+      </fieldset>
     );
   }
 }
+
+FormSignificantRelationShips.propTypes = {
+  significantRelationshipsDefault: PropTypes.object.isRequired,
+  significantRelationships: PropTypes.array.isRequired,
+  handleDefaultInputChangeSignificantRelationships: PropTypes.func.isRequired,
+  handleAddSignificantRelationships: PropTypes.func.isRequired,
+  handleRemoveSignificantRelationships: PropTypes.func.isRequired,
+  handleSignificantRelationshipsInput: PropTypes.func.isRequired
+};
+
 
 export default FormSignificantRelationShips;

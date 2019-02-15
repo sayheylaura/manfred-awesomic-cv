@@ -94,7 +94,7 @@ Main.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
-  significantRelationshipsDefault: PropTypes.array.isRequired,
+  significantRelationshipsDefault: PropTypes.object.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,

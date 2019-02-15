@@ -6,8 +6,8 @@ import Form from "../Form";
 import Json from "../Json";
 
 const tabs = [
-  { name: "form", text: "Form", linkTo: "/" },
-  { name: "json", text: "JSON editor", linkTo: "/json" },
+  { name: "json", text: "JSON editor", linkTo: "/" },
+  { name: "form", text: "Form", linkTo: "/form" },
   { name: "cv", text: "CV viewer", linkTo: "/preview" }
 ];
 
@@ -35,12 +35,7 @@ class Main extends Component {
   }
 
   render() {
-    const {
-      sample,
-      handlePrintBtn,
-      handleJsonText,
-      ...rest
-    } = this.props;
+    const { sample, handlePrintBtn, handleJsonText, ...rest } = this.props;
 
     return (
       <main className="main">
@@ -71,17 +66,12 @@ class Main extends Component {
               exact
               path="/"
               render={() => (
-                <Form
-                  sample={sample}
-                  {...rest}
-                />
+                <Json sample={sample} handleJsonText={handleJsonText} />
               )}
             />
             <Route
-              path="/json"
-              render={() => (
-                <Json sample={sample} handleJsonText={handleJsonText} />
-              )}
+              path="/form"
+              render={() => <Form sample={sample} {...rest} />}
             />
             <Route
               path="/preview"

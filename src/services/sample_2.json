@@ -34,8 +34,6 @@
     ]
   },
   "experience": [
-    {
-      "company": [
         {
           "name": "Happy Bear Co.",
           "roles": [
@@ -66,9 +64,36 @@
               "contact": "sarah@skynet.com"
             }
           ]
+        },
+        {
+          "name": "Burbujas SL",
+          "roles": [
+            {
+              "role": "Product manager",
+              "from": "2017",
+              "until": "2018",
+              "challenges": [
+                {
+                  "summary": "Reventar burbujas",
+                  "actions": [
+                    {
+                      "summary": "Apretar las burbujas",
+                      "tools": "Herramientas muy sofisticadas"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "Delfin hasta el Fin",
+              "role": "Apretador Sr",
+              "contact": "666-66-66"
+            }
+          ]
         }
-      ]
-    }
+
   ],
   "education": [
     {

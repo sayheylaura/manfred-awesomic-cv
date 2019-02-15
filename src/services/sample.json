@@ -26,8 +26,6 @@
   },
   "experience": [
     {
-      "company": [
-        {
           "name": "Burbujas SL",
           "roles": [
             {
@@ -49,14 +47,12 @@
           ],
           "references": [
             {
-              "name": "",
-              "role": "",
-              "contact": ""
+              "name": "Delfin hasta el Fin",
+              "role": "Apretador Sr",
+              "contact": "666-66-66"
             }
           ]
         }
-      ]
-    }
   ],
   "education": [
     {

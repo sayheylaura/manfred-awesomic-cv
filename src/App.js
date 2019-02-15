@@ -87,6 +87,9 @@ class App extends Component {
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddExperienceItem = this.handleAddExperienceItem.bind(this);
+    this.handleRemoveExperienceItem = this.handleRemoveExperienceItem.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
     this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
@@ -705,24 +708,21 @@ class App extends Component {
   }
 
   handleAddExperienceItem() {
-    const {
-      companyDefault
-    } = this.state;
+    const { companyDefault } = this.state;
 
     const newExperience = {
-
+      name: companyDefault,
+      roles: [],
+      references: []
     }
 
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
-          experience: prevState.sample.experience.concat(newExperience)
+          experience: prevState.sample.experience[0].company.concat(newExperience)
         },
-        institutionDefault: "",
-        studyDefault: "",
-        fromEdDefault: "",
-        untilEdDefault: ""
+        companyDefault: ""
       };
       return newState;
     });
@@ -733,7 +733,7 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          education: prevState.sample.education.filter((item, index) => {
+          experience: prevState.sample.experience[0].company.filter((item, index) => {
             return index !== ind;
           })
         }
@@ -742,12 +742,12 @@ class App extends Component {
     });
   }
 
-  handleEducationChange(value, name, ind) {
+  handleExperienceChange(value, name, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
           ...prevState.sample,
-          education: prevState.sample.education.map((item, index) => {
+          experience: prevState.sample.experience[0].company.map((item, index) => {
             if (index === ind) {
               item = {
                 ...item,
@@ -1001,6 +1001,9 @@ class App extends Component {
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}
+          handleAddExperienceItem={this.handleAddExperienceItem}
+          handleRemoveExperienceItem={this.handleRemoveExperienceItem}
+          handleExperienceChange={this.handleExperienceChange}
           handleAddLanguageItem={this.handleAddLanguageItem}
           handleRemoveLanguageItem={this.handleRemoveLanguageItem}
           handleLanguageChange={this.handleLanguageChange}

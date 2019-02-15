@@ -62,6 +62,9 @@ class Form extends Component {
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
+      handleAddExperienceItem,
+      handleRemoveExperienceItem,
+      handleExperienceChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
       handleLanguageChange,
@@ -154,6 +157,9 @@ class Form extends Component {
           companyDefault={companyDefault}
           experience={experience}
           handleDefaultInputChange={handleDefaultInputChange}
+          handleAddExperienceItem={handleAddExperienceItem}
+          handleRemoveExperienceItem={handleRemoveExperienceItem}
+          handleExperienceChange={handleExperienceChange}
         />
 
         <FormEducation
@@ -244,6 +250,9 @@ Form.propTypes = {
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,
+  handleAddExperienceItem: PropTypes.func.isRequired,
+  handleRemoveExperienceItem: PropTypes.func.isRequired,
+  handleExperienceChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,

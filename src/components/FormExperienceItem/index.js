@@ -25,6 +25,7 @@ class FormExperienceItem extends Component {
   render() {
     const { company } = this.props.item;
     console.log(company);
+    console.log(this.props.item);
     return (
       <div>
         {company.map((item, index) => {

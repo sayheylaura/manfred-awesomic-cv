@@ -35,13 +35,15 @@ class FormMiscEducationItem extends Component {
           example="Ex: Scrum master certification"
           handleInputChange={this.handleInputChange}
         />
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
+        </div>
       </div>
     );
   }

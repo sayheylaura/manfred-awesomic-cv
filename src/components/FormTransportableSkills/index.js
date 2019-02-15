@@ -35,7 +35,7 @@ class FormTransportableSkills extends Component {
         })}
         <div>
           <FormInput
-            labelContent="more skills:"
+            labelContent="More skills"
             styles="form__input"
             inputType="text"
             inputName="transportable skills"

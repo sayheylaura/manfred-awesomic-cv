@@ -36,6 +36,7 @@ class FormTransportableSkillsItem extends Component {
           example="Professional Goal"
           handleInputChange={this.handleTransSkillInputChange}
         />
+        <div className="remove-btn__container">
         <Button
           buttonType="button"
           styles="remove-btn"
@@ -43,6 +44,7 @@ class FormTransportableSkillsItem extends Component {
           >
           Remove
         </Button>
+        </div>
       </div>
 
 

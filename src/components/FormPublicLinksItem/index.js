@@ -35,14 +35,15 @@ class FormPublicLinksItem extends Component {
           example="Ex: https://www.twitter.com/janedoe"
           handleInputChange={this.handleChange}
         />
-
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
+        </div>
       </div>
     );
   }

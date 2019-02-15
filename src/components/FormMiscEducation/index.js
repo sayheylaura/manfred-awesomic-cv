@@ -51,7 +51,7 @@ class FormMiscEducation extends Component {
             styles="add-btn"
             handleButtonClick={handleAddMiscItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

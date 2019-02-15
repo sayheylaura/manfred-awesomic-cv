@@ -33,7 +33,7 @@ class FormProfessionalGoals extends Component {
         })}
         <div>
           <FormInput
-            labelContent="more goals:"
+            labelContent="More goals"
             styles="form__input"
             inputType="text"
             inputName="professional goals"

@@ -25,53 +25,9 @@ class Main extends Component {
   render() {
     const {
       sample,
-      publicLinkDefault,
-      goalDefault,
-      transportableSkillDefault,
-      significantExperienceDefault,
-      institutionDefault,
-      studyDefault,
-      fromEdDefault,
-      untilEdDefault,
-      languageDefault,
-      proficiencyDefault,
-      miscEdDefault,
-      questionDefault,
-      answerDefault,
       handlePrintBtn,
       handleJsonText,
-      handleAddImage,
-      handleRemoveImage,
-      handleProfileInputs,
-      handleDefaultInputChange,
-      handleAddLinkItem,
-      handleRemoveLinkItem,
-      handleLinkChange,
-      handleIntroChange,
-      handleAddGoal,
-      handleRemoveGoal,
-      handleGoalsInput,
-      handleGoalChange,
-      handleAddTransportableSkill,
-      handleRemoveTransportableSkill,
-      handleTransportableSkillChange,
-      handleTransportableSkillsInput,
-      handleAddSignificantExperience,
-      handleRemoveSignificantExperience,
-      handlesignificantExperienceChange,
-      handleSignificantExperienceInput,
-      handleAddEducationItem,
-      handleRemoveEducationItem,
-      handleEducationChange,
-      handleAddLanguageItem,
-      handleRemoveLanguageItem,
-      handleLanguageChange,
-      handleAddMiscItem,
-      handleRemoveMiscItem,
-      handleMiscInputChange,
-      handleAddQuestion,
-      handleRemoveQuestion,
-      handleQuestionInputChange
+      ...rest
     } = this.props;
 
     return (
@@ -98,65 +54,7 @@ class Main extends Component {
               render={() => (
                 <Form
                   sample={sample}
-                  publicLinkDefault={publicLinkDefault}
-                  goalDefault={goalDefault}
-                  transportableSkillDefault={transportableSkillDefault}
-                  significantExperienceDefault={significantExperienceDefault}
-                  institutionDefault={institutionDefault}
-                  studyDefault={studyDefault}
-                  fromEdDefault={fromEdDefault}
-                  untilEdDefault={untilEdDefault}
-                  languageDefault={languageDefault}
-                  proficiencyDefault={proficiencyDefault}
-                  miscEdDefault={miscEdDefault}
-                  questionDefault={questionDefault}
-                  answerDefault={answerDefault}
-                  handleAddImage={handleAddImage}
-                  handleRemoveImage={handleRemoveImage}
-                  handleProfileInputs={handleProfileInputs}
-                  handleDefaultInputChange={handleDefaultInputChange}
-                  handleAddLinkItem={handleAddLinkItem}
-                  handleRemoveLinkItem={handleRemoveLinkItem}
-                  handleLinkChange={handleLinkChange}
-                  handleIntroChange={handleIntroChange}
-                  handleAddGoal={handleAddGoal}
-                  handleRemoveGoal={handleRemoveGoal}
-                  handleGoalsInput={handleGoalsInput}
-                  handleGoalChange={handleGoalChange}
-                  handleAddTransportableSkill={handleAddTransportableSkill}
-                  handleRemoveTransportableSkill={
-                    handleRemoveTransportableSkill
-                  }
-                  handleTransportableSkillChange={
-                    handleTransportableSkillChange
-                  }
-                  handleTransportableSkillsInput={
-                    handleTransportableSkillsInput
-                  }
-                  handleAddSignificantExperience={
-                    handleAddSignificantExperience
-                  }
-                  handleRemoveSignificantExperience={
-                    handleRemoveSignificantExperience
-                  }
-                  handlesignificantExperienceChange={
-                    handlesignificantExperienceChange
-                  }
-                  handleSignificantExperienceInput={
-                    handleSignificantExperienceInput
-                  }
-                  handleAddEducationItem={handleAddEducationItem}
-                  handleRemoveEducationItem={handleRemoveEducationItem}
-                  handleEducationChange={handleEducationChange}
-                  handleAddLanguageItem={handleAddLanguageItem}
-                  handleRemoveLanguageItem={handleRemoveLanguageItem}
-                  handleLanguageChange={handleLanguageChange}
-                  handleAddMiscItem={handleAddMiscItem}
-                  handleRemoveMiscItem={handleRemoveMiscItem}
-                  handleMiscInputChange={handleMiscInputChange}
-                  handleAddQuestion={handleAddQuestion}
-                  handleRemoveQuestion={handleRemoveQuestion}
-                  handleQuestionInputChange={handleQuestionInputChange}
+                  {...rest}
                 />
               )}
             />
@@ -183,6 +81,7 @@ Main.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.object.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
@@ -215,6 +114,7 @@ Main.propTypes = {
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
+  handleAddSignificantRelationships: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

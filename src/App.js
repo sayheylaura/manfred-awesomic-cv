@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +18,13 @@ class App extends Component {
       publicLinkDefault: "",
       goalDefault: "",
       transportableSkillDefault: "",
+      significantRelationshipsDefault: {
+        name:"",
+        comment:"",
+        role:"",
+        contact:"",
+        company:"",
+      },
       significantExperienceDefault: "",
       institutionDefault: "",
       studyDefault: "",
@@ -66,6 +75,10 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
       this
     );
+    this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
+    this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
+    this.handleDefaultInputChangeSignificantRelationships = this.handleDefaultInputChangeSignificantRelationships.bind(this)
+    this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -446,6 +459,110 @@ class App extends Component {
     });
   }
 
+  // handleRemoveSignificant(ind) {
+  //   this.setState(prevState => {
+  //     const newState = {
+  //       sample: {
+  //         ...prevState.sample,
+  //         author: {
+  //           ...prevState.sample.author,
+  //           significantExperience: prevState.sample.author.significantExperience.filter(
+  //             (item, index) => {
+  //               return index !== ind;
+  //             }
+  //           )
+  //         }
+  //       }
+  //     };
+  //     return newState;
+  //   });
+  // }
+  handleDefaultInputChangeSignificantRelationships(event) {
+    const { name, value } = event.currentTarget;
+    this.setState(prevState => {
+      const newState = {
+        significantRelationshipsDefault: {
+          ...prevState.significantRelationshipsDefault,
+          [name]: value
+        }
+      };
+      return newState;
+    });
+  }
+
+
+  handleAddSignificantRelationships() {
+    const { significantRelationshipsDefault } = this.state;
+    const newsignificantRelationshipsItem = significantRelationshipsDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
+          },
+
+        },
+        significantRelationshipsDefault: {
+          name: "",
+          comment: "",
+          role: "",
+          contact: "",
+          company: "",
+        }
+
+      };
+      return newState;
+    });
+  }
+  handleRemoveSignificantRelationships(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleSignificantRelationshipsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+
+//handle modificar campo!!!!
+
+
+
   handleAddEducationItem() {
     const {
       institutionDefault,
@@ -675,6 +792,7 @@ class App extends Component {
       sample,
       publicLinkDefault,
       goalDefault,
+      significantRelationshipsDefault,
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
@@ -694,8 +812,11 @@ class App extends Component {
           sample={sample}
           publicLinkDefault={publicLinkDefault}
           goalDefault={goalDefault}
+          significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
+
+          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
@@ -733,6 +854,9 @@ class App extends Component {
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
+          handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
+          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
+          handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

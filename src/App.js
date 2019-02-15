@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       sample: sample_2,
       publicLinkDefault: "",
+      rolesDefault: "project manager",
       goalDefault: "",
       transportableSkillDefault: "",
       significantExperienceDefault: "",
@@ -37,6 +38,9 @@ class App extends Component {
     this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
     this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
     this.handleLinkChange = this.handleLinkChange.bind(this);
+    this.handleAddRoleItem = this.handleAddRoleItem.bind(this);
+    this.handleRemoveRoleItem = this.handleRemoveRoleItem.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
     this.handleIntroChange = this.handleIntroChange.bind(this);
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
@@ -208,6 +212,78 @@ class App extends Component {
             profile: {
               ...prevState.sample.author.profile,
               publicLinks: prevState.sample.author.profile.publicLinks.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+
+  handleAddRoleItem() {
+    const { rolesDefault } = this.state;
+    const newRoleItem = rolesDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.concat(
+                newRoleItem
+              )
+            }
+          }
+        },
+        rolesDefault: "project manager"
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveRoleItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.filter(
+                (item, index) => {
+                  return index !== ind;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleRoleChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.map(
                 (item, index) => {
                   if (index === ind) {
                     item = value;
@@ -674,6 +750,7 @@ class App extends Component {
     const {
       sample,
       publicLinkDefault,
+      rolesDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -693,6 +770,7 @@ class App extends Component {
         <Main
           sample={sample}
           publicLinkDefault={publicLinkDefault}
+          rolesDefault={rolesDefault}
           goalDefault={goalDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
@@ -714,6 +792,9 @@ class App extends Component {
           handleAddLinkItem={this.handleAddLinkItem}
           handleRemoveLinkItem={this.handleRemoveLinkItem}
           handleLinkChange={this.handleLinkChange}
+          handleAddRoleItem={this.handleAddRoleItem}
+          handleRemoveRoleItem={this.handleRemoveRoleItem}
+          handleRoleChange={this.handleRoleChange}
           handleIntroChange={this.handleIntroChange}
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}

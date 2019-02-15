@@ -26,6 +26,7 @@ class Main extends Component {
     const {
       sample,
       publicLinkDefault,
+      rolesDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
@@ -45,6 +46,9 @@ class Main extends Component {
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
+      handleAddRoleItem,
+      handleRemoveRoleItem,
+      handleRoleChange,
       handleRemoveLinkItem,
       handleLinkChange,
       handleIntroChange,
@@ -99,6 +103,7 @@ class Main extends Component {
                 <Form
                   sample={sample}
                   publicLinkDefault={publicLinkDefault}
+                  rolesDefault={rolesDefault}
                   goalDefault={goalDefault}
                   transportableSkillDefault={transportableSkillDefault}
                   significantExperienceDefault={significantExperienceDefault}
@@ -116,6 +121,9 @@ class Main extends Component {
                   handleProfileInputs={handleProfileInputs}
                   handleDefaultInputChange={handleDefaultInputChange}
                   handleAddLinkItem={handleAddLinkItem}
+                  handleAddRoleItem={handleAddRoleItem}
+                  handleRemoveRoleItem={handleRemoveRoleItem}
+                  handleRoleChange={handleRoleChange}
                   handleRemoveLinkItem={handleRemoveLinkItem}
                   handleLinkChange={handleLinkChange}
                   handleIntroChange={handleIntroChange}
@@ -182,6 +190,7 @@ class Main extends Component {
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
+  rolesDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
@@ -201,6 +210,9 @@ Main.propTypes = {
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
+  handleAddRoleItem: PropTypes.func.isRequired,
+  handleRemoveRoleItem: PropTypes.func.isRequired,
+  handleRoleChange: PropTypes.func.isRequired,
   handleRemoveLinkItem: PropTypes.func.isRequired,
   handleLinkChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,

@@ -720,7 +720,11 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          experience: prevState.sample.experience[0].company.concat(newExperience)
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.concat(newExperience)
+            }
+          ]
         },
         companyDefault: ""
       };
@@ -733,9 +737,13 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          experience: prevState.sample.experience[0].company.filter((item, index) => {
-            return index !== ind;
-          })
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.filter((item, index) => {
+                return index !== ind;
+              })
+            }
+          ]
         }
       };
       return newState;
@@ -747,15 +755,19 @@ class App extends Component {
       const newState = {
         sample: {
           ...prevState.sample,
-          experience: prevState.sample.experience[0].company.map((item, index) => {
-            if (index === ind) {
-              item = {
-                ...item,
-                [name]: value
-              };
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.map((item, index) => {
+                if (index === ind) {
+                  item = {
+                    ...item,
+                    [name]: value
+                  };
+                }
+                return item;
+              })
             }
-            return item;
-          })
+          ]
         }
       };
       return newState;

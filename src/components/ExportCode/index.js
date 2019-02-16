@@ -26,7 +26,7 @@ class ExportCode extends Component {
     }
     return (
       <div>
-      <pre className="pre">{pageHTML}</pre>
+      <pre className="pre"><code>{pageHTML}</code></pre>
       </div>
     );
   }

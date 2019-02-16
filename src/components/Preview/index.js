@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Cv from "../Cv";
 import Button from "../Button";
 import ModalHtml from "../Modal";
-// import  {Link} from "react-router-dom";
+
 
 class Preview extends Component {
   render() {
@@ -16,15 +16,7 @@ class Preview extends Component {
           handleButtonClick={handlePrintBtn}
         >
         </Button>
-        {/* <Link to='/cvhtml'> */}
-        <Button
-          buttonType="button"
-          styles=""
-          handleButtonClick={handleHTML}
-        >
-          aqui viene el diiiiiiv
-        </Button>
-        {/* </Link> */}
+
         <ModalHtml
           cvRef={cvRef}
           handleHTML={handleHTML}

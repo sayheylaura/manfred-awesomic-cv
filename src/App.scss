@@ -130,6 +130,35 @@ a:active {
     }
 }
 
+.preview__html-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  background-image: url(images/source-code.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  position: fixed;
+  right: 10%;
+  top: 23%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s all;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
+  &:hover {
+      background-color: #9C9C9C;
+  }
+  @media print {
+      display: none;
+  }
+}
+
 .cv__wrapper,
 .form__wrapper,
 .json__wrapper {
@@ -641,7 +670,8 @@ a:active {
 }
 
 @media all and (min-width: 768px) {
-    .preview__print-btn {
+    .preview__print-btn,
+    .preview__html-btn {
         display: block;
     }
     .cv__wrapper {

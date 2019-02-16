@@ -75,7 +75,6 @@ class Main extends Component {
       handleRemoveQuestion,
       handleQuestionInputChange
     } = this.props;
-    console.log(cvRef.current, 'MAIN')
     return (
       <main className="main">
         <div className="preview__wrapper">

@@ -693,7 +693,6 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
-    console.log(this.cvRef.current, "cvref de app current");
     return (
       <div className="App">
         <Header />

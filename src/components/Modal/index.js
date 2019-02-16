@@ -1,6 +1,7 @@
 import React from "react";
 import ReactModal from 'react-modal';
 import ExportCode from "../ExportCode";
+import Button from "../Button";
 
 class ModalHtml extends React.Component {
   constructor(props){
@@ -25,7 +26,12 @@ class ModalHtml extends React.Component {
     const {cvRef, handleHTML} = this.props;
     return(
       <div>
-        <button onClick={this.handleOpenModal}>Trigger Modal</button>
+        <Button
+          buttonType="button"
+          styles="preview__html-btn"
+          handleButtonClick={this.handleOpenModal}
+        >
+        </Button>
         <ReactModal
           appElement={document.getElementById('App')}
           isOpen={this.state.showModal}

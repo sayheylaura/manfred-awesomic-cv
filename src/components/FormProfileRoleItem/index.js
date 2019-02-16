@@ -4,7 +4,7 @@ import Button from "../Button";
 import FormSelect from "../FormSelect";
 
 class FormProfileRoleItem extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,7 +25,7 @@ class FormProfileRoleItem extends Component {
   render() {
     const { item, rolesArr } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormSelect
           selectName="roles"
           labelContent="Role"
@@ -33,18 +33,18 @@ class FormProfileRoleItem extends Component {
           styles="form__select"
           handleSelectChange={this.handleChange}
           selectOptions={rolesArr}
-      />
-
-      <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+        />
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
       </Button>
-
+        </div>
       </div>
-     );
+    );
   }
 }
 

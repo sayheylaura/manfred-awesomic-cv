@@ -24,7 +24,7 @@ class FormProfessionalGoalsItem extends Component {
   render() {
     const { goalDefault } = this.props;
     return (
-      <div >
+      <div className="form__container">
         <FormInput
           labelContent="Professional goal"
           styles="form__input"

@@ -25,7 +25,7 @@ class FormMiscEducationItem extends Component {
   render() {
     const { item } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Item"
           styles="form__input"
@@ -42,7 +42,7 @@ class FormMiscEducationItem extends Component {
             handleButtonClick={this.handleRemoveBtn}
           >
             Remove
-        </Button>
+          </Button>
         </div>
       </div>
     );

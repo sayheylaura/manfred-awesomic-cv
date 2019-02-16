@@ -25,7 +25,7 @@ class FormSignificantExperienceItem extends Component {
   render() {
     const { significantExperienceDefault } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Significant experience"
           styles="form__input"

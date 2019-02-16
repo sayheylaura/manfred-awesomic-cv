@@ -6,6 +6,7 @@ import Button from '../Button';
 class FormTransportableSkillsItem extends Component {
   constructor(props) {
     super(props);
+
     this.removeItem = this.removeItem.bind(this);
     this.handleTransSkillInputChange = this.handleTransSkillInputChange.bind(this);
   }
@@ -26,7 +27,7 @@ class FormTransportableSkillsItem extends Component {
   render() {
     const { transportableSkillDefault } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Transportable Skill"
           styles="form__input"
@@ -46,9 +47,6 @@ class FormTransportableSkillsItem extends Component {
         </Button>
         </div>
       </div>
-
-
-
     );
   }
 }

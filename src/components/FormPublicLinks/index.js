@@ -15,7 +15,7 @@ class FormPublicLinks extends Component {
       handleLinkChange
     } = this.props;
     return (
-      <div className="public-links__container">
+      <div className="form__public-links">
         <h3 className="form__section-title">Public links</h3>
 
         <p className="form__section-description">

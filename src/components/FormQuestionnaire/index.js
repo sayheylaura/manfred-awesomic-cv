@@ -16,7 +16,7 @@ class FormQuestionnaire extends Component {
       handleQuestionInputChange
     } = this.props;
     return (
-      <fieldset className="form__questionnaire">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Questionnaire</legend>
 
         <p className="form__section-description">

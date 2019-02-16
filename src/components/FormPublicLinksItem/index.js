@@ -25,7 +25,7 @@ class FormPublicLinksItem extends Component {
   render() {
     const { ind, item, publicLinks } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent={`Link ${ind + 1} of ${publicLinks.length}`}
           styles="form__input"

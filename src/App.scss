@@ -48,7 +48,7 @@ a:active {
 .header,
 .footer {
     width: auto;
-    height: 80px;
+    min-height: 80px;
     background-color: #fff;
     @media print {
         display: none;
@@ -60,8 +60,9 @@ a:active {
 }
 
 .header__container,
-.footer__container {
+.footer__container  {
     width: 320px;
+    min-height: 80px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -69,13 +70,64 @@ a:active {
     height: 100%;
 }
 
+.footer__container {
+  display: block;
+}
+
 .logo {
     display: block;
-    width: 150px;
-    height: 27px;
+    width: 250px;
+    height: 19px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top left;
+}
+.footer__manfred-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50px;
+}
+.footer__text {
+  color: #cad4da;
+  margin: 20px auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  .footer__heart {
+    display: inline-block;
+    width: 20px;
+    height: 17px;
+    background-image: url(images/heart.svg);
+    background-repeat: no-repeat;
+    margin: 0 7px;
+    background-position: center;
+    animation: heartbeat 1.5s infinite;
+  }
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1)
+    }
+    20% {
+      transform: scale(1.15)
+    }
+    30% {
+      transform: scale(1)
+    }
+    40% {
+      transform: scale(1.15)
+    }
+    100% {
+      transform: scale(1)
+    }
+  }
+
+  .footer__adalab {
+    display: inline-block;
+    margin-left: 7px;
+    color: #19d3ca;
+  }
 }
 
 // Main
@@ -104,6 +156,12 @@ a:active {
         min-width: 100%;
     }
 }
+.button__container {
+  position: fixed;
+  right: 10%;
+  width: 50px;
+  height: 100px;
+}
 
 .preview__print-btn {
     display: none;
@@ -111,24 +169,41 @@ a:active {
     height: 50px;
     background-color: #1E086D;
     background-image: url(images/print.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     color: #fff;
     border: 0;
-    border-radius: 2px;
-    position: fixed;
-    right: 10%;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 900;
-    letter-spacing: 1px;
+    position: absolute;
     outline: none;
     cursor: pointer;
     transition: .3s all;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
     &:hover {
-        background-color: #127092;
+        background-color: #4726bb;
     }
     @media print {
         display: none;
     }
+}
+.preview__share-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #1E086D;
+  background-image: url(images/share.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: 0;
+  position: absolute;
+  top: 50px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s all;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
+  &:hover {
+    background-color: #4726bb;
+  }
 }
 
 .cv__wrapper,
@@ -282,19 +357,19 @@ a:active {
 
 .company__name {
     font-size: 22px;
-    color:  #127092;
+    color: #625396;
     text-transform: uppercase;
     font-weight: 900;
     margin-bottom: 30px;
 }
 
 .role-list__role-name {
-    color: #127092;
+    color: #625396;
 }
 
 .role-list__date {
     font-size: 12px;
-    color: #127092;
+    color: #625396;
 }
 
 .role-list__wrapper,
@@ -319,12 +394,12 @@ a:active {
 .challengesActions__item-tools {
     padding: 5px 0;
     padding-left: 25px;
-    color: #127092;
+    color: #625396;
 }
 
 .reference-list__title {
     margin-bottom: 10px;
-    color: #127092;
+    color: #625396;
 }
 
 .reference-list__list {
@@ -352,7 +427,7 @@ a:active {
 }
 
 .education__item-institution {
-    color: #127092;
+    color: #625396;
 }
 
 .education__item-study {
@@ -363,7 +438,7 @@ a:active {
 .education__item-date {
     font-weight: 100;
     font-size: 12px;
-    color: #127092;
+    color: #625396;
 }
 
 .achievements__title {
@@ -385,7 +460,7 @@ a:active {
 .languages__item-language {
     font-size: 18px;
     font-weight: 700;
-    color: #127092;
+    color: #625396;
 }
 
 .languages__item-level {
@@ -406,7 +481,7 @@ a:active {
     line-height: 25px;
     margin: 45px 0 10px 20px;
     font-weight: 700;
-    color: #127092;
+    color: #625396;
 }
 
 //Main component -- nav links from router
@@ -415,9 +490,8 @@ a:active {
     display: flex;
     .nav__link {
         display: flex;
-        height: 100%;
-        // background: #23d2ca;
-        background: linear-gradient(to bottom, #23d2ca, #23ccd2);
+        height: 100%; // background: #23d2ca;
+        background: linear-gradient(to bottom, #19d3ca, #1ed4e1);
         margin-right: 3px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -455,28 +529,47 @@ a:active {
     margin: 20px auto 60px;
 }
 
-.textarea__label {
-    display: block;
-    width: 80%;
-    margin: 30px auto 100px;
-    font-weight: 700;
-    color: #127092;
+.textarea__form-label {
+  color: #fff;
+  font-size: 0;
 }
-
 .textarea {
     resize: none;
     width: 100%;
     margin: 10px auto 0;
-    padding: 20px;
-    min-height: 80vh;
+    padding: 30px 25px;
+    min-height: 250px;
     font-family: "Montserrat", sans-serif;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 12px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 5px 40px 0 #12709215;
-    background-color: #eff4f7;
-    color: #127092;
+    outline: none;
+    color: #757575;
+    background-color: #fff;
+    box-shadow: 0px 5px 30px 0 #8099b32e;
+}
+.textarea__label {
+  display: block;
+  margin: 30px auto 0;
+  font-weight: 700;
+  max-width: 700px;
+}
+.textarea__json {
+  resize: none;
+  width: 100%;
+  margin: 10px auto 100px;
+  padding: 30px 25px;
+  min-height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #01ffbb;
+  background-color: #131a4d;
+  box-shadow: 0px 20px 60px 0 #131a4db5;
 }
 
 // Form
@@ -492,40 +585,91 @@ a:active {
 }
 
 .form__container {
-    margin: 5px auto 50px;
+    margin: 0 auto 50px;
     width: 100%;
     max-width: 320px;
+    animation: appear .5s ease-in-out;
 }
+ @keyframes appear {
+   0% {
+     opacity: 0;
+     transform: translateY(15px);
+   }
+   100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ }
+
 .label {
     display: block;
     font-size: 12px;
-    font-weight: 400;
-    margin: 15px auto 25px;
+    margin: 0 auto 20px;
     width: 100%;
-}
-.label__title {
-  display: inline-block;
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
-.public-links__container {
-  margin: 80px 0 10px;
+    color: #cad4da;
+    font-weight: 100;
 }
 
-.form__questionnaire,
-.form__intro,
-.form__professionalGoals,
-.form__transSkills,
-.form__sig-experience,
-.form__education,
-.form__languages,
-.form__misc-education,
-.form__author {
+.select__label {
+    margin-left: 20px;
+    color: #cad4da;
+    font-weight: 100;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.form__select {
+    outline: none;
+    margin-left: 20px;
     border: none;
-    margin: 80px 0 10px;
+    width: 120px;
+    height: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    color: #757575;
+    background-color: #fff;
+    box-shadow: 0px 5px 30px 0 #8099b32e;
+}
+
+.label__title {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.form__fieldset {
+    border: none;
     width: 80%;
     max-width: 500px;
     margin: 50px auto 100px;
+}
+.form__public-links, .form__profile-roles {
+  width: 100%;
+  max-width: 500px;
+  margin: 100px auto 0;
+}
+
+.form__profile-roles {
+  .select__label {
+    display: block;
+    margin-left: 0;
+  }
+  .select__label-title {
+    display: block;
+    margin-left: 20px;
+  }
+  .form__select {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 0;
+    appearance: none;
+    padding-left: 20px;
+    font-size: 12px;
+  }
 }
 
 .form__section-title {
@@ -537,8 +681,20 @@ a:active {
 }
 
 .form__section-description {
-    margin-bottom: 50px;
+    max-width: 300px;
+    margin: 0 auto 50px;
     hyphens: auto;
+    text-align: center;
+    color: #aaa5bb;
+}
+
+.form__date-container {
+    display: flex;
+    justify-content: space-between;
+    .label {
+        width: 48%;
+        margin: 0 0 20px;
+    }
 }
 
 .form__input {
@@ -547,24 +703,20 @@ a:active {
     height: 40px;
     margin-top: 5px;
     padding: 20px;
-    border-radius: 50px;
+    border-radius: 5px;
     border: none;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 1.2;
-    font-weight: 400; //   color: #000;
+    font-weight: 100;
     outline: none;
     transition: .3s all;
-    background-color: #eff4f7;
+    color: #757575;
+    box-shadow: 0px 5px 30px 0 #8099b32e;
 }
 
 .form__input:hover {
-    box-shadow: 0px 5px 30px 0 #8099b31f;
     transform: translateY(-2px);
-}
-
-.form__input:focus {
-    box-shadow: none;
 }
 
 .remove-btn,
@@ -572,7 +724,7 @@ a:active {
     cursor: pointer;
     padding: 12px 25px;
     border: none;
-    border-radius: 50px;
+    border-radius: 5px;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #fff;
@@ -582,8 +734,8 @@ a:active {
 }
 
 .remove-btn__container {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .remove-btn {
@@ -621,12 +773,12 @@ a:active {
 .get-avatar {
     width: 100%;
     text-align: center;
-    margin: 20px auto 80px;
+    margin: 20px auto 60px;
 }
 
 .get-avatar__trigger {
     background: linear-gradient(to left, #44cad6, #56b2de);
-    border-radius: 50px;
+    border-radius: 5px;
     border: 0;
     box-sizing: border-box;
     color: #fff;
@@ -677,6 +829,12 @@ a:active {
         width: 100%;
         max-width: 500px;
     }
+    .select__label {
+        justify-content: flex-start;
+    }
+    .textarea {
+      font-size: 14px;
+    }
 }
 
 @media all and (min-width: 600px) {
@@ -703,7 +861,7 @@ a:active {
 }
 
 @media all and (min-width: 768px) {
-    .preview__print-btn {
+    .preview__print-btn, .preview__share-btn {
         display: block;
     }
     .cv__wrapper {

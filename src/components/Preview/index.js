@@ -2,7 +2,8 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Cv from "../Cv";
 import Button from "../Button";
-import  {Link} from "react-router-dom";
+import ModalHtml from "../Modal";
+// import  {Link} from "react-router-dom";
 
 class Preview extends Component {
   render() {
@@ -15,7 +16,7 @@ class Preview extends Component {
           handleButtonClick={handlePrintBtn}
         >
         </Button>
-        <Link to='/cvhtml'>
+        {/* <Link to='/cvhtml'> */}
         <Button
           buttonType="button"
           styles=""
@@ -23,10 +24,15 @@ class Preview extends Component {
         >
           aqui viene el diiiiiiv
         </Button>
-        </Link>
-
-        <Cv sample={sample}
-        cvRef={cvRef}/>
+        {/* </Link> */}
+        <ModalHtml
+          cvRef={cvRef}
+          handleHTML={handleHTML}
+        />
+        <Cv
+          sample={sample}
+          cvRef={cvRef}
+        />
       </Fragment>
     );
   }

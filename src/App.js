@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,9 +17,18 @@ class App extends Component {
     this.state = {
       sample: sample_2,
       publicLinkDefault: "",
+      rolesDefault: "project manager",
       goalDefault: "",
       transportableSkillDefault: "",
+      significantRelationshipsDefault: {
+        name:"",
+        comment:"",
+        role:"",
+        contact:"",
+        company:"",
+      },
       significantExperienceDefault: "",
+      companyDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -38,6 +49,9 @@ class App extends Component {
     this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
     this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
     this.handleLinkChange = this.handleLinkChange.bind(this);
+    this.handleAddRoleItem = this.handleAddRoleItem.bind(this);
+    this.handleRemoveRoleItem = this.handleRemoveRoleItem.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
     this.handleIntroChange = this.handleIntroChange.bind(this);
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
@@ -67,9 +81,16 @@ class App extends Component {
     this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
       this
     );
+    this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
+    this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
+    this.handleDefaultInputChangeSignificantRelationships = this.handleDefaultInputChangeSignificantRelationships.bind(this)
+    this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddExperienceItem = this.handleAddExperienceItem.bind(this);
+    this.handleRemoveExperienceItem = this.handleRemoveExperienceItem.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
     this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
@@ -214,6 +235,78 @@ class App extends Component {
             profile: {
               ...prevState.sample.author.profile,
               publicLinks: prevState.sample.author.profile.publicLinks.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+
+  handleAddRoleItem() {
+    const { rolesDefault } = this.state;
+    const newRoleItem = rolesDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.concat(
+                newRoleItem
+              )
+            }
+          }
+        },
+        rolesDefault: "project manager"
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveRoleItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.filter(
+                (item, index) => {
+                  return index !== ind;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleRoleChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.map(
                 (item, index) => {
                   if (index === ind) {
                     item = value;
@@ -452,6 +545,110 @@ class App extends Component {
     });
   }
 
+  // handleRemoveSignificant(ind) {
+  //   this.setState(prevState => {
+  //     const newState = {
+  //       sample: {
+  //         ...prevState.sample,
+  //         author: {
+  //           ...prevState.sample.author,
+  //           significantExperience: prevState.sample.author.significantExperience.filter(
+  //             (item, index) => {
+  //               return index !== ind;
+  //             }
+  //           )
+  //         }
+  //       }
+  //     };
+  //     return newState;
+  //   });
+  // }
+  handleDefaultInputChangeSignificantRelationships(event) {
+    const { name, value } = event.currentTarget;
+    this.setState(prevState => {
+      const newState = {
+        significantRelationshipsDefault: {
+          ...prevState.significantRelationshipsDefault,
+          [name]: value
+        }
+      };
+      return newState;
+    });
+  }
+
+
+  handleAddSignificantRelationships() {
+    const { significantRelationshipsDefault } = this.state;
+    const newsignificantRelationshipsItem = significantRelationshipsDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.concat(newsignificantRelationshipsItem)
+          },
+
+        },
+        significantRelationshipsDefault: {
+          name: "",
+          comment: "",
+          role: "",
+          contact: "",
+          company: "",
+        }
+
+      };
+      return newState;
+    });
+  }
+  handleRemoveSignificantRelationships(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.filter(
+              (item, index) => {
+                return index !== ind;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleSignificantRelationshipsInput(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            significantRelationships: prevState.sample.author.significantRelationships.map(
+              (item, index) => {
+                if (index === ind) {
+                  item = [value];
+                }
+                return item;
+              }
+            )
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+
+//handle modificar campo!!!!
+
+
+
   handleAddEducationItem() {
     const {
       institutionDefault,
@@ -510,6 +707,73 @@ class App extends Component {
             }
             return item;
           })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleAddExperienceItem() {
+    const { companyDefault } = this.state;
+
+    const newExperience = {
+      name: companyDefault,
+      roles: [],
+      references: []
+    }
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.concat(newExperience)
+            }
+          ]
+        },
+        companyDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveExperienceItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.filter((item, index) => {
+                return index !== ind;
+              })
+            }
+          ]
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleExperienceChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.map((item, index) => {
+                if (index === ind) {
+                  item = {
+                    ...item,
+                    [name]: value
+                  };
+                }
+                return item;
+              })
+            }
+          ]
         }
       };
       return newState;
@@ -680,10 +944,13 @@ class App extends Component {
     const {
       sample,
       publicLinkDefault,
+      rolesDefault,
       goalDefault,
+      significantRelationshipsDefault,
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
+      companyDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -701,10 +968,14 @@ class App extends Component {
           cvRef={this.cvRef}
           sample={sample}
           publicLinkDefault={publicLinkDefault}
+          rolesDefault={rolesDefault}
           goalDefault={goalDefault}
+          significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
+          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           institutionDefault={institutionDefault}
+          companyDefault={companyDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
           untilEdDefault={untilEdDefault}
@@ -722,6 +993,9 @@ class App extends Component {
           handleAddLinkItem={this.handleAddLinkItem}
           handleRemoveLinkItem={this.handleRemoveLinkItem}
           handleLinkChange={this.handleLinkChange}
+          handleAddRoleItem={this.handleAddRoleItem}
+          handleRemoveRoleItem={this.handleRemoveRoleItem}
+          handleRoleChange={this.handleRoleChange}
           handleIntroChange={this.handleIntroChange}
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}
@@ -741,9 +1015,15 @@ class App extends Component {
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
           }
+          handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
+          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
+          handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}
+          handleAddExperienceItem={this.handleAddExperienceItem}
+          handleRemoveExperienceItem={this.handleRemoveExperienceItem}
+          handleExperienceChange={this.handleExperienceChange}
           handleAddLanguageItem={this.handleAddLanguageItem}
           handleRemoveLanguageItem={this.handleRemoveLanguageItem}
           handleLanguageChange={this.handleLanguageChange}

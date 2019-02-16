@@ -19,7 +19,6 @@ class Cv extends Component {
       miscEducation,
       questionnaire
     } = sample;
-    console.log(cvRef, "cvRef CV")
     return (
       <div className="cv__wrapper" ref={cvRef}>
         <Author sampleAuthor={author} />

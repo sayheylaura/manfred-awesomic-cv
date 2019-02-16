@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Prism from 'prismjs';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './prism.css';
 
 class ExportCode extends Component {
   constructor(props){
     super(props);
     this.state = {
-      refReady: false
+      refReady: false,
+      copied: false
     }
 
     this.setRefAsReady = this.setRefAsReady.bind(this)
@@ -21,6 +23,10 @@ class ExportCode extends Component {
       this.setState({refReady: true})
     }
   }
+
+  onCopy = () => {
+    this.setState({copied: true});
+  };
 
   process(str) {
     let div = document.createElement("div");
@@ -51,11 +57,18 @@ class ExportCode extends Component {
     const {cvRef} = this.props;
     let pageHTML;
     if(cvRef.current) {
-      const test = cvRef.current
+      const test = cvRef.current;
       pageHTML = this.process(test.outerHTML);
     }
+
     return (
-      <div className="highlight">
+      <div>
+        <div className="clipboard__wrapper">
+          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
+            <button className="clipboard-btn">Copy to clipboard</button>
+          </CopyToClipboard>
+        </div>
+
       <pre><code className="language-markup">{pageHTML}</code></pre>
       </div>
     );

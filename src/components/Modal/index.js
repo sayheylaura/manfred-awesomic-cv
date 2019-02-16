@@ -44,7 +44,7 @@ class ModalHtml extends React.Component {
           buttonType="button"
           styles="close-btn"
           handleButtonClick={this.handleCloseModal}
-        >Close
+        >
         </Button>
 
           <ExportCode cvRef={cvRef} handleHTML={handleHTML}/>

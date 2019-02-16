@@ -579,7 +579,7 @@ a:active {
 .form__input:focus {
   border-bottom: 3px solid #e0e0e0;
 }
-.remove-btn, .add-btn, .close-btn  {
+.remove-btn, .add-btn, .clipboard-btn  {
   cursor: pointer;
   padding: 10px 30px;
   border: none;
@@ -593,7 +593,7 @@ a:active {
   transition: .3s all;
   outline: none;
 }
-.remove-btn:hover, .add-btn:hover, .close-btn:hover {
+.remove-btn:hover, .add-btn:hover, .clipboard-btn:hover {
   background: #8f8f8f;
 }
 
@@ -692,4 +692,47 @@ a:active {
   .cv__wrapper {
       padding: 50px 170px;
   }
+}
+
+
+//Export Code
+
+.clipboard__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.clipboard-btn{
+  position: fixed;
+  top: 5%;
+}
+
+.close-btn {
+  position: fixed;
+  top: 5%;
+  width: 20px;
+  height: 20px;
+  padding: 12px 12px;
+  background-color: #000;
+  background-image: url(images/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s all;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
+  &:hover {
+      background-color: #9C9C9C;
+  }
+}
+
+.ReactModal__Content--after-open{
+  height: 85%;
+  width: 80%;
+  top: 10%;
+  bottom: 10%;
+  margin: 0 auto;
 }

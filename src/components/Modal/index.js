@@ -38,7 +38,13 @@ class ModalHtml extends React.Component {
           contentLabel="Minimal Modal Example"
         >
 
-          <button onClick={this.handleCloseModal}>Close Modal</button>
+        <Button
+          buttonType="button"
+          styles=""
+          handleButtonClick={this.handleCloseModal}
+        >Close
+        </Button>
+
           <ExportCode cvRef={cvRef} handleHTML={handleHTML}/>
         </ReactModal>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactModal from 'react-modal';
 import ExportCode from "../ExportCode";
 import Button from "../Button";
-ReactModal.setAppElement('#root')
+ReactModal.setAppElement('#root');
 class ModalHtml extends React.Component {
   constructor(props){
     super(props);

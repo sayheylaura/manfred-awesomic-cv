@@ -18,7 +18,6 @@ class ExportCode extends Component {
 
   render() {
     const {cvRef} = this.props;
-    console.log(cvRef.current, "cvref export");
     let pageHTML;
     if(cvRef.current) {
       const test = cvRef.current

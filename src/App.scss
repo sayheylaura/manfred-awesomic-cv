@@ -579,7 +579,7 @@ a:active {
 .form__input:focus {
   border-bottom: 3px solid #e0e0e0;
 }
-.remove-btn, .add-btn  {
+.remove-btn, .add-btn, .close-btn  {
   cursor: pointer;
   padding: 10px 30px;
   border: none;
@@ -593,7 +593,7 @@ a:active {
   transition: .3s all;
   outline: none;
 }
-.remove-btn:hover, .add-btn:hover {
+.remove-btn:hover, .add-btn:hover, .close-btn:hover {
   background: #8f8f8f;
 }
 

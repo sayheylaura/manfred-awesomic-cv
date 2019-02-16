@@ -2,7 +2,7 @@ import React from "react";
 import ReactModal from 'react-modal';
 import ExportCode from "../ExportCode";
 import Button from "../Button";
-
+ReactModal.setAppElement('#root')
 class ModalHtml extends React.Component {
   constructor(props){
     super(props);
@@ -35,12 +35,14 @@ class ModalHtml extends React.Component {
         <ReactModal
           appElement={document.getElementById('App')}
           isOpen={this.state.showModal}
-          contentLabel="Minimal Modal Example"
+          contentLabel="modal with html code"
+          onRequestClose={this.handleCloseModal}
+          shouldCloseOnOverlayClick={false}
         >
 
         <Button
           buttonType="button"
-          styles=""
+          styles="close-btn"
           handleButtonClick={this.handleCloseModal}
         >Close
         </Button>
@@ -50,7 +52,8 @@ class ModalHtml extends React.Component {
       </div>
     );
   }
-
 };
+
+
 
 export default ModalHtml;

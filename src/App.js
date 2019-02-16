@@ -27,6 +27,7 @@ class App extends Component {
         company:"",
       },
       significantExperienceDefault: "",
+      companyDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -86,6 +87,9 @@ class App extends Component {
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddExperienceItem = this.handleAddExperienceItem.bind(this);
+    this.handleRemoveExperienceItem = this.handleRemoveExperienceItem.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
     this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
@@ -703,6 +707,73 @@ class App extends Component {
     });
   }
 
+  handleAddExperienceItem() {
+    const { companyDefault } = this.state;
+
+    const newExperience = {
+      name: companyDefault,
+      roles: [],
+      references: []
+    }
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.concat(newExperience)
+            }
+          ]
+        },
+        companyDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveExperienceItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.filter((item, index) => {
+                return index !== ind;
+              })
+            }
+          ]
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleExperienceChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.map((item, index) => {
+                if (index === ind) {
+                  item = {
+                    ...item,
+                    [name]: value
+                  };
+                }
+                return item;
+              })
+            }
+          ]
+        }
+      };
+      return newState;
+    });
+  }
+
   handleAddLanguageItem() {
     const { languageDefault, proficiencyDefault } = this.state;
 
@@ -873,6 +944,7 @@ class App extends Component {
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
+      companyDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -893,9 +965,9 @@ class App extends Component {
           significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
-
           handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           institutionDefault={institutionDefault}
+          companyDefault={companyDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
           untilEdDefault={untilEdDefault}
@@ -941,6 +1013,9 @@ class App extends Component {
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}
+          handleAddExperienceItem={this.handleAddExperienceItem}
+          handleRemoveExperienceItem={this.handleRemoveExperienceItem}
+          handleExperienceChange={this.handleExperienceChange}
           handleAddLanguageItem={this.handleAddLanguageItem}
           handleRemoveLanguageItem={this.handleRemoveLanguageItem}
           handleLanguageChange={this.handleLanguageChange}

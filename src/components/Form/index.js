@@ -4,6 +4,7 @@ import FormAuthor from "../FormAuthor";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
+import FormExperience from '../FormExperience';
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
@@ -22,6 +23,7 @@ class Form extends Component {
       transportableSkillDefault,
       significantExperienceDefault,
       institutionDefault,
+      companyDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -60,6 +62,9 @@ class Form extends Component {
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
+      handleAddExperienceItem,
+      handleRemoveExperienceItem,
+      handleExperienceChange,
       handleAddLanguageItem,
       handleRemoveLanguageItem,
       handleLanguageChange,
@@ -71,7 +76,7 @@ class Form extends Component {
       handleQuestionInputChange
     } = this.props;
 
-    const { education, languages, miscEducation, questionnaire } = sample;
+    const { education, experience, languages, miscEducation, questionnaire } = sample;
 
 
 
@@ -147,6 +152,14 @@ class Form extends Component {
           handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
 
+        />
+        <FormExperience
+          companyDefault={companyDefault}
+          experience={experience}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddExperienceItem={handleAddExperienceItem}
+          handleRemoveExperienceItem={handleRemoveExperienceItem}
+          handleExperienceChange={handleExperienceChange}
         />
 
         <FormEducation
@@ -237,6 +250,9 @@ Form.propTypes = {
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,
+  handleAddExperienceItem: PropTypes.func.isRequired,
+  handleRemoveExperienceItem: PropTypes.func.isRequired,
+  handleExperienceChange: PropTypes.func.isRequired,
   handleAddLanguageItem: PropTypes.func.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired,

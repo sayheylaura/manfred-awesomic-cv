@@ -512,6 +512,10 @@ a:active {
             color: #fff;
         }
     }
+
+    @media print {
+      display: none;
+    }
 }
 
 // Json

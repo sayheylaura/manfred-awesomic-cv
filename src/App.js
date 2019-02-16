@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.cvRef = React.createRef();
     this.state = {
       sample: sample_2,
       publicLinkDefault: "",
@@ -78,6 +79,11 @@ class App extends Component {
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
+    this.handleHTML = this.handleHTML.bind(this);
+  }
+
+  handleHTML(){
+    this.setState({refReady: true})
   }
 
   handlePrintBtn() {
@@ -687,10 +693,13 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
+    console.log(this.cvRef.current, "cvref de app current");
     return (
       <div className="App">
         <Header />
         <Main
+          handleHTML={this.handleHTML}
+          cvRef={this.cvRef}
           sample={sample}
           publicLinkDefault={publicLinkDefault}
           goalDefault={goalDefault}
@@ -746,7 +755,7 @@ class App extends Component {
           handleRemoveQuestion={this.handleRemoveQuestion}
           handleQuestionInputChange={this.handleQuestionInputChange}
         />
-        <Footer />
+        <Footer/>
       </div>
     );
   }

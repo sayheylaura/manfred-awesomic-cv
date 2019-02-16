@@ -8,8 +8,9 @@ import MiscEducation from "../MiscEducation";
 import LanguagesList from "../LanguagesList";
 
 class Cv extends Component {
+
   render() {
-    const { sample } = this.props;
+    const { sample, cvRef } = this.props;
     const {
       author,
       experience,
@@ -18,8 +19,9 @@ class Cv extends Component {
       miscEducation,
       questionnaire
     } = sample;
+    console.log(cvRef, "cvRef CV")
     return (
-      <div className="cv__wrapper">
+      <div className="cv__wrapper" ref={cvRef}>
         <Author sampleAuthor={author} />
         {experience && !!experience.length && <Experience sampleExperience={experience} />}
         {education && !!education.length && <Education sampleEducation={education} />}

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import logo from "../../images/logo.svg";
+import ExportCode from "../../ExportCode";
 
 class Footer extends Component {
   render() {
+    const {cvDOM, handleHTML} = this.props;
+    console.log("cvDOM en footer", cvDOM)
     return (
       <footer className="footer">
         <div className="footer__container">
@@ -12,6 +15,7 @@ class Footer extends Component {
               style={{ backgroundImage: `url(${logo})` }}
             />
           </a>
+          {/* <ExportCode handleHTML={handleHTML} cvDOM={cvDOM}/> */}
         </div>
       </footer>
     );

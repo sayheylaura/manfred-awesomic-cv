@@ -2,10 +2,11 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Cv from "../Cv";
 import Button from "../Button";
+import  {Link} from "react-router-dom";
 
 class Preview extends Component {
   render() {
-    const { sample, handlePrintBtn } = this.props;
+    const { sample, handlePrintBtn, handleHTML, cvRef } = this.props;
     return (
       <Fragment>
         <Button
@@ -14,7 +15,18 @@ class Preview extends Component {
           handleButtonClick={handlePrintBtn}
         >
         </Button>
-        <Cv sample={sample} />
+        <Link to='/cvhtml'>
+        <Button
+          buttonType="button"
+          styles=""
+          handleButtonClick={handleHTML}
+        >
+          aqui viene el diiiiiiv
+        </Button>
+        </Link>
+
+        <Cv sample={sample}
+        cvRef={cvRef}/>
       </Fragment>
     );
   }

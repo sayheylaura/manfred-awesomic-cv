@@ -4,11 +4,13 @@ import PropTypes from "prop-types";
 import Preview from "../Preview";
 import Form from "../Form";
 import Json from "../Json";
+import ExportCode from "../../ExportCode";
 
 const tabs = [
   { name: 'form', text: 'Form', linkTo: '/' },
   { name: 'json', text: 'JSON editor', linkTo: '/json' },
-  { name: 'cv', text: 'CV viewer', linkTo: '/preview' }
+  { name: 'cv', text: 'CV viewer', linkTo: '/preview' },
+  { name: 'html', text: 'CV html', linkTo: '/cvhtml' },
 ]
 
 class Main extends Component {
@@ -24,6 +26,8 @@ class Main extends Component {
 
   render() {
     const {
+      cvRef,
+      handleHTML,
       sample,
       publicLinkDefault,
       goalDefault,
@@ -73,7 +77,7 @@ class Main extends Component {
       handleRemoveQuestion,
       handleQuestionInputChange
     } = this.props;
-
+    console.log(cvRef.current, 'MAIN')
     return (
       <main className="main">
         <div className="preview__wrapper">
@@ -169,7 +173,19 @@ class Main extends Component {
             <Route
               path="/preview"
               render={() => (
-                <Preview sample={sample} handlePrintBtn={handlePrintBtn} />
+                <Preview
+                  sample={sample}
+                  handlePrintBtn={handlePrintBtn}
+                  cvRef={cvRef}
+                  handleHTML={handleHTML}
+                />
+              )}
+            />
+            <Route
+              path="/cvhtml"
+              render={() => (
+                <ExportCode cvRef={cvRef}
+                handleHTML={handleHTML}/>
               )}
             />
           </Switch>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cv from '../Cv';
+import PropTypes from "prop-types";
 
 class Embed extends Component {
 
@@ -15,5 +16,12 @@ class Embed extends Component {
     );
   }
 }
+
+Embed.propTypes = {
+  sample: PropTypes.object.isRequired,
+  cvRef: PropTypes.object.isRequired,
+  embedRef: PropTypes.object.isRequired
+};
+
 
 export default Embed;

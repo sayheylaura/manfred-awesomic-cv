@@ -33,7 +33,7 @@ class FormAuthor extends Component {
     } = profile;
 
     return (
-      <fieldset className="form__author">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Personal data</legend>
 
         <FormImage

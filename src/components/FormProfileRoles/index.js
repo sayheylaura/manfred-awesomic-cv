@@ -18,10 +18,9 @@ class FormProfileRoles extends Component {
     } = this.props;
 
     return (
-      <div>
-        <p>Roles</p>
-
-        <p>
+      <div className="form__profile-roles">
+        <h3 className="form__section-title">Roles</h3>
+        <p className="form__section-description">
           The ones that better describe your previous or future positions
         </p>
 

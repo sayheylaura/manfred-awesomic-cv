@@ -16,10 +16,10 @@ class FormPublicLinks extends Component {
     } = this.props;
 
     return (
-      <div>
-        <p>Public links</p>
+      <div className="form__public-links">
+        <h3 className="form__section-title">Public links</h3>
 
-        <p>
+        <p className="form__section-description">
           List the links to code repositories, social media, professional
           networks or any other worthy public profile
         </p>
@@ -52,7 +52,7 @@ class FormPublicLinks extends Component {
           styles="add-btn"
           handleButtonClick={handleAddLinkItem}
         >
-          Add item
+          Add
         </Button>
       </div>
     );

@@ -16,7 +16,7 @@ class FormProfessionalGoals extends Component {
     } = this.props;
 
     return (
-      <fieldset className="form__professionalGoals">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Professional Goals <span className="required_field">*</span></legend>
 
         <p className="form__section-description">
@@ -36,7 +36,7 @@ class FormProfessionalGoals extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="More goals"
             styles="form__input"

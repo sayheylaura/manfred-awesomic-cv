@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormInput from "../FormInput";
 import Button from "../Button";
@@ -25,7 +25,7 @@ class FormCompany extends Component {
   render() {
     const { name } = this.props;
     return (
-      <Fragment>
+      <div className="form__container">
         <FormInput
           labelContent="Company name"
           styles="form__input"
@@ -35,14 +35,16 @@ class FormCompany extends Component {
           example="Ex: Google"
           handleInputChange={this.handleInputChange}
         />
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
-      </Fragment>
+        </div>
+      </div>
     );
   }
 }

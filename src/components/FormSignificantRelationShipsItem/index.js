@@ -26,7 +26,7 @@ class FormSignificantRelationShipsItem extends Component {
     const { ind, item, significantRelationships } = this.props;
     const { name, comment, role, contact, company } = item;
     return (
-      <div>
+      <div className="form__container">
         <p>{`Relationship ${ind + 1} of ${significantRelationships.length}`}</p>
 
         <FormInput
@@ -79,13 +79,15 @@ class FormSignificantRelationShipsItem extends Component {
           handleInputChange={this.handleInputChange}
         />
 
-        <Button
-          buttonType="button"
-          styles="add-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
-        </Button>
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="add-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
+          </Button>
+        </div>
       </div>
     );
   }

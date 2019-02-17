@@ -15,7 +15,7 @@ class FormSignificantExperience extends Component {
       handleSignificantExperienceInput
     } = this.props;
     return (
-      <fieldset className="form__sig-experience">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Significant Experience<span className="required_field">*</span></legend>
         <p className="form__section-description">
           List the professional milestones that provided you with experience and knowledge for your future position
@@ -31,7 +31,7 @@ class FormSignificantExperience extends Component {
             />
           );
         })}
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="More significant experiences"
             styles="form__input"

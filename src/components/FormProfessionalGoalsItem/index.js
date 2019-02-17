@@ -24,7 +24,7 @@ class FormProfessionalGoalsItem extends Component {
   render() {
     const { ind, item, professionalGoals } = this.props;
     return (
-      <div >
+      <div className="form__container">
         <FormInput
           labelContent={`Goal ${ind + 1} of ${professionalGoals.length}`}
           styles="form__input"
@@ -35,13 +35,15 @@ class FormProfessionalGoalsItem extends Component {
           handleInputChange={this.handleGoalInputChange}
         />
 
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.removeItem}
-        >
-          Remove
-        </Button>
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.removeItem}
+          >
+            Remove
+          </Button>
+        </div>
       </div>
     );
   }

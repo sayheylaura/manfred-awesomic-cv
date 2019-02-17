@@ -34,7 +34,7 @@ class FormLanguageItem extends Component {
   render() {
     const { language, proficiency } = this.props.item;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Language"
           styles="form__input"
@@ -53,14 +53,15 @@ class FormLanguageItem extends Component {
           selectOptions={proficiencyLevels}
           handleSelectChange={this.handleChange}
         />
-
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
+        </div>
       </div>
     );
   }

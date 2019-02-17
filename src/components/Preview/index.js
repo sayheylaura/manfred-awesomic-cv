@@ -8,12 +8,18 @@ class Preview extends Component {
     const { sample, handlePrintBtn } = this.props;
     return (
       <Fragment>
+        <div className="button__container">
         <Button
           buttonType="button"
           styles="preview__print-btn"
           handleButtonClick={handlePrintBtn}
-        >
-        </Button>
+        />
+        <Button
+          buttonType="button"
+          styles="preview__share-btn"
+          handleButtonClick={handlePrintBtn}
+        />
+        </div>
         <Cv sample={sample} />
       </Fragment>
     );

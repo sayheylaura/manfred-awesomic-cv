@@ -36,13 +36,13 @@ class FormImage extends Component {
           className="get-avatar__preview"
           style={{ backgroundImage: `url(${image})` }}
         />
-
+        <div className="get-avatar__container">
         <Button
           buttonType="button"
           styles="get-avatar__trigger"
           handleButtonClick={this.handleFilePicker}
         >
-          Upload new image
+          Upload image
         </Button>
 
         <input
@@ -59,6 +59,7 @@ class FormImage extends Component {
         >
           Remove image
         </Button>
+        </div>
       </div>
     );
   }

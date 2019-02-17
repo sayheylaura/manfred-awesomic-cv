@@ -16,7 +16,7 @@ class FormExperience extends Component {
       handleExperienceChange,
     } = this.props;
     return (
-      <fieldset className="form__education">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Experience</legend>
 
         <p className="form__section-description">List of working experience</p>
@@ -33,7 +33,7 @@ class FormExperience extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Company name"
             styles="form__input"

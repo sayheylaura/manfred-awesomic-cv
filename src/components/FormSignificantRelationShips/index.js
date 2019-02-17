@@ -24,7 +24,7 @@ class FormSignificantRelationShips extends Component {
     } = significantRelationshipsDefault;
 
     return (
-      <fieldset className="form__significantRelationships">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Significant Relationships
         <span className="required_field">*</span></legend>
 
@@ -45,7 +45,7 @@ class FormSignificantRelationShips extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <p>More relationships</p>
 
           <FormInput

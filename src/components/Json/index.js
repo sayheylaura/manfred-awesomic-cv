@@ -16,6 +16,8 @@ class Json extends Component {
           JSON will be here waiting to be copied back!
         </p>
         <FormTextarea
+          textAreaStyles="textarea__json"
+          textAreaLabelStyles="textarea__label"
           labelContent="JSON code"
           textName="json"
           textValue={parsedSample}

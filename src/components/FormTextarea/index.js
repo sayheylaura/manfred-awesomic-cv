@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const FormTextarea = ({ labelContent, textName, textValue, example, handleTextChange }) => (
-  <label className="textarea__label" htmlFor={textName}>
+const FormTextarea = ({ labelContent, textName, textValue, example, handleTextChange, textAreaStyles, textAreaLabelStyles }) => (
+  <label className={textAreaLabelStyles} htmlFor={textName}>
     {labelContent}
     <textarea
-      className="textarea"
+      className={textAreaStyles}
       name={textName}
       value={textValue}
       placeholder={example}
@@ -19,7 +19,9 @@ FormTextarea.propTypes = {
   textName: PropTypes.string.isRequired,
   textValue: PropTypes.string.isRequired,
   example: PropTypes.string,
-  handleTextChange: PropTypes.func.isRequired
+  handleTextChange: PropTypes.func.isRequired,
+  textAreaStyles: PropTypes.string.isRequired,
+  textAreaLabelStyles: PropTypes.string.isRequired
 };
 
 export default FormTextarea;

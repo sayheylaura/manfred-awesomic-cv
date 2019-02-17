@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RoleList from "../RoleList";
 import ReferencesList from "../ReferencesList";
-import "./Company.scss";
 
 class Company extends Component {
   render() {

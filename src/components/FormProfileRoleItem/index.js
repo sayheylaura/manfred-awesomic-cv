@@ -25,7 +25,7 @@ class FormProfileRoleItem extends Component {
   render() {
     const { ind, item, roles, rolesArr } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormSelect
           labelContent={`Role ${ind + 1} of ${roles.length}`}
           styles="form__select"
@@ -35,13 +35,15 @@ class FormProfileRoleItem extends Component {
           selectOptions={rolesArr}
         />
 
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
-      </Button>
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
+          </Button>
+        </div>
       </div>
     );
   }

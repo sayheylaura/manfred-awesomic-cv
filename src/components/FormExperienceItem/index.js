@@ -13,7 +13,7 @@ class FormExperienceItem extends Component {
     const { company } = item;
     return (
       <div>
-        {company.map((item, index) => {
+        {company && !!company.length && company.map((item, index) => {
           return (
             <FormCompany
               key={index}

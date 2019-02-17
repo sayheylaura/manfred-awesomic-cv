@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const FormTextarea = ({ labelContent, textName, textValue, example, handleTextChange, textAreaStyles, textAreaLabelStyles }) => (
   <label className={textAreaLabelStyles} htmlFor={textName}>
-    {labelContent}
+    <span className="label__title">{labelContent}</span>
     <textarea
       className={textAreaStyles}
       name={textName}

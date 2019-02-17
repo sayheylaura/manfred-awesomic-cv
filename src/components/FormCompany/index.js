@@ -26,7 +26,7 @@ class FormCompany extends Component {
     const { ind, name, company } = this.props;
     return (
       <div className="form__container">
-        <p>{`Company ${ind + 1} of ${company.length}`}</p>
+        <p className="form__container-title">{`Company ${ind + 1} of ${company.length}`}</p>
 
         <FormInput
           labelContent="Company name"

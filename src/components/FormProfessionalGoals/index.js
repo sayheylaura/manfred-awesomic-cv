@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import FormInput from "../FormInput";
+//import FormInput from "../FormInput";
 import Button from "../Button";
 import PropTypes from "prop-types";
 import FormProfessionalGoalsItem from "../FormProfessionalGoalsItem";
+import FormTextarea from "../FormTextarea";
 
 class FormProfessionalGoals extends Component {
   render() {
@@ -37,7 +38,7 @@ class FormProfessionalGoals extends Component {
         })}
 
         <div className="form__container">
-          <FormInput
+          {/* <FormInput
             labelContent="More goals"
             styles="form__input"
             inputType="text"
@@ -45,7 +46,18 @@ class FormProfessionalGoals extends Component {
             inputValue={goalDefault}
             example="Ex: Build my own company"
             handleInputChange={handleDefaultInputChange}
+          /> */}
+
+          <FormTextarea
+            labelContent="More goals"
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="goalDefault"
+            textValue={goalDefault}
+            example="Ex: Build my own company"
+            handleTextChange={handleDefaultInputChange}
           />
+
           <Button
             buttonType="button"
             styles="add-btn"

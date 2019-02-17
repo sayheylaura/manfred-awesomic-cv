@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormInput from '../FormInput';
+//import FormInput from '../FormInput';
 import Button from '../Button';
+import FormTextarea from "../FormTextarea";
 
 class FormProfessionalGoalsItem extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class FormProfessionalGoalsItem extends Component {
     const { ind, item, professionalGoals } = this.props;
     return (
       <div className="form__container">
-        <FormInput
+        {/* <FormInput
           labelContent={`Goal ${ind + 1} of ${professionalGoals.length}`}
           styles="form__input"
           inputType="text"
@@ -33,6 +34,16 @@ class FormProfessionalGoalsItem extends Component {
           inputValue={item}
           example="Ex: Build my own company"
           handleInputChange={this.handleGoalInputChange}
+        /> */}
+
+        <FormTextarea
+          labelContent={`Goal ${ind + 1} of ${professionalGoals.length}`}
+          textAreaStyles="textarea"
+          textAreaLabelStyles="label"
+          textName="professionalGoal"
+          textValue={item}
+          example="Ex: Build my own company"
+          handleTextChange={this.handleGoalInputChange}
         />
 
         <div className="remove-btn__container">

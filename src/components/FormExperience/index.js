@@ -33,7 +33,7 @@ class FormExperience extends Component {
         })}
 
         <div className="form__container">
-          <p>More companies</p>
+          <p className="form__container-title">More companies</p>
 
           <FormInput
             labelContent="Company name"

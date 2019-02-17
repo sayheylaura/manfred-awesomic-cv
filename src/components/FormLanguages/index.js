@@ -39,6 +39,8 @@ class FormLanguages extends Component {
               key={index}
               ind={index}
               item={item}
+              languages={languages}
+              proficiencyLevels={proficiencyLevels}
               handleRemoveLanguageItem={handleRemoveLanguageItem}
               handleLanguageChange={handleLanguageChange}
             />
@@ -46,6 +48,8 @@ class FormLanguages extends Component {
         })}
 
         <div className="form__container">
+          <p className="form__container-title">More languages</p>
+
           <FormInput
             labelContent="Language*"
             styles="form__input"

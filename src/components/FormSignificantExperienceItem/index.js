@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormInput from '../FormInput';
+//import FormInput from '../FormInput';
 import Button from '../Button';
+import FormTextarea from "../FormTextarea";
 
 class FormSignificantExperienceItem extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class FormSignificantExperienceItem extends Component {
     const { ind, item, significantExperience } = this.props;
     return (
       <div className="form__container">
-        <FormInput
+        {/* <FormInput
           labelContent={`Experience ${ind + 1} of ${significantExperience.length}`}
           styles="form__input"
           inputType="text"
@@ -33,6 +34,16 @@ class FormSignificantExperienceItem extends Component {
           inputValue={item}
           example="Ex: Managing a team of 20 people at Acme, Co."
           handleInputChange={this.handleGoalInputChange}
+        /> */}
+
+        <FormTextarea
+          labelContent={`Experience ${ind + 1} of ${significantExperience.length}`}
+          textAreaStyles="textarea"
+          textAreaLabelStyles="label"
+          textName="significantExperience"
+          textValue={item}
+          example="Ex: Managing a team of 20 people at Acme, Co."
+          handleTextChange={this.handleGoalInputChange}
         />
 
         <div className="remove-btn__container">

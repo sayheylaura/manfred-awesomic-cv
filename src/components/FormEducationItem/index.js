@@ -38,7 +38,7 @@ class FormEducationItem extends Component {
 
     return (
       <div className="form__container">
-        <p>{`Institution ${ind + 1} of ${education.length}`}</p>
+        <p className="form__container-title">{`Institution ${ind + 1} of ${education.length}`}</p>
 
         <FormInput
           labelContent="Institution"

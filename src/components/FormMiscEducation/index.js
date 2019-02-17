@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormMiscEducationItem from "../FormMiscEducationItem";
-import FormInput from "../FormInput";
+//import FormInput from "../FormInput";
 import Button from "../Button";
+import FormTextarea from "../FormTextarea";
 
 class FormMiscEducation extends Component {
   render() {
@@ -29,6 +30,7 @@ class FormMiscEducation extends Component {
               key={index}
               ind={index}
               item={item}
+              miscEducation={miscEducation}
               handleRemoveMiscItem={handleRemoveMiscItem}
               handleMiscInputChange={handleMiscInputChange}
             />
@@ -36,14 +38,24 @@ class FormMiscEducation extends Component {
         })}
 
         <div className="form__container">
-          <FormInput
-            labelContent="Item"
+          {/* <FormInput
+            labelContent="More items"
             styles="form__input"
             inputType="text"
             inputName="miscEdDefault"
             inputValue={miscEdDefault}
             example="Ex: Scrum master certification"
             handleInputChange={handleDefaultInputChange}
+          /> */}
+
+          <FormTextarea
+            labelContent="More items"
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="miscEdDefault"
+            textValue={miscEdDefault}
+            example="Ex: Scrum master certification"
+            handleTextChange={handleDefaultInputChange}
           />
 
           <Button

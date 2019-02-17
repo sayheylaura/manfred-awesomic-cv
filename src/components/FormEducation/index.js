@@ -38,7 +38,7 @@ class FormEducation extends Component {
         })}
 
         <div className="form__container">
-          <p>More institutions</p>
+          <p className="form__container-title">More institutions</p>
 
           <FormInput
             labelContent="Institution name"

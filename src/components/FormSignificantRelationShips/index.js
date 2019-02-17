@@ -3,6 +3,7 @@ import FormInput from '../FormInput';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import FormSignificantRelationShipsItem from '../FormSignificantRelationShipsItem';
+import FormTextarea from "../FormTextarea";
 
 class FormSignificantRelationShips extends Component {
   render() {
@@ -46,7 +47,7 @@ class FormSignificantRelationShips extends Component {
         })}
 
         <div className="form__container">
-          <p>More relationships</p>
+          <p className="form__container-title">More relationships</p>
 
           <FormInput
             labelContent="Name"
@@ -58,7 +59,7 @@ class FormSignificantRelationShips extends Component {
             handleInputChange={handleDefaultInputChangeSignificantRelationships}
           />
 
-          <FormInput
+          {/* <FormInput
             labelContent="Comment"
             styles="form__input"
             inputType="text"
@@ -66,6 +67,16 @@ class FormSignificantRelationShips extends Component {
             inputValue={comment}
             example="Ex: Mentor and good friend"
             handleInputChange={handleDefaultInputChangeSignificantRelationships}
+          /> */}
+
+          <FormTextarea
+            labelContent="Comment"
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="comment"
+            textValue={comment}
+            example="Ex: Mentor and good friend"
+            handleTextChange={handleDefaultInputChangeSignificantRelationships}
           />
 
           <FormInput

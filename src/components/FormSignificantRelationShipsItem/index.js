@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FormInput from '../FormInput';
 import Button from '../Button';
+import FormTextarea from "../FormTextarea";
 
 class FormSignificantRelationShipsItem extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class FormSignificantRelationShipsItem extends Component {
     const { name, comment, role, contact, company } = item;
     return (
       <div className="form__container">
-        <p>{`Relationship ${ind + 1} of ${significantRelationships.length}`}</p>
+        <p className="form__container-title">{`Relationship ${ind + 1} of ${significantRelationships.length}`}</p>
 
         <FormInput
           labelContent="Name"
@@ -39,7 +40,7 @@ class FormSignificantRelationShipsItem extends Component {
           handleInputChange={this.handleInputChange}
         />
 
-        <FormInput
+        {/* <FormInput
           labelContent="Comment"
           styles="form__input"
           inputType="text"
@@ -47,6 +48,16 @@ class FormSignificantRelationShipsItem extends Component {
           inputValue={comment}
           example="Ex: Mentor and good friend"
           handleInputChange={this.handleInputChange}
+        /> */}
+
+        <FormTextarea
+          labelContent="Comment"
+          textAreaStyles="textarea"
+          textAreaLabelStyles="label"
+          textName="comment"
+          textValue={comment}
+          example="Ex: Mentor and good friend"
+          handleTextChange={this.handleInputChange}
         />
 
         <FormInput

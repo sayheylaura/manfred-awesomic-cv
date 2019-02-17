@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import FormInput from "../FormInput";
+//import FormInput from "../FormInput";
 import Button from "../Button";
 import FormSignificantExperienceItem from '../FormSignificantExperienceItem';
+import FormTextarea from "../FormTextarea";
 
 class FormSignificantExperience extends Component {
   render() {
@@ -37,7 +38,7 @@ class FormSignificantExperience extends Component {
         })}
 
         <div className="form__container">
-          <FormInput
+          {/* <FormInput
             labelContent="More experiences"
             styles="form__input"
             inputType="text"
@@ -45,6 +46,16 @@ class FormSignificantExperience extends Component {
             inputValue={significantExperienceDefault}
             example="Ex: Managing a team of 20 people at Acme, Co."
             handleInputChange={handleDefaultInputChange}
+          /> */}
+
+          <FormTextarea
+            labelContent="More experiences"
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="significantExperienceDefault"
+            textValue={significantExperienceDefault}
+            example="Ex: Managing a team of 20 people at Acme, Co."
+            handleTextChange={handleDefaultInputChange}
           />
 
           <Button

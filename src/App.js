@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { Route } from "react-router-dom";
 import "./App.scss";
 // import sample from "./services/sample.json";
 import sample_2 from "./services/sample_2.json";
@@ -7,6 +8,7 @@ import sample_2 from "./services/sample_2.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import Embed from "./components/Embed";
 
 
 
@@ -15,6 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.cvRef = React.createRef();
+    this.embedRef = React.createRef();
     this.state = {
       sample: sample_2,
       publicLinkDefault: "",
@@ -961,81 +964,95 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
+    const currentPath = window.location.href;
     return (
       <div className="App">
+      {!currentPath.includes('embedded') ?
+      <Fragment>
         <Header />
         <Main
           handleHTML={this.handleHTML}
-          cvRef={this.cvRef}
-          sample={sample}
-          publicLinkDefault={publicLinkDefault}
-          rolesDefault={rolesDefault}
-          goalDefault={goalDefault}
-          significantRelationshipsDefault={significantRelationshipsDefault}
-          transportableSkillDefault={transportableSkillDefault}
-          significantExperienceDefault={significantExperienceDefault}
-          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
-          institutionDefault={institutionDefault}
-          companyDefault={companyDefault}
-          studyDefault={studyDefault}
-          fromEdDefault={fromEdDefault}
-          untilEdDefault={untilEdDefault}
-          languageDefault={languageDefault}
-          proficiencyDefault={proficiencyDefault}
-          miscEdDefault={miscEdDefault}
-          questionDefault={questionDefault}
-          answerDefault={answerDefault}
-          handlePrintBtn={this.handlePrintBtn}
-          handleJsonText={this.handleJsonText}
-          handleAddImage={this.handleAddImage}
-          handleRemoveImage={this.handleRemoveImage}
-          handleProfileInputs={this.handleProfileInputs}
-          handleDefaultInputChange={this.handleDefaultInputChange}
-          handleAddLinkItem={this.handleAddLinkItem}
-          handleRemoveLinkItem={this.handleRemoveLinkItem}
-          handleLinkChange={this.handleLinkChange}
-          handleAddRoleItem={this.handleAddRoleItem}
-          handleRemoveRoleItem={this.handleRemoveRoleItem}
-          handleRoleChange={this.handleRoleChange}
-          handleIntroChange={this.handleIntroChange}
-          handleAddGoal={this.handleAddGoal}
-          handleRemoveGoal={this.handleRemoveGoal}
-          handleGoalsInput={this.handleGoalsInput}
-          handleGoalChange={this.handleGoalChange}
-          handleAddTransportableSkill={this.handleAddTransportableSkill}
-          handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
-          handleTransportableSkillChange={this.handleTransportableSkillChange}
-          handleTransportableSkillsInput={this.handleTransportableSkillsInput}
-          handleAddSignificantExperience={this.handleAddSignificantExperience}
-          handleRemoveSignificantExperience={
-            this.handleRemoveSignificantExperience
-          }
-          handlesignificantExperienceChange={
-            this.handlesignificantExperienceChange
-          }
-          handleSignificantExperienceInput={
-            this.handleSignificantExperienceInput
-          }
-          handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
-          handleAddSignificantRelationships={this.handleAddSignificantRelationships}
-          handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
-          handleAddEducationItem={this.handleAddEducationItem}
-          handleRemoveEducationItem={this.handleRemoveEducationItem}
-          handleEducationChange={this.handleEducationChange}
-          handleAddExperienceItem={this.handleAddExperienceItem}
-          handleRemoveExperienceItem={this.handleRemoveExperienceItem}
-          handleExperienceChange={this.handleExperienceChange}
-          handleAddLanguageItem={this.handleAddLanguageItem}
-          handleRemoveLanguageItem={this.handleRemoveLanguageItem}
-          handleLanguageChange={this.handleLanguageChange}
-          handleAddMiscItem={this.handleAddMiscItem}
-          handleRemoveMiscItem={this.handleRemoveMiscItem}
-          handleMiscInputChange={this.handleMiscInputChange}
-          handleAddQuestion={this.handleAddQuestion}
-          handleRemoveQuestion={this.handleRemoveQuestion}
+            cvRef={this.cvRef}
+            sample={sample}
+            publicLinkDefault={publicLinkDefault}
+            rolesDefault={rolesDefault}
+            goalDefault={goalDefault}
+            significantRelationshipsDefault={significantRelationshipsDefault}
+            transportableSkillDefault={transportableSkillDefault}
+            significantExperienceDefault={significantExperienceDefault}
+            handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
+            institutionDefault={institutionDefault}
+            companyDefault={companyDefault}
+            studyDefault={studyDefault}
+            fromEdDefault={fromEdDefault}
+            untilEdDefault={untilEdDefault}
+            languageDefault={languageDefault}
+            proficiencyDefault={proficiencyDefault}
+            miscEdDefault={miscEdDefault}
+            questionDefault={questionDefault}
+            answerDefault={answerDefault}
+            handlePrintBtn={this.handlePrintBtn}
+            handleJsonText={this.handleJsonText}
+            handleAddImage={this.handleAddImage}
+            handleRemoveImage={this.handleRemoveImage}
+            handleProfileInputs={this.handleProfileInputs}
+            handleDefaultInputChange={this.handleDefaultInputChange}
+            handleAddLinkItem={this.handleAddLinkItem}
+            handleRemoveLinkItem={this.handleRemoveLinkItem}
+            handleLinkChange={this.handleLinkChange}
+            handleAddRoleItem={this.handleAddRoleItem}
+            handleRemoveRoleItem={this.handleRemoveRoleItem}
+            handleRoleChange={this.handleRoleChange}
+            handleIntroChange={this.handleIntroChange}
+            handleAddGoal={this.handleAddGoal}
+            handleRemoveGoal={this.handleRemoveGoal}
+            handleGoalsInput={this.handleGoalsInput}
+            handleGoalChange={this.handleGoalChange}
+            handleAddTransportableSkill={this.handleAddTransportableSkill}
+            handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
+            handleTransportableSkillChange={this.handleTransportableSkillChange}
+            handleTransportableSkillsInput={this.handleTransportableSkillsInput}
+            handleAddSignificantExperience={this.handleAddSignificantExperience}
+            handleRemoveSignificantExperience={
+              this.handleRemoveSignificantExperience
+            }
+            handlesignificantExperienceChange={
+              this.handlesignificantExperienceChange
+            }
+            handleSignificantExperienceInput={
+              this.handleSignificantExperienceInput
+            }
+            handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
+            handleAddSignificantRelationships={this.handleAddSignificantRelationships}
+            handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
+            handleAddEducationItem={this.handleAddEducationItem}
+            handleRemoveEducationItem={this.handleRemoveEducationItem}
+            handleEducationChange={this.handleEducationChange}
+            handleAddExperienceItem={this.handleAddExperienceItem}
+            handleRemoveExperienceItem={this.handleRemoveExperienceItem}
+            handleExperienceChange={this.handleExperienceChange}
+            handleAddLanguageItem={this.handleAddLanguageItem}
+            handleRemoveLanguageItem={this.handleRemoveLanguageItem}
+            handleLanguageChange={this.handleLanguageChange}
+            handleAddMiscItem={this.handleAddMiscItem}
+            handleRemoveMiscItem={this.handleRemoveMiscItem}
+            handleMiscInputChange={this.handleMiscInputChange}
+            handleAddQuestion={this.handleAddQuestion}
+            handleRemoveQuestion={this.handleRemoveQuestion}
           handleQuestionInputChange={this.handleQuestionInputChange}
         />
         <Footer/>
+      </Fragment>
+      : null}
+        <Route
+          path="/embedded"
+          render={() => (
+            <Embed
+              sample={sample}
+              cvRef={this.cvRef}
+              embedRef={this.embedRef}
+            />)}
+        />
       </div>
     );
   }

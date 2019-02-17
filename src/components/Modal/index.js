@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactModal from 'react-modal';
 import ExportCode from "../ExportCode";
 import Button from "../Button";
@@ -52,6 +53,11 @@ class ModalHtml extends React.Component {
       </div>
     );
   }
+};
+
+ModalHtml.propTypes = {
+  cvRef: PropTypes.object.isRequired,
+  handleHTML: PropTypes.func.isRequired
 };
 
 

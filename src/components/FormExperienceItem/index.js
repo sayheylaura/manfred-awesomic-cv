@@ -9,6 +9,7 @@ class FormExperienceItem extends Component {
       handleRemoveExperienceItem,
       handleExperienceChange
     } = this.props;
+
     const { company } = item;
     return (
       <div>

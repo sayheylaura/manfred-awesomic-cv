@@ -1,15 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const FormTextarea = ({ labelContent, textName, textValue, handleTextChange }) => (
-  <label className="textarea__label" htmlFor={textName}>
+const FormTextarea = ({ labelContent, textName, textValue, handleTextChange, textAreaStyles, textAreaLabelStyles }) => (
+  <label className={textAreaLabelStyles} htmlFor={textName}>
     {labelContent}
     <textarea
-      className="textarea"
+      className={textAreaStyles}
       name={textName}
       value={textValue}
-      // rows="8"
-      // cols="40"
       onChange={handleTextChange}
     />
   </label>

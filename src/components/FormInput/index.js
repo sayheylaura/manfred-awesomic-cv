@@ -14,7 +14,7 @@ class FormInput extends Component {
     } = this.props;
     return (
       <label className="label" htmlFor={inputName}>
-        {labelContent}
+        <span className="label__title">{labelContent}</span>
         <input
           className={styles}
           type={inputType}

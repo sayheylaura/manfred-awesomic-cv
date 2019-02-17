@@ -18,7 +18,7 @@ class FormEducation extends Component {
       handleEducationChange,
     } = this.props;
     return (
-      <fieldset className="form__education">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Education</legend>
 
         <p className="form__section-description">Degree or kind of schooling</p>
@@ -35,7 +35,7 @@ class FormEducation extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Institution"
             styles="form__input"
@@ -55,33 +55,33 @@ class FormEducation extends Component {
             example="Ex: Computer Science"
             handleInputChange={handleDefaultInputChange}
           />
+          <div className="form__date-container">
+            <FormInput
+              labelContent="From"
+              styles="form__input"
+              inputType="text"
+              inputName="fromEdDefault"
+              inputValue={fromEdDefault}
+              example="Ex: 2008"
+              handleInputChange={handleDefaultInputChange}
+            />
 
-          <FormInput
-            labelContent="From"
-            styles="form__input"
-            inputType="text"
-            inputName="fromEdDefault"
-            inputValue={fromEdDefault}
-            example="Ex: 2008"
-            handleInputChange={handleDefaultInputChange}
-          />
-
-          <FormInput
-            labelContent="Until"
-            styles="form__input"
-            inputType="text"
-            inputName="untilEdDefault"
-            inputValue={untilEdDefault}
-            example="Ex: 2012"
-            handleInputChange={handleDefaultInputChange}
-          />
-
+            <FormInput
+              labelContent="Until"
+              styles="form__input"
+              inputType="text"
+              inputName="untilEdDefault"
+              inputValue={untilEdDefault}
+              example="Ex: 2012"
+              handleInputChange={handleDefaultInputChange}
+            />
+          </div>
           <Button
             buttonType="button"
             styles="add-btn"
             handleButtonClick={handleAddEducationItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

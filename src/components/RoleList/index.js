@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RoleItem from '../RoleItem';
-import './RoleList.scss';
 
 class RoleList extends Component {
 

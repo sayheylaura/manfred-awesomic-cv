@@ -25,7 +25,7 @@ class FormSignificantExperienceItem extends Component {
   render() {
     const { significantExperienceDefault } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Significant experience"
           styles="form__input"
@@ -35,14 +35,15 @@ class FormSignificantExperienceItem extends Component {
           example="Ex: Managing a team of 20 people at Acme, Co."
           handleInputChange={this.handleGoalInputChange}
         />
-
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.removeItem}
-        >
-          Remove
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.removeItem}
+          >
+            Remove
           </Button>
+        </div>
       </div>
     );
   }

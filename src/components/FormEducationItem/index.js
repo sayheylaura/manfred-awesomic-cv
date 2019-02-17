@@ -25,7 +25,7 @@ class FormEducationItem extends Component {
   render() {
     const { institution, study, from, until } = this.props.item;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Institution"
           styles="form__input"
@@ -45,27 +45,28 @@ class FormEducationItem extends Component {
           example="Ex: Computer Science"
           handleInputChange={this.handleInputChange}
         />
+        <div className="form__date-container">
+          <FormInput
+            labelContent="From"
+            styles="form__input"
+            inputType="text"
+            inputName="from"
+            inputValue={from}
+            example="Ex: 2008"
+            handleInputChange={this.handleInputChange}
+          />
 
-        <FormInput
-          labelContent="From"
-          styles="form__input"
-          inputType="text"
-          inputName="from"
-          inputValue={from}
-          example="Ex: 2008"
-          handleInputChange={this.handleInputChange}
-        />
-
-        <FormInput
-          labelContent="Until"
-          styles="form__input"
-          inputType="text"
-          inputName="until"
-          inputValue={until}
-          example="Ex: 2012"
-          handleInputChange={this.handleInputChange}
-        />
-
+          <FormInput
+            labelContent="Until"
+            styles="form__input"
+            inputType="text"
+            inputName="until"
+            inputValue={until}
+            example="Ex: 2012"
+            handleInputChange={this.handleInputChange}
+          />
+        </div>
+        <div className="remove-btn__container">
         <Button
           buttonType="button"
           styles="remove-btn"
@@ -73,6 +74,7 @@ class FormEducationItem extends Component {
         >
           Remove
         </Button>
+        </div>
       </div>
     );
   }

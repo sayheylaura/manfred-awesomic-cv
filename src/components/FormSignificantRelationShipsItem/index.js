@@ -27,7 +27,7 @@ class FormSignificantRelationShipsItem extends Component {
       const { relationships, ind } = this.props;
       const { name, comment, role, contact, company } = relationships;
       return (
-        <div ind={ind}>
+        <div ind={ind} className="form__container">
           <FormInput
             labelContent="Name"
             styles="form__input"
@@ -73,13 +73,15 @@ class FormSignificantRelationShipsItem extends Component {
             example="Ex: IBM"
             handleInputChange={this.handleInputChange}
           />
+          <div className="remove-btn__container">
           <Button
             buttonType="button"
-            styles="add-btn"
+            styles="remove-btn"
             handleButtonClick={this.handleRemoveBtn}
           >
             Remove
-              </Button>
+          </Button>
+          </div>
         </div>
 
       );

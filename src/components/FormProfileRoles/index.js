@@ -11,12 +11,11 @@ class FormProfileRoles extends Component {
   render() {
     const { rolesDefault, handleDefaultInputChange, handleAddRoleItem, roles, handleRemoveRoleItem, handleRoleChange } = this.props;
     return (
-      <div>
-        <p>Roles</p>
-
-        <p>
+      <div className="form__profile-roles">
+        <h3 className="form__section-title">Roles</h3>
+        <p className="form__section-description">
           The ones that better describe your previous or future positions
-      </p>
+        </p>
 
         {roles && !!roles.length && roles.map((item, index) => {
           return (
@@ -39,9 +38,9 @@ class FormProfileRoles extends Component {
           styles="form__select"
           handleSelectChange={handleDefaultInputChange}
           selectOptions={rolesArr}
-      />
+        />
 
-      <Button
+        <Button
           buttonType="button"
           styles="add-btn"
           handleButtonClick={handleAddRoleItem}

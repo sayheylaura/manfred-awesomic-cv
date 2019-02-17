@@ -25,7 +25,7 @@ class FormMiscEducationItem extends Component {
   render() {
     const { item } = this.props;
     return (
-      <div>
+      <div className="form__container">
         <FormInput
           labelContent="Item"
           styles="form__input"
@@ -35,13 +35,15 @@ class FormMiscEducationItem extends Component {
           example="Ex: Scrum master certification"
           handleInputChange={this.handleInputChange}
         />
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
-        </Button>
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
+          </Button>
+        </div>
       </div>
     );
   }

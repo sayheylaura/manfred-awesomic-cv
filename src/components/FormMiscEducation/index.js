@@ -15,7 +15,7 @@ class FormMiscEducation extends Component {
       handleMiscInputChange
     } = this.props;
     return (
-      <fieldset className="form__misc-education">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Miscellany</legend>
 
         <p className="form__section-description">
@@ -35,7 +35,7 @@ class FormMiscEducation extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Item"
             styles="form__input"
@@ -51,7 +51,7 @@ class FormMiscEducation extends Component {
             styles="add-btn"
             handleButtonClick={handleAddMiscItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

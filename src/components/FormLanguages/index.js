@@ -26,7 +26,7 @@ class FormLanguages extends Component {
     } = this.props;
 
     return (
-      <fieldset className="form__languages">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Languages</legend>
 
         <p className="form__section-description">
@@ -45,7 +45,7 @@ class FormLanguages extends Component {
           );
         })}
 
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Language*"
             styles="form__input"
@@ -70,7 +70,7 @@ class FormLanguages extends Component {
             styles="add-btn"
             handleButtonClick={handleAddLanguageItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

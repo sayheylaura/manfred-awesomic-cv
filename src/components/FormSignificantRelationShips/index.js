@@ -24,7 +24,7 @@ class FormSignificantRelationShips extends Component {
       company
     } = significantRelationshipsDefault;
     return (
-      <fieldset className="form__significantRelationships">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Significant Relationships
         <span className="required_field">*</span></legend>
         <p className="form__section-description">
@@ -41,7 +41,7 @@ class FormSignificantRelationShips extends Component {
           );
         }
         )}
-        <div>
+        <div className="form__container">
           <FormInput
             labelContent="Name"
             styles="form__input"

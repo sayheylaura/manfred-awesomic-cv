@@ -11,17 +11,19 @@ class Preview extends Component {
     const { sample, handlePrintBtn, handleHTML, cvRef } = this.props;
     return (
       <Fragment>
+        <div className="button__container">
         <Button
           buttonType="button"
           styles="preview__print-btn"
           handleButtonClick={handlePrintBtn}
         >
         </Button>
-
+        </div>
         <ModalHtml
           cvRef={cvRef}
           handleHTML={handleHTML}
         />
+
         <Cv
           sample={sample}
           cvRef={cvRef}

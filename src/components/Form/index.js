@@ -124,7 +124,7 @@ class Form extends Component {
           handleRemoveGoal={handleRemoveGoal}
           handleGoalsInput={handleGoalsInput}
           handleGoalChange={handleGoalChange}
-       />
+        />
 
         <FormSignificantRelationShips
           significantRelationships={significantRelationships}

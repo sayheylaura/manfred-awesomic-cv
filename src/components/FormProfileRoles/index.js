@@ -7,16 +7,23 @@ import FormProfileRoleItem from "../FormProfileRoleItem";
 const rolesArr = ["project manager", "product manager", "operational manager", "analyst", "business analyst", "qa manager", "software architect", "process analyst", "test engineer", "test analyst", "database administrator", "developer", "software engineer", "product owner", "scrum master", "team lead", "UX designer", "UI designer"]
 
 class FormProfileRoles extends Component {
-
   render() {
-    const { rolesDefault, handleDefaultInputChange, handleAddRoleItem, roles, handleRemoveRoleItem, handleRoleChange } = this.props;
+    const {
+      roles,
+      rolesDefault,
+      handleDefaultInputChange,
+      handleAddRoleItem,
+      handleRemoveRoleItem,
+      handleRoleChange
+    } = this.props;
+
     return (
       <div>
         <p>Roles</p>
 
         <p>
           The ones that better describe your previous or future positions
-      </p>
+        </p>
 
         {roles && !!roles.length && roles.map((item, index) => {
           return (
@@ -25,23 +32,23 @@ class FormProfileRoles extends Component {
               ind={index}
               item={item}
               roles={roles}
+              rolesArr={rolesArr}
               handleRemoveRoleItem={handleRemoveRoleItem}
               handleRoleChange={handleRoleChange}
-              rolesArr={rolesArr}
             />
           );
         })}
 
         <FormSelect
-          selectName="rolesDefault"
           labelContent="More roles"
-          selectValue={rolesDefault}
           styles="form__select"
+          selectName="rolesDefault"
+          selectValue={rolesDefault}
           handleSelectChange={handleDefaultInputChange}
           selectOptions={rolesArr}
-      />
+        />
 
-      <Button
+        <Button
           buttonType="button"
           styles="add-btn"
           handleButtonClick={handleAddRoleItem}

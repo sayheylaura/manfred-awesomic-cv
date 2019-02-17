@@ -4,7 +4,7 @@ import Button from "../Button";
 import FormSelect from "../FormSelect";
 
 class FormProfileRoleItem extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,34 +23,34 @@ class FormProfileRoleItem extends Component {
   }
 
   render() {
-    const { item, rolesArr } = this.props;
+    const { ind, item, roles, rolesArr } = this.props;
     return (
       <div>
         <FormSelect
-          selectName="roles"
-          labelContent="Role"
-          selectValue={item}
+          labelContent={`Role ${ind + 1} of ${roles.length}`}
           styles="form__select"
+          selectName="roles"
+          selectValue={item}
           handleSelectChange={this.handleChange}
           selectOptions={rolesArr}
-      />
+        />
 
-      <Button
+        <Button
           buttonType="button"
           styles="remove-btn"
           handleButtonClick={this.handleRemoveBtn}
         >
           Remove
       </Button>
-
       </div>
-     );
+    );
   }
 }
 
 FormProfileRoleItem.propTypes = {
-  item: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  roles: PropTypes.array.isRequired,
   rolesArr: PropTypes.array.isRequired,
   handleRemoveRoleItem: PropTypes.func.isRequired,
   handleRoleChange: PropTypes.func.isRequired

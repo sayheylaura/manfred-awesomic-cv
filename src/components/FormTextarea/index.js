@@ -1,25 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const FormTextarea = ({ labelContent, textName, textValue, handleTextChange }) => (
+const FormTextarea = ({ labelContent, textName, textValue, example, handleTextChange }) => (
   <label className="textarea__label" htmlFor={textName}>
     {labelContent}
     <textarea
       className="textarea"
       name={textName}
       value={textValue}
-      // rows="8"
-      // cols="40"
+      placeholder={example}
       onChange={handleTextChange}
     />
   </label>
-
 );
 
 FormTextarea.propTypes = {
   labelContent: PropTypes.string.isRequired,
   textName: PropTypes.string.isRequired,
   textValue: PropTypes.string.isRequired,
+  example: PropTypes.string,
   handleTextChange: PropTypes.func.isRequired
 };
 

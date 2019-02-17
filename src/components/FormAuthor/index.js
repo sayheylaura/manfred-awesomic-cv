@@ -8,7 +8,7 @@ import FormProfileRoles from "../FormProfileRoles";
 class FormAuthor extends Component {
   render() {
     const {
-      sample,
+      profile,
       publicLinkDefault,
       rolesDefault,
       handleAddImage,
@@ -16,33 +16,34 @@ class FormAuthor extends Component {
       handleProfileInputs,
       handleDefaultInputChange,
       handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
       handleAddRoleItem,
       handleRoleChange,
-      handleRemoveRoleItem,
-      handleRemoveLinkItem,
-      handleLinkChange
+      handleRemoveRoleItem
     } = this.props;
 
     const {
       name,
+      image,
       birthday,
       yearsOfExperience,
       publicLinks,
       roles
-    } = sample.author.profile;
+    } = profile;
 
     return (
       <fieldset className="form__author">
         <legend className="form__section-title">Personal data</legend>
 
         <FormImage
-          image={sample.author.profile.image}
+          image={image}
           handleAddImage={handleAddImage}
           handleRemoveImage={handleRemoveImage}
         />
 
         <FormInput
-          labelContent="Name"
+          labelContent="Full name"
           styles="form__input"
           inputType="text"
           inputName="name"
@@ -61,7 +62,7 @@ class FormAuthor extends Component {
         />
 
         <FormInput
-          labelContent="Years of experience"
+          labelContent="Years of professional experience"
           styles="form__input"
           inputType="number"
           inputName="yearsOfExperience"
@@ -81,8 +82,8 @@ class FormAuthor extends Component {
 
         <FormProfileRoles
           roles={roles}
-          handleDefaultInputChange={handleDefaultInputChange}
           rolesDefault={rolesDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
           handleAddRoleItem={handleAddRoleItem}
           handleRemoveRoleItem={handleRemoveRoleItem}
           handleRoleChange={handleRoleChange}
@@ -93,7 +94,7 @@ class FormAuthor extends Component {
 }
 
 FormAuthor.propTypes = {
-  sample: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired,
   publicLinkDefault: PropTypes.string.isRequired,
   rolesDefault: PropTypes.string.isRequired,
   handleAddImage: PropTypes.func.isRequired,

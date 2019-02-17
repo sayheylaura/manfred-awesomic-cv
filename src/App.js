@@ -8,8 +8,6 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,14 +17,14 @@ class App extends Component {
       rolesDefault: "project manager",
       goalDefault: "",
       transportableSkillDefault: "",
-      significantRelationshipsDefault: {
-        name:"",
-        comment:"",
-        role:"",
-        contact:"",
-        company:"",
-      },
       significantExperienceDefault: "",
+      significantRelationshipsDefault: {
+        name: "",
+        comment: "",
+        role: "",
+        contact: "",
+        company: "",
+      },
       companyDefault: "",
       institutionDefault: "",
       studyDefault: "",
@@ -55,7 +53,6 @@ class App extends Component {
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
-    this.handleGoalChange = this.handleGoalChange.bind(this);
     this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(
       this
     );
@@ -84,12 +81,12 @@ class App extends Component {
     this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
     this.handleDefaultInputChangeSignificantRelationships = this.handleDefaultInputChangeSignificantRelationships.bind(this)
     this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
-    this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
-    this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddExperienceItem = this.handleAddExperienceItem.bind(this);
     this.handleRemoveExperienceItem = this.handleRemoveExperienceItem.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
+    this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
+    this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
+    this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddLanguageItem = this.handleAddLanguageItem.bind(this);
     this.handleRemoveLanguageItem = this.handleRemoveLanguageItem.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
@@ -244,7 +241,6 @@ class App extends Component {
     });
   }
 
-
   handleAddRoleItem() {
     const { rolesDefault } = this.state;
     const newRoleItem = rolesDefault;
@@ -345,9 +341,9 @@ class App extends Component {
             professionalGoals: prevState.sample.author.professionalGoals.concat(
               newGoalItem
             )
-          },
-          goalDefault: ""
-        }
+          }
+        },
+        goalDefault: ""
       };
       return newState;
     });
@@ -372,14 +368,7 @@ class App extends Component {
     });
   }
 
-  handleGoalChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      goalDefault: value
-    });
-  }
-
-  handleGoalsInput(value, name, ind) {
+  handleGoalsInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -539,24 +528,6 @@ class App extends Component {
     });
   }
 
-  // handleRemoveSignificant(ind) {
-  //   this.setState(prevState => {
-  //     const newState = {
-  //       sample: {
-  //         ...prevState.sample,
-  //         author: {
-  //           ...prevState.sample.author,
-  //           significantExperience: prevState.sample.author.significantExperience.filter(
-  //             (item, index) => {
-  //               return index !== ind;
-  //             }
-  //           )
-  //         }
-  //       }
-  //     };
-  //     return newState;
-  //   });
-  // }
   handleDefaultInputChangeSignificantRelationships(event) {
     const { name, value } = event.currentTarget;
     this.setState(prevState => {
@@ -569,7 +540,6 @@ class App extends Component {
       return newState;
     });
   }
-
 
   handleAddSignificantRelationships() {
     const { significantRelationshipsDefault } = this.state;
@@ -592,11 +562,11 @@ class App extends Component {
           contact: "",
           company: "",
         }
-
       };
       return newState;
     });
   }
+
   handleRemoveSignificantRelationships(ind) {
     this.setState(prevState => {
       const newState = {
@@ -626,81 +596,15 @@ class App extends Component {
             significantRelationships: prevState.sample.author.significantRelationships.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = {
+                    ...item,
+                    [name]: value
+                  }
                 }
                 return item;
               }
             )
           }
-        }
-      };
-      return newState;
-    });
-  }
-
-
-//handle modificar campo!!!!
-
-
-
-  handleAddEducationItem() {
-    const {
-      institutionDefault,
-      studyDefault,
-      fromEdDefault,
-      untilEdDefault
-    } = this.state;
-
-    const newEducationItem = {
-      institution: institutionDefault,
-      study: studyDefault,
-      from: fromEdDefault,
-      until: untilEdDefault
-    };
-
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          education: prevState.sample.education.concat(newEducationItem)
-        },
-        institutionDefault: "",
-        studyDefault: "",
-        fromEdDefault: "",
-        untilEdDefault: ""
-      };
-      return newState;
-    });
-  }
-
-  handleRemoveEducationItem(ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          education: prevState.sample.education.filter((item, index) => {
-            return index !== ind;
-          })
-        }
-      };
-      return newState;
-    });
-  }
-
-  handleEducationChange(value, name, ind) {
-    this.setState(prevState => {
-      const newState = {
-        sample: {
-          ...prevState.sample,
-          education: prevState.sample.education.map((item, index) => {
-            if (index === ind) {
-              item = {
-                ...item,
-                [name]: value
-              };
-            }
-            return item;
-          })
         }
       };
       return newState;
@@ -768,6 +672,70 @@ class App extends Component {
               })
             }
           ]
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleAddEducationItem() {
+    const {
+      institutionDefault,
+      studyDefault,
+      fromEdDefault,
+      untilEdDefault
+    } = this.state;
+
+    const newEducationItem = {
+      institution: institutionDefault,
+      study: studyDefault,
+      from: fromEdDefault,
+      until: untilEdDefault
+    };
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.concat(newEducationItem)
+        },
+        institutionDefault: "",
+        studyDefault: "",
+        fromEdDefault: "",
+        untilEdDefault: ""
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveEducationItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.filter((item, index) => {
+            return index !== ind;
+          })
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleEducationChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          education: prevState.sample.education.map((item, index) => {
+            if (index === ind) {
+              item = {
+                ...item,
+                [name]: value
+              };
+            }
+            return item;
+          })
         }
       };
       return newState;
@@ -940,11 +908,11 @@ class App extends Component {
       publicLinkDefault,
       rolesDefault,
       goalDefault,
-      significantRelationshipsDefault,
       transportableSkillDefault,
       significantExperienceDefault,
-      institutionDefault,
+      significantRelationshipsDefault,
       companyDefault,
+      institutionDefault,
       studyDefault,
       fromEdDefault,
       untilEdDefault,
@@ -954,6 +922,7 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
+
     return (
       <div className="App">
         <Header />
@@ -962,12 +931,11 @@ class App extends Component {
           publicLinkDefault={publicLinkDefault}
           rolesDefault={rolesDefault}
           goalDefault={goalDefault}
-          significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
-          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
-          institutionDefault={institutionDefault}
+          significantRelationshipsDefault={significantRelationshipsDefault}
           companyDefault={companyDefault}
+          institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
           untilEdDefault={untilEdDefault}
@@ -992,7 +960,6 @@ class App extends Component {
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}
           handleGoalsInput={this.handleGoalsInput}
-          handleGoalChange={this.handleGoalChange}
           handleAddTransportableSkill={this.handleAddTransportableSkill}
           handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
           handleTransportableSkillChange={this.handleTransportableSkillChange}
@@ -1010,12 +977,13 @@ class App extends Component {
           handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
           handleAddSignificantRelationships={this.handleAddSignificantRelationships}
           handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
-          handleAddEducationItem={this.handleAddEducationItem}
-          handleRemoveEducationItem={this.handleRemoveEducationItem}
-          handleEducationChange={this.handleEducationChange}
+          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
           handleAddExperienceItem={this.handleAddExperienceItem}
           handleRemoveExperienceItem={this.handleRemoveExperienceItem}
           handleExperienceChange={this.handleExperienceChange}
+          handleAddEducationItem={this.handleAddEducationItem}
+          handleRemoveEducationItem={this.handleRemoveEducationItem}
+          handleEducationChange={this.handleEducationChange}
           handleAddLanguageItem={this.handleAddLanguageItem}
           handleRemoveLanguageItem={this.handleRemoveLanguageItem}
           handleLanguageChange={this.handleLanguageChange}

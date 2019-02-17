@@ -4,19 +4,22 @@ import PropTypes from 'prop-types';
 
 class FormIntro extends Component {
   render() {
-    const { handleIntroChange, intro} = this.props;
+    const { handleIntroChange, intro } = this.props;
     return (
       <fieldset className="form__intro">
         <legend className="form__section-title">Intro</legend>
+
         <p className="form__intro-description">
           Explain to your future company what kind of professional you are
         </p>
-        <FormTextarea
-        textName="intro"
-        textValue={intro}
-        labelContent="Intro"
-        handleTextChange={handleIntroChange} />
 
+        <FormTextarea
+          labelContent="Intro"
+          textName="intro"
+          textValue={intro}
+          example="Ex: Full-stack developer with broad experience in managing teams"
+          handleTextChange={handleIntroChange}
+        />
       </fieldset>
     );
   }

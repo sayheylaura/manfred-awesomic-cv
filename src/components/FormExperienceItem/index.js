@@ -19,6 +19,7 @@ class FormExperienceItem extends Component {
               key={index}
               ind={index}
               name={item.name}
+              company={company}
               handleRemoveExperienceItem={handleRemoveExperienceItem}
               handleExperienceChange={handleExperienceChange}
             />
@@ -30,7 +31,6 @@ class FormExperienceItem extends Component {
 }
 
 FormExperienceItem.propTypes = {
-  ind: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
   handleRemoveExperienceItem: PropTypes.func.isRequired,
   handleExperienceChange: PropTypes.func.isRequired

@@ -23,9 +23,23 @@ class FormEducationItem extends Component {
   }
 
   render() {
-    const { institution, study, from, until } = this.props.item;
+    const {
+      ind,
+      item,
+      education
+    } = this.props;
+
+    const {
+      institution,
+      study,
+      from,
+      until
+    } = item;
+
     return (
       <div className="form__container">
+        <p>{`Institution ${ind + 1} of ${education.length}`}</p>
+
         <FormInput
           labelContent="Institution"
           styles="form__input"
@@ -67,12 +81,12 @@ class FormEducationItem extends Component {
           />
         </div>
         <div className="remove-btn__container">
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
         </div>
       </div>
@@ -83,6 +97,7 @@ class FormEducationItem extends Component {
 FormEducationItem.propTypes = {
   ind: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
+  education: PropTypes.array.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired
 };

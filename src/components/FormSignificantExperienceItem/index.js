@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import FormInput from '../FormInput';
 import Button from '../Button';
 
-
 class FormSignificantExperienceItem extends Component {
   constructor(props) {
     super(props);
@@ -17,24 +16,25 @@ class FormSignificantExperienceItem extends Component {
   }
 
   handleGoalInputChange(event) {
-    const { value, name } = event.currentTarget;
+    const { value } = event.currentTarget;
     const { handleSignificantExperienceInput, ind } = this.props;
-    handleSignificantExperienceInput(value, name, ind);
+    handleSignificantExperienceInput(value, ind);
   }
 
   render() {
-    const { significantExperienceDefault } = this.props;
+    const { ind, item, significantExperience } = this.props;
     return (
       <div className="form__container">
         <FormInput
-          labelContent="Significant experience"
+          labelContent={`Experience ${ind + 1} of ${significantExperience.length}`}
           styles="form__input"
           inputType="text"
-          inputName="significant experience"
-          inputValue={significantExperienceDefault}
+          inputName="significantExperience"
+          inputValue={item}
           example="Ex: Managing a team of 20 people at Acme, Co."
           handleInputChange={this.handleGoalInputChange}
         />
+
         <div className="remove-btn__container">
           <Button
             buttonType="button"
@@ -50,8 +50,9 @@ class FormSignificantExperienceItem extends Component {
 }
 
 FormSignificantExperienceItem.propTypes = {
-  significantExperienceDefault: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  significantExperience: PropTypes.array.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired
 }

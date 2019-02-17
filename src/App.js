@@ -62,9 +62,6 @@ class App extends Component {
     this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(
       this
     );
-    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(
-      this
-    );
     this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(
       this
     );
@@ -72,9 +69,6 @@ class App extends Component {
       this
     );
     this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(
-      this
-    );
-    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
       this
     );
     this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
@@ -378,7 +372,7 @@ class App extends Component {
             professionalGoals: prevState.sample.author.professionalGoals.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -403,9 +397,9 @@ class App extends Component {
             transportableSkills: prevState.sample.author.transportableSkills.concat(
               newTransportableSkillItem
             )
-          },
-          transportableSkillDefault: ""
-        }
+          }
+        },
+        transportableSkillDefault: ""
       };
       return newState;
     });
@@ -430,14 +424,7 @@ class App extends Component {
     });
   }
 
-  handleTransportableSkillChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      transportableSkillDefault: value
-    });
-  }
-
-  handleTransportableSkillsInput(value, name, ind) {
+  handleTransportableSkillsInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -447,7 +434,7 @@ class App extends Component {
             transportableSkills: prevState.sample.author.transportableSkills.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -499,14 +486,7 @@ class App extends Component {
     });
   }
 
-  handlesignificantExperienceChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      significantExperienceDefault: value
-    });
-  }
-
-  handleSignificantExperienceInput(value, name, ind) {
+  handleSignificantExperienceInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -516,7 +496,7 @@ class App extends Component {
             significantExperience: prevState.sample.author.significantExperience.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -962,14 +942,10 @@ class App extends Component {
           handleGoalsInput={this.handleGoalsInput}
           handleAddTransportableSkill={this.handleAddTransportableSkill}
           handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
-          handleTransportableSkillChange={this.handleTransportableSkillChange}
           handleTransportableSkillsInput={this.handleTransportableSkillsInput}
           handleAddSignificantExperience={this.handleAddSignificantExperience}
           handleRemoveSignificantExperience={
             this.handleRemoveSignificantExperience
-          }
-          handlesignificantExperienceChange={
-            this.handlesignificantExperienceChange
           }
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput

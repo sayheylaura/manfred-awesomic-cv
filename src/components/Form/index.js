@@ -48,11 +48,9 @@ class Form extends Component {
       handleGoalsInput,
       handleAddTransportableSkill,
       handleRemoveTransportableSkill,
-      handleTransportableSkillChange,
       handleTransportableSkillsInput,
       handleAddSignificantExperience,
       handleRemoveSignificantExperience,
-      handlesignificantExperienceChange,
       handleSignificantExperienceInput,
       handleDefaultInputChangeSignificantRelationships,
       handleAddSignificantRelationships,
@@ -145,18 +143,18 @@ class Form extends Component {
         <FormTransportableSkills
           transportableSkills={transportableSkills}
           transportableSkillDefault={transportableSkillDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
           handleAddTransportableSkill={handleAddTransportableSkill}
           handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-          handleTransportableSkillChange={handleTransportableSkillChange}
           handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
         <FormSignificantExperience
           significantExperience={significantExperience}
           significantExperienceDefault={significantExperienceDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
           handleAddSignificantExperience={handleAddSignificantExperience}
           handleRemoveSignificantExperience={handleRemoveSignificantExperience}
-          handlesignificantExperienceChange={handlesignificantExperienceChange}
           handleSignificantExperienceInput={handleSignificantExperienceInput}
         />
 
@@ -248,11 +246,9 @@ Form.propTypes = {
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddSignificantExperience: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
-  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleAddSignificantRelationships: PropTypes.func.isRequired,
   handleRemoveSignificantRelationships: PropTypes.func.isRequired,

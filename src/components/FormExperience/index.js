@@ -25,7 +25,6 @@ class FormExperience extends Component {
           return (
             <FormExperienceItem
               key={index}
-              ind={index}
               item={item}
               handleRemoveExperienceItem={handleRemoveExperienceItem}
               handleExperienceChange={handleExperienceChange}
@@ -34,6 +33,8 @@ class FormExperience extends Component {
         })}
 
         <div className="form__container">
+          <p>More companies</p>
+
           <FormInput
             labelContent="Company name"
             styles="form__input"

@@ -17,6 +17,7 @@ class FormEducation extends Component {
       handleRemoveEducationItem,
       handleEducationChange,
     } = this.props;
+
     return (
       <fieldset className="form__fieldset">
         <legend className="form__section-title">Education</legend>
@@ -29,6 +30,7 @@ class FormEducation extends Component {
               key={index}
               ind={index}
               item={item}
+              education={education}
               handleRemoveEducationItem={handleRemoveEducationItem}
               handleEducationChange={handleEducationChange}
             />
@@ -36,8 +38,10 @@ class FormEducation extends Component {
         })}
 
         <div className="form__container">
+          <p>More institutions</p>
+
           <FormInput
-            labelContent="Institution"
+            labelContent="Institution name"
             styles="form__input"
             inputType="text"
             inputName="institutionDefault"
@@ -55,6 +59,7 @@ class FormEducation extends Component {
             example="Ex: Computer Science"
             handleInputChange={handleDefaultInputChange}
           />
+
           <div className="form__date-container">
             <FormInput
               labelContent="From"
@@ -76,6 +81,7 @@ class FormEducation extends Component {
               handleInputChange={handleDefaultInputChange}
             />
           </div>
+
           <Button
             buttonType="button"
             styles="add-btn"

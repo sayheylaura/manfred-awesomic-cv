@@ -700,21 +700,15 @@ a:active {
 .clipboard__wrapper {
   display: flex;
   justify-content: flex-end;
-}
-
-.clipboard-btn{
-  position: fixed;
-  top: 5%;
+  margin-top: 10px;
 }
 
 .close-btn {
-  position: fixed;
-  top: 5%;
   width: 20px;
   height: 20px;
   padding: 12px 12px;
   background-color: #000;
-  background-image: url(images/close.svg);
+  background-image: url(images/close-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
@@ -723,16 +717,21 @@ a:active {
   outline: none;
   cursor: pointer;
   transition: .3s all;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
   &:hover {
       background-color: #9C9C9C;
   }
 }
 
 .ReactModal__Content--after-open{
-  height: 85%;
+  max-height: 70%;
   width: 80%;
-  top: 10%;
-  bottom: 10%;
-  margin: 0 auto;
+  margin-top: 15%;
+  margin: auto;
+}
+
+.modal__outer {
+  max-height: 85%;
+  margin-top: 5%;
+  overflow-y: auto;
 }

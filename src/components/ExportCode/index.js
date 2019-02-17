@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Prism from 'prismjs';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './prism.css';
@@ -62,15 +62,16 @@ class ExportCode extends Component {
     }
 
     return (
-      <div>
-        <div className="clipboard__wrapper">
+      <Fragment>
+      <div className="modal__outer">
+      <pre><code className="language-markup">{pageHTML}</code></pre>
+      </div>
+      <div className="clipboard__wrapper">
           <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
-        </div>
-
-      <pre><code className="language-markup">{pageHTML}</code></pre>
       </div>
+      </Fragment>
     );
   }
 }

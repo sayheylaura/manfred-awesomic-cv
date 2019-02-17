@@ -5,6 +5,7 @@ import Button from "../Button";
 import ModalHtml from "../Modal";
 
 
+
 class Preview extends Component {
   render() {
     const { sample, handlePrintBtn, handleHTML, cvRef } = this.props;
@@ -32,7 +33,9 @@ class Preview extends Component {
 
 Preview.propTypes = {
   sample: PropTypes.object.isRequired,
-  handlePrintBtn: PropTypes.func.isRequired
+  cvRef: PropTypes.object.isRequired,
+  handlePrintBtn: PropTypes.func.isRequired,
+  handleHTML: PropTypes.func.isRequired,
 };
 
 export default Preview;

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+// import PropTypes from "prop-types";
 import Prism from 'prismjs';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './prism.css';
@@ -85,4 +86,8 @@ class ExportCode extends Component {
   }
 }
 
+
+// ExportCode.propTypes = {
+//   cvRef: PropTypes.object.isRequired
+// };
 export default ExportCode;

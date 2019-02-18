@@ -164,6 +164,9 @@ a:active {
 }
 
 .preview__print-btn {
+    position: fixed;
+    right: 10%;
+    top: 25.5%;
     display: none;
     width: 50px;
     height: 50px;
@@ -173,7 +176,7 @@ a:active {
     background-position: center;
     color: #fff;
     border: 0;
-    position: absolute;
+    // position: absolute;
     outline: none;
     cursor: pointer;
     transition: .3s all;
@@ -185,24 +188,34 @@ a:active {
         display: none;
     }
 }
-.preview__share-btn {
+
+
+.preview__html-btn {
   display: none;
   width: 50px;
   height: 50px;
   background-color: #1E086D;
-  background-image: url(images/share.svg);
+  background-image: url(images/source-code.svg);
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
   border: 0;
-  position: absolute;
-  top: 50px;
+  border-radius: 2px;
+  position: fixed;
+  right: 10%;
+  top: 32%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
   outline: none;
   cursor: pointer;
   transition: .3s all;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
   &:hover {
-    background-color: #4726bb;
+      background-color: #4726bb;
+  }
+  @media print {
+      display: none;
   }
 }
 
@@ -743,6 +756,23 @@ a:active {
     transition: .3s all;
     outline: none;
 }
+.clipboard-btn  {
+  cursor: pointer;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.15);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  background-color: #1E086D;
+  color: #fff;
+  font-weight: 700;
+  transition: .3s all;
+  outline: none;
+  &:hover {
+    background-color: #4726bb;
+  }
+}
 
 .remove-btn__container {
     display: flex;
@@ -873,7 +903,8 @@ a:active {
 }
 
 @media all and (min-width: 768px) {
-    .preview__print-btn, .preview__share-btn {
+    .preview__print-btn,
+    .preview__html-btn {
         display: block;
     }
     .cv__wrapper {
@@ -891,3 +922,49 @@ a:active {
         padding: 50px 170px;
     }
 }
+
+
+//Export Code
+
+.clipboard__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.close-btn {
+  width: 20px;
+  height: 20px;
+  padding: 12px 12px;
+  background-color: #d264ca;
+  background-image: url(images/close-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s all;
+  box-shadow: 0 3px 5px 0 #d264cbb4;
+  &:hover {
+      background-color: #fb55b0;
+      transform: translateY(-1px);
+  }
+}
+
+.ReactModal__Content--after-open{
+  max-height: 70%;
+  width: 80%;
+  margin-top: 15%;
+  margin: auto;
+}
+
+.modal__outer {
+  margin: auto;
+  max-height: 85%;
+  margin-top: 5%;
+  max-width: 90%;
+  overflow-y: auto;
+}
+

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./App.scss";
 //import sample from "./services/empty_sample.json"
 // import sample from "./services/sample.json";
@@ -8,9 +8,12 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
+    this.cvRef = React.createRef();
     this.state = {
       sample: sample,
       publicLinkDefault: "",
@@ -91,6 +94,11 @@ class App extends Component {
     this.handleAddQuestion = this.handleAddQuestion.bind(this);
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
+    this.handleHTML = this.handleHTML.bind(this);
+  }
+
+  handleHTML(){
+    this.setState({refReady: true})
   }
 
 componentDidMount(){
@@ -923,9 +931,9 @@ componentDidMount(){
       questionDefault,
       answerDefault
     } = this.state;
-
     return (
       <div className="App">
+      <Fragment>
         <Header />
         <Main
           sample={sample}
@@ -990,8 +998,13 @@ componentDidMount(){
           handleAddQuestion={this.handleAddQuestion}
           handleRemoveQuestion={this.handleRemoveQuestion}
           handleQuestionInputChange={this.handleQuestionInputChange}
+          handleHTML={this.handleHTML}
+          cvRef={this.cvRef}
         />
-        <Footer />
+        <Footer/>
+      </Fragment>
+
+
       </div>
     );
   }

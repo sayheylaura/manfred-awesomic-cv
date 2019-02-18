@@ -35,7 +35,7 @@ class Main extends Component {
   }
 
   render() {
-    const { sample, handlePrintBtn, handleJsonText, ...rest } = this.props;
+    const { sample, cvRef, handleHTML, handlePrintBtn, handleJsonText, ...rest } = this.props;
 
     return (
       <main className="main">
@@ -77,7 +77,12 @@ class Main extends Component {
             <Route
               path="/preview"
               render={() => (
-                <Preview sample={sample} handlePrintBtn={handlePrintBtn} />
+                <Preview
+                  sample={sample}
+                  handlePrintBtn={handlePrintBtn}
+                  cvRef={cvRef}
+                  handleHTML={handleHTML}
+                />
               )}
             />
           </Switch>

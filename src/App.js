@@ -112,11 +112,10 @@ componentDidMount(){
   fetch(stylesCV)
   .then(data => data.text())
   .then(data => {
-    const codeCV = this.state.codeToCopy.current.outerHTML;
-    const codeToExport = `<link itemprop="url" href=https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet">
-                        <style>${data}</style>
-                        ${codeCV}`
-  })
+    this.setState({
+    codeToExport : `<link itemprop="url" href=https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet">
+                        <style>${data}</style>`
+  })})
 
 
 }
@@ -929,13 +928,15 @@ componentDidMount(){
       proficiencyDefault,
       miscEdDefault,
       questionDefault,
-      answerDefault
+      answerDefault,
+      codeToExport,
     } = this.state;
     return (
       <div className="App">
       <Fragment>
         <Header />
         <Main
+          codeToExport ={codeToExport}
           sample={sample}
           publicLinkDefault={publicLinkDefault}
           rolesDefault={rolesDefault}

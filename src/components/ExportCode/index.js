@@ -55,7 +55,7 @@ class ExportCode extends Component {
 
 
   render() {
-    const {cvRef} = this.props;
+    const {cvRef, codeToExport} = this.props;
     let pageHTML;
     if(cvRef.current) {
       const test = cvRef.current;
@@ -66,13 +66,13 @@ class ExportCode extends Component {
       <Fragment>
       <div className="modal__outer ">
       <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
+          <CopyToClipboard onCopy={this.onCopy} text={`${codeToExport}${pageHTML}`}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>
       <pre><code className="language-markup">{pageHTML}</code></pre>
       <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
+          <CopyToClipboard onCopy={this.onCopy} text={`${codeToExport}${pageHTML}`}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>

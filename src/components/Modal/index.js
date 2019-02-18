@@ -24,7 +24,7 @@ class ModalHtml extends React.Component {
   }
 
   render(){
-    const {cvRef, handleHTML} = this.props;
+    const {cvRef, codeToExport, handleHTML} = this.props;
     return(
       <div>
         <Button
@@ -48,7 +48,7 @@ class ModalHtml extends React.Component {
         >
         </Button>
 
-          <ExportCode cvRef={cvRef} handleHTML={handleHTML}/>
+          <ExportCode cvRef={cvRef} codeToExport={codeToExport} handleHTML={handleHTML}/>
         </ReactModal>
       </div>
     );

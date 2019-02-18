@@ -8,7 +8,7 @@ import ModalHtml from "../Modal";
 
 class Preview extends Component {
   render() {
-    const { sample, handlePrintBtn, handleHTML, cvRef } = this.props;
+    const { sample, handlePrintBtn, handleHTML, cvRef, codeToExport } = this.props;
     return (
       <Fragment>
         <div className="button__container">
@@ -21,6 +21,7 @@ class Preview extends Component {
         </div>
         <ModalHtml
           cvRef={cvRef}
+          codeToExport ={codeToExport}
           handleHTML={handleHTML}
         />
 

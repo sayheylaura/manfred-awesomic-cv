@@ -35,7 +35,7 @@ class Main extends Component {
   }
 
   render() {
-    const { sample, cvRef, handleHTML, handlePrintBtn, handleJsonText, ...rest } = this.props;
+    const { sample, cvRef, handleHTML, handlePrintBtn, handleJsonText, codeToExport, ...rest } = this.props;
 
     return (
       <main className="main">
@@ -81,6 +81,7 @@ class Main extends Component {
                   sample={sample}
                   handlePrintBtn={handlePrintBtn}
                   cvRef={cvRef}
+                  codeToExport ={codeToExport}
                   handleHTML={handleHTML}
                 />
               )}

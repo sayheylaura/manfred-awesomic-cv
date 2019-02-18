@@ -33,7 +33,7 @@
       }
     ]
   },
-  "experience": [
+  "experience":  [
     {
       "company": [
         {
@@ -99,8 +99,8 @@
           ]
         }
       ]
-    }
-  ],
+        }
+      ],
   "education": [
     {
       "institution": "Miskatonic University",

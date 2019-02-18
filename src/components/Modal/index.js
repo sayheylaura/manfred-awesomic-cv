@@ -36,7 +36,7 @@ class ModalHtml extends React.Component {
         <ReactModal
           appElement={document.getElementById('App')}
           isOpen={this.state.showModal}
-          contentLabel="modal with html code"
+          contentLabel="share your CV in html code"
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={false}
         >

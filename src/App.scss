@@ -164,6 +164,9 @@ a:active {
 }
 
 .preview__print-btn {
+    position: fixed;
+    right: 10%;
+    top: 25.5%;
     display: none;
     width: 50px;
     height: 50px;
@@ -173,7 +176,7 @@ a:active {
     background-position: center;
     color: #fff;
     border: 0;
-    position: absolute;
+    // position: absolute;
     outline: none;
     cursor: pointer;
     transition: .3s all;
@@ -185,26 +188,7 @@ a:active {
         display: none;
     }
 }
-.preview__share-btn {
-  display: none;
-  width: 50px;
-  height: 50px;
-  background-color: #1E086D;
-  background-image: url(images/share.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #fff;
-  border: 0;
-  position: absolute;
-  top: 50px;
-  outline: none;
-  cursor: pointer;
-  transition: .3s all;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .15);
-  &:hover {
-    background-color: #4726bb;
-  }
-}
+
 
 .preview__html-btn {
   display: none;
@@ -219,7 +203,7 @@ a:active {
   border-radius: 2px;
   position: fixed;
   right: 10%;
-  top: 23%;
+  top: 32%;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   letter-spacing: 1px;

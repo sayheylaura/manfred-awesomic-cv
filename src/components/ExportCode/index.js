@@ -66,13 +66,13 @@ class ExportCode extends Component {
       <Fragment>
       <div className="modal__outer ">
       <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={`${codeToExport}${pageHTML}`}>
+          <CopyToClipboard onCopy={this.onCopy} text={`<div>${codeToExport}${pageHTML}</div>`}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>
-      <pre><code className="language-markup">{pageHTML}</code></pre>
+      <pre><code className="language-markup">{`<div>${codeToExport}${pageHTML}</div>`}</code></pre>
       <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={`${codeToExport}${pageHTML}`}>
+          <CopyToClipboard onCopy={this.onCopy} text={`<div>${codeToExport}${pageHTML}</div>`}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>

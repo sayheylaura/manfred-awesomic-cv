@@ -101,24 +101,24 @@ class App extends Component {
     this.setState({refReady: true})
   }
 
-componentDidMount(){
-  const urlStyle = document.styleSheets;
-  let stylesCV;
-  for (const styleSheet of urlStyle){
-    if (styleSheet.href.includes("easley-s4-manfred")){
-      stylesCV= styleSheet;
+  componentDidMount() {
+    const urlStyle = document.styleSheets;
+    let stylesCV;
+    for (const styleSheet of urlStyle) {
+      console.log(styleSheet);
+      if (styleSheet.href && styleSheet.href.includes("easley-s4-manfred")) {
+        stylesCV = styleSheet.href;
+      }
     }
-  }
-  fetch(stylesCV)
-  .then(data => data.text())
-  .then(data => {
-    this.setState({
-    codeToExport : `<link itemprop="url" href=https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet">
+    fetch(stylesCV)
+      .then(data => data.text())
+      .then(data => {
+        this.setState({
+          codeToExport: `<link itemprop="url" href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet" />
                         <style>${data}</style>`
-  })})
-
-
-}
+        })
+      })
+  }
 
   handlePrintBtn() {
     window.print();

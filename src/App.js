@@ -3,7 +3,6 @@ import "./App.scss";
 //import sample from "./services/empty_sample.json"
 // import sample from "./services/sample.json";
 import sample from "./services/sample_2.json";
-//import sample from "./services/sample_yago.json";
 //import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -35,7 +34,8 @@ class App extends Component {
       proficiencyDefault: "elementary",
       miscEdDefault: "",
       questionDefault: "",
-      answerDefault: ""
+      answerDefault: "",
+      codeToExport: null,
     };
 
     this.handlePrintBtn = this.handlePrintBtn.bind(this);
@@ -92,6 +92,26 @@ class App extends Component {
     this.handleRemoveQuestion = this.handleRemoveQuestion.bind(this);
     this.handleQuestionInputChange = this.handleQuestionInputChange.bind(this);
   }
+
+componentDidMount(){
+  const urlStyle = document.styleSheets;
+  let stylesCV;
+  for (const styleSheet of urlStyle){
+    if (styleSheet.href.includes("easley-s4-manfred")){
+      stylesCV= styleSheet;
+    }
+  }
+  fetch(stylesCV)
+  .then(data => data.text())
+  .then(data => {
+    const codeCV = this.state.codeToCopy.current.outerHTML;
+    const codeToExport = `<link itemprop="url" href=https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet">
+                        <style>${data}</style>
+                        ${codeCV}`
+  })
+
+
+}
 
   handlePrintBtn() {
     window.print();

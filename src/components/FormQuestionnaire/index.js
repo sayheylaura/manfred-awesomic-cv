@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import FormInput from "../FormInput";
+//import FormInput from '../FormInput';
 import Button from "../Button";
 import FormQuestionnaireItem from "../FormQuestionnaireItem";
+import FormTextarea from "../FormTextarea";
 
 class FormQuestionnaire extends Component {
   render() {
@@ -16,7 +17,7 @@ class FormQuestionnaire extends Component {
       handleQuestionInputChange
     } = this.props;
     return (
-      <fieldset className="form__questionnaire">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Questionnaire</legend>
 
         <p className="form__section-description">
@@ -25,13 +26,12 @@ class FormQuestionnaire extends Component {
         </p>
 
         {questionnaire && !!questionnaire.length && questionnaire.map((item, index) => {
-          const { question, answer } = item;
           return (
             <FormQuestionnaireItem
               key={index}
               ind={index}
-              question={question}
-              answer={answer}
+              item={item}
+              questionnaire={questionnaire}
               handleRemoveQuestion={handleRemoveQuestion}
               handleQuestionInputChange={handleQuestionInputChange}
             />
@@ -39,24 +39,46 @@ class FormQuestionnaire extends Component {
         })}
 
         <div className="form__container">
-          <FormInput
+          <p className="form__container-title">More questions</p>
+
+          {/* <FormInput
+          labelContent="Question"
+          styles="form__input"
+          inputType="text"
+          inputName="questionDefault"
+          inputValue={questionDefault}
+          example="Ex: What JS frameworks do you use?"
+          handleInputChange={handleDefaultInputChange}
+        /> */}
+
+          {/* <FormInput
+          labelContent="Answer"
+          styles="form__input"
+          inputType="text"
+          inputName="answerDefault"
+          inputValue={answerDefault}
+          example="Ex: React"
+          handleInputChange={handleDefaultInputChange}
+        /> */}
+
+          <FormTextarea
             labelContent="Question"
-            styles="form__input"
-            inputType="text"
-            inputName="questionDefault"
-            inputValue={questionDefault}
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="questionDefault"
+            textValue={questionDefault}
             example="Ex: What JS frameworks do you use?"
-            handleInputChange={handleDefaultInputChange}
+            handleTextChange={handleDefaultInputChange}
           />
 
-          <FormInput
+          <FormTextarea
             labelContent="Answer"
-            styles="form__input"
-            inputType="text"
-            inputName="answerDefault"
-            inputValue={answerDefault}
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="answerDefault"
+            textValue={answerDefault}
             example="Ex: React"
-            handleInputChange={handleDefaultInputChange}
+            handleTextChange={handleDefaultInputChange}
           />
 
           <Button
@@ -64,7 +86,7 @@ class FormQuestionnaire extends Component {
             styles="add-btn"
             handleButtonClick={handleAddQuestion}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

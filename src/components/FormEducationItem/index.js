@@ -23,9 +23,23 @@ class FormEducationItem extends Component {
   }
 
   render() {
-    const { institution, study, from, until } = this.props.item;
+    const {
+      ind,
+      item,
+      education
+    } = this.props;
+
+    const {
+      institution,
+      study,
+      from,
+      until
+    } = item;
+
     return (
-      <div>
+      <div className="form__container">
+        <p className="form__container-title">{`Institution ${ind + 1} of ${education.length}`}</p>
+
         <FormInput
           labelContent="Institution"
           styles="form__input"
@@ -45,34 +59,36 @@ class FormEducationItem extends Component {
           example="Ex: Computer Science"
           handleInputChange={this.handleInputChange}
         />
+        <div className="form__date-container">
+          <FormInput
+            labelContent="From"
+            styles="form__input"
+            inputType="text"
+            inputName="from"
+            inputValue={from}
+            example="Ex: 2008"
+            handleInputChange={this.handleInputChange}
+          />
 
-        <FormInput
-          labelContent="From"
-          styles="form__input"
-          inputType="text"
-          inputName="from"
-          inputValue={from}
-          example="Ex: 2008"
-          handleInputChange={this.handleInputChange}
-        />
-
-        <FormInput
-          labelContent="Until"
-          styles="form__input"
-          inputType="text"
-          inputName="until"
-          inputValue={until}
-          example="Ex: 2012"
-          handleInputChange={this.handleInputChange}
-        />
-
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
+          <FormInput
+            labelContent="Until"
+            styles="form__input"
+            inputType="text"
+            inputName="until"
+            inputValue={until}
+            example="Ex: 2012"
+            handleInputChange={this.handleInputChange}
+          />
+        </div>
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
         </Button>
+        </div>
       </div>
     );
   }
@@ -81,6 +97,7 @@ class FormEducationItem extends Component {
 FormEducationItem.propTypes = {
   ind: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
+  education: PropTypes.array.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired
 };

@@ -21,6 +21,7 @@ class Author extends Component {
     return (
       <Fragment>
         <Profile sampleProfile={profile} />
+
         {intro && <Intro sampleIntro={intro} />}
 
         {professionalGoals && !!professionalGoals.length && (

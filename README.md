@@ -5,12 +5,17 @@ Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getma
 
 ## Repo instructions
 
-Clone the repo & run `npm install` to install the dependencies.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To make it work, you first have to install create-react-app by typing:
+`npm install -g create-react-app`
+Then, clone the repo & run `npm install` to install the dependencies.
 
-In the project directory, you can run`npm start`. Runs the app in the development mode.<br>
+In the project directory, you can run`npm start` to run the app in the development mode.<br>
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+Type `ctrl/cmd + c` to stop it from running.
 
 ## Using MACv
 

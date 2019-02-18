@@ -12,8 +12,8 @@ class FormSelect extends Component {
       selectOptions
     } = this.props;
     return (
-      <label className="label" htmlFor={selectName}>
-        {labelContent}
+      <label className="select__label" htmlFor={selectName}>
+        <span className="select__label-title">{labelContent}</span>
         <select
           id={selectName}
           name={selectName}

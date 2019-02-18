@@ -1,31 +1,32 @@
 import React, { Component } from "react";
 import "./App.scss";
+//import sample from "./services/empty_sample.json"
 // import sample from "./services/sample.json";
-import sample_2 from "./services/sample_2.json";
+import sample from "./services/sample_2.json";
 //import sample from "./services/sample_yago.json";
 //import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
-
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sample: sample_2,
+      sample: sample,
       publicLinkDefault: "",
+      rolesDefault: "project manager",
       goalDefault: "",
       transportableSkillDefault: "",
-      significantRelationshipsDefault: {
-        name:"",
-        comment:"",
-        role:"",
-        contact:"",
-        company:"",
-      },
       significantExperienceDefault: "",
+      significantRelationshipsDefault: {
+        name: "",
+        comment: "",
+        role: "",
+        contact: "",
+        company: "",
+      },
+      companyDefault: "",
       institutionDefault: "",
       studyDefault: "",
       fromEdDefault: "",
@@ -46,11 +47,13 @@ class App extends Component {
     this.handleAddLinkItem = this.handleAddLinkItem.bind(this);
     this.handleRemoveLinkItem = this.handleRemoveLinkItem.bind(this);
     this.handleLinkChange = this.handleLinkChange.bind(this);
+    this.handleAddRoleItem = this.handleAddRoleItem.bind(this);
+    this.handleRemoveRoleItem = this.handleRemoveRoleItem.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
     this.handleIntroChange = this.handleIntroChange.bind(this);
     this.handleAddGoal = this.handleAddGoal.bind(this);
     this.handleRemoveGoal = this.handleRemoveGoal.bind(this);
     this.handleGoalsInput = this.handleGoalsInput.bind(this);
-    this.handleGoalChange = this.handleGoalChange.bind(this);
     this.handleAddTransportableSkill = this.handleAddTransportableSkill.bind(
       this
     );
@@ -58,9 +61,6 @@ class App extends Component {
       this
     );
     this.handleTransportableSkillsInput = this.handleTransportableSkillsInput.bind(
-      this
-    );
-    this.handleTransportableSkillChange = this.handleTransportableSkillChange.bind(
       this
     );
     this.handleAddSignificantExperience = this.handleAddSignificantExperience.bind(
@@ -72,13 +72,13 @@ class App extends Component {
     this.handleSignificantExperienceInput = this.handleSignificantExperienceInput.bind(
       this
     );
-    this.handlesignificantExperienceChange = this.handlesignificantExperienceChange.bind(
-      this
-    );
     this.handleAddSignificantRelationships = this.handleAddSignificantRelationships.bind(this);
     this.handleRemoveSignificantRelationships = this.handleRemoveSignificantRelationships.bind(this);
     this.handleDefaultInputChangeSignificantRelationships = this.handleDefaultInputChangeSignificantRelationships.bind(this)
     this.handleSignificantRelationshipsInput = this.handleSignificantRelationshipsInput.bind(this);
+    this.handleAddExperienceItem = this.handleAddExperienceItem.bind(this);
+    this.handleRemoveExperienceItem = this.handleRemoveExperienceItem.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddEducationItem = this.handleAddEducationItem.bind(this);
     this.handleRemoveEducationItem = this.handleRemoveEducationItem.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -236,6 +236,77 @@ class App extends Component {
     });
   }
 
+  handleAddRoleItem() {
+    const { rolesDefault } = this.state;
+    const newRoleItem = rolesDefault;
+
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.concat(
+                newRoleItem
+              )
+            }
+          }
+        },
+        rolesDefault: "project manager"
+      };
+      return newState;
+    });
+  }
+
+  handleRemoveRoleItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.filter(
+                (item, index) => {
+                  return index !== ind;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleRoleChange(value, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          author: {
+            ...prevState.sample.author,
+            profile: {
+              ...prevState.sample.author.profile,
+              roles: prevState.sample.author.profile.roles.map(
+                (item, index) => {
+                  if (index === ind) {
+                    item = value;
+                  }
+                  return item;
+                }
+              )
+            }
+          }
+        }
+      };
+      return newState;
+    });
+  }
+
   handleIntroChange(event) {
     const { value } = event.currentTarget;
     this.setState(prevState => {
@@ -265,9 +336,9 @@ class App extends Component {
             professionalGoals: prevState.sample.author.professionalGoals.concat(
               newGoalItem
             )
-          },
-          goalDefault: ""
-        }
+          }
+        },
+        goalDefault: ""
       };
       return newState;
     });
@@ -292,14 +363,7 @@ class App extends Component {
     });
   }
 
-  handleGoalChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      goalDefault: value
-    });
-  }
-
-  handleGoalsInput(value, name, ind) {
+  handleGoalsInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -309,7 +373,7 @@ class App extends Component {
             professionalGoals: prevState.sample.author.professionalGoals.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -334,9 +398,9 @@ class App extends Component {
             transportableSkills: prevState.sample.author.transportableSkills.concat(
               newTransportableSkillItem
             )
-          },
-          transportableSkillDefault: ""
-        }
+          }
+        },
+        transportableSkillDefault: ""
       };
       return newState;
     });
@@ -361,14 +425,7 @@ class App extends Component {
     });
   }
 
-  handleTransportableSkillChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      transportableSkillDefault: value
-    });
-  }
-
-  handleTransportableSkillsInput(value, name, ind) {
+  handleTransportableSkillsInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -378,7 +435,7 @@ class App extends Component {
             transportableSkills: prevState.sample.author.transportableSkills.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -430,14 +487,7 @@ class App extends Component {
     });
   }
 
-  handlesignificantExperienceChange(event) {
-    const { value } = event.currentTarget;
-    this.setState({
-      significantExperienceDefault: value
-    });
-  }
-
-  handleSignificantExperienceInput(value, name, ind) {
+  handleSignificantExperienceInput(value, ind) {
     this.setState(prevState => {
       const newState = {
         sample: {
@@ -447,7 +497,7 @@ class App extends Component {
             significantExperience: prevState.sample.author.significantExperience.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = value;
                 }
                 return item;
               }
@@ -459,24 +509,6 @@ class App extends Component {
     });
   }
 
-  // handleRemoveSignificant(ind) {
-  //   this.setState(prevState => {
-  //     const newState = {
-  //       sample: {
-  //         ...prevState.sample,
-  //         author: {
-  //           ...prevState.sample.author,
-  //           significantExperience: prevState.sample.author.significantExperience.filter(
-  //             (item, index) => {
-  //               return index !== ind;
-  //             }
-  //           )
-  //         }
-  //       }
-  //     };
-  //     return newState;
-  //   });
-  // }
   handleDefaultInputChangeSignificantRelationships(event) {
     const { name, value } = event.currentTarget;
     this.setState(prevState => {
@@ -489,7 +521,6 @@ class App extends Component {
       return newState;
     });
   }
-
 
   handleAddSignificantRelationships() {
     const { significantRelationshipsDefault } = this.state;
@@ -512,11 +543,11 @@ class App extends Component {
           contact: "",
           company: "",
         }
-
       };
       return newState;
     });
   }
+
   handleRemoveSignificantRelationships(ind) {
     this.setState(prevState => {
       const newState = {
@@ -546,7 +577,10 @@ class App extends Component {
             significantRelationships: prevState.sample.author.significantRelationships.map(
               (item, index) => {
                 if (index === ind) {
-                  item = [value];
+                  item = {
+                    ...item,
+                    [name]: value
+                  }
                 }
                 return item;
               }
@@ -558,10 +592,72 @@ class App extends Component {
     });
   }
 
+  handleAddExperienceItem() {
+    const { companyDefault } = this.state;
 
-//handle modificar campo!!!!
+    const newExperience = {
+      name: companyDefault,
+      roles: [],
+      references: []
+    }
 
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.concat(newExperience)
+            }
+          ]
+        },
+        companyDefault: ""
+      };
+      return newState;
+    });
+  }
 
+  handleRemoveExperienceItem(ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.filter((item, index) => {
+                return index !== ind;
+              })
+            }
+          ]
+        }
+      };
+      return newState;
+    });
+  }
+
+  handleExperienceChange(value, name, ind) {
+    this.setState(prevState => {
+      const newState = {
+        sample: {
+          ...prevState.sample,
+          experience: [
+            {
+              company: prevState.sample.experience[0].company.map((item, index) => {
+                if (index === ind) {
+                  item = {
+                    ...item,
+                    [name]: value
+                  };
+                }
+                return item;
+              })
+            }
+          ]
+        }
+      };
+      return newState;
+    });
+  }
 
   handleAddEducationItem() {
     const {
@@ -791,10 +887,12 @@ class App extends Component {
     const {
       sample,
       publicLinkDefault,
+      rolesDefault,
       goalDefault,
-      significantRelationshipsDefault,
       transportableSkillDefault,
       significantExperienceDefault,
+      significantRelationshipsDefault,
+      companyDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -805,18 +903,19 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
+
     return (
       <div className="App">
         <Header />
         <Main
           sample={sample}
           publicLinkDefault={publicLinkDefault}
+          rolesDefault={rolesDefault}
           goalDefault={goalDefault}
-          significantRelationshipsDefault={significantRelationshipsDefault}
           transportableSkillDefault={transportableSkillDefault}
           significantExperienceDefault={significantExperienceDefault}
-
-          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
+          significantRelationshipsDefault={significantRelationshipsDefault}
+          companyDefault={companyDefault}
           institutionDefault={institutionDefault}
           studyDefault={studyDefault}
           fromEdDefault={fromEdDefault}
@@ -835,21 +934,19 @@ class App extends Component {
           handleAddLinkItem={this.handleAddLinkItem}
           handleRemoveLinkItem={this.handleRemoveLinkItem}
           handleLinkChange={this.handleLinkChange}
+          handleAddRoleItem={this.handleAddRoleItem}
+          handleRemoveRoleItem={this.handleRemoveRoleItem}
+          handleRoleChange={this.handleRoleChange}
           handleIntroChange={this.handleIntroChange}
           handleAddGoal={this.handleAddGoal}
           handleRemoveGoal={this.handleRemoveGoal}
           handleGoalsInput={this.handleGoalsInput}
-          handleGoalChange={this.handleGoalChange}
           handleAddTransportableSkill={this.handleAddTransportableSkill}
           handleRemoveTransportableSkill={this.handleRemoveTransportableSkill}
-          handleTransportableSkillChange={this.handleTransportableSkillChange}
           handleTransportableSkillsInput={this.handleTransportableSkillsInput}
           handleAddSignificantExperience={this.handleAddSignificantExperience}
           handleRemoveSignificantExperience={
             this.handleRemoveSignificantExperience
-          }
-          handlesignificantExperienceChange={
-            this.handlesignificantExperienceChange
           }
           handleSignificantExperienceInput={
             this.handleSignificantExperienceInput
@@ -857,6 +954,10 @@ class App extends Component {
           handleDefaultInputChangeSignificantRelationships={this.handleDefaultInputChangeSignificantRelationships}
           handleAddSignificantRelationships={this.handleAddSignificantRelationships}
           handleRemoveSignificantRelationships={this.handleRemoveSignificantRelationships}
+          handleSignificantRelationshipsInput={this.handleSignificantRelationshipsInput}
+          handleAddExperienceItem={this.handleAddExperienceItem}
+          handleRemoveExperienceItem={this.handleRemoveExperienceItem}
+          handleExperienceChange={this.handleExperienceChange}
           handleAddEducationItem={this.handleAddEducationItem}
           handleRemoveEducationItem={this.handleRemoveEducationItem}
           handleEducationChange={this.handleEducationChange}

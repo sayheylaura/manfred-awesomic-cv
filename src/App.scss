@@ -757,6 +757,8 @@ a:active {
     outline: none;
 }
 .clipboard-btn  {
+  position: absolute;
+  top: 4%;
   cursor: pointer;
   padding: 10px 30px;
   border: none;
@@ -929,7 +931,6 @@ a:active {
 .clipboard__wrapper {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
 }
 
 .close-btn {

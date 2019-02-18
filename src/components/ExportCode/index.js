@@ -71,11 +71,6 @@ class ExportCode extends Component {
           </CopyToClipboard>
       </div>
       <pre><code className="language-markup">{pageHTML}</code></pre>
-      <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
-            <button className="clipboard-btn">Copy to clipboard</button>
-          </CopyToClipboard>
-      </div>
       </div>
 
       </Fragment>

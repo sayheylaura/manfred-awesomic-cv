@@ -43,10 +43,10 @@ class Profile extends Component {
         </div>
         <ProfileRoles sampleProfileRoles={roles} />
         <div className="author-data__container">
-          <p className="author__birthday">{getAge(birthday)}</p>
-          <p className="author__yearsOfExperience">
+          {birthday && <p className="author__birthday">{getAge(birthday)}</p>}
+          {yearsOfExperience && (<p className="author__yearsOfExperience">
             {yearsOfExperience} years of experience
-          </p>
+          </p>)}
         </div>
         {publicLinks && !!publicLinks.length && (
           <PublicLinks profileLinks={publicLinks} />
@@ -57,7 +57,7 @@ class Profile extends Component {
 }
 
 Profile.propTypes = {
-  sampleProfile: PropTypes.array.isRequired
+  sampleProfile: PropTypes.object.isRequired
 };
 
 export default Profile;

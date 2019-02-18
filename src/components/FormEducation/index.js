@@ -17,27 +17,31 @@ class FormEducation extends Component {
       handleRemoveEducationItem,
       handleEducationChange,
     } = this.props;
+
     return (
-      <fieldset className="form__education">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Education</legend>
 
         <p className="form__section-description">Degree or kind of schooling</p>
 
-        {education.map((item, index) => {
+        {education && !!education.length && education.map((item, index) => {
           return (
             <FormEducationItem
               key={index}
               ind={index}
               item={item}
+              education={education}
               handleRemoveEducationItem={handleRemoveEducationItem}
               handleEducationChange={handleEducationChange}
             />
           );
         })}
 
-        <div>
+        <div className="form__container">
+          <p className="form__container-title">More institutions</p>
+
           <FormInput
-            labelContent="Institution"
+            labelContent="Institution name"
             styles="form__input"
             inputType="text"
             inputName="institutionDefault"
@@ -56,32 +60,34 @@ class FormEducation extends Component {
             handleInputChange={handleDefaultInputChange}
           />
 
-          <FormInput
-            labelContent="From"
-            styles="form__input"
-            inputType="text"
-            inputName="fromEdDefault"
-            inputValue={fromEdDefault}
-            example="Ex: 2008"
-            handleInputChange={handleDefaultInputChange}
-          />
+          <div className="form__date-container">
+            <FormInput
+              labelContent="From"
+              styles="form__input"
+              inputType="text"
+              inputName="fromEdDefault"
+              inputValue={fromEdDefault}
+              example="Ex: 2008"
+              handleInputChange={handleDefaultInputChange}
+            />
 
-          <FormInput
-            labelContent="Until"
-            styles="form__input"
-            inputType="text"
-            inputName="untilEdDefault"
-            inputValue={untilEdDefault}
-            example="Ex: 2012"
-            handleInputChange={handleDefaultInputChange}
-          />
+            <FormInput
+              labelContent="Until"
+              styles="form__input"
+              inputType="text"
+              inputName="untilEdDefault"
+              inputValue={untilEdDefault}
+              example="Ex: 2012"
+              handleInputChange={handleDefaultInputChange}
+            />
+          </div>
 
           <Button
             buttonType="button"
             styles="add-btn"
             handleButtonClick={handleAddEducationItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

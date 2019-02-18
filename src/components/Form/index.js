@@ -4,22 +4,25 @@ import FormAuthor from "../FormAuthor";
 import FormQuestionnaire from "../FormQuestionnaire";
 import FormLanguages from "../FormLanguages";
 import FormEducation from "../FormEducation";
+import FormExperience from '../FormExperience';
 import FormMiscEducation from "../FormMiscEducation";
 import FormIntro from '../FormIntro';
 import FormProfessionalGoals from '../FormProfessionalGoals';
+import FormSignificantRelationShips from '../FormSignificantRelationShips';
 import FormTransportableSkills from "../FormTransportableSkills";
 import FormSignificantExperience from "../FormSignificantExperience";
-
-
-
 
 class Form extends Component {
   render() {
     const {
       sample,
+      publicLinkDefault,
+      rolesDefault,
       goalDefault,
       transportableSkillDefault,
       significantExperienceDefault,
+      significantRelationshipsDefault,
+      companyDefault,
       institutionDefault,
       studyDefault,
       fromEdDefault,
@@ -29,21 +32,33 @@ class Form extends Component {
       miscEdDefault,
       questionDefault,
       answerDefault,
+      handleAddImage,
+      handleRemoveImage,
+      handleProfileInputs,
       handleDefaultInputChange,
+      handleAddLinkItem,
+      handleRemoveLinkItem,
+      handleLinkChange,
+      handleAddRoleItem,
+      handleRemoveRoleItem,
+      handleRoleChange,
       handleIntroChange,
       handleAddGoal,
       handleRemoveGoal,
       handleGoalsInput,
-      handleGoalChange,
       handleAddTransportableSkill,
-      handleTransportableSkillChange,
       handleRemoveTransportableSkill,
       handleTransportableSkillsInput,
       handleAddSignificantExperience,
-      handlesignificantExperienceChange,
       handleRemoveSignificantExperience,
       handleSignificantExperienceInput,
-      handleProfileInputs,
+      handleDefaultInputChangeSignificantRelationships,
+      handleAddSignificantRelationships,
+      handleRemoveSignificantRelationships,
+      handleSignificantRelationshipsInput,
+      handleAddExperienceItem,
+      handleRemoveExperienceItem,
+      handleExperienceChange,
       handleAddEducationItem,
       handleRemoveEducationItem,
       handleEducationChange,
@@ -53,60 +68,105 @@ class Form extends Component {
       handleAddMiscItem,
       handleRemoveMiscItem,
       handleMiscInputChange,
-      handleImage,
       handleAddQuestion,
       handleRemoveQuestion,
-      handleQuestionInputChange,
+      handleQuestionInputChange
     } = this.props;
 
-    const { education, languages, miscEducation, questionnaire } = sample;
-    const {intro, professionalGoals, transportableSkills, significantExperience} = sample.author;
+    const {
+      author,
+      experience,
+      education,
+      languages,
+      miscEducation,
+      questionnaire
+    } = sample;
+
+    const {
+      profile,
+      intro,
+      professionalGoals,
+      transportableSkills,
+      significantExperience,
+      significantRelationships
+    } = author;
+
     return (
       <section className="form__wrapper">
         <h2 className="form__title">Form</h2>
+
         <p className="form__guidelines">
-          Fill in the fields with your personal and contact details that you
-          want to be displayed in your CV. Note that the fields marked with an
-          asterisk (*) are compulsory. You can add or remove the fields.
+          Fill in the fields with the personal and contact details that you want
+          to be displayed in your CV. Note that the fields marked with an
+          asterisk (*) are compulsory. You can add or remove some of the fields.
         </p>
 
-
         <FormAuthor
-          sample={sample}
+          profile={profile}
+          publicLinkDefault={publicLinkDefault}
+          rolesDefault={rolesDefault}
+          handleAddImage={handleAddImage}
+          handleRemoveImage={handleRemoveImage}
           handleProfileInputs={handleProfileInputs}
-          updateAvatar={handleImage}
-          image={sample.author.profile.image}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddLinkItem={handleAddLinkItem}
+          handleRemoveLinkItem={handleRemoveLinkItem}
+          handleLinkChange={handleLinkChange}
+          handleAddRoleItem={handleAddRoleItem}
+          handleRemoveRoleItem={handleRemoveRoleItem}
+          handleRoleChange={handleRoleChange}
         />
-        <FormIntro intro={intro}
+
+        <FormIntro
+          intro={intro}
           handleIntroChange={handleIntroChange}
         />
+
         <FormProfessionalGoals
           professionalGoals={professionalGoals}
+          goalDefault={goalDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
           handleAddGoal={handleAddGoal}
           handleRemoveGoal={handleRemoveGoal}
           handleGoalsInput={handleGoalsInput}
-          handleGoalChange={handleGoalChange}
-          goalDefault={goalDefault}
         />
+
+        <FormSignificantRelationShips
+          significantRelationships={significantRelationships}
+          significantRelationshipsDefault={significantRelationshipsDefault}
+          handleDefaultInputChangeSignificantRelationships={handleDefaultInputChangeSignificantRelationships}
+          handleAddSignificantRelationships={handleAddSignificantRelationships}
+          handleRemoveSignificantRelationships={handleRemoveSignificantRelationships}
+          handleSignificantRelationshipsInput={handleSignificantRelationshipsInput}
+        />
+
         <FormTransportableSkills
-        transportableSkillDefault={transportableSkillDefault}
-        transportableSkills={transportableSkills}
-        handleAddTransportableSkill={handleAddTransportableSkill}
-        handleTransportableSkillChange={handleTransportableSkillChange}
-        handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-        handleTransportableSkillsInput={handleTransportableSkillsInput}
+          transportableSkills={transportableSkills}
+          transportableSkillDefault={transportableSkillDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddTransportableSkill={handleAddTransportableSkill}
+          handleRemoveTransportableSkill={handleRemoveTransportableSkill}
+          handleTransportableSkillsInput={handleTransportableSkillsInput}
         />
 
         <FormSignificantExperience
-        significantExperienceDefault={significantExperienceDefault}
-        significantExperience={significantExperience}
-        handleAddSignificantExperience={handleAddSignificantExperience}
-        handlesignificantExperienceChange={handlesignificantExperienceChange}
-        handleRemoveSignificantExperience={
-          handleRemoveSignificantExperience
-        }
-        handleSignificantExperienceInput={handleSignificantExperienceInput}
+          significantExperience={significantExperience}
+          significantExperienceDefault={significantExperienceDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddSignificantExperience={handleAddSignificantExperience}
+          handleRemoveSignificantExperience={handleRemoveSignificantExperience}
+          handleSignificantExperienceInput={handleSignificantExperienceInput}
         />
+
+        <FormExperience
+          experience={experience}
+          companyDefault={companyDefault}
+          handleDefaultInputChange={handleDefaultInputChange}
+          handleAddExperienceItem={handleAddExperienceItem}
+          handleRemoveExperienceItem={handleRemoveExperienceItem}
+          handleExperienceChange={handleExperienceChange}
+        />
+
         <FormEducation
           education={education}
           institutionDefault={institutionDefault}
@@ -154,9 +214,13 @@ class Form extends Component {
 
 Form.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
+  rolesDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.object.isRequired,
+  companyDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -166,20 +230,33 @@ Form.propTypes = {
   miscEdDefault: PropTypes.string.isRequired,
   questionDefault: PropTypes.string.isRequired,
   answerDefault: PropTypes.string.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
+  handleAddRoleItem: PropTypes.func.isRequired,
+  handleRemoveRoleItem: PropTypes.func.isRequired,
+  handleRoleChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired,
+  handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddSignificantExperience: PropTypes.func.isRequired,
-  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
-  handleProfileInputs: PropTypes.func.isRequired,
+  handleAddSignificantRelationships: PropTypes.func.isRequired,
+  handleRemoveSignificantRelationships: PropTypes.func.isRequired,
+  handleSignificantRelationshipsInput: PropTypes.func.isRequired,
+  handleDefaultInputChangeSignificantRelationships: PropTypes.func.isRequired,
+  handleAddExperienceItem: PropTypes.func.isRequired,
+  handleRemoveExperienceItem: PropTypes.func.isRequired,
+  handleExperienceChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

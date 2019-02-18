@@ -8,8 +8,9 @@ import MiscEducation from "../MiscEducation";
 import LanguagesList from "../LanguagesList";
 
 class Cv extends Component {
+
   render() {
-    const { sample } = this.props;
+    const { sample, cvRef } = this.props;
     const {
       author,
       experience,
@@ -19,10 +20,10 @@ class Cv extends Component {
       questionnaire
     } = sample;
     return (
-      <div className="cv__wrapper">
+      <div className="cv__wrapper" ref={cvRef}>
         <Author sampleAuthor={author} />
-        <Experience sampleExperience={experience} />
-        <Education sampleEducation={education} />
+        {experience && !!experience.length && experience[0].company && !!experience[0].company.length && <Experience sampleExperience={experience} />}
+        {education && !!education.length && <Education sampleEducation={education} />}
         {languages && !!languages.length && <LanguagesList sampleLanguages={languages} />}
         {miscEducation && !!miscEducation.length && <MiscEducation sampleMiscEducation={miscEducation} />}
         {questionnaire && !!questionnaire.length && <Questionnaire sampleQuestionnaire={questionnaire} />}

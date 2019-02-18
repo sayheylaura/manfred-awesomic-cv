@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
-
+import Button from "../Button";
+import PropTypes from "prop-types";
 
 class FormImage extends Component {
-
   constructor(props) {
     super(props);
     this.fr = new FileReader();
@@ -19,27 +18,56 @@ class FormImage extends Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
+    this.fr.addEventListener("load", this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
   getImage() {
     const image = this.fr.result;
-    this.props.updateAvatar(image);
+    this.props.handleAddImage(image);
   }
 
   render() {
     const { image } = this.props;
     return (
       <div className="get-avatar">
-        <p className="get-avatar__description"></p>
-        <div className="get-avatar__preview" style={{ backgroundImage: `url(${image})` }}></div>
-        <button className="get-avatar__trigger" type="button" onClick={this.handleFilePicker}>Upload new image</button>
-        <input type="file" ref={this.myFileField} className="get-avatar__upload-field" onChange={this.uploadImage} />
+        <p className="get-avatar__description" />
+        <div
+          className="get-avatar__preview"
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className="get-avatar__container">
+        <Button
+          buttonType="button"
+          styles="get-avatar__trigger"
+          handleButtonClick={this.handleFilePicker}
+        >
+          Upload image
+        </Button>
+
+        <input
+          type="file"
+          ref={this.myFileField}
+          className="get-avatar__upload-field"
+          onChange={this.uploadImage}
+        />
+
+        <Button
+          buttonType="button"
+          styles="remove-btn"
+          handleButtonClick={this.props.handleRemoveImage}
+        >
+          Remove image
+        </Button>
+        </div>
       </div>
     );
   }
-
 }
+
+FormImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired
+};
 
 export default FormImage;

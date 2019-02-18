@@ -1,20 +1,18 @@
 {
   "author": {
-    "profile": [
-      {
-        "name": "Mary Jane",
-        "image": "",
-        "birthday": "1980-04-02",
-        "publicLinks": [
-          "https://github.com/emma-martin",
-          "https://github.com/emma-martin"
-        ],
-        "roles": [
-          "Project manager"
-        ],
-        "yearsOfExperience": 5
-      }
-    ],
+    "profile": {
+      "name": "Mary Jane",
+      "image": "",
+      "birthday": "1980-04-02",
+      "publicLinks": [
+        "https://github.com/emma-martin",
+        "https://github.com/emma-martin"
+      ],
+      "roles": [
+        "product manager"
+      ],
+      "yearsOfExperience": 5
+    },
     "intro": "Let's make some happy little clouds in our world.  Work on one thing at a time. Don't get carried away - we have plenty of time. Everyone is going to see things differently - and that's the way it should be. Don't hurry. Take your time and enjoy. In your world you can create anything you desire.",
     "professionalGoals": [
       "World Domitation Manager"
@@ -35,7 +33,7 @@
       }
     ]
   },
-  "experience": [
+  "experience":  [
     {
       "company": [
         {
@@ -68,10 +66,41 @@
               "contact": "sarah@skynet.com"
             }
           ]
+        },
+        {
+          "name": "Google",
+          "roles": [
+            {
+              "role": " Founder",
+              "from": "june 2018",
+              "until": "present",
+              "challenges": [
+                {
+                  "summary": "La- da- da- da- dah. Just be happy. We'll throw some happy little limbs on this tree.",
+                  "actions": [
+                    {
+                      "summary": "By now you should be quite happy about what's happening here. Get tough with it, get strong.",
+                      "tools": "Git, GitHub"
+                    },
+                    {
+                      "summary": "By now you should be quite happy about what's happening here. Get tough with it, get strong."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "name": "Sarah Connor",
+              "role": "CEO of Skynet",
+              "contact": "sarah@skynet.com"
+            }
+          ]
         }
       ]
-    }
-  ],
+        }
+      ],
   "education": [
     {
       "institution": "Miskatonic University",
@@ -93,11 +122,11 @@
   "languages": [
     {
       "language": "Spanish",
-      "proficiency": "Native or bilingual"
+      "proficiency": "native or bilingual"
     },
     {
       "language": "French Gibbering",
-      "proficiency": "Full professional"
+      "proficiency": "full professional"
     }
   ],
   "miscEducation": [

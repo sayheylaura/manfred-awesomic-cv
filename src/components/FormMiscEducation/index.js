@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FormMiscEducationItem from "../FormMiscEducationItem";
-import FormInput from "../FormInput";
+//import FormInput from "../FormInput";
 import Button from "../Button";
+import FormTextarea from "../FormTextarea";
 
 class FormMiscEducation extends Component {
   render() {
@@ -15,7 +16,7 @@ class FormMiscEducation extends Component {
       handleMiscInputChange
     } = this.props;
     return (
-      <fieldset className="form__misc-education">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Miscellany</legend>
 
         <p className="form__section-description">
@@ -23,27 +24,38 @@ class FormMiscEducation extends Component {
           projects, etc.
         </p>
 
-        {miscEducation.map((item, index) => {
+        {miscEducation && !!miscEducation.length && miscEducation.map((item, index) => {
           return (
             <FormMiscEducationItem
               key={index}
               ind={index}
               item={item}
+              miscEducation={miscEducation}
               handleRemoveMiscItem={handleRemoveMiscItem}
               handleMiscInputChange={handleMiscInputChange}
             />
           );
         })}
 
-        <div>
-          <FormInput
-            labelContent="Item"
+        <div className="form__container">
+          {/* <FormInput
+            labelContent="More items"
             styles="form__input"
             inputType="text"
             inputName="miscEdDefault"
             inputValue={miscEdDefault}
             example="Ex: Scrum master certification"
             handleInputChange={handleDefaultInputChange}
+          /> */}
+
+          <FormTextarea
+            labelContent="More items"
+            textAreaStyles="textarea"
+            textAreaLabelStyles="label"
+            textName="miscEdDefault"
+            textValue={miscEdDefault}
+            example="Ex: Scrum master certification"
+            handleTextChange={handleDefaultInputChange}
           />
 
           <Button
@@ -51,7 +63,7 @@ class FormMiscEducation extends Component {
             styles="add-btn"
             handleButtonClick={handleAddMiscItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

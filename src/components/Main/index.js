@@ -5,160 +5,85 @@ import Preview from "../Preview";
 import Form from "../Form";
 import Json from "../Json";
 
+const tabs = [
+  { name: "json", text: "JSON editor", linkTo: "/" },
+  { name: "form", text: "Form", linkTo: "/form" },
+  { name: "cv", text: "CV viewer", linkTo: "/preview" }
+];
+
 class Main extends Component {
-  handleFirstTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const secondChild = parent.childNodes[1];
-    const thirdChild = parent.childNodes[2];
-    event.currentTarget.classList.add("active");
-    secondChild.classList.remove("active");
-    thirdChild.classList.remove("active");
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: this.getActiveTabFromLS()
+    };
   }
 
-  handleSecondTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const firstChild = parent.childNodes[0];
-    const thirdChild = parent.childNodes[2];
-    event.currentTarget.classList.add("active");
-    firstChild.classList.remove("active");
-    thirdChild.classList.remove("active");
+  getActiveTabFromLS() {
+    const localStorageActiveTab = localStorage.getItem("activeTab");
+    const localStorageJSON = JSON.parse(localStorageActiveTab);
+    if (!localStorageActiveTab) {
+      return "json";
+    } else {
+      return localStorageJSON;
+    }
   }
 
-  handleThirdTabClick(event) {
-    const parent = event.currentTarget.parentElement;
-    const firstChild = parent.childNodes[0];
-    const secondChild = parent.childNodes[1];
-    event.currentTarget.classList.add("active");
-    secondChild.classList.remove("active");
-    firstChild.classList.remove("active");
+  handleTabClick(newActiveTabName) {
+    this.setState({ activeTab: newActiveTabName });
+    localStorage.setItem("activeTab", JSON.stringify(newActiveTabName));
   }
 
   render() {
-    const {
-      sample,
-      goalDefault,
-      transportableSkillDefault,
-      significantExperienceDefault,
-      institutionDefault,
-      studyDefault,
-      fromEdDefault,
-      untilEdDefault,
-      languageDefault,
-      proficiencyDefault,
-      miscEdDefault,
-      questionDefault,
-      answerDefault,
-      handlePrintBtn,
-      handleJsonText,
-      handleDefaultInputChange,
-      handleIntroChange,
-      handleAddGoal,
-      handleRemoveGoal,
-      handleGoalsInput,
-      handleGoalChange,
-      handleAddTransportableSkill,
-      handleTransportableSkillChange,
-      handleRemoveTransportableSkill,
-      handleTransportableSkillsInput,
-      handleAddSignificantExperience,
-      handlesignificantExperienceChange,
-      handleRemoveSignificantExperience,
-      handleSignificantExperienceInput,
-      handleProfileInputs,
-      handleAddEducationItem,
-      handleRemoveEducationItem,
-      handleEducationChange,
-      handleAddLanguageItem,
-      handleRemoveLanguageItem,
-      handleLanguageChange,
-      handleAddMiscItem,
-      handleRemoveMiscItem,
-      handleMiscInputChange,
-      handleImage,
-      handleAddQuestion,
-      handleRemoveQuestion,
-      handleQuestionInputChange
-    } = this.props;
+    const { sample, cvRef, handleHTML, handlePrintBtn, handleJsonText, codeToExport, ...rest } = this.props;
 
     return (
       <main className="main">
         <div className="preview__wrapper">
           <nav className="main__nav">
             <ul className="nav__list">
-              <li
-                className="nav__link active"
-                onClick={this.handleFirstTabClick}
-              >
-                <Link to="/">Form</Link>
-              </li>
-              <li className="nav__link" onClick={this.handleSecondTabClick}>
-                <Link to="/json">Json</Link>
-              </li>
-              <li className="nav__link" onClick={this.handleThirdTabClick}>
-                <Link to="/preview">Cv</Link>
-              </li>
+              {tabs.map((tabItem, index) => (
+                <li
+                  key={index}
+                  className={`nav__link ${
+                    tabItem.name === this.state.activeTab ? "active" : ""
+                    }`}
+                  onClick={e => this.handleTabClick(tabItem.name)}
+                >
+                  {tabItem.name === this.state.activeTab ? (
+                    tabItem.text
+                  ) : (
+                      <Link className="nav__link-route" to={tabItem.linkTo}>
+                        {tabItem.text}
+                      </Link>
+                    )}
+                </li>
+              ))}
             </ul>
           </nav>
+
           <Switch>
             <Route
               exact
               path="/"
               render={() => (
-                <Form
-                  sample={sample}
-                  goalDefault={goalDefault}
-                  transportableSkillDefault={transportableSkillDefault}
-                  significantExperienceDefault={significantExperienceDefault}
-                  institutionDefault={institutionDefault}
-                  studyDefault={studyDefault}
-                  fromEdDefault={fromEdDefault}
-                  untilEdDefault={untilEdDefault}
-                  languageDefault={languageDefault}
-                  proficiencyDefault={proficiencyDefault}
-                  miscEdDefault={miscEdDefault}
-                  questionDefault={questionDefault}
-                  answerDefault={answerDefault}
-                  handleDefaultInputChange={handleDefaultInputChange}
-                  handleIntroChange={handleIntroChange}
-                  handleAddGoal={handleAddGoal}
-                  handleRemoveGoal ={handleRemoveGoal}
-                  handleGoalsInput={handleGoalsInput}
-                  handleGoalChange={handleGoalChange}
-                  handleAddTransportableSkill={handleAddTransportableSkill}
-                  handleTransportableSkillChange={handleTransportableSkillChange}
-                  handleRemoveTransportableSkill={handleRemoveTransportableSkill}
-                  handleTransportableSkillsInput={handleTransportableSkillsInput}
-                  handleAddSignificantExperience={handleAddSignificantExperience}
-                  handlesignificantExperienceChange={handlesignificantExperienceChange}
-                  handleRemoveSignificantExperience={handleRemoveSignificantExperience}
-                  handleSignificantExperienceInput={handleSignificantExperienceInput}
-                  handleProfileInputs={handleProfileInputs}
-                  handleAddEducationItem={handleAddEducationItem}
-                  handleRemoveEducationItem={handleRemoveEducationItem}
-                  handleEducationChange={handleEducationChange}
-                  handleAddLanguageItem={handleAddLanguageItem}
-                  handleRemoveLanguageItem={handleRemoveLanguageItem}
-                  handleLanguageChange={handleLanguageChange}
-                  handleAddMiscItem={handleAddMiscItem}
-                  handleRemoveMiscItem={handleRemoveMiscItem}
-                  handleMiscInputChange={handleMiscInputChange}
-                  handleImage={handleImage}
-                  handleAddQuestion={handleAddQuestion}
-                  handleRemoveQuestion={handleRemoveQuestion}
-                  handleQuestionInputChange={handleQuestionInputChange}
-                />
-              )}
-            />
-            <Route
-              path="/json"
-              render={() => (
                 <Json sample={sample} handleJsonText={handleJsonText} />
               )}
             />
             <Route
+              path="/form"
+              render={() => <Form sample={sample} {...rest} />}
+            />
+            <Route
               path="/preview"
               render={() => (
-                <Preview sample={sample} handlePrintBtn={handlePrintBtn} />
+                <Preview
+                  sample={sample}
+                  handlePrintBtn={handlePrintBtn}
+                  cvRef={cvRef}
+                  codeToExport ={codeToExport}
+                  handleHTML={handleHTML}
+                />
               )}
             />
           </Switch>
@@ -170,9 +95,13 @@ class Main extends Component {
 
 Main.propTypes = {
   sample: PropTypes.object.isRequired,
+  publicLinkDefault: PropTypes.string.isRequired,
+  rolesDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
-  significantExperienceDefault:PropTypes.string.isRequired,
+  significantExperienceDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.object.isRequired,
+  companyDefault: PropTypes.string.isRequired,
   institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
@@ -184,20 +113,33 @@ Main.propTypes = {
   answerDefault: PropTypes.string.isRequired,
   handlePrintBtn: PropTypes.func.isRequired,
   handleJsonText: PropTypes.func.isRequired,
+  handleAddImage: PropTypes.func.isRequired,
+  handleRemoveImage: PropTypes.func.isRequired,
+  handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
+  handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
+  handleAddRoleItem: PropTypes.func.isRequired,
+  handleRemoveRoleItem: PropTypes.func.isRequired,
+  handleRoleChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
-  handleAddGoal:PropTypes.func.isRequired ,
+  handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddSignificantExperience: PropTypes.func.isRequired,
-  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
-  handleProfileInputs: PropTypes.func.isRequired,
+  handleAddSignificantRelationships: PropTypes.func.isRequired,
+  handleRemoveSignificantRelationships: PropTypes.func.isRequired,
+  handleSignificantRelationshipsInput: PropTypes.func.isRequired,
+  handleDefaultInputChangeSignificantRelationships: PropTypes.func.isRequired,
+  handleAddExperienceItem: PropTypes.func.isRequired,
+  handleRemoveExperienceItem: PropTypes.func.isRequired,
+  handleExperienceChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

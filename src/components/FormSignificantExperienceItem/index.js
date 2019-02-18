@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormInput from '../FormInput';
+//import FormInput from '../FormInput';
 import Button from '../Button';
-
+import FormTextarea from "../FormTextarea";
 
 class FormSignificantExperienceItem extends Component {
   constructor(props) {
@@ -17,25 +17,36 @@ class FormSignificantExperienceItem extends Component {
   }
 
   handleGoalInputChange(event) {
-    const { value, name } = event.currentTarget;
+    const { value } = event.currentTarget;
     const { handleSignificantExperienceInput, ind } = this.props;
-    handleSignificantExperienceInput(value, name, ind);
+    handleSignificantExperienceInput(value, ind);
   }
 
   render() {
-    const { significantExperienceDefault } = this.props;
+    const { ind, item, significantExperience } = this.props;
     return (
-      <div>
-        <FormInput
-            labelContent="significant experience"
-            styles="form__input"
-            inputType="text"
-            inputName="significant experience"
-            inputValue={significantExperienceDefault}
-            example="significant experience"
-            handleInputChange={this.handleGoalInputChange}
-          />
+      <div className="form__container">
+        {/* <FormInput
+          labelContent={`Experience ${ind + 1} of ${significantExperience.length}`}
+          styles="form__input"
+          inputType="text"
+          inputName="significantExperience"
+          inputValue={item}
+          example="Ex: Managing a team of 20 people at Acme, Co."
+          handleInputChange={this.handleGoalInputChange}
+        /> */}
 
+        <FormTextarea
+          labelContent={`Experience ${ind + 1} of ${significantExperience.length}`}
+          textAreaStyles="textarea"
+          textAreaLabelStyles="label"
+          textName="significantExperience"
+          textValue={item}
+          example="Ex: Managing a team of 20 people at Acme, Co."
+          handleTextChange={this.handleGoalInputChange}
+        />
+
+        <div className="remove-btn__container">
           <Button
             buttonType="button"
             styles="remove-btn"
@@ -43,16 +54,18 @@ class FormSignificantExperienceItem extends Component {
           >
             Remove
           </Button>
+        </div>
       </div>
     );
   }
 }
 
 FormSignificantExperienceItem.propTypes = {
-  significantExperienceDefault: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  significantExperience: PropTypes.array.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
-  handleSignificantExperienceInput:PropTypes.func.isRequired
+  handleSignificantExperienceInput: PropTypes.func.isRequired
 }
 
 export default FormSignificantExperienceItem;

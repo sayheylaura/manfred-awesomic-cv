@@ -26,28 +26,32 @@ class FormLanguages extends Component {
     } = this.props;
 
     return (
-      <fieldset className="form__languages">
+      <fieldset className="form__fieldset">
         <legend className="form__section-title">Languages</legend>
 
         <p className="form__section-description">
           List of languages and your proficiency level
-        </p>
+          <span className="required_field">*</span></p>
 
-        {languages.map((item, index) => {
+        {languages && !!languages.length && languages.map((item, index) => {
           return (
             <FormLanguageItem
               key={index}
               ind={index}
               item={item}
+              languages={languages}
+              proficiencyLevels={proficiencyLevels}
               handleRemoveLanguageItem={handleRemoveLanguageItem}
               handleLanguageChange={handleLanguageChange}
             />
           );
         })}
 
-        <div>
+        <div className="form__container">
+          <p className="form__container-title">More languages</p>
+
           <FormInput
-            labelContent="Language"
+            labelContent="Language*"
             styles="form__input"
             inputType="text"
             inputName="languageDefault"
@@ -57,7 +61,7 @@ class FormLanguages extends Component {
           />
 
           <FormSelect
-            labelContent="Proficiency"
+            labelContent="Proficiency*"
             styles="form__select"
             selectName="proficiencyDefault"
             selectValue={proficiencyDefault}
@@ -70,7 +74,7 @@ class FormLanguages extends Component {
             styles="add-btn"
             handleButtonClick={handleAddLanguageItem}
           >
-            Add item
+            Add
           </Button>
         </div>
       </fieldset>

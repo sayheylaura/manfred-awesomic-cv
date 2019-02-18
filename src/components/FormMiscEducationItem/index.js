@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import FormInput from "../FormInput";
+//import FormInput from "../FormInput";
 import Button from "../Button";
+import FormTextarea from "../FormTextarea";
 
 class FormMiscEducationItem extends Component {
   constructor(props) {
@@ -23,25 +24,38 @@ class FormMiscEducationItem extends Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { ind, item, miscEducation } = this.props;
     return (
-      <div>
-        <FormInput
-          labelContent="Item"
+      <div className="form__container">
+        {/* <FormInput
+          labelContent={`Item ${ind + 1} of ${miscEducation.length}`}
           styles="form__input"
           inputType="text"
           inputName="miscEd"
           inputValue={item}
           example="Ex: Scrum master certification"
           handleInputChange={this.handleInputChange}
+        /> */}
+
+        <FormTextarea
+          labelContent={`Item ${ind + 1} of ${miscEducation.length}`}
+          textAreaStyles="textarea"
+          textAreaLabelStyles="label"
+          textName="miscEd"
+          textValue={item}
+          example="Ex: Scrum master certification"
+          handleTextChange={this.handleInputChange}
         />
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.handleRemoveBtn}
-        >
-          Remove
-        </Button>
+
+        <div className="remove-btn__container">
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.handleRemoveBtn}
+          >
+            Remove
+          </Button>
+        </div>
       </div>
     );
   }
@@ -50,6 +64,7 @@ class FormMiscEducationItem extends Component {
 FormMiscEducationItem.propTypes = {
   ind: PropTypes.number.isRequired,
   item: PropTypes.string.isRequired,
+  miscEducation: PropTypes.array.isRequired,
   handleRemoveMiscItem: PropTypes.func.isRequired,
   handleMiscInputChange: PropTypes.func.isRequired
 };

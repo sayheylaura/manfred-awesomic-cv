@@ -13,12 +13,13 @@ class FormExperienceItem extends Component {
     const { company } = item;
     return (
       <div>
-        {company.map((item, index) => {
+        {company && !!company.length && company.map((item, index) => {
           return (
             <FormCompany
               key={index}
               ind={index}
               name={item.name}
+              company={company}
               handleRemoveExperienceItem={handleRemoveExperienceItem}
               handleExperienceChange={handleExperienceChange}
             />
@@ -30,7 +31,6 @@ class FormExperienceItem extends Component {
 }
 
 FormExperienceItem.propTypes = {
-  ind: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
   handleRemoveExperienceItem: PropTypes.func.isRequired,
   handleExperienceChange: PropTypes.func.isRequired

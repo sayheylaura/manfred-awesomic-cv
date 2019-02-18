@@ -23,9 +23,11 @@ class FormCompany extends Component {
   }
 
   render() {
-    const { name } = this.props;
+    const { ind, name, company } = this.props;
     return (
       <div className="form__container">
+        <p className="form__container-title">{`Company ${ind + 1} of ${company.length}`}</p>
+
         <FormInput
           labelContent="Company name"
           styles="form__input"
@@ -35,6 +37,7 @@ class FormCompany extends Component {
           example="Ex: Google"
           handleInputChange={this.handleInputChange}
         />
+
         <div className="remove-btn__container">
           <Button
             buttonType="button"
@@ -52,6 +55,7 @@ class FormCompany extends Component {
 FormCompany.propTypes = {
   ind: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  company: PropTypes.array.isRequired,
   handleRemoveExperienceItem: PropTypes.func.isRequired,
   handleExperienceChange: PropTypes.func.isRequired
 };

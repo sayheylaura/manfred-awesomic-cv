@@ -4,14 +4,6 @@ import FormInput from "../FormInput";
 import FormSelect from "../FormSelect";
 import Button from "../Button";
 
-const proficiencyLevels = [
-  "elementary",
-  "limited working",
-  "professional working",
-  "full professional",
-  "native or bilingual"
-];
-
 class FormLanguageItem extends Component {
   constructor(props) {
     super(props);
@@ -32,9 +24,12 @@ class FormLanguageItem extends Component {
   }
 
   render() {
-    const { language, proficiency } = this.props.item;
+    const { ind, item, languages, proficiencyLevels } = this.props;
+    const { language, proficiency } = item;
     return (
       <div className="form__container">
+        <p className="form__container-title">{`Language ${ind + 1} of ${languages.length}`}</p>
+
         <FormInput
           labelContent="Language"
           styles="form__input"
@@ -53,6 +48,7 @@ class FormLanguageItem extends Component {
           selectOptions={proficiencyLevels}
           handleSelectChange={this.handleChange}
         />
+
         <div className="remove-btn__container">
           <Button
             buttonType="button"
@@ -70,6 +66,8 @@ class FormLanguageItem extends Component {
 FormLanguageItem.propTypes = {
   ind: PropTypes.number.isRequired,
   item: PropTypes.object.isRequired,
+  languages: PropTypes.array.isRequired,
+  proficiencyLevels: PropTypes.array.isRequired,
   handleRemoveLanguageItem: PropTypes.func.isRequired,
   handleLanguageChange: PropTypes.func.isRequired
 };

@@ -17,33 +17,32 @@ class FormTransportableSkillsItem extends Component {
   }
 
   handleTransSkillInputChange(event) {
-    const { value, name } = event.currentTarget;
+    const { value } = event.currentTarget;
     const { handleTransportableSkillsInput, ind } = this.props;
-    handleTransportableSkillsInput(value, name, ind);
+    handleTransportableSkillsInput(value, ind);
   }
 
-
-
   render() {
-    const { transportableSkillDefault } = this.props;
+    const { ind, item, transportableSkills } = this.props;
     return (
       <div className="form__container">
         <FormInput
-          labelContent="Transportable Skill"
+          labelContent={`Skill ${ind + 1} of ${transportableSkills.length}`}
           styles="form__input"
           inputType="text"
-          inputName="transportable skills"
-          inputValue={transportableSkillDefault}
-          example="Professional Goal"
+          inputName="transportableSkills"
+          inputValue={item}
+          example="Ex: Team management"
           handleInputChange={this.handleTransSkillInputChange}
         />
+
         <div className="remove-btn__container">
-        <Button
-          buttonType="button"
-          styles="remove-btn"
-          handleButtonClick={this.removeItem}
+          <Button
+            buttonType="button"
+            styles="remove-btn"
+            handleButtonClick={this.removeItem}
           >
-          Remove
+            Remove
         </Button>
         </div>
       </div>
@@ -52,10 +51,11 @@ class FormTransportableSkillsItem extends Component {
 }
 
 FormTransportableSkillsItem.propTypes = {
-  transportableSkillDefault: PropTypes.string.isRequired,
   ind: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+  transportableSkills: PropTypes.array.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillsInput:PropTypes.func.isRequired
+  handleTransportableSkillsInput: PropTypes.func.isRequired
 }
 
 export default FormTransportableSkillsItem;

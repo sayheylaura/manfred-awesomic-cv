@@ -22,7 +22,7 @@ class Cv extends Component {
     return (
       <div className="cv__wrapper" ref={cvRef}>
         <Author sampleAuthor={author} />
-        {experience && !!experience.length && <Experience sampleExperience={experience} />}
+        {experience && !!experience.length && experience[0].company && !!experience[0].company.length && <Experience sampleExperience={experience} />}
         {education && !!education.length && <Education sampleEducation={education} />}
         {languages && !!languages.length && <LanguagesList sampleLanguages={languages} />}
         {miscEducation && !!miscEducation.length && <MiscEducation sampleMiscEducation={miscEducation} />}

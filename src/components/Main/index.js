@@ -23,7 +23,7 @@ class Main extends Component {
     const localStorageActiveTab = localStorage.getItem("activeTab");
     const localStorageJSON = JSON.parse(localStorageActiveTab);
     if (!localStorageActiveTab) {
-      return "form";
+      return "json";
     } else {
       return localStorageJSON;
     }
@@ -47,20 +47,21 @@ class Main extends Component {
                   key={index}
                   className={`nav__link ${
                     tabItem.name === this.state.activeTab ? "active" : ""
-                  }`}
+                    }`}
                   onClick={e => this.handleTabClick(tabItem.name)}
                 >
                   {tabItem.name === this.state.activeTab ? (
                     tabItem.text
                   ) : (
-                    <Link className="nav__link-route" to={tabItem.linkTo}>
-                      {tabItem.text}
-                    </Link>
-                  )}
+                      <Link className="nav__link-route" to={tabItem.linkTo}>
+                        {tabItem.text}
+                      </Link>
+                    )}
                 </li>
               ))}
             </ul>
           </nav>
+
           <Switch>
             <Route
               exact
@@ -96,11 +97,11 @@ Main.propTypes = {
   publicLinkDefault: PropTypes.string.isRequired,
   rolesDefault: PropTypes.string.isRequired,
   goalDefault: PropTypes.string.isRequired,
-  significantRelationshipsDefault: PropTypes.object.isRequired,
   transportableSkillDefault: PropTypes.string.isRequired,
   significantExperienceDefault: PropTypes.string.isRequired,
-  institutionDefault: PropTypes.string.isRequired,
+  significantRelationshipsDefault: PropTypes.object.isRequired,
   companyDefault: PropTypes.string.isRequired,
+  institutionDefault: PropTypes.string.isRequired,
   studyDefault: PropTypes.string.isRequired,
   fromEdDefault: PropTypes.string.isRequired,
   untilEdDefault: PropTypes.string.isRequired,
@@ -116,24 +117,28 @@ Main.propTypes = {
   handleProfileInputs: PropTypes.func.isRequired,
   handleDefaultInputChange: PropTypes.func.isRequired,
   handleAddLinkItem: PropTypes.func.isRequired,
+  handleRemoveLinkItem: PropTypes.func.isRequired,
+  handleLinkChange: PropTypes.func.isRequired,
   handleAddRoleItem: PropTypes.func.isRequired,
   handleRemoveRoleItem: PropTypes.func.isRequired,
   handleRoleChange: PropTypes.func.isRequired,
-  handleRemoveLinkItem: PropTypes.func.isRequired,
-  handleLinkChange: PropTypes.func.isRequired,
   handleIntroChange: PropTypes.func.isRequired,
   handleAddGoal: PropTypes.func.isRequired,
   handleRemoveGoal: PropTypes.func.isRequired,
   handleGoalsInput: PropTypes.func.isRequired,
   handleAddTransportableSkill: PropTypes.func.isRequired,
   handleRemoveTransportableSkill: PropTypes.func.isRequired,
-  handleTransportableSkillChange: PropTypes.func.isRequired,
   handleTransportableSkillsInput: PropTypes.func.isRequired,
   handleAddSignificantExperience: PropTypes.func.isRequired,
   handleRemoveSignificantExperience: PropTypes.func.isRequired,
-  handlesignificantExperienceChange: PropTypes.func.isRequired,
   handleSignificantExperienceInput: PropTypes.func.isRequired,
   handleAddSignificantRelationships: PropTypes.func.isRequired,
+  handleRemoveSignificantRelationships: PropTypes.func.isRequired,
+  handleSignificantRelationshipsInput: PropTypes.func.isRequired,
+  handleDefaultInputChangeSignificantRelationships: PropTypes.func.isRequired,
+  handleAddExperienceItem: PropTypes.func.isRequired,
+  handleRemoveExperienceItem: PropTypes.func.isRequired,
+  handleExperienceChange: PropTypes.func.isRequired,
   handleAddEducationItem: PropTypes.func.isRequired,
   handleRemoveEducationItem: PropTypes.func.isRequired,
   handleEducationChange: PropTypes.func.isRequired,

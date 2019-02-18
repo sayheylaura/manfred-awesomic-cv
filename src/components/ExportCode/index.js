@@ -70,7 +70,7 @@ class ExportCode extends Component {
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>
-      <pre><code className="language-markup">{pageHTML}</code></pre>
+      <pre><code className="language-markup">{`${codeToExport}${pageHTML}`}</code></pre>
       <div className="clipboard__wrapper">
           <CopyToClipboard onCopy={this.onCopy} text={`${codeToExport}${pageHTML}`}>
             <button className="clipboard-btn">Copy to clipboard</button>

@@ -1,22 +1,19 @@
 import React, { Component, Fragment } from "react";
-import { Route } from "react-router-dom";
 import "./App.scss";
 //import sample from "./services/empty_sample.json"
 // import sample from "./services/sample.json";
 import sample from "./services/sample_2.json";
-//import sample from "./services/sample_yago.json";
 //import sample from "./services/example.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import Embed from "./components/Embed";
+
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.cvRef = React.createRef();
-    this.embedRef = React.createRef();
     this.state = {
       sample: sample,
       publicLinkDefault: "",
@@ -913,10 +910,8 @@ class App extends Component {
       questionDefault,
       answerDefault
     } = this.state;
-    const currentPath = window.location.href;
     return (
       <div className="App">
-      {!currentPath.includes('embedded') ?
       <Fragment>
         <Header />
         <Main
@@ -987,16 +982,8 @@ class App extends Component {
         />
         <Footer/>
       </Fragment>
-      : null}
-        <Route
-          path="/embedded"
-          render={() => (
-            <Embed
-              sample={sample}
-              cvRef={this.cvRef}
-              embedRef={this.embedRef}
-            />)}
-        />
+
+
       </div>
     );
   }

@@ -965,17 +965,6 @@ a:active {
   max-height: 85%;
   margin-top: 5%;
   max-width: 90%;
-  // overflow-y: auto;
+  overflow-y: auto;
 }
 
-.iframe__preview {
-  display: flex;
-}
-
-.iframe__link{
-  margin: auto;
-}
-
-.iframe__title{
-  margin: 20px 50px;
-}

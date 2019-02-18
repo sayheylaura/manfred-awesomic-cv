@@ -56,7 +56,6 @@ class ExportCode extends Component {
 
   render() {
     const {cvRef} = this.props;
-    const embed = '<iframe src="https://beta.adalab.es/easley-s4-manfred/#/embedded" height="500" width="90%"></iframe>';
     let pageHTML;
     if(cvRef.current) {
       const test = cvRef.current;
@@ -65,20 +64,17 @@ class ExportCode extends Component {
 
     return (
       <Fragment>
-      <div className="modal__outer">
-
-      <pre><code className="language-markup">{pageHTML}</code></pre>
-      <pre><code className="language-markup">{embed}</code></pre>
+      <div className="modal__outer ">
       <div className="clipboard__wrapper">
-          <CopyToClipboard onCopy={this.onCopy} text={embed}>
+          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
             <button className="clipboard-btn">Copy to clipboard</button>
           </CopyToClipboard>
       </div>
-      <div className="iframe__title">
-        <h5> Preview </h5>
-      </div>
-      <div className="iframe__preview">
-        <iframe className="iframe__link" title="cv" src="http://localhost:3001/#/embedded" height="500" width="90%"></iframe>
+      <pre><code className="language-markup">{pageHTML}</code></pre>
+      <div className="clipboard__wrapper">
+          <CopyToClipboard onCopy={this.onCopy} text={pageHTML}>
+            <button className="clipboard-btn">Copy to clipboard</button>
+          </CopyToClipboard>
       </div>
       </div>
 

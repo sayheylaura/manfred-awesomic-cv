@@ -18,7 +18,7 @@ To make it work, you first have to install create-react-app by typing:
 `npm install -g create-react-app`
 Then, clone the repo & run `npm install` to install the dependencies.
 
-In the project directory, you can run`npm start` to run the app in the development mode.<br>
+In the project directory, you can type `npm start` to run the app in the development mode.<br>
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 

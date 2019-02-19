@@ -1,7 +1,7 @@
 
-# Manfred Awesomic CV (MACv)📄 + 👩‍💻 = 🚀
+![Manfred Awesomic CV](https://github.com/Adalab/easley-s4-manfred/blob/dev/src/images/logo.svg)
 
-Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac).
+Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac) (MACv) 📄 + 👩‍💻 = 🚀
 
 This project is based on this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json). 
 

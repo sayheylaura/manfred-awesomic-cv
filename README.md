@@ -1,7 +1,6 @@
 
-![Manfred Awesomic CV](https://github.com/Adalab/easley-s4-manfred/blob/dev/src/images/logo.svg)
-
-
+<img src="https://github.com/Adalab/easley-s4-manfred/blob/dev/src/images/logo.svg" alt="Manfred Awesomic CV" width="700px">
+<br/>
 
 Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac) (MACv) 📄 + 👩‍💻 = 🚀
 
@@ -10,7 +9,7 @@ This project is based on this [JSON schema](https://github.com/getmanfred/mac/bl
 This App is a **work in progress** towards a standardized curriculum format. 
 
 [By clicking here](https://beta.adalab.es/easley-s4-manfred/#/), you'll go to its latest version. Jump to the **Using MACv** section to get started.
-
+<br/>
 
 ## Repo instructions
 
@@ -25,6 +24,7 @@ In the project directory, you can type `npm start` to run the app in the develop
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 In the terminal, type `ctrl/cmd + c` to stop it from running.
+<br/>
 
 ## Using MACv
 
@@ -41,9 +41,11 @@ To create your CV, there are three different ways:
 After following any of these steps, click on the **CV viewer** tab to see your changes.
 
 Once on the **CV viewer** tab, you can print your CV or copy the inner HTML to paste it to your website. 
+<br/>
 
 ## Community
 
 This is an Open Source collaborative project, made with :green_heart: at [Adalab](https://adalab.es/) as our last assignment. It was achieved with the guidance and endless support of [Manfred](https://www.getmanfred.com/).
 
 We strive to learn and share with everybody, so feel free to send us a PR for improvements. Also, an *issues section* is on its way :sunglasses:
+<br/>

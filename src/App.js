@@ -109,15 +109,16 @@ class App extends Component {
         stylesCV = styleSheet.href;
       }
     }
-    fetch(stylesCV)
+    if (stylesCV){
+      fetch(stylesCV)
       .then(data => data.text())
       .then(data => {
         this.setState({
           codeToExport: `<link itemprop="url" href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900" rel="stylesheet" />
                         <style>${data}</style>`
         })
-      })
-  }
+      })}
+    }
 
   handlePrintBtn() {
     window.print();

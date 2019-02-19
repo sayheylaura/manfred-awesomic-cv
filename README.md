@@ -3,6 +3,13 @@
 
 Welcome to the first prototype of [Manfred Awesomic CV](https://github.com/getmanfred/mac).
 
+This project is based on this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json). 
+
+This App is a **work in progress** towards a standarized curriculum format. 
+
+[By clicking here](https://beta.adalab.es/easley-s4-manfred/#/), you'll go to its latest version. Jump to the **Using MACv** section to get started.
+
+
 ## Repo instructions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
@@ -15,18 +22,26 @@ In the project directory, you can run`npm start` to run the app in the developme
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Type `ctrl/cmd + c` to stop it from running.
+In the terminal, type `ctrl/cmd + c` to stop it from running.
 
 ## Using MACv
 
 ![](https://media1.tenor.com/images/2a8ce8d4128b7b6616fb825ede2b47ec/tenor.gif?itemid=11225469)
 
-To get started, you will need to follow this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json). 
+To create your CV, there are three different ways:
 
-Once your JSON file is ready, follow these instructions:
+1. _Easy mode_: click on the **Form** tab and fill the form fields with your data. 
 
-1. Add it to services folder 📂
+2. _Advanced_: go the **JSON editor** tab and modify the JSON data.
 
-2. Go to App.js, then change the import link and the App's state to your shiny JSON file 💻
+3. _Pro_: create your own JSON following this [JSON schema](https://github.com/getmanfred/mac/blob/master/schema/schema.json), then paste it to the **JSON editor** text area. 
 
-3. Lit 🔥🔥🔥
+After following any of these steps, click on the **CV viewer** tab to see your changes.
+
+Once on the **CV viewer** tab, you can print your CV or copy the inner HTML to paste it to your website. 
+
+## Community
+
+This is an Open Source collaborative project, made with :green_heart: at [Adalab](https://adalab.es/) as our final assignment. It was achieved with the guidance and endless support of [Manfred](https://www.getmanfred.com/).
+
+We strive to learn and share with everybody, so feel free to send us a PR for improvements. Also, an *issues section* is on its way :sunglasses:
